@@ -1,22 +1,41 @@
 
+import type { Metadata } from "next";
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { FeatureCard } from '@/components/ui/FeatureCard';
 import { buttonVariants } from '@/components/ui/button';
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Link } from '@/i18n/routing';
+import { buildPageMetadata, buildServiceListSchema, type AppLocale } from "@/lib/seo";
 import { cn } from "@/lib/utils";
-import { MonitorSmartphone, CalendarCheck, Workflow, Smartphone, ArrowRight } from 'lucide-react';
+import { MonitorSmartphone, CalendarCheck, Workflow, Smartphone, ArrowRight, type LucideIcon } from 'lucide-react';
 
 import { getTranslations } from 'next-intl/server';
 import { getServices } from '@/lib/content';
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   MonitorSmartphone,
   CalendarCheck,
   Workflow,
   Smartphone
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "ServicesPage" });
+
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/services",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
+}
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -26,6 +45,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <div className="pt-16 pb-24">
+      <JsonLd data={buildServiceListSchema(locale as AppLocale, services)} />
+
       {/* Intro */}
       <Section className="bg-background pb-0 md:pb-0 lg:pb-0">
         <Container>
@@ -70,6 +91,20 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           >
             {tShared('sendMessage')} <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/solutions"
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-full")}
+            >
+              {t("seeSolutions")}
+            </Link>
+            <Link
+              href="/work"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
+            >
+              {t("seeWork")}
+            </Link>
+          </div>
         </Container>
       </Section>
     </div>

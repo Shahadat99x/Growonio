@@ -2,6 +2,8 @@
   "Index": {
     "title": "Welcome to Growonio",
     "description": "Business automation built for growth. Helping service businesses thrive in the digital age with modern software solutions.",
+    "metaTitle": "Business Automation for Service Businesses in Romania",
+    "metaDescription": "Growonio builds conversion-focused websites, automations, booking systems, and digital workflows for service businesses growing in Romania.",
     "cta": "Get Started",
     "servicesPreviewTitle": "Our Services",
     "servicesPreviewDesc": "End-to-end digital solutions tailored to your growth.",
@@ -22,7 +24,9 @@
     "ctaHeading": "Ready to automate your growth?",
     "ctaDesc": "Let's talk about how our transparent process and modern tech stack can elevate your business.",
     "ctaButton": "Book a Free Consultation",
-    "heroBadge": "Business Automation Platform"
+    "heroBadge": "Business Automation Platform",
+    "exploreWork": "Explore our work",
+    "readInsights": "Read our insights"
   },
   "Navigation": {
     "home": "Home",
@@ -38,6 +42,8 @@
   "ServicesPage": {
     "title": "Our Services",
     "description": "Comprehensive digital services designed to optimize and scale your business operations.",
+    "metaTitle": "Automation, Websites, and Digital Systems for Service Businesses",
+    "metaDescription": "Explore Growonio services for service businesses in Romania: websites, booking systems, automations, and custom digital products built for growth.",
     "webDesign": "Website Design & Development",
     "webDesignDesc": "High-performance, beautifully crafted websites that convert visitors into clients.",
     "booking": "Booking & Client Management",
@@ -47,11 +53,15 @@
     "mobile": "Mobile App Development",
     "mobileDesc": "Custom iOS and Android solutions for deeper client engagement.",
     "ctaTitle": "Need a custom solution?",
-    "ctaDesc": "We build bespoke software tailored to your specific operational workflows and growth targets."
+    "ctaDesc": "We build bespoke software tailored to your specific operational workflows and growth targets.",
+    "seeSolutions": "See industry solutions",
+    "seeWork": "See recent work"
   },
   "PricingPage": {
     "title": "Transparent Pricing",
     "description": "Clear, milestone-based pricing packages designed to fit your growth stage.",
+    "metaTitle": "Pricing for Business Automation and Growth Systems",
+    "metaDescription": "Review Growonio pricing for websites, automation systems, and growth-focused digital services for service businesses in Romania.",
     "starter": "Starter",
     "starterDesc": "Perfect for new businesses needing a professional digital presence.",
     "growth": "Growth",
@@ -61,42 +71,74 @@
     "custom": "Custom",
     "contactUs": "Contact Us",
     "getStarted": "Get Started",
-    "popularBadge": "Most Popular"
+    "popularBadge": "Most Popular",
+    "faqLinkLabel": "Review common questions",
+    "contactLinkLabel": "Request a tailored quote"
   },
   "SolutionsPage": {
     "title": "Industry Solutions",
     "description": "Tailored digital strategies for service-oriented businesses.",
+    "metaTitle": "Digital Solutions for Salons, Clinics, and Consultants",
+    "metaDescription": "See how Growonio adapts automation, websites, and client workflows for salons, clinics, consultants, and other service businesses.",
     "salons": "Salons & Beauty",
     "salonsDesc": "Integrated booking and loyalty systems.",
     "clinics": "Clinics & Health",
     "clinicsDesc": "Secure patient management and scheduling.",
     "consultants": "Consultants & Firms",
-    "consultantsDesc": "Professional lead capture and client portals."
+    "consultantsDesc": "Professional lead capture and client portals.",
+    "servicesLinkLabel": "Explore core services",
+    "contactLinkLabel": "Talk about your business"
   },
   "WorkPage": {
     "title": "Our Work",
     "description": "Explore how we've helped businesses transform their digital operations.",
-    "viewProject": "View Project"
+    "metaTitle": "Selected Work and Automation Case Studies",
+    "metaDescription": "Browse Growonio work examples and see how service businesses improve bookings, lead capture, and operations through digital systems.",
+    "viewProject": "View Project",
+    "servicesLinkLabel": "Explore services",
+    "contactLinkLabel": "Start a similar project"
   },
   "AboutPage": {
     "title": "About Growonio",
     "description": "We believe in software that works for you, not the other way around.",
+    "metaTitle": "About Growonio",
+    "metaDescription": "Learn how Growonio approaches business automation, premium execution, and practical digital growth for service businesses.",
     "mission": "Our Mission",
-    "missionDesc": "To make powerful business automation accessible to service businesses everywhere."
+    "missionDesc": "To make powerful business automation accessible to service businesses everywhere.",
+    "value1Title": "Transparent Process",
+    "value1Desc": "We avoid black-box agency work. You know what is being built, when it ships, and how it supports growth.",
+    "value2Title": "Built for Growth",
+    "value2Desc": "We build systems that capture leads, manage bookings, and remove repetitive admin work."
   },
   "FAQPage": {
     "title": "Frequently Asked Questions",
-    "description": "Everything you need to know about working with us."
+    "description": "Everything you need to know about working with us.",
+    "metaTitle": "Frequently Asked Questions About Working with Growonio",
+    "metaDescription": "Get answers about pricing, delivery, collaboration, and what to expect when building growth systems with Growonio.",
+    "pricingLinkLabel": "Review pricing",
+    "contactLinkLabel": "Ask a specific question"
   },
   "ContactPage": {
     "title": "Contact Us",
-    "description": "Ready to scale? Let's discuss your project."
+    "description": "Ready to scale? Let's discuss your project.",
+    "metaTitle": "Contact Growonio",
+    "metaDescription": "Talk to Growonio about websites, automation, and digital systems for service businesses in Bucharest, across Romania, and beyond.",
+    "contactCardTitle": "Get in touch",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "locationValue": "Bucharest, Romania",
+    "locationAvailability": "Available across Romania and internationally",
+    "servicesLinkLabel": "Explore services",
+    "insightsLinkLabel": "Read insights"
   },
   "Legal": {
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "cookies": "Cookie Policy",
-    "placeholder": "This page is a placeholder and will be populated with official legal text."
+    "placeholder": "This page is a placeholder and will be populated with official legal text.",
+    "privacyDescription": "How Growonio handles and protects personal information.",
+    "termsDescription": "The basic terms that govern Growonio engagements and site usage.",
+    "cookiesDescription": "How Growonio uses cookies and similar technologies."
   },
   "Shared": {
     "firstName": "First Name",
@@ -112,8 +154,8 @@
   "InsightsPage": {
     "title": "Insights",
     "description": "Ideas, guides, and practical thinking on business automation and digital growth.",
-    "metaTitle": "Insights — Growonio",
-    "metaDescription": "Practical articles on business automation, digital tools, and growth strategies for service businesses.",
+    "metaTitle": "Insights on Automation, Websites, and Digital Growth",
+    "metaDescription": "Read practical Growonio articles on automation, digital operations, client acquisition, and sustainable growth for service businesses.",
     "readMore": "Read Article",
     "readTime": "read",
     "backToInsights": "Back to Insights",

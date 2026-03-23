@@ -1,9 +1,23 @@
+import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { Link } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { LayoutDashboard, Briefcase, FileText, Tags, HelpCircle, Newspaper, LogOut } from "lucide-react";
 import { logoutAction } from "../login/actions";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Admin",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
+};
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const locale = useLocale();

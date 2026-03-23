@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import {useTranslations} from 'next-intl';
+import { getTranslations } from "next-intl/server";
 import { Hero } from '@/components/sections/Hero';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
@@ -6,14 +8,34 @@ import { FeatureCard } from '@/components/ui/FeatureCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { buttonVariants } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildOrganizationSchema, buildPageMetadata, buildWebsiteSchema, type AppLocale } from "@/lib/seo";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 import { 
   MonitorSmartphone, CalendarCheck, Workflow, Smartphone, 
   Scissors, Stethoscope, Briefcase, ArrowRight,
   CheckCircle2, Target, Rocket
 } from 'lucide-react';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Index" });
+
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
+}
+
 export default function HomePage() {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations('Index');
   const tShared = useTranslations('Shared');
   const tServices = useTranslations('ServicesPage');
@@ -21,6 +43,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={[buildOrganizationSchema(locale), buildWebsiteSchema(locale)]} />
+
       <Hero
         badge={t('heroBadge')}
         title={t('title')}
@@ -66,6 +90,20 @@ export default function HomePage() {
               className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-8 bg-transparent")}
             >
               {tShared('learnMore')} <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/work"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
+            >
+              {t("exploreWork")}
+            </Link>
+            <Link
+              href="/insights"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
+            >
+              {t("readInsights")}
             </Link>
           </div>
         </Container>

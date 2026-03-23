@@ -104,3 +104,19 @@ export function createAdminClient() {
     },
   });
 }
+
+export function createPublicClient() {
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseKey = getSupabasePublishableKey();
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new MissingSupabaseConfigError();
+  }
+
+  return createSupabaseClient(supabaseUrl, supabaseKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
+}

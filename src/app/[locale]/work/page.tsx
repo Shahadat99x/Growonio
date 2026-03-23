@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { buttonVariants } from "@/components/ui/button";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -7,6 +9,25 @@ import { WorkItemCardImage } from "@/components/media/WorkItemCardImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getWorkItemImageAlt } from "@/lib/cloudinary";
 import { getWorkItems } from "@/lib/content";
+import { Link } from "@/i18n/routing";
+import { buildPageMetadata, type AppLocale } from "@/lib/seo";
+import { cn } from "@/lib/utils";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "WorkPage" });
+
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/work",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
+}
 
 export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -55,6 +76,21 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/services"
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-full")}
+            >
+              {t("servicesLinkLabel")}
+            </Link>
+            <Link
+              href="/contact"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
+            >
+              {t("contactLinkLabel")}
+            </Link>
           </div>
         </Container>
       </Section>

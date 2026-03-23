@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import {useTranslations} from 'next-intl';
+import { getTranslations } from "next-intl/server";
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
+import { buildPageMetadata, type AppLocale } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Legal" });
+
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/legal/privacy",
+    title: t("privacy"),
+    description: t("privacyDescription"),
+  });
+}
 
 export default function PrivacyPolicyPage() {
   const t = useTranslations('Legal');

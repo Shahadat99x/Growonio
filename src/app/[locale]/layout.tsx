@@ -30,10 +30,10 @@ export async function generateMetadata(props: {
 
   return {
     title: {
-      default: t("title"),
+      default: t("metaTitle"),
       template: `%s | Growonio`,
     },
-    description: t("description"),
+    description: t("metaDescription"),
   };
 }
 

@@ -1,4 +1,4 @@
-import { createClient } from './supabase/server';
+import { createPublicClient } from './supabase/server';
 import { 
   LocalizedService, 
   LocalizedPricingPackage, 
@@ -11,15 +11,18 @@ import {
  * Generic mapping function to resolve `_en` vs `_ro` properties.
  * Strips the language suffix and assigns it to the base key.
  */
-function localizeEntity<T extends Record<string, any>>(entity: T, locale: string): any {
-  const result: any = { ...entity };
+function localizeEntity<T extends Record<string, unknown>>(
+  entity: T,
+  locale: string,
+): Record<string, unknown> {
+  const result: Record<string, unknown> = { ...entity };
   const targetSuffix = `_${locale}`;
   
   for (const key of Object.keys(entity)) {
     if (key.endsWith("_en") || key.endsWith("_ro")) {
       if (key.endsWith(targetSuffix)) {
         const baseKey = key.replace(targetSuffix, "");
-        result[baseKey] = entity[key];
+        result[baseKey] = entity[key as keyof T];
       }
       delete result[key];
     }
@@ -40,7 +43,7 @@ function localizeEntity<T extends Record<string, any>>(entity: T, locale: string
 
 export async function getServices(locale: string = "en"): Promise<LocalizedService[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('services')
       .select('*')
@@ -49,7 +52,7 @@ export async function getServices(locale: string = "en"): Promise<LocalizedServi
       
     if (error) throw error;
     
-    return (data || []).map(s => localizeEntity(s, locale) as LocalizedService);
+    return (data || []).map((s) => localizeEntity(s, locale) as unknown as LocalizedService);
   } catch (err) {
     console.error("Failed to fetch services:", err);
     return [];
@@ -58,7 +61,7 @@ export async function getServices(locale: string = "en"): Promise<LocalizedServi
 
 export async function getPricingPackages(locale: string = "en"): Promise<LocalizedPricingPackage[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('pricing_packages')
       .select('*')
@@ -67,7 +70,7 @@ export async function getPricingPackages(locale: string = "en"): Promise<Localiz
       
     if (error) throw error;
     
-    return (data || []).map(p => localizeEntity(p, locale) as LocalizedPricingPackage);
+    return (data || []).map((p) => localizeEntity(p, locale) as unknown as LocalizedPricingPackage);
   } catch (err) {
     console.error("Failed to fetch pricing_packages:", err);
     return [];
@@ -76,7 +79,7 @@ export async function getPricingPackages(locale: string = "en"): Promise<Localiz
 
 export async function getWorkItems(locale: string = "en"): Promise<LocalizedWorkItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('work_items')
       .select('*')
@@ -85,7 +88,7 @@ export async function getWorkItems(locale: string = "en"): Promise<LocalizedWork
       
     if (error) throw error;
     
-    return (data || []).map(w => localizeEntity(w, locale) as LocalizedWorkItem);
+    return (data || []).map((w) => localizeEntity(w, locale) as unknown as LocalizedWorkItem);
   } catch (err) {
     console.error("Failed to fetch work_items:", err);
     return [];
@@ -94,7 +97,7 @@ export async function getWorkItems(locale: string = "en"): Promise<LocalizedWork
 
 export async function getFeaturedWorkItems(locale: string = "en"): Promise<LocalizedWorkItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('work_items')
       .select('*')
@@ -104,7 +107,7 @@ export async function getFeaturedWorkItems(locale: string = "en"): Promise<Local
       
     if (error) throw error;
     
-    return (data || []).map(w => localizeEntity(w, locale) as LocalizedWorkItem);
+    return (data || []).map((w) => localizeEntity(w, locale) as unknown as LocalizedWorkItem);
   } catch (err) {
     console.error("Failed to fetch featured work_items:", err);
     return [];
@@ -113,7 +116,7 @@ export async function getFeaturedWorkItems(locale: string = "en"): Promise<Local
 
 export async function getFAQs(locale: string = "en"): Promise<LocalizedFAQItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('faqs')
       .select('*')
@@ -122,7 +125,7 @@ export async function getFAQs(locale: string = "en"): Promise<LocalizedFAQItem[]
       
     if (error) throw error;
     
-    return (data || []).map(f => localizeEntity(f, locale) as LocalizedFAQItem);
+    return (data || []).map((f) => localizeEntity(f, locale) as unknown as LocalizedFAQItem);
   } catch (err) {
     console.error("Failed to fetch faqs:", err);
     return [];
@@ -131,7 +134,7 @@ export async function getFAQs(locale: string = "en"): Promise<LocalizedFAQItem[]
 
 export async function getCompanySettings(locale: string = "en") {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('company_settings')
       .select('*')
@@ -140,7 +143,7 @@ export async function getCompanySettings(locale: string = "en") {
       
     if (error) throw error;
     
-    return localizeEntity(data || {}, locale);
+    return localizeEntity(data || {}, locale) as unknown as Record<string, unknown>;
   } catch (err) {
     console.error("Failed to fetch company_settings:", err);
     return null;
@@ -149,7 +152,7 @@ export async function getCompanySettings(locale: string = "en") {
 
 export async function getPublishedArticles(locale: string = "en"): Promise<LocalizedArticle[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
@@ -159,7 +162,7 @@ export async function getPublishedArticles(locale: string = "en"): Promise<Local
 
     if (error) throw error;
 
-    return (data || []).map(a => localizeEntity(a, locale) as LocalizedArticle);
+    return (data || []).map((a) => localizeEntity(a, locale) as unknown as LocalizedArticle);
   } catch (err) {
     console.error("Failed to fetch published articles:", err);
     return [];
@@ -168,7 +171,7 @@ export async function getPublishedArticles(locale: string = "en"): Promise<Local
 
 export async function getFeaturedArticles(locale: string = "en"): Promise<LocalizedArticle[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
@@ -180,7 +183,7 @@ export async function getFeaturedArticles(locale: string = "en"): Promise<Locali
 
     if (error) throw error;
 
-    return (data || []).map(a => localizeEntity(a, locale) as LocalizedArticle);
+    return (data || []).map((a) => localizeEntity(a, locale) as unknown as LocalizedArticle);
   } catch (err) {
     console.error("Failed to fetch featured articles:", err);
     return [];
@@ -189,18 +192,19 @@ export async function getFeaturedArticles(locale: string = "en"): Promise<Locali
 
 export async function getArticleBySlug(slug: string, locale: string = "en"): Promise<LocalizedArticle | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
       .eq('slug', slug)
       .eq('status', 'published')
+      .lte('published_at', new Date().toISOString())
       .single();
 
     if (error) throw error;
     if (!data) return null;
 
-    return localizeEntity(data, locale) as LocalizedArticle;
+    return localizeEntity(data, locale) as unknown as LocalizedArticle;
   } catch (err) {
     console.error("Failed to fetch article by slug:", err);
     return null;

@@ -1,7 +1,26 @@
+import type { Metadata } from "next";
 import {useTranslations} from 'next-intl';
+import { getTranslations } from "next-intl/server";
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { buildPageMetadata, type AppLocale } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "AboutPage" });
+
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/about",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
+}
 
 export default function AboutPage() {
   const t = useTranslations('AboutPage');
@@ -27,12 +46,12 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 not-prose">
               <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-border/40">
-                <h4 className="text-xl font-bold mb-4">Transparent Process</h4>
-                <p className="text-muted-foreground">We despise black-box agencies. You will know exactly what is being built, when it will be delivered, and how much it costs.</p>
+                <h4 className="text-xl font-bold mb-4">{t("value1Title")}</h4>
+                <p className="text-muted-foreground">{t("value1Desc")}</p>
               </div>
               <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-border/40">
-                <h4 className="text-xl font-bold mb-4">Built for Growth</h4>
-                <p className="text-muted-foreground">We don't just build digital brochures. We engineer systems that capture leads, manage bookings, and automate admin work.</p>
+                <h4 className="text-xl font-bold mb-4">{t("value2Title")}</h4>
+                <p className="text-muted-foreground">{t("value2Desc")}</p>
               </div>
             </div>
           </div>

@@ -2,6 +2,8 @@
   "Index": {
     "title": "Bine ați venit la Growonio",
     "description": "Automatizarea afacerii construită pentru creștere. Ajutăm afacerile de servicii să prospere în era digitală.",
+    "metaTitle": "Automatizare pentru afaceri de servicii din România",
+    "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
     "cta": "Începe acum",
     "servicesPreviewTitle": "Serviciile Noastre",
     "servicesPreviewDesc": "Soluții digitale complete, adaptate pentru creșterea ta.",
@@ -22,7 +24,9 @@
     "ctaHeading": "Ești gata să-ți automatizezi creșterea?",
     "ctaDesc": "Hai să discutăm cum procesul nostru transparent și tehnologia modernă pot eleva afacerea ta.",
     "ctaButton": "Programează o Consultare Gratuită",
-    "heroBadge": "Platformă de Automatizare"
+    "heroBadge": "Platformă de Automatizare",
+    "exploreWork": "Vezi portofoliul",
+    "readInsights": "Citește articolele"
   },
   "Navigation": {
     "home": "Acasă",
@@ -38,6 +42,8 @@
   "ServicesPage": {
     "title": "Serviciile Noastre",
     "description": "Servicii digitale complete, concepute pentru a optimiza și scala operațiunile tale.",
+    "metaTitle": "Automatizări, website-uri și sisteme digitale pentru afaceri de servicii",
+    "metaDescription": "Descoperă serviciile Growonio pentru afaceri de servicii din România: website-uri, programări, automatizări și produse digitale construite pentru creștere.",
     "webDesign": "Design & Dezvoltare Web",
     "webDesignDesc": "Site-uri web ultra-rapide și atractive, care transformă vizitatorii în clienți.",
     "booking": "Sisteme de Programări",
@@ -47,11 +53,15 @@
     "mobile": "Aplicații Mobile",
     "mobileDesc": "Soluții personalizate iOS și Android pentru implicarea clienților.",
     "ctaTitle": "Ai nevoie de o soluție personalizată?",
-    "ctaDesc": "Construim software la comandă, adaptat fluxurilor tale operaționale și obiectivelor de creștere."
+    "ctaDesc": "Construim software la comandă, adaptat fluxurilor tale operaționale și obiectivelor de creștere.",
+    "seeSolutions": "Vezi soluțiile pe industrii",
+    "seeWork": "Vezi proiectele recente"
   },
   "PricingPage": {
     "title": "Prețuri Transparente",
     "description": "Pachete clare, bazate pe obiective, concepute pentru stadiul tău de creștere.",
+    "metaTitle": "Prețuri pentru automatizare și sisteme digitale de creștere",
+    "metaDescription": "Analizează pachetele Growonio pentru website-uri, automatizări și servicii digitale orientate spre creștere pentru afaceri de servicii din România.",
     "starter": "Start",
     "starterDesc": "Perfect pentru afaceri noi care au nevoie de o prezență digitală profesională.",
     "growth": "Creștere",
@@ -61,42 +71,74 @@
     "custom": "Personalizat",
     "contactUs": "Contactează-ne",
     "getStarted": "Începe",
-    "popularBadge": "Cel Mai Popular"
+    "popularBadge": "Cel Mai Popular",
+    "faqLinkLabel": "Vezi întrebările frecvente",
+    "contactLinkLabel": "Cere o ofertă personalizată"
   },
   "SolutionsPage": {
     "title": "Soluții pe Industrii",
     "description": "Strategii digitale adaptate pentru afacerile orientate pe servicii.",
+    "metaTitle": "Soluții digitale pentru saloane, clinici și consultanți",
+    "metaDescription": "Vezi cum adaptează Growonio automatizările, website-urile și fluxurile cu clienții pentru saloane, clinici, consultanți și alte afaceri de servicii.",
     "salons": "Saloane & Frumusețe",
     "salonsDesc": "Sisteme integrate de programări și loialitate.",
     "clinics": "Clinici & Sănătate",
     "clinicsDesc": "Management securizat al pacienților.",
     "consultants": "Consultanți & Agenții",
-    "consultantsDesc": "Portaluri profesionale pentru clienți și captare lead-uri."
+    "consultantsDesc": "Portaluri profesionale pentru clienți și captare lead-uri.",
+    "servicesLinkLabel": "Descoperă serviciile",
+    "contactLinkLabel": "Discută despre afacerea ta"
   },
   "WorkPage": {
     "title": "Portofoliu",
     "description": "Descoperă cum am ajutat alte afaceri să își transforme operațiunile.",
-    "viewProject": "Vezi Proiectul"
+    "metaTitle": "Portofoliu și exemple de automatizare",
+    "metaDescription": "Explorează proiectele Growonio și vezi cum afacerile de servicii își îmbunătățesc programările, captarea lead-urilor și operațiunile prin sisteme digitale.",
+    "viewProject": "Vezi Proiectul",
+    "servicesLinkLabel": "Descoperă serviciile",
+    "contactLinkLabel": "Începe un proiect similar"
   },
   "AboutPage": {
     "title": "Despre Growonio",
     "description": "Credem în software care lucrează pentru tine, nu invers.",
+    "metaTitle": "Despre Growonio",
+    "metaDescription": "Află cum abordează Growonio automatizarea afacerii, execuția premium și creșterea digitală practică pentru afaceri de servicii.",
     "mission": "Misiunea Noastră",
-    "missionDesc": "Să facem automatizarea accesibilă afacerilor de servicii de pretutindeni."
+    "missionDesc": "Să facem automatizarea accesibilă afacerilor de servicii de pretutindeni.",
+    "value1Title": "Proces Transparent",
+    "value1Desc": "Evităm munca de agenție opacă. Știi ce se construiește, când se livrează și cum susține creșterea.",
+    "value2Title": "Construit pentru Creștere",
+    "value2Desc": "Creăm sisteme care captează lead-uri, gestionează programări și elimină munca administrativă repetitivă."
   },
   "FAQPage": {
     "title": "Întrebări Frecvente",
-    "description": "Tot ce trebuie să știi despre colaborarea cu noi."
+    "description": "Tot ce trebuie să știi despre colaborarea cu noi.",
+    "metaTitle": "Întrebări frecvente despre colaborarea cu Growonio",
+    "metaDescription": "Primește răspunsuri despre prețuri, livrare, colaborare și ce poți aștepta când construiești sisteme de creștere cu Growonio.",
+    "pricingLinkLabel": "Vezi prețurile",
+    "contactLinkLabel": "Pune o întrebare specifică"
   },
   "ContactPage": {
     "title": "Contact",
-    "description": "Ești gata să scalezi? Hai să discutăm proiectul tău."
+    "description": "Ești gata să scalezi? Hai să discutăm proiectul tău.",
+    "metaTitle": "Contact Growonio",
+    "metaDescription": "Discută cu Growonio despre website-uri, automatizări și sisteme digitale pentru afaceri de servicii din București, din România și din alte piețe.",
+    "contactCardTitle": "Hai să vorbim",
+    "emailLabel": "Email",
+    "locationLabel": "Locație",
+    "locationValue": "București, România",
+    "locationAvailability": "Disponibili în toată România și internațional",
+    "servicesLinkLabel": "Descoperă serviciile",
+    "insightsLinkLabel": "Citește articolele"
   },
   "Legal": {
     "privacy": "Politica de Confidențialitate",
     "terms": "Termeni și Condiții",
     "cookies": "Politica de Cookies",
-    "placeholder": "Această pagină este un substituent și va fi completată cu textul legal oficial."
+    "placeholder": "Această pagină este un substituent și va fi completată cu textul legal oficial.",
+    "privacyDescription": "Cum gestionează și protejează Growonio datele cu caracter personal.",
+    "termsDescription": "Termenii de bază care guvernează colaborările Growonio și utilizarea site-ului.",
+    "cookiesDescription": "Cum utilizează Growonio cookie-uri și tehnologii similare."
   },
   "Shared": {
     "firstName": "Prenume",
@@ -112,8 +154,8 @@
   "InsightsPage": {
     "title": "Articole",
     "description": "Idei, ghiduri și gândire practică despre automatizarea afacerilor și creșterea digitală.",
-    "metaTitle": "Articole — Growonio",
-    "metaDescription": "Articole practice despre automatizarea afacerilor, instrumente digitale și strategii de creștere.",
+    "metaTitle": "Articole despre automatizare, website-uri și creștere digitală",
+    "metaDescription": "Citește articole Growonio despre automatizare, operațiuni digitale, atragerea clienților și creștere sustenabilă pentru afaceri de servicii.",
     "readMore": "Citește Articolul",
     "readTime": "citire",
     "backToInsights": "Înapoi la Articole",

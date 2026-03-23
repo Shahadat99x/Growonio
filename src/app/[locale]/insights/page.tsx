@@ -1,21 +1,28 @@
 import { Calendar, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buttonVariants } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getPublishedArticles, getFeaturedArticles } from "@/lib/content";
 import { buildCloudinaryImageUrl } from "@/lib/cloudinary";
 import { Link } from "@/i18n/routing";
+import { buildBlogSchema, buildPageMetadata, type AppLocale } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "InsightsPage" });
-  return {
+  return buildPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/insights",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+  });
 }
 
 function formatDate(dateStr: string | null, locale: string) {
@@ -30,6 +37,7 @@ function formatDate(dateStr: string | null, locale: string) {
 export default async function InsightsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "InsightsPage" });
+  const tNav = await getTranslations({ locale, namespace: "Navigation" });
   const articles = await getPublishedArticles(locale);
   const featured = await getFeaturedArticles(locale);
 
@@ -38,6 +46,13 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
 
   return (
     <div className="min-h-[80vh] pb-24 pt-16">
+      <JsonLd
+        data={buildBlogSchema(
+          locale as AppLocale,
+          articles.map((article) => ({ slug: article.slug, title: article.title })),
+        )}
+      />
+
       <Section>
         <Container>
           <SectionHeader title={t("title")} description={t("description")} />
@@ -50,10 +65,13 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
                   {/* Cover Image */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900/70 md:aspect-auto md:min-h-[320px]">
                     {featuredArticle.cover_image_url ? (
-                      <img
+                      <Image
                         src={buildCloudinaryImageUrl(featuredArticle.cover_image_url, { width: 800, crop: "fill" })}
                         alt={featuredArticle.cover_image_alt || featuredArticle.title}
+                        fill
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        unoptimized
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center">
@@ -103,10 +121,13 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
                     {/* Cover */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900/70">
                       {article.cover_image_url ? (
-                        <img
+                        <Image
                           src={buildCloudinaryImageUrl(article.cover_image_url, { width: 600, crop: "fill" })}
                           alt={article.cover_image_alt || article.title}
+                          fill
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          unoptimized
                         />
                       ) : (
                         <div className="flex h-full items-center justify-center">
@@ -153,6 +174,23 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
             <div className="mt-16 text-center">
               <Sparkles className="mx-auto h-12 w-12 text-muted-foreground/30" />
               <p className="mt-4 text-lg text-muted-foreground">{t("empty")}</p>
+            </div>
+          )}
+
+          {articles.length > 0 && (
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/services"
+                className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-full")}
+              >
+                {tNav("services")}
+              </Link>
+              <Link
+                href="/contact"
+                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
+              >
+                {tNav("contact")}
+              </Link>
             </div>
           )}
         </Container>
