@@ -110,6 +110,11 @@ export const mockWorkItems: WorkItem[] = [
     description_en: "A complete digital transformation including a custom booking portal that increased appointments by 40%.",
     description_ro: "O transformare digitală completă incluzând un portal de rezervări care a crescut programările cu 40%.",
     image_url: "/placeholder-salon.jpg",
+    image_public_id: null,
+    image_alt_en: "Luxe Beauty Salon website preview",
+    image_alt_ro: "Preview site pentru Luxe Beauty Salon",
+    image_width: null,
+    image_height: null,
     stats: [
       { label: "Bookings", value: "+40%" },
       { label: "Admin Time", value: "-15h/wk" }
@@ -129,6 +134,11 @@ export const mockWorkItems: WorkItem[] = [
     description_en: "Secure patient onboarding and automated reminder pipelines reducing no-shows entirely.",
     description_ro: "Sistem securizat de înregistrare pacienți și mementouri automate care au redus complet neprezentările.",
     image_url: "/placeholder-clinic.jpg",
+    image_public_id: null,
+    image_alt_en: "Medica Health Clinic operations preview",
+    image_alt_ro: "Preview operațiuni pentru Clinica Medica",
+    image_width: null,
+    image_height: null,
     stats: [
       { label: "No-shows", value: "-95%" },
       { label: "Retention", value: "+22%" }

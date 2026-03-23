@@ -41,7 +41,12 @@ export interface WorkItem extends BaseEntity {
   industry_ro: string;
   description_en: string;
   description_ro: string;
-  image_url: string;
+  image_url: string | null;
+  image_public_id: string | null;
+  image_alt_en: string | null;
+  image_alt_ro: string | null;
+  image_width: number | null;
+  image_height: number | null;
   stats: { label: string; value: string }[];
   is_featured: boolean;
 }
@@ -74,13 +79,13 @@ export interface CompanySettings {
 export type Localized<T> = {
   // strips out all keys ending in _en or _ro and replaces them with a single localized key.
   // Done dynamically in the mapping layer.
-  [K in keyof T as K extends `${infer Base}_en` | `${infer Base}_ro` 
+  [K in keyof T as K extends `${string}_en` | `${string}_ro`
     ? never 
     : K
   ]: T[K];
 } & {
   // A generic property map added at runtime
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 // Example projection result:
@@ -110,7 +115,11 @@ export interface LocalizedWorkItem {
   client_name: string;
   industry: string;
   description: string;
-  image_url: string;
+  image_url: string | null;
+  image_public_id: string | null;
+  image_alt: string | null;
+  image_width: number | null;
+  image_height: number | null;
   stats: { label: string; value: string }[];
   is_featured: boolean;
   order: number;
