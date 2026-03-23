@@ -1,45 +1,60 @@
 import {useTranslations} from 'next-intl';
-import {Link} from '@/i18n/routing';
+import { Hero } from '@/components/sections/Hero';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { FeatureCard } from '@/components/ui/FeatureCard';
+import { Zap, Shield, BarChart3, Globe } from 'lucide-react';
 
 export default function HomePage() {
   const t = useTranslations('Index');
 
   return (
-    <div className="flex flex-col items-center justify-center py-24 px-6 text-center">
-      <div className="max-w-3xl space-y-8">
-        <div className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold tracking-wider uppercase">
-          Proiect în curs de dezvoltare
-        </div>
-        
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900">
-          {t('title')}
-        </h1>
-        
-        <p className="text-xl text-zinc-600 leading-relaxed max-w-2xl mx-auto">
-          {t('description')}
-        </p>
+    <>
+      <Hero
+        badge="Proiect în curs de dezvoltare"
+        title={t('title')}
+        description={t('description')}
+        primaryCtaText={t('cta')}
+        primaryCtaHref="/contact"
+        secondaryCtaText="Află mai multe"
+        secondaryCtaHref="/services"
+      />
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-          <Link
-            href="/contact"
-            className="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-zinc-800 transition-all text-lg shadow-lg shadow-black/10"
-          >
-            {t('cta')}
-          </Link>
-          <Link
-            href="/services"
-            className="bg-white text-black border border-zinc-200 px-8 py-4 rounded-full font-semibold hover:bg-zinc-50 transition-all text-lg"
-          >
-            Află mai multe
-          </Link>
-        </div>
-      </div>
+      <Section className="bg-zinc-50 dark:bg-zinc-900/50">
+        <Container>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground">
+              Modern Solutions for Growth
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              We provide end-to-end business automation and strategic digital services designed to scale your operations.
+            </p>
+          </div>
 
-      <div className="mt-24 w-full max-w-5xl border border-zinc-100 rounded-2xl bg-zinc-50/50 p-4 shadow-sm">
-        <div className="aspect-video flex items-center justify-center bg-white rounded-xl border border-zinc-100">
-          <p className="text-zinc-400 font-medium">Placeholder pentru demo vizual</p>
-        </div>
-      </div>
-    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <FeatureCard 
+              icon={<Zap className="w-6 h-6" />}
+              title="Fast Performance"
+              description="Optimized digital experiences that load instantly, ensuring maximum engagement and conversion rates."
+            />
+            <FeatureCard 
+              icon={<Shield className="w-6 h-6" />}
+              title="Secure Operations"
+              description="Enterprise-grade security protocols built into every layer of your business infrastructure."
+            />
+            <FeatureCard 
+              icon={<BarChart3 className="w-6 h-6" />}
+              title="Data Analytics"
+              description="Actionable insights from your customer data to drive strategic business decisions."
+            />
+            <FeatureCard 
+              icon={<Globe className="w-6 h-6" />}
+              title="Global Reach"
+              description="Multilingual, SEO-optimized platforms designed to capture international markets seamlessly."
+            />
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

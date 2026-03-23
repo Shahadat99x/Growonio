@@ -2,11 +2,9 @@
 
 ## Current Summary
 
-Growonio has completed Phase 1 (Project Setup & Architecture).
+Growonio has completed Phase 2 (Design System & Branding Foundation).
 
-The project is now a working Next.js 16 application with a full bilingual architecture (Romanian/English), clean folder structure, and infrastructure placeholders for Supabase and Cloudinary.
-
-The production build is verified and the app shell is functional.
+The project now has a premium, modern visual identity implemented via Tailwind v4 and shadcn/ui. The functional app shell from Phase 1 has been visually upgraded, and core layout abstractions have been established to streamline future page building.
 
 ---
 
@@ -15,38 +13,38 @@ The production build is verified and the app shell is functional.
 - **Framework:** Next.js 16.2.1 (App Router)
 - **Language:** TypeScript 5+
 - **Styling:** Tailwind CSS 4+
-- **i18n:** next-intl (middleware-based routing, `ro` default, `/en` secondary)
-- **App Shell:** Unified Layout, Navbar, Footer, and Language Switcher
-- **Infrastructure:**
-  - Supabase SSR client factories (Browser & Server)
-  - Cloudinary config placeholders
-  - Environment variable scaffolding (`.env.example`)
-- **Utilities:** `cn` (clsx + tailwind-merge), site configuration constants
+- **Design Tokens:** Deep Zinc base (`oklch`) with a vibrant Indigo-600 (`oklch(0.511 0.262 276.966)`) primary accent. Sharp but slightly rounded aesthetic (`--radius: 0.5rem`).
+- **UI Architecture:** Base components integrated via `shadcn/ui` (Button, Input, Badge, Separator, Dialog).
 
 ---
 
-## Pages Implemented (Shell Level)
+## Pages & Components Implemented
 
-- **Home Page:** Localized and integrated into the `[locale]` segment.
-- **Navbar/Footer:** Localized navigation links and functional language switcher.
+- **Layout Atoms:** `Container` (max-width consistency) and `Section` (standardized v-spacing).
+- **Boilerplates:** Reusable `Hero` and `FeatureCard`.
+- **App Shell:** 
+  - `Navbar` upgraded with glassmorphism (`backdrop-blur-xl`) and semantic tokens.
+  - `Footer` restructured for a cleaner, more professional topography.
+  - `LanguageSwitcher` polished to match the new semantic variables.
+- **Home Page:** Rebuilt using the new design system, featuring the `Hero` component and a grid of `FeatureCard`s.
 
 ---
 
 ## Technical Decisions Made
 
-- Awaited `params` and `requestLocale` as Promises to support Next.js 15/16.
-- Used `next-intl/plugin` in `next.config.ts`.
-- Implemented a pass-through root layout for the base `src/app`.
+- Leveraged standard CSS variables inside `@theme inline` for Tailwind v4 compatibility without relying on a legacy `tailwind.config.ts`.
+- Subbed default Zinc primary with a custom Indigo accent for a tech-focused agency appeal.
+- Built reusable layout atoms to prevent random margin/padding classes scattered across pages.
 
 ---
 
 ## What Is Next
 
-Phase 2 — Design System & Branding Foundation.
-Setting up the visual tokens, typography, and core UI components using shadcn/ui.
+Phase 3 — Core Marketing Pages (Services, Pricing, Contact).
+Expanding the component ecosystem and implementing hardcoded generic content for the remaining top-level routes to validate the sitemap and UI.
 
 ---
 
 ## Last Updated
 
-Phase 1 complete — 2026-03-23
+Phase 2 complete — 2026-03-24

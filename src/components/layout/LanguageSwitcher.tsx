@@ -3,6 +3,7 @@
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/routing';
 import {useTransition} from 'react';
+import { cn } from '@/lib/utils';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -17,26 +18,30 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1 bg-secondary/50 p-1 rounded-full border border-border/40">
       <button
         onClick={() => onSelectChange('ro')}
         disabled={isPending || locale === 'ro'}
-        className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${
+        className={cn(
+          "text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-200",
           locale === 'ro' 
-            ? 'bg-black text-white' 
-            : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-        } disabled:opacity-50`}
+            ? "bg-background text-foreground shadow-sm" 
+            : "text-muted-foreground hover:text-foreground hover:bg-background/50",
+          isPending && "opacity-50 cursor-not-allowed"
+        )}
       >
         RO
       </button>
       <button
         onClick={() => onSelectChange('en')}
         disabled={isPending || locale === 'en'}
-        className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${
+        className={cn(
+          "text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-200",
           locale === 'en' 
-            ? 'bg-black text-white' 
-            : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-        } disabled:opacity-50`}
+            ? "bg-background text-foreground shadow-sm" 
+            : "text-muted-foreground hover:text-foreground hover:bg-background/50",
+          isPending && "opacity-50 cursor-not-allowed"
+        )}
       >
         EN
       </button>
