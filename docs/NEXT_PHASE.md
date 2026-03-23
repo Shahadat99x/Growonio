@@ -1,20 +1,20 @@
-# Next Phase Plan: Phase 8
-**Focus:** SEO & Discoverability Hardening
+# Next Phase Plan: Phase 9
+**Focus:** QA, Analytics, and Launch Readiness
 
 ## Objective
-Turn the already-built bilingual marketing site and blog into a fully polished SEO-ready release by auditing metadata, schema, crawlability, and content discoverability end to end.
+Take the now SEO-hardened Growonio site through a production launch pass: validate UX and performance, wire analytics and Search Console, replace placeholders that should not ship, and close the final operational gaps before indexing and promotion.
 
 ## Key Tasks
-- Audit page-by-page metadata for Romanian-first and English secondary routes.
-- Complete or verify canonical tags, hreflang links, sitemap coverage, and robots behavior.
-- Generate a dynamic sitemap that includes published blog articles.
-- Expand structured data where it materially helps (`Organization`, `Service`, `FAQPage`, `Article` schema).
-- Review internal linking and heading structure across the public marketing pages.
-- Validate image alt behavior and OG/social sharing assets after the new media and blog phases.
-- Finish a practical launch checklist for Search Console and analytics readiness.
+- Run a full manual QA pass across public pages, blog routes, admin CRUD, and bilingual navigation.
+- Execute Lighthouse/performance/accessibility checks and fix high-value regressions.
+- Configure and verify GA4 and Google Search Console.
+- Submit and validate `sitemap.xml` in Search Console.
+- Replace remaining legal placeholder copy with final text.
+- Audit contact flows and any remaining launch-blocking content inconsistencies.
+- Decide whether to address the existing Next.js `middleware` deprecation by moving to the `proxy` file convention.
 
 ## Constraints
-- Do not rebuild the existing public pages.
-- Keep the hybrid CMS boundary intact; SEO logic remains code-owned.
-- Preserve bilingual routing and Romania-first positioning.
-- Favor implementation quality over adding more editable admin surface.
+- No large redesigns.
+- No new CMS sprawl.
+- Preserve the hybrid CMS boundary and the now-implemented SEO layer.
+- Focus on launch quality, measurement, and operational readiness rather than adding broad new product scope.
