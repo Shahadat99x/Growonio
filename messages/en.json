@@ -1,15 +1,98 @@
 {
   "Index": {
     "title": "Welcome to Growonio",
-    "description": "Business automation built for growth.",
-    "cta": "Get Started"
+    "description": "Business automation built for growth. Helping service businesses thrive in the digital age with modern software solutions.",
+    "cta": "Get Started",
+    "servicesPreviewTitle": "Our Services",
+    "servicesPreviewDesc": "End-to-end digital solutions tailored to your growth.",
+    "solutionsPreviewTitle": "Industries We Serve",
+    "solutionsPreviewDesc": "Specialized automation for service-based businesses.",
+    "workPreviewTitle": "Featured Work",
+    "workPreviewDesc": "A glimpse into our recent digital transformations.",
+    "processTitle": "How We Work",
+    "processDesc": "A transparent, milestone-driven approach to delivery.",
+    "trustTitle": "Why Growonio?",
+    "trustDesc": "We build scalable foundations, not just websites."
   },
   "Navigation": {
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
+    "solutions": "Solutions",
     "work": "Portfolio",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "ServicesPage": {
+    "title": "Our Services",
+    "description": "Comprehensive digital services designed to optimize and scale your business operations.",
+    "webDesign": "Website Design & Development",
+    "webDesignDesc": "High-performance, beautifully crafted websites that convert visitors into clients.",
+    "booking": "Booking & Client Management",
+    "bookingDesc": "Streamlined scheduling systems that eliminate administrative overhead.",
+    "automation": "Lead Capture & Workflow Automation",
+    "automationDesc": "Automated funnels and data syncing to capture every opportunity.",
+    "mobile": "Mobile App Development",
+    "mobileDesc": "Custom iOS and Android solutions for deeper client engagement."
+  },
+  "PricingPage": {
+    "title": "Transparent Pricing",
+    "description": "Clear, milestone-based pricing packages designed to fit your growth stage.",
+    "starter": "Starter",
+    "starterDesc": "Perfect for new businesses needing a professional digital presence.",
+    "growth": "Growth",
+    "growthDesc": "For established businesses looking to automate and scale.",
+    "enterprise": "Enterprise",
+    "enterpriseDesc": "Custom architecture and complex integrations.",
+    "custom": "Custom",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started"
+  },
+  "SolutionsPage": {
+    "title": "Industry Solutions",
+    "description": "Tailored digital strategies for service-oriented businesses.",
+    "salons": "Salons & Beauty",
+    "salonsDesc": "Integrated booking and loyalty systems.",
+    "clinics": "Clinics & Health",
+    "clinicsDesc": "Secure patient management and scheduling.",
+    "consultants": "Consultants & Firms",
+    "consultantsDesc": "Professional lead capture and client portals."
+  },
+  "WorkPage": {
+    "title": "Our Work",
+    "description": "Explore how we've helped businesses transform their digital operations.",
+    "viewProject": "View Project"
+  },
+  "AboutPage": {
+    "title": "About Growonio",
+    "description": "We believe in software that works for you, not the other way around.",
+    "mission": "Our Mission",
+    "missionDesc": "To make powerful business automation accessible to service businesses everywhere."
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about working with us."
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "description": "Ready to scale? Let's discuss your project."
+  },
+  "Legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "cookies": "Cookie Policy",
+    "placeholder": "This page is a placeholder and will be populated with official legal text."
+  },
+  "Shared": {
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "email": "Email Address",
+    "message": "Project Details",
+    "messagePlaceholder": "Tell us about your business and goals...",
+    "sendMessage": "Send Message",
+    "learnMore": "Learn More"
   }
 }

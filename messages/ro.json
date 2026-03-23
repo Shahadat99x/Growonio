@@ -1,15 +1,98 @@
 {
   "Index": {
     "title": "Bine ați venit la Growonio",
-    "description": "Automatizarea afacerii construită pentru creștere.",
-    "cta": "Începe acum"
+    "description": "Automatizarea afacerii construită pentru creștere. Ajutăm afacerile de servicii să prospere în era digitală.",
+    "cta": "Începe acum",
+    "servicesPreviewTitle": "Serviciile Noastre",
+    "servicesPreviewDesc": "Soluții digitale complete, adaptate pentru creșterea ta.",
+    "solutionsPreviewTitle": "Industrii Deservite",
+    "solutionsPreviewDesc": "Automatizare specializată pentru afaceri bazate pe servicii.",
+    "workPreviewTitle": "Proiecte Recente",
+    "workPreviewDesc": "O privire asupra transformărilor noastre digitale.",
+    "processTitle": "Cum Lucrăm",
+    "processDesc": "O abordare transparentă, bazată pe etape clare.",
+    "trustTitle": "De ce Growonio?",
+    "trustDesc": "Construim fundații scalabile, nu doar site-uri web."
   },
   "Navigation": {
     "home": "Acasă",
     "services": "Servicii",
     "pricing": "Prețuri",
+    "solutions": "Soluții",
     "work": "Portofoliu",
     "about": "Despre",
-    "contact": "Contact"
+    "contact": "Contact",
+    "faq": "Întrebări Frecvente"
+  },
+  "ServicesPage": {
+    "title": "Serviciile Noastre",
+    "description": "Servicii digitale complete, concepute pentru a optimiza și scala operațiunile tale.",
+    "webDesign": "Design & Dezvoltare Web",
+    "webDesignDesc": "Site-uri web ultra-rapide și atractive, care transformă vizitatorii în clienți.",
+    "booking": "Sisteme de Programări",
+    "bookingDesc": "Sisteme de programare optimizate care elimină munca administrativă.",
+    "automation": "Automatizare & Captare Lead-uri",
+    "automationDesc": "Fluxuri automate pentru a capta și gestiona fiecare oportunitate.",
+    "mobile": "Aplicații Mobile",
+    "mobileDesc": "Soluții personalizate iOS și Android pentru implicarea clienților."
+  },
+  "PricingPage": {
+    "title": "Prețuri Transparente",
+    "description": "Pachete clare, bazate pe obiective, concepute pentru stadiul tău de creștere.",
+    "starter": "Start",
+    "starterDesc": "Perfect pentru afaceri noi care au nevoie de o prezență digitală profesională.",
+    "growth": "Creștere",
+    "growthDesc": "Pentru afaceri consacrate care doresc să automatizeze și să scaleze.",
+    "enterprise": "Enterprise",
+    "enterpriseDesc": "Arhitectură personalizată și integrări complexe.",
+    "custom": "Personalizat",
+    "contactUs": "Contactează-ne",
+    "getStarted": "Începe"
+  },
+  "SolutionsPage": {
+    "title": "Soluții pe Industrii",
+    "description": "Strategii digitale adaptate pentru afacerile orientate pe servicii.",
+    "salons": "Saloane & Frumusețe",
+    "salonsDesc": "Sisteme integrate de programări și loialitate.",
+    "clinics": "Clinici & Sănătate",
+    "clinicsDesc": "Management securizat al pacienților.",
+    "consultants": "Consultanți & Agenții",
+    "consultantsDesc": "Portaluri profesionale pentru clienți și captare lead-uri."
+  },
+  "WorkPage": {
+    "title": "Portofoliu",
+    "description": "Descoperă cum am ajutat alte afaceri să își transforme operațiunile.",
+    "viewProject": "Vezi Proiectul"
+  },
+  "AboutPage": {
+    "title": "Despre Growonio",
+    "description": "Credem în software care lucrează pentru tine, nu invers.",
+    "mission": "Misiunea Noastră",
+    "missionDesc": "Să facem automatizarea accesibilă afacerilor de servicii de pretutindeni."
+  },
+  "FAQPage": {
+    "title": "Întrebări Frecvente",
+    "description": "Tot ce trebuie să știi despre colaborarea cu noi."
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "description": "Ești gata să scalezi? Hai să discutăm proiectul tău."
+  },
+  "Legal": {
+    "privacy": "Politica de Confidențialitate",
+    "terms": "Termeni și Condiții",
+    "cookies": "Politica de Cookies",
+    "placeholder": "Această pagină este un substituent și va fi completată cu textul legal oficial."
+  },
+  "Shared": {
+    "firstName": "Prenume",
+    "firstNamePlaceholder": "Ion",
+    "lastName": "Nume",
+    "lastNamePlaceholder": "Popescu",
+    "email": "Adresă de Email",
+    "message": "Detalii Proiect",
+    "messagePlaceholder": "Spune-ne despre afacerea și obiectivele tale...",
+    "sendMessage": "Trimite Mesajul",
+    "learnMore": "Află mai multe"
   }
 }
