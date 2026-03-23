@@ -18,7 +18,7 @@ export async function deleteServiceAction(formData: FormData) {
   revalidatePath("/[locale]/services", "layout");
 }
 
-export async function saveServiceAction(prevState: any, formData: FormData) {
+export async function saveServiceAction(formData: FormData) {
   if (!hasSupabaseEnv()) {
     return { error: missingSupabaseConfigMessage };
   }

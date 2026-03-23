@@ -17,7 +17,7 @@ export async function deleteFAQAction(formData: FormData) {
   revalidatePath("/[locale]/faq", "layout");
 }
 
-export async function saveFAQAction(prevState: any, formData: FormData) {
+export async function saveFAQAction(formData: FormData) {
   if (!hasSupabaseEnv()) {
     return { error: missingSupabaseConfigMessage };
   }

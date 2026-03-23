@@ -2,13 +2,25 @@ import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 export const missingSupabaseConfigMessage =
-  "Supabase environment variables are missing. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to continue.";
+  "Supabase environment variables are missing. Add NEXT_PUBLIC_SUPABASE_URL and either NEXT_PUBLIC_SUPABASE_ANON_KEY or NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY to continue.";
+
+function getSupabaseUrl() {
+  const value = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  return value && value.length > 0 ? value : null;
+}
+
+function getSupabasePublishableKey() {
+  const preferred = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
+  if (preferred) {
+    return preferred;
+  }
+
+  const fallback = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY?.trim();
+  return fallback && fallback.length > 0 ? fallback : null;
+}
 
 export function hasSupabaseEnv() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() &&
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim(),
-  );
+  return Boolean(getSupabaseUrl() && getSupabasePublishableKey());
 }
 
 export class MissingSupabaseConfigError extends Error {
@@ -24,10 +36,16 @@ export async function createClient() {
   }
 
   const cookieStore = await cookies();
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseKey = getSupabasePublishableKey();
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new MissingSupabaseConfigError();
+  }
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseKey,
     {
       cookies: {
         getAll() {

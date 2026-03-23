@@ -17,7 +17,7 @@ export async function deletePricingPackageAction(formData: FormData) {
   revalidatePath("/[locale]/pricing", "layout");
 }
 
-export async function savePricingPackageAction(prevState: any, formData: FormData) {
+export async function savePricingPackageAction(formData: FormData) {
   if (!hasSupabaseEnv()) {
     return { error: missingSupabaseConfigMessage };
   }
