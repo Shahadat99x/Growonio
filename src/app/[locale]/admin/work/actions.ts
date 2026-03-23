@@ -97,100 +97,95 @@ export async function saveWorkItemAction(
   _prevState: WorkItemFormState,
   formData: FormData,
 ): Promise<WorkItemFormState> {
-  try {
-    const supabase = await requireAdminClient();
-    const id = formData.get("id") as string;
-    const locale = (formData.get("locale") as string) || "en";
-    const isNew = id === "new";
+  const supabase = await requireAdminClient();
+  const id = formData.get("id") as string;
+  const locale = (formData.get("locale") as string) || "en";
+  const isNew = id === "new";
 
-    const imageUrl = normalizeOptionalText(formData.get("image_url"));
-    const imagePublicId = imageUrl ? normalizeOptionalText(formData.get("image_public_id")) : null;
-    const imageWidth = imageUrl ? parseOptionalInteger(formData.get("image_width")) : null;
-    const imageHeight = imageUrl ? parseOptionalInteger(formData.get("image_height")) : null;
-    const parsedStats = parseStats(normalizeOptionalText(formData.get("stats_str")));
+  const imageUrl = normalizeOptionalText(formData.get("image_url"));
+  const imagePublicId = imageUrl ? normalizeOptionalText(formData.get("image_public_id")) : null;
+  const imageWidth = imageUrl ? parseOptionalInteger(formData.get("image_width")) : null;
+  const imageHeight = imageUrl ? parseOptionalInteger(formData.get("image_height")) : null;
+  const parsedStats = parseStats(normalizeOptionalText(formData.get("stats_str")));
 
-    if (!isSupportedImageUrl(imageUrl)) {
-      return { error: "Image URL must start with /, http://, or https://." };
-    }
-
-    let existingImagePublicId: string | null = null;
-
-    if (!isNew) {
-      const { data: existingWork, error: existingError } = await supabase
-        .from("work_items")
-        .select("image_public_id")
-        .eq("id", id)
-        .single();
-
-      if (existingError) {
-        return { error: existingError.message };
-      }
-
-      existingImagePublicId = existingWork?.image_public_id ?? null;
-    }
-
-    const payload = {
-      slug: formData.get("slug") as string,
-      title_en: formData.get("title_en") as string,
-      title_ro: formData.get("title_ro") as string,
-      client_name: formData.get("client_name") as string,
-      industry_en: formData.get("industry_en") as string,
-      industry_ro: formData.get("industry_ro") as string,
-      description_en: formData.get("description_en") as string,
-      description_ro: formData.get("description_ro") as string,
-      image_url: imageUrl,
-      image_public_id: imagePublicId,
-      image_alt_en: imageUrl ? normalizeOptionalText(formData.get("image_alt_en")) : null,
-      image_alt_ro: imageUrl ? normalizeOptionalText(formData.get("image_alt_ro")) : null,
-      image_width: imageWidth,
-      image_height: imageHeight,
-      stats: parsedStats,
-      is_featured: formData.get("is_featured") === "on",
-      sort_order: parseOptionalInteger(formData.get("sort_order")) ?? 0,
-      is_active: formData.get("is_active") === "on",
-    };
-
-    if (!payload.title_en || !payload.title_ro || !payload.slug) {
-      return { error: "Titles and slug are required." };
-    }
-
-    let dbError;
-    if (isNew) {
-      const { error } = await supabase.from("work_items").insert(payload);
-      dbError = error;
-    } else {
-      const { error } = await supabase.from("work_items").update(payload).eq("id", id);
-      dbError = error;
-    }
-
-    if (dbError) {
-      if (payload.image_public_id && payload.image_public_id !== existingImagePublicId) {
-        try {
-          await deleteCloudinaryAsset(payload.image_public_id);
-        } catch (cleanupError) {
-          console.error("Failed to clean up failed Cloudinary upload:", cleanupError);
-        }
-      }
-
-      return { error: dbError.message };
-    }
-
-    if (existingImagePublicId && existingImagePublicId !== payload.image_public_id) {
-      try {
-        await deleteCloudinaryAsset(existingImagePublicId);
-      } catch (cleanupError) {
-        console.error("Failed to remove replaced Cloudinary asset:", cleanupError);
-      }
-    }
-
-    revalidatePath("/admin/work");
-    revalidatePath("/ro/admin/work");
-    revalidatePath("/en/admin/work");
-    revalidatePath("/[locale]/work", "layout");
-
-    redirect(`/${locale}/admin/work`);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Failed to save work item.";
-    return { error: message };
+  if (!isSupportedImageUrl(imageUrl)) {
+    return { error: "Image URL must start with /, http://, or https://." };
   }
+
+  let existingImagePublicId: string | null = null;
+
+  if (!isNew) {
+    const { data: existingWork, error: existingError } = await supabase
+      .from("work_items")
+      .select("image_public_id")
+      .eq("id", id)
+      .single();
+
+    if (existingError) {
+      return { error: existingError.message };
+    }
+
+    existingImagePublicId = existingWork?.image_public_id ?? null;
+  }
+
+  const payload = {
+    slug: formData.get("slug") as string,
+    title_en: formData.get("title_en") as string,
+    title_ro: formData.get("title_ro") as string,
+    client_name: formData.get("client_name") as string,
+    industry_en: formData.get("industry_en") as string,
+    industry_ro: formData.get("industry_ro") as string,
+    description_en: formData.get("description_en") as string,
+    description_ro: formData.get("description_ro") as string,
+    image_url: imageUrl,
+    image_public_id: imagePublicId,
+    image_alt_en: imageUrl ? normalizeOptionalText(formData.get("image_alt_en")) : null,
+    image_alt_ro: imageUrl ? normalizeOptionalText(formData.get("image_alt_ro")) : null,
+    image_width: imageWidth,
+    image_height: imageHeight,
+    stats: parsedStats,
+    is_featured: formData.get("is_featured") === "on",
+    sort_order: parseOptionalInteger(formData.get("sort_order")) ?? 0,
+    is_active: formData.get("is_active") === "on",
+  };
+
+  if (!payload.title_en || !payload.title_ro || !payload.slug) {
+    return { error: "Titles and slug are required." };
+  }
+
+  let dbError;
+  if (isNew) {
+    const { error } = await supabase.from("work_items").insert(payload);
+    dbError = error;
+  } else {
+    const { error } = await supabase.from("work_items").update(payload).eq("id", id);
+    dbError = error;
+  }
+
+  if (dbError) {
+    if (payload.image_public_id && payload.image_public_id !== existingImagePublicId) {
+      try {
+        await deleteCloudinaryAsset(payload.image_public_id);
+      } catch (cleanupError) {
+        console.error("Failed to clean up failed Cloudinary upload:", cleanupError);
+      }
+    }
+
+    return { error: dbError.message };
+  }
+
+  if (existingImagePublicId && existingImagePublicId !== payload.image_public_id) {
+    try {
+      await deleteCloudinaryAsset(existingImagePublicId);
+    } catch (cleanupError) {
+      console.error("Failed to remove replaced Cloudinary asset:", cleanupError);
+    }
+  }
+
+  revalidatePath("/admin/work");
+  revalidatePath("/ro/admin/work");
+  revalidatePath("/en/admin/work");
+  revalidatePath("/[locale]/work", "layout");
+
+  redirect(`/${locale}/admin/work`);
 }
