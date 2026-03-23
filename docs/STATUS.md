@@ -1,5 +1,5 @@
 # Project Status
-**Phase:** 8 Complete
+**Phase:** 9 Complete
 **Date:** March 2026
 
 ## Complete
@@ -20,18 +20,40 @@
   - Added noindex handling for admin and login surfaces.
   - Tightened article discoverability so only published, already-live posts resolve publicly.
   - Moved public content reads to a cookie-free server client to keep the public SEO surface cleaner.
+- **Phase 9:** Launch Readiness, Final QA, and Production Hardening.
+  - Replaced deprecated `middleware` routing with the Next.js 16 `proxy` convention.
+  - Added a real contact form action with validation, bot-field protection, optional Resend notifications, and graceful fallback behavior.
+  - Added launch assets and setup hooks:
+    - Google Analytics component
+    - Google Search Console verification metadata
+    - `manifest.webmanifest`
+    - `icon.svg`
+    - localized `not-found` page
+  - Replaced legal placeholder copy with bilingual production-ready baseline text.
+  - Fixed admin/media upload signing so article uploads use the correct Cloudinary entity folder.
+  - Cleaned remaining admin/login lint debt and verified the app now passes both `npm run lint` and `npm run build`.
+  - Ran a live Supabase smoke test:
+    - draft article stays hidden publicly
+    - published article becomes publicly queryable
+    - active work item becomes publicly queryable
+    - `contact_leads` table is still missing from the currently connected Supabase schema and is tracked below as a deployment follow-up
 
 ## Current State
-- The public site and insights/blog are bilingual, Supabase-backed, and production-buildable.
-- Work items and articles render Cloudinary-backed media cleanly.
-- Core public routes now have localized titles, descriptions, canonical URLs, alternates, and OG/Twitter metadata.
-- Published insights are included in the sitemap; admin, login, drafts, and non-public content are excluded from indexing.
-- Structured data is present where it materially helps discoverability without turning the site into a fake schema dump.
+- The public site, blog, and admin are bilingual, Supabase-backed, and pass both lint and production build checks.
+- Proxy-based route protection is in place for localized admin/login flows on Next.js 16 without the old deprecation warning.
+- Work items and articles render Cloudinary-backed media cleanly, and article uploads now sign against the correct folder.
+- Core public routes have localized metadata, canonical URLs, hreflang alternates, OG/Twitter metadata, sitemap coverage, and structured data.
+- Contact now has a production-safe baseline:
+  - validated server action
+  - optional email notification path
+  - direct email fallback visible on the page
+- Legal/supporting trust routes now contain actual bilingual baseline content instead of placeholders.
 
 ## Remaining Gaps / Next Focus
-- **Phase 9:** QA, analytics, and launch readiness.
-  - Lighthouse and manual QA sweep.
-  - Search Console and GA4 setup/verification.
-  - Final legal copy replacement.
-  - Domain/indexing submission checks.
-  - Optional cleanup of the existing `middleware` -> `proxy` deprecation path.
+- **Launch Follow-Ups Before Public Promotion**
+  - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
+  - Configure Resend if email notifications should be sent automatically from contact submissions.
+  - Add the real GA4 measurement ID and Google Search Console verification token in production.
+  - Submit `sitemap.xml` in Search Console after deployment and verify index coverage.
+  - Replace the placeholder app icon with final brand artwork if a polished brand-specific icon is available.
+- **Phase 10:** Launch, monitoring, and post-launch optimization.

@@ -88,5 +88,4 @@ Schema is intentionally practical. No fake reviews, fake addresses, or inflated 
 - Submit sitemap in Google Search Console.
 - Verify indexed canonicals and hreflang behavior in Search Console after deployment.
 - Add GA4/Search Console verification if not already live.
-- Replace placeholder legal text before public launch.
-- Optionally replace the existing `middleware` convention with `proxy` to clear the current Next.js deprecation warning.
+- Monitor published-article coverage after launch and confirm no draft leakage in Search Console.

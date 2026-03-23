@@ -3,7 +3,7 @@
 Growonio uses Supabase Authentication to secure the `/admin` back-office. 
 
 ## Architecture
-1. **Next.js Middleware:** `src/middleware.ts` intercepts all requests to `/admin` (and its localized variants like `/en/admin` and `/ro/admin`).
+1. **Next.js Proxy:** `src/proxy.ts` intercepts all requests to `/admin` (and its localized variants like `/en/admin` and `/ro/admin`).
 2. **Session Check:** It uses `@supabase/ssr` to check for a valid session cookie.
 3. **Redirection:** Unauthenticated users are transparently booted to `/[locale]/login`.
 
@@ -33,4 +33,4 @@ The MVP Admin covers the highest priority Phase 5 entities:
 
 ## Security Considerations
 - The admin dashboard currently trusts *any* authenticated Supabase user as an administrator. 
-- If you intend to introduce end-user logins in the future (e.g., restricted client portals), we will need to implement Role Based Access Control (RBAC) checking the user's `app_metadata.role` during the Middleware validation phase.
+- If you intend to introduce end-user logins in the future (e.g., restricted client portals), we will need to implement Role Based Access Control (RBAC) checking the user's `app_metadata.role` during the proxy validation phase.

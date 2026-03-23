@@ -1,20 +1,25 @@
-# Next Phase Plan: Phase 9
-**Focus:** QA, Analytics, and Launch Readiness
+# Next Phase Plan: Phase 10
+**Focus:** Launch Execution, Monitoring, and Post-Launch Optimization
 
 ## Objective
-Take the now SEO-hardened Growonio site through a production launch pass: validate UX and performance, wire analytics and Search Console, replace placeholders that should not ship, and close the final operational gaps before indexing and promotion.
+Take the now launch-hardened Growonio site through actual production rollout and the first post-launch feedback loop: deploy, monitor, validate indexing and measurement, and tighten the first wave of real-world issues without reopening large product scope.
 
 ## Key Tasks
-- Run a full manual QA pass across public pages, blog routes, admin CRUD, and bilingual navigation.
-- Execute Lighthouse/performance/accessibility checks and fix high-value regressions.
-- Configure and verify GA4 and Google Search Console.
-- Submit and validate `sitemap.xml` in Search Console.
-- Replace remaining legal placeholder copy with final text.
-- Audit contact flows and any remaining launch-blocking content inconsistencies.
-- Decide whether to address the existing Next.js `middleware` deprecation by moving to the `proxy` file convention.
+- Deploy the current production build and confirm the final domain environment variables.
+- Apply the `contact_leads` migration in the live Supabase project if form submissions should persist there.
+- Verify GA4 event intake and Google Search Console ownership on the live domain.
+- Submit and monitor `sitemap.xml`, canonical coverage, and hreflang interpretation in Search Console.
+- Run a short post-launch QA pass on the live site:
+  - public route rendering
+  - admin authentication
+  - article publishing
+  - media uploads
+  - contact lead handling
+- Monitor logs and analytics for broken routes, missing assets, failed form submissions, or crawl anomalies.
+- Prioritize the first round of low-risk conversion/content improvements based on live data.
 
 ## Constraints
 - No large redesigns.
-- No new CMS sprawl.
-- Preserve the hybrid CMS boundary and the now-implemented SEO layer.
-- Focus on launch quality, measurement, and operational readiness rather than adding broad new product scope.
+- No admin rebuild.
+- Preserve the hybrid CMS boundary, current SEO layer, and proxy-based route protection.
+- Focus on real launch execution and measured follow-up rather than speculative feature work.
