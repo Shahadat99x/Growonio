@@ -2,7 +2,7 @@ import { requireAdminClient } from "@/lib/admin-auth";
 import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -14,6 +14,11 @@ import { notFound } from "next/navigation";
 export default async function FAQEditor({ params }: { params: Promise<{ id: string, locale: string }> }) {
   const { id, locale } = await params;
   const isNew = id === "new";
+
+  async function submitFAQForm(formData: FormData) {
+    "use server";
+    await saveFAQAction(formData);
+  }
 
   if (!hasSupabaseAdminEnv()) {
     return (
@@ -27,7 +32,18 @@ export default async function FAQEditor({ params }: { params: Promise<{ id: stri
     );
   }
   
-  let faq: any = null;
+  let faq:
+    | {
+        category_en: string | null;
+        category_ro: string | null;
+        question_en: string;
+        question_ro: string;
+        answer_en: string;
+        answer_ro: string;
+        sort_order: number | null;
+        is_active: boolean | null;
+      }
+    | null = null;
   
   if (!isNew) {
     const supabase = await requireAdminClient();
@@ -49,18 +65,18 @@ export default async function FAQEditor({ params }: { params: Promise<{ id: stri
       </div>
 
       <div className="bg-card border rounded-md p-6">
-        <form action={saveFAQAction as any} className="space-y-6">
+        <form action={submitFAQForm} className="space-y-6">
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="locale" value={locale} />
           
           <div className="grid grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="category_en">Category (English)</Label>
-              <Input id="category_en" name="category_en" defaultValue={faq?.category_en} placeholder="e.g. Formatting, Support" />
+              <Input id="category_en" name="category_en" defaultValue={faq?.category_en ?? undefined} placeholder="e.g. Formatting, Support" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="category_ro">Category (Romanian)</Label>
-              <Input id="category_ro" name="category_ro" defaultValue={faq?.category_ro} placeholder="e.g. Suport" />
+              <Input id="category_ro" name="category_ro" defaultValue={faq?.category_ro ?? undefined} placeholder="e.g. Suport" />
             </div>
           </div>
 
@@ -96,7 +112,7 @@ export default async function FAQEditor({ params }: { params: Promise<{ id: stri
                 type="checkbox" 
                 id="is_active" 
                 name="is_active" 
-                defaultChecked={isNew ? true : faq?.is_active} 
+                defaultChecked={isNew ? true : (faq?.is_active ?? false)} 
                 className="w-4 h-4 rounded border-gray-300"
               />
               <Label htmlFor="is_active" className="cursor-pointer">Published / Active</Label>

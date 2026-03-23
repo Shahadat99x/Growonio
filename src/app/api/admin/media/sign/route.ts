@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const signature = createCloudinarySignedUpload("work_items");
+    const signature = createCloudinarySignedUpload(payload.entity);
     return NextResponse.json(signature);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Upload signing failed.";

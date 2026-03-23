@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm';
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
+import { siteConfig } from "@/lib/config";
 import { buildOrganizationSchema, buildPageMetadata, type AppLocale } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { useLocale } from "next-intl";
@@ -54,7 +55,9 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-primary mt-1" />
                     <div>
                       <p className="font-semibold text-foreground">{t("emailLabel")}</p>
-                      <a href="mailto:hello@growonio.com" className="text-muted-foreground hover:text-primary transition-colors">hello@growonio.com</a>
+                      <a href={`mailto:${siteConfig.companyEmail}`} className="text-muted-foreground hover:text-primary transition-colors">
+                        {siteConfig.companyEmail}
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -70,9 +73,25 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href={`mailto:${siteConfig.companyEmail}`}
+                    className={cn(buttonVariants({ size: "sm" }), "rounded-full")}
+                  >
+                    {t("emailCta")}
+                  </a>
+                  {siteConfig.links.whatsapp && (
+                    <a
+                      href={siteConfig.links.whatsapp}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-full")}
+                    >
+                      {t("whatsAppCta")}
+                    </a>
+                  )}
                   <Link
                     href="/services"
-                    className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-full")}
+                    className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
                   >
                     {t("servicesLinkLabel")}
                   </Link>

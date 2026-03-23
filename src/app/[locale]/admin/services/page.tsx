@@ -78,7 +78,7 @@ export default async function AdminServicesList() {
             {(!services || services.length === 0) && (
               <tr>
                 <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
-                  No services found. Click "New Service" to create one.
+                  No services found. Click &quot;New Service&quot; to create one.
                 </td>
               </tr>
             )}

@@ -2,7 +2,7 @@ import { requireAdminClient } from "@/lib/admin-auth";
 import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -14,6 +14,11 @@ import { notFound } from "next/navigation";
 export default async function ServiceEditor({ params }: { params: Promise<{ id: string, locale: string }> }) {
   const { id, locale } = await params;
   const isNew = id === "new";
+
+  async function submitServiceForm(formData: FormData) {
+    "use server";
+    await saveServiceAction(formData);
+  }
 
   if (!hasSupabaseAdminEnv()) {
     return (
@@ -27,7 +32,18 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
     );
   }
   
-  let service: any = null;
+  let service:
+    | {
+        slug: string;
+        icon_name: string | null;
+        title_en: string;
+        title_ro: string;
+        description_en: string;
+        description_ro: string;
+        sort_order: number | null;
+        is_active: boolean | null;
+      }
+    | null = null;
   
   if (!isNew) {
     const supabase = await requireAdminClient();
@@ -49,7 +65,7 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
       </div>
 
       <div className="bg-card border rounded-md p-6">
-        <form action={saveServiceAction as any} className="space-y-6">
+        <form action={submitServiceForm} className="space-y-6">
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="locale" value={locale} />
           
@@ -60,7 +76,7 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
             </div>
             <div className="space-y-2">
               <Label htmlFor="icon_name">Icon Name (Lucide)</Label>
-              <Input id="icon_name" name="icon_name" defaultValue={service?.icon_name} placeholder="e.g. MonitorSmartphone" />
+              <Input id="icon_name" name="icon_name" defaultValue={service?.icon_name ?? undefined} placeholder="e.g. MonitorSmartphone" />
             </div>
           </div>
 
@@ -96,7 +112,7 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
                 type="checkbox" 
                 id="is_active" 
                 name="is_active" 
-                defaultChecked={isNew ? true : service?.is_active} 
+                defaultChecked={isNew ? true : (service?.is_active ?? false)} 
                 className="w-4 h-4 rounded border-gray-300"
               />
               <Label htmlFor="is_active" className="cursor-pointer">Published / Active</Label>

@@ -128,8 +128,18 @@
     "locationLabel": "Locație",
     "locationValue": "București, România",
     "locationAvailability": "Disponibili în toată România și internațional",
+    "emailCta": "Trimite email",
+    "whatsAppCta": "Scrie pe WhatsApp",
     "servicesLinkLabel": "Descoperă serviciile",
-    "insightsLinkLabel": "Citește articolele"
+    "insightsLinkLabel": "Citește articolele",
+    "contactFormNote": "Dacă formularul nu funcționează, ne poți scrie direct pe email și îți răspundem."
+  },
+  "Footer": {
+    "description": "Automatizare construită pentru creștere pentru afaceri de servicii care au nevoie de website-uri mai bune, operațiuni mai clare și sisteme digitale practice.",
+    "company": "Companie",
+    "services": "Servicii",
+    "resources": "Resurse",
+    "rights": "Toate drepturile rezervate."
   },
   "Legal": {
     "privacy": "Politica de Confidențialitate",
@@ -139,6 +149,12 @@
     "privacyDescription": "Cum gestionează și protejează Growonio datele cu caracter personal.",
     "termsDescription": "Termenii de bază care guvernează colaborările Growonio și utilizarea site-ului.",
     "cookiesDescription": "Cum utilizează Growonio cookie-uri și tehnologii similare."
+  },
+  "NotFound": {
+    "title": "Această pagină nu a fost găsită",
+    "description": "Pagina poate fi mutată, adresa poate fi greșită sau conținutul nu mai este disponibil.",
+    "home": "Mergi la Acasă",
+    "contact": "Contactează-ne"
   },
   "Shared": {
     "firstName": "Prenume",

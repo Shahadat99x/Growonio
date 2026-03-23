@@ -128,8 +128,18 @@
     "locationLabel": "Location",
     "locationValue": "Bucharest, Romania",
     "locationAvailability": "Available across Romania and internationally",
+    "emailCta": "Email Growonio",
+    "whatsAppCta": "Chat on WhatsApp",
     "servicesLinkLabel": "Explore services",
-    "insightsLinkLabel": "Read insights"
+    "insightsLinkLabel": "Read insights",
+    "contactFormNote": "If the form ever fails, email us directly and we will still respond."
+  },
+  "Footer": {
+    "description": "Business automation built for growth for service businesses that need stronger websites, cleaner operations, and practical digital systems.",
+    "company": "Company",
+    "services": "Services",
+    "resources": "Resources",
+    "rights": "All rights reserved."
   },
   "Legal": {
     "privacy": "Privacy Policy",
@@ -139,6 +149,12 @@
     "privacyDescription": "How Growonio handles and protects personal information.",
     "termsDescription": "The basic terms that govern Growonio engagements and site usage.",
     "cookiesDescription": "How Growonio uses cookies and similar technologies."
+  },
+  "NotFound": {
+    "title": "This page could not be found",
+    "description": "The page may have moved, the URL may be incorrect, or the content is no longer available.",
+    "home": "Go to Home",
+    "contact": "Contact Us"
   },
   "Shared": {
     "firstName": "First Name",

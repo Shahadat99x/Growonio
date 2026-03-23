@@ -80,7 +80,7 @@ export default async function AdminPricingList() {
             {(!packages || packages.length === 0) && (
               <tr>
                 <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
-                  No pricing packages found. Click "New Package" to create one.
+                  No pricing packages found. Click &quot;New Package&quot; to create one.
                 </td>
               </tr>
             )}

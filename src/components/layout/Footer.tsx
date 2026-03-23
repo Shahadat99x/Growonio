@@ -1,8 +1,11 @@
 import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/routing';
+import { siteConfig } from '@/lib/config';
 
 export default function Footer() {
   const t = useTranslations('Navigation');
+  const tFooter = useTranslations('Footer');
+  const tLegal = useTranslations('Legal');
   const currentYear = new Date().getFullYear();
 
   return (
@@ -12,13 +15,19 @@ export default function Footer() {
           <div className="max-w-xs">
             <h2 className="text-xl font-bold mb-3 tracking-tight">Growonio</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Business automation built for growth. Helping service businesses thrive in the digital age with modern software solutions.
+              {tFooter('description')}
             </p>
+            <a
+              href={`mailto:${siteConfig.companyEmail}`}
+              className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+            >
+              {siteConfig.companyEmail}
+            </a>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12">
             <div>
-              <h3 className="text-sm font-semibold mb-4 tracking-tight">Company</h3>
+              <h3 className="text-sm font-semibold mb-4 tracking-tight">{tFooter('company')}</h3>
               <ul className="space-y-3">
                 <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('about')}</Link></li>
                 <li><Link href="/work" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('work')}</Link></li>
@@ -26,7 +35,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-4 tracking-tight">Services</h3>
+              <h3 className="text-sm font-semibold mb-4 tracking-tight">{tFooter('services')}</h3>
               <ul className="space-y-3">
                 <li><Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('services')}</Link></li>
                 <li><Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('pricing')}</Link></li>
@@ -34,7 +43,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-4 tracking-tight">Resources</h3>
+              <h3 className="text-sm font-semibold mb-4 tracking-tight">{tFooter('resources')}</h3>
               <ul className="space-y-3">
                 <li><Link href="/insights" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('insights')}</Link></li>
               </ul>
@@ -44,11 +53,12 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Growonio. All rights reserved.
+            &copy; {currentYear} Growonio. {tFooter('rights')}
           </p>
-          <div className="flex gap-6">
-            <Link href="/legal/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link href="/legal/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+          <div className="flex flex-wrap gap-6">
+            <Link href="/legal/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{tLegal('privacy')}</Link>
+            <Link href="/legal/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{tLegal('terms')}</Link>
+            <Link href="/legal/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{tLegal('cookies')}</Link>
           </div>
         </div>
       </div>

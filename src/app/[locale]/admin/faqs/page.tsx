@@ -78,7 +78,7 @@ export default async function AdminFAQsList() {
             {(!faqs || faqs.length === 0) && (
               <tr>
                 <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
-                  No FAQs found. Click "New FAQ" to create one.
+                  No FAQs found. Click &quot;New FAQ&quot; to create one.
                 </td>
               </tr>
             )}

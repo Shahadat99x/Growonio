@@ -2,7 +2,7 @@ import { requireAdminClient } from "@/lib/admin-auth";
 import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -14,6 +14,11 @@ import { notFound } from "next/navigation";
 export default async function PricingEditor({ params }: { params: Promise<{ id: string, locale: string }> }) {
   const { id, locale } = await params;
   const isNew = id === "new";
+
+  async function submitPricingForm(formData: FormData) {
+    "use server";
+    await savePricingPackageAction(formData);
+  }
 
   if (!hasSupabaseAdminEnv()) {
     return (
@@ -27,7 +32,23 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
     );
   }
   
-  let pkg: any = null;
+  let pkg:
+    | {
+        title_en: string;
+        title_ro: string;
+        price_monthly: string;
+        description_en: string | null;
+        description_ro: string | null;
+        features_en: string[] | null;
+        features_ro: string[] | null;
+        cta_text_en: string | null;
+        cta_text_ro: string | null;
+        cta_link: string | null;
+        sort_order: number | null;
+        is_active: boolean | null;
+        is_popular: boolean | null;
+      }
+    | null = null;
   
   if (!isNew) {
     const supabase = await requireAdminClient();
@@ -49,7 +70,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
       </div>
 
       <div className="bg-card border rounded-md p-6">
-        <form action={savePricingPackageAction as any} className="space-y-6">
+        <form action={submitPricingForm} className="space-y-6">
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="locale" value={locale} />
           
@@ -67,7 +88,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
           <div className="grid grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="price_monthly">Price (Display Text)</Label>
-              <Input id="price_monthly" name="price_monthly" defaultValue={pkg?.price_monthly} required placeholder="e.g. €499 or Custom" />
+              <Input id="price_monthly" name="price_monthly" defaultValue={pkg?.price_monthly ?? undefined} required placeholder="e.g. €499 or Custom" />
             </div>
             <div className="flex gap-6 items-end pb-2">
               <div className="flex items-center gap-2">
@@ -75,7 +96,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
                   type="checkbox" 
                   id="is_popular" 
                   name="is_popular" 
-                  defaultChecked={pkg?.is_popular} 
+                  defaultChecked={pkg?.is_popular ?? false} 
                   className="w-4 h-4 rounded border-gray-300"
                 />
                 <Label htmlFor="is_popular" className="cursor-pointer">Highlight as Popular</Label>
@@ -86,11 +107,11 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
           <div className="grid grid-cols-2 gap-6 border-t pt-6">
             <div className="space-y-2">
               <Label htmlFor="description_en">Description (English)</Label>
-              <Textarea id="description_en" name="description_en" defaultValue={pkg?.description_en} rows={3} />
+              <Textarea id="description_en" name="description_en" defaultValue={pkg?.description_en ?? undefined} rows={3} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="description_ro">Description (Romanian)</Label>
-              <Textarea id="description_ro" name="description_ro" defaultValue={pkg?.description_ro} rows={3} />
+              <Textarea id="description_ro" name="description_ro" defaultValue={pkg?.description_ro ?? undefined} rows={3} />
             </div>
           </div>
 
@@ -100,7 +121,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
               <Textarea 
                 id="features_en" 
                 name="features_en" 
-                defaultValue={pkg?.features_en?.join('\n')} 
+                defaultValue={pkg?.features_en?.join('\n') ?? undefined} 
                 rows={6} 
                 placeholder="Custom 5-page website&#10;Basic SEO setup"
               />
@@ -110,7 +131,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
               <Textarea 
                 id="features_ro" 
                 name="features_ro" 
-                defaultValue={pkg?.features_ro?.join('\n')} 
+                defaultValue={pkg?.features_ro?.join('\n') ?? undefined} 
                 rows={6} 
                 placeholder="Site web 5 pagini&#10;SEO de bază"
               />
@@ -120,16 +141,16 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
           <div className="grid grid-cols-2 gap-6 border-t pt-6">
             <div className="space-y-2">
               <Label htmlFor="cta_text_en">CTA Text (EN)</Label>
-              <Input id="cta_text_en" name="cta_text_en" defaultValue={pkg?.cta_text_en} placeholder="Get Started" />
+              <Input id="cta_text_en" name="cta_text_en" defaultValue={pkg?.cta_text_en ?? undefined} placeholder="Get Started" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="cta_text_ro">CTA Text (RO)</Label>
-              <Input id="cta_text_ro" name="cta_text_ro" defaultValue={pkg?.cta_text_ro} placeholder="Începe acum" />
+              <Input id="cta_text_ro" name="cta_text_ro" defaultValue={pkg?.cta_text_ro ?? undefined} placeholder="Începe acum" />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="cta_link">CTA Link (URL)</Label>
-            <Input id="cta_link" name="cta_link" defaultValue={pkg?.cta_link} placeholder="/contact" />
+            <Input id="cta_link" name="cta_link" defaultValue={pkg?.cta_link ?? undefined} placeholder="/contact" />
           </div>
 
           <div className="grid grid-cols-2 gap-6 border-t pt-6">
@@ -142,7 +163,7 @@ export default async function PricingEditor({ params }: { params: Promise<{ id: 
                 type="checkbox" 
                 id="is_active" 
                 name="is_active" 
-                defaultChecked={isNew ? true : pkg?.is_active} 
+                defaultChecked={isNew ? true : (pkg?.is_active ?? false)} 
                 className="w-4 h-4 rounded border-gray-300"
               />
               <Label htmlFor="is_active" className="cursor-pointer">Published / Active</Label>

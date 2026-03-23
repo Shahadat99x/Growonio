@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   authors: [{ name: siteConfig.name }],
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined,
+  },
   formatDetection: {
     address: false,
     email: false,

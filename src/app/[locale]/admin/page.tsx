@@ -33,7 +33,7 @@ export default function AdminDashboard() {
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {modules.map(mod => (
-          <Link key={mod.href} href={mod.href as any} className="block group">
+          <Link key={mod.href} href={mod.href} className="block group">
             <Card className="h-full transition-shadow hover:shadow-md">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between text-lg">
