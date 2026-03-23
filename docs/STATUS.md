@@ -1,5 +1,5 @@
 # Project Status
-**Phase:** 5 Complete
+**Phase:** 6 Complete
 **Date:** March 2026
 
 ## Complete
@@ -8,14 +8,15 @@
 - **Phase 2:** Design System, Base Layouts, Navbar/Footer.
 - **Phase 3:** Core Marketing Pages Implementations.
 - **Phase 4:** CMS Data Modeling & Migration
-- **Phase 5:** Live Supabase Integration (Current)
-  - Designed local `supabase/migrations/00001_phase5_core_entities.sql` and `seed.sql`.
-  - Configured standard `@supabase/ssr` server credential factories.
-  - Rewired `src/lib/content.ts` to directly fetch and gracefully degrade queries to live Supabase Postgres schemas.
-  - Authored standard `SUPABASE_INTEGRATION.md` and `SEEDING_GUIDE.md` docs.
+- **Phase 5:** Live Supabase Integration
+- **Phase 6:** Authentication & Admin Back-Office (Current)
+  - Configured `@supabase/ssr` with Next.js Edge Middleware for route protection.
+  - Built an agnostic Admin shell preventing layout/CSS bleed with public routes.
+  - Implemented secure React 19 Server Actions for CRUD logic over Supabase pg-data.
+  - Constructed lean, native, bilingual HTML forms handling complex stats & feature arrays transparently.
 
 ## Current State
-- The frontend is a fully database-integrated hybrid architecture. Content seamlessly streams asynchronously down from Supabase for all primary dynamic entities. Missing tables merely return empty graceful responses ensuring Next.js doesn't crash during deployment or uninitialized builds.
+- The frontend is fully integrated with a working Supabase instance, providing graceful UI handling regardless of DB status. An authenticated `/admin` tier now governs live mutation of the 4 core entities (Services, Pricing, Work Items, FAQs).
 
 ## Blockers / Known Issues
-- An admin requires raw SQL/Dashboard access to edit business data right now. Phase 6 will solve this.
+- Image file uploads rely on raw string URLs. To upgrade this, a Supabase Storage Bucket module must be built next.

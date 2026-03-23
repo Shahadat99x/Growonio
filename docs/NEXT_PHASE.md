@@ -1,17 +1,15 @@
-# Next Phase Plan: Phase 6
-**Focus:** Authentication & Admin Back-Office 
+# Next Phase Plan: Phase 7
+**Focus:** Media & Storage Integration
 
 ## Objective
-Establish a secure, authenticated GUI for non-technical users to Create, Read, Update, and Delete the Phase 5 content schemas.
+Enhance the existing Admin and Content layers by implementing robust handling, upload, and optimization workflows for image assets using Supabase Storage or Cloudinary.
 
 ## Key Tasks
-- **Infrastructure:** Wire `@supabase/ssr` into standard Next.js Middleware route guards.
-- **Authentication:** Establish a clean `/admin/login` page leveraging Supabase Email/Password or Magic Link.
-- **Admin Shell:** Scaffold a secured `/admin/dashboard` layout utilizing Shadcn UI components.
-- **CRUD Operations:** Build intuitive Server-Action powered edit forms for Services, Pricing, Portfolios, and FAQs.
-- **Localization Handling:** Ensure form fields correctly update both `_en` and `_ro` explicitly.
-- **File Uploads (Optional/Prepared):** Supabase Storage buckets for `image_url` on Portfolio/Work items.
+- **Supabase Storage:** Create secure image buckets for portfolio (`work_items`) and potentially blog/author avatars if scaling.
+- **Admin Upload UI:** Replace the plain `image_url` text input with an interactive drag-and-drop file uploader component inside the Admin editor layout.
+- **Action Mutations:** Update React Server actions to receive `FormData` blobs, upload to Supabase Storage, and retrieve the public access URL before persisting to Postgres.
+- **Public Optimization:** Ensure `next/image` is optimally configured to serve and cache the resulting remote asset URLs without warnings.
 
 ## Constraints
-- Keep it highly focused on functionality and usability, not "perfect" enterprise-style admin complexity.
-- Do not let the Admin CSS leak into or corrupt the public Marketing-site CSS footprint.
+- Security remains paramount. Storage buckets should strictly enforce RLS preventing public or unauthenticated POST/PUT events.
+- Keep the upload UI clean and aligned with the professional, functional design of the current Shadcn layout.

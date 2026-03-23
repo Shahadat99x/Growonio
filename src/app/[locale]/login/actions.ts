@@ -1,0 +1,34 @@
+"use server";
+
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
+
+export async function loginAction(prevState: any, formData: FormData) {
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+  const locale = formData.get("locale") as string || "en";
+
+  if (!email || !password) {
+    return { error: "Email and password are required." };
+  }
+
+  const supabase = await createClient();
+
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  // Redirect to admin dashboard on success
+  redirect(`/${locale}/admin`);
+}
+
+export async function logoutAction(locale: string = "en") {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  redirect(`/${locale}/login`);
+}
