@@ -1,4 +1,5 @@
-import { createClient, hasSupabaseEnv } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/admin-auth";
+import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -14,7 +15,7 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
   const { id, locale } = await params;
   const isNew = id === "new";
 
-  if (!hasSupabaseEnv()) {
+  if (!hasSupabaseAdminEnv()) {
     return (
       <div className="p-8 max-w-4xl mx-auto space-y-6 animate-in fade-in duration-500">
         <div>
@@ -29,7 +30,7 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
   let service: any = null;
   
   if (!isNew) {
-    const supabase = await createClient();
+    const supabase = await requireAdminClient();
     const { data } = await supabase.from("services").select("*").eq("id", id).single();
     if (!data) notFound();
     service = data;

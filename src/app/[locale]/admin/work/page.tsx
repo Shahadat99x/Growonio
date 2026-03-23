@@ -1,4 +1,5 @@
-import { createClient, hasSupabaseEnv } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/admin-auth";
+import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -6,7 +7,7 @@ import { Plus, Edit, Trash2 } from "lucide-react";
 import { deleteWorkItemAction } from "./actions";
 
 export default async function AdminWorkList() {
-  if (!hasSupabaseEnv()) {
+  if (!hasSupabaseAdminEnv()) {
     return (
       <div className="p-8 max-w-5xl mx-auto space-y-6 animate-in fade-in duration-500">
         <div>
@@ -18,7 +19,7 @@ export default async function AdminWorkList() {
     );
   }
 
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   const { data: works } = await supabase
     .from('work_items')
     .select('*')

@@ -1,5 +1,5 @@
-import { createClient } from "@/lib/supabase/server";
-import { hasSupabaseEnv } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/admin-auth";
+import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Plus, Edit, Trash2 } from "lucide-react";
 import { deleteServiceAction } from "./actions";
 
 export default async function AdminServicesList() {
-  if (!hasSupabaseEnv()) {
+  if (!hasSupabaseAdminEnv()) {
     return (
       <div className="p-8 max-w-5xl mx-auto space-y-6 animate-in fade-in duration-500">
         <div>
@@ -19,7 +19,7 @@ export default async function AdminServicesList() {
     );
   }
 
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   const { data: services } = await supabase
     .from('services')
     .select('*')

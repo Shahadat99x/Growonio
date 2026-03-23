@@ -1,6 +1,7 @@
 "use server";
 
-import { createClient, hasSupabaseEnv, missingSupabaseConfigMessage } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/admin-auth";
+import { hasSupabaseAdminEnv, missingSupabaseAdminConfigMessage } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -8,9 +9,9 @@ export async function deletePricingPackageAction(formData: FormData) {
   const id = formData.get("id") as string;
   if (!id) return;
 
-  if (!hasSupabaseEnv()) return;
+  if (!hasSupabaseAdminEnv()) return;
 
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   await supabase.from("pricing_packages").delete().eq("id", id);
   
   revalidatePath("/admin/pricing");
@@ -18,11 +19,11 @@ export async function deletePricingPackageAction(formData: FormData) {
 }
 
 export async function savePricingPackageAction(formData: FormData) {
-  if (!hasSupabaseEnv()) {
-    return { error: missingSupabaseConfigMessage };
+  if (!hasSupabaseAdminEnv()) {
+    return { error: missingSupabaseAdminConfigMessage };
   }
 
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   const id = formData.get("id") as string;
   const locale = formData.get("locale") as string || "en";
   

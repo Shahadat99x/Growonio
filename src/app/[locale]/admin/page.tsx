@@ -2,10 +2,10 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
-import { hasSupabaseEnv } from "@/lib/supabase/server";
+import { hasSupabaseAdminEnv } from "@/lib/supabase/server";
 
 export default function AdminDashboard() {
-  if (!hasSupabaseEnv()) {
+  if (!hasSupabaseAdminEnv()) {
     return (
       <div className="mx-auto max-w-5xl space-y-8 p-8 animate-in fade-in duration-500">
         <div>

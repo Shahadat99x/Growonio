@@ -1,15 +1,15 @@
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient, createClient } from "@/lib/supabase/server";
 
 export async function requireAdminClient() {
-  const supabase = await createClient();
+  const authClient = await createClient();
   const {
     data: { user },
     error,
-  } = await supabase.auth.getUser();
+  } = await authClient.auth.getUser();
 
   if (error || !user) {
     throw new Error("Unauthorized");
   }
 
-  return supabase;
+  return createAdminClient();
 }
