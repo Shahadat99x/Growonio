@@ -12,6 +12,7 @@ interface PricingCardProps {
   ctaText: string;
   ctaHref: string;
   isPopular?: boolean;
+  popularLabel?: string;
 }
 
 export function PricingCard({
@@ -22,6 +23,7 @@ export function PricingCard({
   ctaText,
   ctaHref,
   isPopular,
+  popularLabel = "Most Popular",
 }: PricingCardProps) {
   return (
     <Card className={cn(
@@ -30,7 +32,7 @@ export function PricingCard({
     )}>
       {isPopular && (
         <div className="absolute -top-4 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-          Most Popular
+          {popularLabel}
         </div>
       )}
       <CardHeader>

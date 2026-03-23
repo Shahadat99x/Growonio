@@ -24,18 +24,18 @@ export function Hero({
   secondaryCtaHref,
 }: HeroProps) {
   return (
-    <Section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
-      {/* Background visual asset placeholder */}
+    <Section className="relative overflow-hidden bg-background pt-20 pb-16 md:pt-28 md:pb-24 lg:pt-36 lg:pb-32">
+      {/* Background visual */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
       
       <Container className="relative z-10 text-center flex flex-col items-center">
         {badge && (
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-6">
+          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-8">
             {badge}
           </div>
         )}
         
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground max-w-4xl mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground max-w-4xl mb-6 leading-[1.1]">
           {title}
         </h1>
         
@@ -46,7 +46,7 @@ export function Hero({
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <Link 
             href={primaryCtaHref}
-            className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto rounded-full px-8 shadow-md")}
+            className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto rounded-full px-8 h-13 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow")}
           >
             {primaryCtaText}
           </Link>

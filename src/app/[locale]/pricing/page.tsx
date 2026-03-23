@@ -26,6 +26,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <PricingCard 
                 key={pkg.id}
                 isPopular={pkg.is_popular}
+                popularLabel={t('popularBadge')}
                 title={pkg.title}
                 description={pkg.description}
                 price={pkg.price_monthly}

@@ -1,5 +1,5 @@
 # Project Status
-**Phase:** 7.5 Complete
+**Phase:** 7A Complete
 **Date:** March 2026
 
 ## Complete
@@ -10,24 +10,21 @@
 - **Phase 4:** CMS data modeling and migration.
 - **Phase 5:** Live Supabase integration.
 - **Phase 6:** Authentication and Admin Back-Office MVP.
-- **Phase 7:** Media & Storage Integration (Cloudinary for work items).
-- **Phase 7.5:** Insights / Blog System.
-  - Created `articles` table with bilingual content, SEO fields, Cloudinary cover image columns, draft/published workflow, and RLS.
-  - Built public `/insights` listing page with featured article hero and card grid.
-  - Built `/insights/[slug]` detail page with markdown rendering, SEO metadata, cover images, tags, and CTA block.
-  - Implemented full admin CRUD for articles with Cloudinary cover upload, bilingual fields, SEO inputs, and draft/publish workflow.
-  - Added `react-markdown` + `remark-gfm` for safe markdown rendering with `@tailwindcss/typography` prose styling.
-  - Extended Cloudinary signing route to support `articles` entity alongside `work_items`.
+- **Phase 7:** Media & Storage Integration (Cloudinary) + Insights/Blog System.
+- **Phase 7A:** Frontend Premium Polish + Responsive Refinement.
+  - Navbar: mobile hamburger menu with animated overlay, Insights link added.
+  - Footer: replaced dead `#` links with real `Link` components, added Insights + FAQ + legal links, 3-column layout.
+  - Homepage: Process and CTA sections now fully translatable, Hero badge added, Process mobile vertical timeline connector.
+  - PricingCard: "Most Popular" badge now accepts translated prop.
+  - Services: CTA heading/description wired through translations.
+  - Hero: tighter spacing, stronger CTA shadow, sm: breakpoint added to heading.
+  - All hardcoded English in public pages replaced with translation keys.
 
 ## Current State
-- The bilingual marketing site, Supabase-backed content hydration, protected admin CRUD, and Cloudinary media handling remain in place.
-- A full blog/insights system is now operational with admin CRUD, Cloudinary cover images, and SEO-ready publishing.
-- Articles support draft/published workflow with localized metadata rendering.
-
-## Operational Notes
-- Run `supabase/migrations/00003_articles.sql` before using the blog system against a fresh or lagging database.
-- Seed data includes 2 sample published articles for immediate testing.
-- The `@tailwindcss/typography` plugin is registered via `@plugin` directive in `globals.css` (Tailwind v4 syntax).
+- All public-facing pages are bilingual, responsive, and premium.
+- Mobile navigation is fully functional.
+- Footer links are all real routed links.
+- No hardcoded English in translatable areas.
 
 ## Remaining Gaps / Next Focus
-- The next logical phase is SEO hardening and discoverability polish across the bilingual marketing pages (Phase 8).
+- Phase 8: SEO & Discoverability Hardening (sitemaps, structured data, canonical tags, hreflang).

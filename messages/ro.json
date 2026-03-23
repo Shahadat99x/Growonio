@@ -12,7 +12,17 @@
     "processTitle": "Cum Lucrăm",
     "processDesc": "O abordare transparentă, bazată pe etape clare.",
     "trustTitle": "De ce Growonio?",
-    "trustDesc": "Construim fundații scalabile, nu doar site-uri web."
+    "trustDesc": "Construim fundații scalabile, nu doar site-uri web.",
+    "processStep1Title": "Descoperire",
+    "processStep1Desc": "Analizăm blocajele afacerii tale și creăm o strategie digitală.",
+    "processStep2Title": "Dezvoltare",
+    "processStep2Desc": "Construim arhitectura personalizată cu actualizări transparente.",
+    "processStep3Title": "Lansare și Scalare",
+    "processStep3Desc": "Implementare, instruire și suport continuu pentru accelerarea creșterii.",
+    "ctaHeading": "Ești gata să-ți automatizezi creșterea?",
+    "ctaDesc": "Hai să discutăm cum procesul nostru transparent și tehnologia modernă pot eleva afacerea ta.",
+    "ctaButton": "Programează o Consultare Gratuită",
+    "heroBadge": "Platformă de Automatizare"
   },
   "Navigation": {
     "home": "Acasă",
@@ -35,7 +45,9 @@
     "automation": "Automatizare & Captare Lead-uri",
     "automationDesc": "Fluxuri automate pentru a capta și gestiona fiecare oportunitate.",
     "mobile": "Aplicații Mobile",
-    "mobileDesc": "Soluții personalizate iOS și Android pentru implicarea clienților."
+    "mobileDesc": "Soluții personalizate iOS și Android pentru implicarea clienților.",
+    "ctaTitle": "Ai nevoie de o soluție personalizată?",
+    "ctaDesc": "Construim software la comandă, adaptat fluxurilor tale operaționale și obiectivelor de creștere."
   },
   "PricingPage": {
     "title": "Prețuri Transparente",
@@ -48,7 +60,8 @@
     "enterpriseDesc": "Arhitectură personalizată și integrări complexe.",
     "custom": "Personalizat",
     "contactUs": "Contactează-ne",
-    "getStarted": "Începe"
+    "getStarted": "Începe",
+    "popularBadge": "Cel Mai Popular"
   },
   "SolutionsPage": {
     "title": "Soluții pe Industrii",

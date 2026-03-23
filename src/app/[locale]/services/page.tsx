@@ -61,8 +61,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       <Section>
         <Container className="max-w-3xl text-center">
           <SectionHeader 
-            title="Need a custom solution?" 
-            description="We build bespoke software tailored to your specific operational workflows and growth targets." 
+            title={t('ctaTitle')} 
+            description={t('ctaDesc')} 
           />
           <Link 
             href="/contact"

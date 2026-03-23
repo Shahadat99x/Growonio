@@ -12,7 +12,17 @@
     "processTitle": "How We Work",
     "processDesc": "A transparent, milestone-driven approach to delivery.",
     "trustTitle": "Why Growonio?",
-    "trustDesc": "We build scalable foundations, not just websites."
+    "trustDesc": "We build scalable foundations, not just websites.",
+    "processStep1Title": "Discovery",
+    "processStep1Desc": "We analyze your business bottlenecks and map out a digital strategy.",
+    "processStep2Title": "Development",
+    "processStep2Desc": "We build your custom architecture with transparent milestone updates.",
+    "processStep3Title": "Launch & Scale",
+    "processStep3Desc": "Deployment, training, and ongoing support to accelerate growth.",
+    "ctaHeading": "Ready to automate your growth?",
+    "ctaDesc": "Let's talk about how our transparent process and modern tech stack can elevate your business.",
+    "ctaButton": "Book a Free Consultation",
+    "heroBadge": "Business Automation Platform"
   },
   "Navigation": {
     "home": "Home",
@@ -35,7 +45,9 @@
     "automation": "Lead Capture & Workflow Automation",
     "automationDesc": "Automated funnels and data syncing to capture every opportunity.",
     "mobile": "Mobile App Development",
-    "mobileDesc": "Custom iOS and Android solutions for deeper client engagement."
+    "mobileDesc": "Custom iOS and Android solutions for deeper client engagement.",
+    "ctaTitle": "Need a custom solution?",
+    "ctaDesc": "We build bespoke software tailored to your specific operational workflows and growth targets."
   },
   "PricingPage": {
     "title": "Transparent Pricing",
@@ -48,7 +60,8 @@
     "enterpriseDesc": "Custom architecture and complex integrations.",
     "custom": "Custom",
     "contactUs": "Contact Us",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "popularBadge": "Most Popular"
   },
   "SolutionsPage": {
     "title": "Industry Solutions",
