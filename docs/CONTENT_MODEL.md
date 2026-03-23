@@ -33,7 +33,10 @@ Showcases previous client transformations.
 - `client_name`: string
 - `industry_en`, `industry_ro`: string
 - `description_en`, `description_ro`: text
-- `image_url`: string
+- `image_url`: string (optional)
+- `image_public_id`: string (Cloudinary asset id for tracked cleanup)
+- `image_alt_en`, `image_alt_ro`: string (optional localized alt text)
+- `image_width`, `image_height`: integer (optional intrinsic dimensions returned by Cloudinary)
 - `stats`: jsonb (e.g. `[{ label: "Conversion", value: "+20%" }]` - stats are usually locale-agnostic or simple enough to map)
 - `is_featured`: boolean
 - `order`: integer

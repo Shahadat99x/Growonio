@@ -1,15 +1,19 @@
-# Next Phase Plan: Phase 7
-**Focus:** Media & Storage Integration
+# Next Phase Plan: Phase 8
+**Focus:** SEO & Discoverability Hardening
 
 ## Objective
-Enhance the existing Admin and Content layers by implementing robust handling, upload, and optimization workflows for image assets using Supabase Storage or Cloudinary.
+Turn the already-built bilingual marketing site into a fully polished SEO-ready release by auditing metadata, schema, crawlability, and content discoverability end to end.
 
 ## Key Tasks
-- **Supabase Storage:** Create secure image buckets for portfolio (`work_items`) and potentially blog/author avatars if scaling.
-- **Admin Upload UI:** Replace the plain `image_url` text input with an interactive drag-and-drop file uploader component inside the Admin editor layout.
-- **Action Mutations:** Update React Server actions to receive `FormData` blobs, upload to Supabase Storage, and retrieve the public access URL before persisting to Postgres.
-- **Public Optimization:** Ensure `next/image` is optimally configured to serve and cache the resulting remote asset URLs without warnings.
+- Audit page-by-page metadata for Romanian-first and English secondary routes.
+- Complete or verify canonical tags, hreflang links, sitemap coverage, and robots behavior.
+- Expand structured data where it materially helps (`Organization`, `Service`, `FAQPage`, and relevant work/supporting schema).
+- Review internal linking and heading structure across the public marketing pages.
+- Validate image alt behavior and OG/social sharing assets after the new media phase.
+- Finish a practical launch checklist for Search Console and analytics readiness.
 
 ## Constraints
-- Security remains paramount. Storage buckets should strictly enforce RLS preventing public or unauthenticated POST/PUT events.
-- Keep the upload UI clean and aligned with the professional, functional design of the current Shadcn layout.
+- Do not rebuild the existing public pages.
+- Keep the hybrid CMS boundary intact; SEO logic remains code-owned.
+- Preserve bilingual routing and Romania-first positioning.
+- Favor implementation quality over adding more editable admin surface.
