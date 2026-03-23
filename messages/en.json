@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "title": "Welcome to Growonio",
+    "description": "Business automation built for growth.",
+    "cta": "Get Started"
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "work": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  }
+}
