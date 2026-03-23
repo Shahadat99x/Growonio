@@ -1,4 +1,5 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, hasSupabaseEnv } from "@/lib/supabase/server";
+import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,18 @@ import { notFound } from "next/navigation";
 export default async function FAQEditor({ params }: { params: Promise<{ id: string, locale: string }> }) {
   const { id, locale } = await params;
   const isNew = id === "new";
+
+  if (!hasSupabaseEnv()) {
+    return (
+      <div className="p-8 max-w-4xl mx-auto space-y-6 animate-in fade-in duration-500">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">{isNew ? "New FAQ" : "Edit FAQ"}</h1>
+          <p className="text-muted-foreground mt-1">Configure bilingual questions and answers.</p>
+        </div>
+        <AdminEnvNotice />
+      </div>
+    );
+  }
   
   let faq: any = null;
   

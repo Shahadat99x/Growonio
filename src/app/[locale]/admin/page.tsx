@@ -1,8 +1,22 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
+import { hasSupabaseEnv } from "@/lib/supabase/server";
 
 export default function AdminDashboard() {
+  if (!hasSupabaseEnv()) {
+    return (
+      <div className="mx-auto max-w-5xl space-y-8 p-8 animate-in fade-in duration-500">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <p className="mt-2 text-muted-foreground">Welcome to the Growonio content management portal.</p>
+        </div>
+        <AdminEnvNotice />
+      </div>
+    );
+  }
+
   const modules = [
     { title: "Services", desc: "Manage overarching capabilities offered.", href: "/admin/services" },
     { title: "Pricing", desc: "Manage billing packages and tiers.", href: "/admin/pricing" },

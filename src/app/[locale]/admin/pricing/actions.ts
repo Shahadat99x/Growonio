@@ -1,12 +1,14 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient, hasSupabaseEnv, missingSupabaseConfigMessage } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function deletePricingPackageAction(formData: FormData) {
   const id = formData.get("id") as string;
   if (!id) return;
+
+  if (!hasSupabaseEnv()) return;
 
   const supabase = await createClient();
   await supabase.from("pricing_packages").delete().eq("id", id);
@@ -16,6 +18,10 @@ export async function deletePricingPackageAction(formData: FormData) {
 }
 
 export async function savePricingPackageAction(prevState: any, formData: FormData) {
+  if (!hasSupabaseEnv()) {
+    return { error: missingSupabaseConfigMessage };
+  }
+
   const supabase = await createClient();
   const id = formData.get("id") as string;
   const locale = formData.get("locale") as string || "en";

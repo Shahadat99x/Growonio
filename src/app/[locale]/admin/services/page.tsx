@@ -1,10 +1,24 @@
 import { createClient } from "@/lib/supabase/server";
+import { hasSupabaseEnv } from "@/lib/supabase/server";
+import { AdminEnvNotice } from "@/components/admin/AdminEnvNotice";
 import { Link } from "@/i18n/routing";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Plus, Edit, Trash2 } from "lucide-react";
 import { deleteServiceAction } from "./actions";
 
 export default async function AdminServicesList() {
+  if (!hasSupabaseEnv()) {
+    return (
+      <div className="p-8 max-w-5xl mx-auto space-y-6 animate-in fade-in duration-500">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Services</h1>
+          <p className="text-muted-foreground mt-1">Manage the core capabilities offered to clients.</p>
+        </div>
+        <AdminEnvNotice />
+      </div>
+    );
+  }
+
   const supabase = await createClient();
   const { data: services } = await supabase
     .from('services')

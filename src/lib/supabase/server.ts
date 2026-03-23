@@ -1,7 +1,28 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
+export const missingSupabaseConfigMessage =
+  "Supabase environment variables are missing. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to continue.";
+
+export function hasSupabaseEnv() {
+  return Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() &&
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim(),
+  );
+}
+
+export class MissingSupabaseConfigError extends Error {
+  constructor() {
+    super(missingSupabaseConfigMessage);
+    this.name = "MissingSupabaseConfigError";
+  }
+}
+
 export async function createClient() {
+  if (!hasSupabaseEnv()) {
+    throw new MissingSupabaseConfigError();
+  }
+
   const cookieStore = await cookies();
 
   return createServerClient(
