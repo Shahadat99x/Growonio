@@ -138,3 +138,57 @@ export interface LocalizedPricingPackage {
   order: number;
   isActive: boolean;
 }
+
+export interface Article {
+  id: string;
+  slug: string;
+  status: 'draft' | 'published';
+  is_featured: boolean;
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+  title_en: string;
+  title_ro: string;
+  excerpt_en: string;
+  excerpt_ro: string;
+  content_en: string;
+  content_ro: string;
+  seo_title_en: string | null;
+  seo_title_ro: string | null;
+  seo_description_en: string | null;
+  seo_description_ro: string | null;
+  cover_image_url: string | null;
+  cover_image_public_id: string | null;
+  cover_image_alt_en: string | null;
+  cover_image_alt_ro: string | null;
+  cover_image_width: number | null;
+  cover_image_height: number | null;
+  author_name: string | null;
+  category: string | null;
+  tags: string[];
+  reading_time: number;
+}
+
+export interface LocalizedArticle {
+  id: string;
+  slug: string;
+  status: 'draft' | 'published';
+  is_featured: boolean;
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  seo_title: string | null;
+  seo_description: string | null;
+  cover_image_url: string | null;
+  cover_image_public_id: string | null;
+  cover_image_alt: string | null;
+  cover_image_width: number | null;
+  cover_image_height: number | null;
+  author_name: string | null;
+  category: string | null;
+  tags: string[];
+  reading_time: number;
+}

@@ -1,5 +1,5 @@
 # Project Status
-**Phase:** 7 Complete
+**Phase:** 7.5 Complete
 **Date:** March 2026
 
 ## Complete
@@ -10,25 +10,24 @@
 - **Phase 4:** CMS data modeling and migration.
 - **Phase 5:** Live Supabase integration.
 - **Phase 6:** Authentication and Admin Back-Office MVP.
-- **Phase 7:** Media & Storage Integration.
-  - Added signed Cloudinary uploads for `work_items` via `/api/admin/media/sign`.
-  - Extended `work_items` with media metadata (`image_public_id`, localized alt text, intrinsic width/height).
-  - Replaced the raw work item image URL field with an upload-aware admin workflow that supports preview, replace, remove, and manual URL fallback.
-  - Updated public work cards to render uploaded assets cleanly with Cloudinary-aware delivery and graceful empty/broken-image fallback handling.
+- **Phase 7:** Media & Storage Integration (Cloudinary for work items).
+- **Phase 7.5:** Insights / Blog System.
+  - Created `articles` table with bilingual content, SEO fields, Cloudinary cover image columns, draft/published workflow, and RLS.
+  - Built public `/insights` listing page with featured article hero and card grid.
+  - Built `/insights/[slug]` detail page with markdown rendering, SEO metadata, cover images, tags, and CTA block.
+  - Implemented full admin CRUD for articles with Cloudinary cover upload, bilingual fields, SEO inputs, and draft/publish workflow.
+  - Added `react-markdown` + `remark-gfm` for safe markdown rendering with `@tailwindcss/typography` prose styling.
+  - Extended Cloudinary signing route to support `articles` entity alongside `work_items`.
 
 ## Current State
-- The bilingual marketing site, Supabase-backed content hydration, and protected admin CRUD remain in place.
-- Work items now support practical production media handling without introducing a full asset-manager UI.
-- Cloudinary is the approved media provider for this phase; URLs remain persisted in Supabase and rendered on the public site with sensible fallback behavior.
+- The bilingual marketing site, Supabase-backed content hydration, protected admin CRUD, and Cloudinary media handling remain in place.
+- A full blog/insights system is now operational with admin CRUD, Cloudinary cover images, and SEO-ready publishing.
+- Articles support draft/published workflow with localized metadata rendering.
 
 ## Operational Notes
-- Run `supabase/migrations/00002_phase7_work_item_media.sql` before using the new work item media fields against a fresh or lagging database.
-- Required media environment variables now include:
-  - `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`
-  - `CLOUDINARY_API_KEY`
-  - `CLOUDINARY_API_SECRET`
-  - `CLOUDINARY_WORK_ITEMS_FOLDER` (optional override)
-- `npm run build` succeeds after this phase. Repo-wide `npm run lint` still reports pre-existing issues outside the Phase 7 scope.
+- Run `supabase/migrations/00003_articles.sql` before using the blog system against a fresh or lagging database.
+- Seed data includes 2 sample published articles for immediate testing.
+- The `@tailwindcss/typography` plugin is registered via `@plugin` directive in `globals.css` (Tailwind v4 syntax).
 
 ## Remaining Gaps / Next Focus
-- The next logical phase is SEO hardening and discoverability polish across the bilingual marketing pages.
+- The next logical phase is SEO hardening and discoverability polish across the bilingual marketing pages (Phase 8).

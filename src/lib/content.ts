@@ -4,6 +4,7 @@ import {
   LocalizedPricingPackage, 
   LocalizedWorkItem, 
   LocalizedFAQItem,
+  LocalizedArticle,
 } from "@/types/content";
 
 /**
@@ -142,6 +143,66 @@ export async function getCompanySettings(locale: string = "en") {
     return localizeEntity(data || {}, locale);
   } catch (err) {
     console.error("Failed to fetch company_settings:", err);
+    return null;
+  }
+}
+
+export async function getPublishedArticles(locale: string = "en"): Promise<LocalizedArticle[]> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('status', 'published')
+      .lte('published_at', new Date().toISOString())
+      .order('published_at', { ascending: false });
+
+    if (error) throw error;
+
+    return (data || []).map(a => localizeEntity(a, locale) as LocalizedArticle);
+  } catch (err) {
+    console.error("Failed to fetch published articles:", err);
+    return [];
+  }
+}
+
+export async function getFeaturedArticles(locale: string = "en"): Promise<LocalizedArticle[]> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('status', 'published')
+      .eq('is_featured', true)
+      .lte('published_at', new Date().toISOString())
+      .order('published_at', { ascending: false })
+      .limit(3);
+
+    if (error) throw error;
+
+    return (data || []).map(a => localizeEntity(a, locale) as LocalizedArticle);
+  } catch (err) {
+    console.error("Failed to fetch featured articles:", err);
+    return [];
+  }
+}
+
+export async function getArticleBySlug(slug: string, locale: string = "en"): Promise<LocalizedArticle | null> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('slug', slug)
+      .eq('status', 'published')
+      .single();
+
+    if (error) throw error;
+    if (!data) return null;
+
+    return localizeEntity(data, locale) as LocalizedArticle;
+  } catch (err) {
+    console.error("Failed to fetch article by slug:", err);
     return null;
   }
 }

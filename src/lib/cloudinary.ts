@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-type CloudinaryEntity = "work_items";
+type CloudinaryEntity = "work_items" | "articles";
 
 type CloudinaryTransformOptions = {
   width?: number;
@@ -10,6 +10,7 @@ type CloudinaryTransformOptions = {
 };
 
 const DEFAULT_WORK_ITEMS_FOLDER = "growonio/work-items";
+const DEFAULT_ARTICLES_FOLDER = "growonio/articles";
 
 function getCloudinaryConfig() {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME?.trim();
@@ -34,6 +35,10 @@ export function isCloudinaryConfigured() {
 export function getCloudinaryFolder(entity: CloudinaryEntity) {
   if (entity === "work_items") {
     return process.env.CLOUDINARY_WORK_ITEMS_FOLDER?.trim() || DEFAULT_WORK_ITEMS_FOLDER;
+  }
+
+  if (entity === "articles") {
+    return process.env.CLOUDINARY_ARTICLES_FOLDER?.trim() || DEFAULT_ARTICLES_FOLDER;
   }
 
   return DEFAULT_WORK_ITEMS_FOLDER;

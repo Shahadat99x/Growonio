@@ -20,6 +20,7 @@
     "pricing": "Pricing",
     "solutions": "Solutions",
     "work": "Portfolio",
+    "insights": "Insights",
     "about": "About",
     "contact": "Contact",
     "faq": "FAQ"
@@ -94,5 +95,18 @@
     "messagePlaceholder": "Tell us about your business and goals...",
     "sendMessage": "Send Message",
     "learnMore": "Learn More"
+  },
+  "InsightsPage": {
+    "title": "Insights",
+    "description": "Ideas, guides, and practical thinking on business automation and digital growth.",
+    "metaTitle": "Insights — Growonio",
+    "metaDescription": "Practical articles on business automation, digital tools, and growth strategies for service businesses.",
+    "readMore": "Read Article",
+    "readTime": "read",
+    "backToInsights": "Back to Insights",
+    "ctaTitle": "Ready to automate your business?",
+    "ctaDescription": "Let's discuss how Growonio can help your business grow faster with less manual work.",
+    "ctaButton": "Get in Touch",
+    "empty": "No articles published yet. Check back soon."
   }
 }

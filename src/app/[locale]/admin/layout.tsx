@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "@/i18n/routing";
 import { useLocale } from "next-intl";
-import { LayoutDashboard, Briefcase, FileText, Tags, HelpCircle, LogOut } from "lucide-react";
+import { LayoutDashboard, Briefcase, FileText, Tags, HelpCircle, Newspaper, LogOut } from "lucide-react";
 import { logoutAction } from "../login/actions";
 import { Button } from "@/components/ui/button";
 
@@ -36,6 +36,10 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           <Link href="/admin/faqs" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted text-sm font-medium transition-colors">
             <HelpCircle className="w-4 h-4" />
             FAQs
+          </Link>
+          <Link href="/admin/articles" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted text-sm font-medium transition-colors">
+            <Newspaper className="w-4 h-4" />
+            Articles
           </Link>
         </nav>
 

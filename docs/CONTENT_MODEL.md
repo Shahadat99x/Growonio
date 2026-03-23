@@ -59,3 +59,25 @@ A singleton configuration object.
 - `address_en`, `address_ro`: string
 - `social_urls`: jsonb (e.g. `{ facebook: "url", linkedin: "url" }`)
 - `updated_at`: timestamp
+
+## 6. Articles / Blog Posts
+Bilingual blog content with SEO and Cloudinary cover images.
+- `id`: uuid (PK)
+- `slug`: string (unique)
+- `status`: string ('draft' | 'published')
+- `is_featured`: boolean
+- `published_at`: timestamptz
+- `created_at`, `updated_at`: timestamptz
+- `title_en`, `title_ro`: text
+- `excerpt_en`, `excerpt_ro`: text
+- `content_en`, `content_ro`: text (markdown)
+- `seo_title_en`, `seo_title_ro`: text (optional override)
+- `seo_description_en`, `seo_description_ro`: text (optional override)
+- `cover_image_url`: string (Cloudinary URL)
+- `cover_image_public_id`: string (Cloudinary asset id)
+- `cover_image_alt_en`, `cover_image_alt_ro`: string (optional localized alt)
+- `cover_image_width`, `cover_image_height`: integer (optional intrinsic dimensions)
+- `author_name`: string
+- `category`: string
+- `tags`: text[] (flat array)
+- `reading_time`: integer (minutes)

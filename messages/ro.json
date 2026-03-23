@@ -20,6 +20,7 @@
     "pricing": "Prețuri",
     "solutions": "Soluții",
     "work": "Portofoliu",
+    "insights": "Articole",
     "about": "Despre",
     "contact": "Contact",
     "faq": "Întrebări Frecvente"
@@ -94,5 +95,18 @@
     "messagePlaceholder": "Spune-ne despre afacerea și obiectivele tale...",
     "sendMessage": "Trimite Mesajul",
     "learnMore": "Află mai multe"
+  },
+  "InsightsPage": {
+    "title": "Articole",
+    "description": "Idei, ghiduri și gândire practică despre automatizarea afacerilor și creșterea digitală.",
+    "metaTitle": "Articole — Growonio",
+    "metaDescription": "Articole practice despre automatizarea afacerilor, instrumente digitale și strategii de creștere.",
+    "readMore": "Citește Articolul",
+    "readTime": "citire",
+    "backToInsights": "Înapoi la Articole",
+    "ctaTitle": "Ești gata să-ți automatizezi afacerea?",
+    "ctaDescription": "Hai să discutăm cum Growonio te poate ajuta să crești mai rapid cu mai puțină muncă manuală.",
+    "ctaButton": "Contactează-ne",
+    "empty": "Niciun articol publicat încă. Revino curând."
   }
 }
