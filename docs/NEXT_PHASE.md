@@ -1,16 +1,16 @@
-# Next Phase Plan: Phase 4
-**Focus:** CMS Integration & Data Hydration Setup
+# Next Phase Plan: Phase 5
+**Focus:** Live Supabase Integration & Authentication 
 
 ## Objective
-Connect the frontend marketing shell to a real data source (e.g., Supabase/Sanity) or local `.mdx` files to allow content management for dynamic sections like Portfolio, Blog, or Services.
+Connect the established Phase 4 data layer (`src/lib/content.ts`) to a live Supabase PostgreSQL database and create the foundation for admin authentication.
 
 ## Key Tasks
-- Define the content schema.
-- Integrate the backend client (Supabase SSR or MDX parsing logic).
-- Hydrate the `/work` page with dynamic project data instead of hardcoded arrays.
-- Implement dynamic routing for single case studies (e.g., `/work/[slug]`).
-- Configure SEO metadata generation (`generateMetadata`) across routes.
+- Execute the SQL from `docs/SUPABASE_SCHEMA_PLAN.md` into the active Supabase project.
+- Implement `@supabase/ssr` or `@supabase/supabase-js` to replace the `mock.ts` seed data.
+- Ensure all Row Level Security (RLS) policies are configured for public read access to active content.
+- Implement an authentication gateway (`/login` or `/admin/login`) for firm staff.
+- Ensure Edge Middleware correctly protects the `/admin` routing group.
 
 ## Constraints
-- Do not build complex user authentication yet.
-- Focus strictly on content delivery optimization.
+- Do not build full CRUD dashboards yet; only configure read access for the public site and admin login access.
+- Keep the `lib/content.ts` interface identical so the UI pages do not need refactoring.

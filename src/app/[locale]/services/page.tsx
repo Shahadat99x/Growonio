@@ -1,4 +1,4 @@
-import {useTranslations} from 'next-intl';
+
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -8,9 +8,21 @@ import { Link } from '@/i18n/routing';
 import { cn } from "@/lib/utils";
 import { MonitorSmartphone, CalendarCheck, Workflow, Smartphone, ArrowRight } from 'lucide-react';
 
-export default function ServicesPage() {
-  const t = useTranslations('ServicesPage');
-  const tShared = useTranslations('Shared');
+import { getTranslations } from 'next-intl/server';
+import { getServices } from '@/lib/content';
+
+const iconMap: Record<string, any> = {
+  MonitorSmartphone,
+  CalendarCheck,
+  Workflow,
+  Smartphone
+};
+
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ServicesPage' });
+  const tShared = await getTranslations({ locale, namespace: 'Shared' });
+  const services = await getServices(locale);
 
   return (
     <div className="pt-16 pb-24">
@@ -29,30 +41,18 @@ export default function ServicesPage() {
       <Section className="bg-zinc-50 dark:bg-zinc-900/40 border-y border-border/40 py-16 md:py-24">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            <FeatureCard 
-              className="p-10 bg-background"
-              icon={<MonitorSmartphone className="w-8 h-8" />}
-              title={t('webDesign')}
-              description={t('webDesignDesc')}
-            />
-            <FeatureCard 
-              className="p-10 bg-background"
-              icon={<CalendarCheck className="w-8 h-8" />}
-              title={t('booking')}
-              description={t('bookingDesc')}
-            />
-            <FeatureCard 
-              className="p-10 bg-background"
-              icon={<Workflow className="w-8 h-8" />}
-              title={t('automation')}
-              description={t('automationDesc')}
-            />
-            <FeatureCard 
-              className="p-10 bg-background"
-              icon={<Smartphone className="w-8 h-8" />}
-              title={t('mobile')}
-              description={t('mobileDesc')}
-            />
+            {services.map((service) => {
+              const Icon = iconMap[service.icon_name] || MonitorSmartphone;
+              return (
+                <FeatureCard 
+                  key={service.id}
+                  className="p-10 bg-background"
+                  icon={<Icon className="w-8 h-8" />}
+                  title={service.title}
+                  description={service.description}
+                />
+              );
+            })}
           </div>
         </Container>
       </Section>

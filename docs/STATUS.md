@@ -1,5 +1,5 @@
 # Project Status
-**Phase:** 3 Complete
+**Phase:** 4 Complete
 **Date:** March 2026
 
 ## Complete
@@ -7,14 +7,14 @@
 - **Phase 1:** Next.js + Tailwind v4 + Next-Intl + Shadcn core initialization.
 - **Phase 2:** Design System, Base Layouts, Navbar/Footer.
 - **Phase 3:** Core Marketing Pages Implementations.
-  - Implemented generic pages: `/`, `/services`, `/pricing`, `/solutions`, `/work`, `/about`, `/faq`, `/contact`.
-  - Built localized placeholders for Legal (`/legal/privacy`, etc.).
-  - Expanded `shadcn/ui` with `accordion`, `card`, `label`, `textarea`.
-  - Created composite components: `SectionHeader`, `PricingCard`, `FAQAccordion`, `ContactForm`.
+- **Phase 4:** CMS Data Modeling & Migration
+  - Established `CONTENT_MODEL.md`, `ADMIN_SCOPE.md`, and `SUPABASE_SCHEMA_PLAN.md`.
+  - Created TypeScript entity domains (`src/types/content.ts`).
+  - Built a mock data repository and localized accessor hooks (`src/lib/content.ts`).
+  - Extracted inline data from Services, Pricing, Work, and FAQs into the new structured content layer.
 
 ## Current State
-- The frontend is a fully functional, localized, and responsive static/dynamic marketing site shell.
-- All primary routes are established and linked correctly using the `Link` component from `next-intl`.
+- The frontend is now a hybrid architecture. Structural components, metadata, and UI labels are governed by code & `next-intl` json, while business content (Pricing, Services, Portfolios, FAQs) is governed by a dynamic mock repository awaiting real CMS wiring.
 
 ## Blockers / Known Issues
-- None. `asChild` prop typings conflict with `next-intl` Link resolved via `buttonVariants`.
+- None. The app successfully compiles and accurately hydrates the dual-tier translation system.
