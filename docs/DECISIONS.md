@@ -292,3 +292,22 @@ Technical implementation notes:
   - `light`
   - `tint`
   - `feature`
+
+---
+
+## 14. Homepage Phase 3 Composition Decision
+
+Decision:
+**Refactor homepage sections into dedicated section components with asymmetric layouts**
+
+Implementation shape:
+
+- homepage sections below the hero now live in `src/components/home/*`
+- services, industries, process, proof, and CTA each use different layout rhythms instead of repeating the same centered heading + uniform card row
+- homepage-specific cards can be richer than the generic card primitive, but they must still reuse the main visual tokens, button system, and section modes
+
+Reason:
+
+- the homepage needed a stronger sense of progression after the hero
+- keeping the redesign inside dedicated section components is cleaner than pushing complex one-off markup into `page.tsx`
+- asymmetric composition helps the premium growth-tech direction feel intentional without forcing the same art direction onto every other page

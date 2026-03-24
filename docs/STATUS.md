@@ -84,20 +84,31 @@
     - hero rebuilt into a left-content / right-visual signature section
     - right-side hero visual now expresses the approved growth/workflow idea through layered rings, branching lines, and floating workflow panels
     - homepage hero copy was upgraded in both English and Romanian to better match Growonio’s positioning
+  - **Phase 3:** homepage sections redesigned to match the new hero/header quality
+    - homepage content below the hero was refactored into dedicated `src/components/home/*` section components instead of staying as one large inline page file
+    - services preview was rebuilt as productized module cards with stronger hierarchy, bullets, asymmetric rhythm, and clearer internal navigation
+    - industries preview was upgraded into a better business-fit section with stronger tags, clearer “best for” framing, and a more useful support panel
+    - process was rebuilt into a four-step premium delivery path with stronger progression, milestone emphasis, and more distinct dark feature styling
+    - the old generic trust row was replaced with a richer proof/value section that emphasizes bilingual delivery, SEO structure, admin usability, and automation readiness
+    - the homepage CTA was redesigned into a more signature closing section with stronger layering, trust notes, and better button hierarchy
+    - homepage translation content in both English and Romanian was expanded so the redesigned sections have more specific, business-focused copy and not generic brochure text
 
 ## Remaining Gaps / Next Focus
 - **Redesign Execution**
-  - Phase 3: homepage section redesign
-    - redesign services preview
-    - redesign solutions/industries preview
-    - redesign process and trust sections with stronger layout variation
-    - improve CTA rhythm across the rest of the homepage
   - Phase 4: inner-page redesign
     - Services
     - Pricing
     - Work / Portfolio
     - Insights
     - Contact
+  - Phase 5: footer and global polish
+    - redesign footer structure and premium brand block
+    - tighten section-to-section cohesion across the full site
+    - carry the motion system into more interior interaction points where useful
+  - Phase 6 to 8: production finishing pass
+    - broader motion rollout
+    - responsive, accessibility, and performance tightening
+    - final documentation and consistency cleanup
 - **Launch Follow-Ups After Redesign Review**
   - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
   - Configure Resend if email notifications should be sent automatically from contact submissions.
