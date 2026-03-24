@@ -6,6 +6,7 @@ import type {
   LocalizedArticle,
   LocalizedFAQItem,
   LocalizedService,
+  LocalizedWorkItem,
 } from "@/types/content";
 
 export type AppLocale = (typeof routing.locales)[number];
@@ -271,6 +272,55 @@ export function buildServiceListSchema(
       areaServed: siteConfig.location.country,
       url: getLocaleAbsoluteUrl(locale, "/services"),
     })),
+  };
+}
+
+export function buildWorkItemListSchema(
+  locale: AppLocale,
+  workItems: LocalizedWorkItem[],
+) {
+  if (workItems.length === 0) {
+    return null;
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: locale === "ro" ? "Studii de caz Growonio" : "Growonio Case Studies",
+    itemListElement: workItems.map((workItem, index) => ({
+      "@type": "CreativeWork",
+      position: index + 1,
+      name: workItem.title,
+      description: workItem.overview || workItem.description,
+      creator: {
+        "@id": `${getAbsoluteUrl("/")}#organization`,
+      },
+      image: workItem.image_url ? [getAbsoluteUrl(workItem.image_url)] : undefined,
+      url: getLocaleAbsoluteUrl(locale, `/work/${workItem.slug}`),
+    })),
+  };
+}
+
+export function buildWorkItemSchema(
+  locale: AppLocale,
+  workItem: LocalizedWorkItem,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: workItem.title,
+    description: workItem.overview || workItem.description,
+    url: getLocaleAbsoluteUrl(locale, `/work/${workItem.slug}`),
+    inLanguage: getLocaleMetadata(locale).hreflang,
+    image: workItem.image_url ? [getAbsoluteUrl(workItem.image_url)] : undefined,
+    about: workItem.industry || undefined,
+    keywords:
+      workItem.features && workItem.features.length > 0
+        ? workItem.features.join(", ")
+        : undefined,
+    creator: {
+      "@id": `${getAbsoluteUrl("/")}#organization`,
+    },
   };
 }
 
