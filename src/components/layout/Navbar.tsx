@@ -1,16 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import LanguageSwitcher from './LanguageSwitcher';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
+import { BrandMark } from './BrandMark';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 16);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const navLinks = [
     { href: '/' as const, label: t('home') },
@@ -21,21 +35,36 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="border-b border-border/40 bg-background/80 backdrop-blur-xl sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
+    <header
+      className={cn(
+        "sticky top-0 z-50 transition-all duration-300",
+        isScrolled ? "pt-3" : "pt-0",
+      )}
+    >
+      <nav
+        className={cn(
+          "mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8",
+          isScrolled
+            ? "h-[4.35rem] rounded-[1.6rem] border border-white/55 bg-white/78 shadow-[0_24px_60px_-34px_rgba(24,18,51,0.28)] backdrop-blur-2xl"
+            : "h-[4.85rem] border-b border-border/45 bg-background/72 backdrop-blur-xl",
+        )}
+      >
         <div className="flex items-center gap-8">
-          <Link href="/" className="text-xl font-bold tracking-tight" onClick={() => setMobileOpen(false)}>
-            Growonio
+          <Link href="/" onClick={() => setMobileOpen(false)}>
+            <BrandMark compact={isScrolled} />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 rounded-full border border-border/55 bg-white/72 p-1 shadow-[0_16px_32px_-28px_rgba(24,18,51,0.2)] backdrop-blur-xl">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground px-3 py-2 rounded-lg hover:bg-muted/50 transition-colors"
+                className={cn(
+                  "rounded-full px-3.5 py-2 text-sm font-medium transition-all duration-200",
+                  pathname === link.href
+                    ? "bg-foreground text-background shadow-[0_12px_25px_-18px_rgba(24,18,51,0.45)]"
+                    : "text-muted-foreground hover:bg-primary/8 hover:text-foreground",
+                )}
               >
                 {link.label}
               </Link>
@@ -43,21 +72,23 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Right side */}
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <Link
             href="/contact"
-            className={cn(buttonVariants({ variant: 'default', size: 'sm' }), 'rounded-full px-5 hidden sm:inline-flex')}
+            className={cn(
+              buttonVariants({ variant: 'default', size: 'sm' }),
+              'hidden rounded-full px-5 sm:inline-flex',
+            )}
           >
             {t('contact')}
+            <ArrowRight className="ml-1 h-3.5 w-3.5" />
           </Link>
 
-          {/* Mobile hamburger */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border/55 bg-white/78 text-muted-foreground shadow-[0_14px_28px_-24px_rgba(24,18,51,0.25)] transition-colors hover:text-foreground md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -65,21 +96,25 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl animate-in slide-in-from-top-2 duration-200">
-          <div className="px-4 py-4 space-y-1">
+        <div className="mx-4 mt-3 overflow-hidden rounded-[1.6rem] border border-white/55 bg-white/88 shadow-[0_24px_60px_-34px_rgba(24,18,51,0.28)] backdrop-blur-2xl animate-in slide-in-from-top-2 duration-200 md:hidden sm:mx-6">
+          <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                className={cn(
+                  "flex items-center rounded-[1rem] px-4 py-3 text-sm font-medium transition-colors",
+                  pathname === link.href
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:bg-primary/8 hover:text-foreground",
+                )}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-border/40 mt-2">
+            <div className="mt-2 border-t border-border/45 pt-3">
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
