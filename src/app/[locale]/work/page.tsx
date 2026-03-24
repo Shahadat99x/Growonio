@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Layers3, Settings2, Workflow } from "lucide-react";
+import { CheckCircle2, Layers3, Settings2, Workflow } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
+import { MotionReveal } from "@/components/motion/Reveal";
+import { InnerPageHero } from "@/components/sections/InnerPageHero";
+import { PremiumCtaPanel } from "@/components/sections/PremiumCtaPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { buttonVariants } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { WorkCaseStudyCard } from "@/components/work/WorkCaseStudyCard";
 import { Link } from "@/i18n/routing";
@@ -16,7 +18,6 @@ import {
   buildWorkItemListSchema,
   type AppLocale,
 } from "@/lib/seo";
-import { cn } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -51,6 +52,10 @@ export default async function WorkPage({
 
     return left.is_featured ? -1 : 1;
   });
+  const featuredItem = prioritizedItems[0] ?? null;
+  const remainingItems = featuredItem
+    ? prioritizedItems.filter((item) => item.id !== featuredItem.id)
+    : [];
 
   const heroIcons = [Layers3, Workflow, Settings2];
   const structuredData = [
@@ -65,121 +70,98 @@ export default async function WorkPage({
     <div className="overflow-hidden pb-24">
       <JsonLd data={structuredData} />
 
-      <Section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-primary/12 via-background to-background" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <InnerPageHero
+        badge={t("heroBadge")}
+        title={t("title")}
+        description={t("description")}
+        supportingLine={t("supportingLine")}
+        primaryAction={{ label: t("ctaPrimary"), href: "/contact" }}
+        secondaryAction={{ label: t("ctaSecondary"), href: "/pricing", variant: "outline" }}
+        chips={heroPoints.map((point, index) => {
+          const Icon = heroIcons[index] || CheckCircle2;
+          return { label: point, icon: <Icon className="h-4 w-4" /> };
+        })}
+        aside={
+          <div className="relative overflow-hidden rounded-[2.1rem] border border-border/60 bg-white/84 p-7 shadow-[0_24px_65px_-40px_rgba(24,18,51,0.24)] backdrop-blur-md">
+            <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top_left,rgba(129,93,255,0.16),transparent_72%)]" />
+            <p className="relative text-sm font-semibold uppercase tracking-[0.2em] text-primary/82">
+              {t("heroPanelEyebrow")}
+            </p>
+            <h2 className="relative mt-4 text-2xl font-semibold tracking-[-0.04em] text-foreground">
+              {t("heroPanelTitle")}
+            </h2>
+            <p className="relative mt-4 text-base leading-8 text-muted-foreground">
+              {t("heroPanelDescription")}
+            </p>
 
-        <Container className="relative z-10">
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
-                {t("heroBadge")}
+            <div className="relative mt-6 grid gap-3">
+              <div className="rounded-[1.35rem] border border-border/55 bg-background/76 px-4 py-3 text-sm font-medium text-foreground shadow-[0_16px_35px_-30px_rgba(24,18,51,0.18)]">
+                {items.length} {t("publishedLabel")}
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                {t("title")}
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                {t("description")}
-              </p>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground/90 md:text-lg">
-                {t("supportingLine")}
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className={cn(
-                    buttonVariants({ size: "lg" }),
-                    "rounded-full px-7 text-base font-semibold shadow-lg",
-                  )}
-                >
-                  {t("ctaPrimary")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "rounded-full px-7 text-base",
-                  )}
-                >
-                  {t("ctaSecondary")}
-                </Link>
+              <div className="rounded-[1.35rem] border border-border/55 bg-background/76 px-4 py-3 text-sm font-medium text-foreground shadow-[0_16px_35px_-30px_rgba(24,18,51,0.18)]">
+                {t("operationalFocusLabel")}
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-border/50 bg-background/85 p-7 shadow-xl shadow-primary/5 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/80">
-                {t("heroPanelEyebrow")}
-              </p>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground">
-                {t("heroPanelTitle")}
-              </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">
-                {t("heroPanelDescription")}
-              </p>
-
-              <div className="mt-6 space-y-3">
-                {heroPoints.map((point, index) => {
-                  const Icon = heroIcons[index] || CheckCircle2;
-
-                  return (
-                    <div
-                      key={point}
-                      className="flex items-start gap-3 rounded-2xl border border-border/50 bg-muted/40 px-4 py-3"
-                    >
-                      <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-sm leading-6 text-foreground/90">{point}</span>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/services"
-                  className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
-                >
-                  {t("servicesLinkLabel")}
-                </Link>
-                <Link
-                  href="/solutions"
-                  className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "rounded-full")}
-                >
-                  {t("solutionsLinkLabel")}
-                </Link>
-              </div>
+            <div className="relative mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/72 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/22 hover:text-primary"
+              >
+                {t("servicesLinkLabel")}
+              </Link>
+              <Link
+                href="/solutions"
+                className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/72 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/22 hover:text-primary"
+              >
+                {t("solutionsLinkLabel")}
+              </Link>
             </div>
           </div>
-        </Container>
-      </Section>
+        }
+      />
 
-      <Section className="bg-zinc-50 py-16 dark:bg-zinc-900/40 md:py-24">
+      <Section variant="tint">
         <Container>
-          <SectionHeader
-            title={t("gridTitle")}
-            description={t("gridDescription")}
-            className="mb-12 md:mb-16"
-          />
+          <MotionReveal>
+            <SectionHeader
+              badge={t("featuredLabel")}
+              align="left"
+              title={t("gridTitle")}
+              description={t("gridDescription")}
+              className="mb-12 max-w-none"
+            />
+          </MotionReveal>
 
-          {prioritizedItems.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:gap-8">
-              {prioritizedItems.map((item, index) => (
+          {featuredItem ? (
+            <div className="space-y-10">
+              <MotionReveal delay={0.06}>
                 <WorkCaseStudyCard
-                  key={item.id}
-                  item={item}
+                  item={featuredItem}
                   ctaLabel={t("viewProject")}
                   featuredLabel={t("featuredLabel")}
-                  featured={index === 0 && item.is_featured}
+                  featured
                 />
-              ))}
+              </MotionReveal>
+
+              {remainingItems.length > 0 && (
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:gap-8">
+                  {remainingItems.map((item, index) => (
+                    <MotionReveal key={item.id} delay={0.08 + index * 0.04}>
+                      <WorkCaseStudyCard
+                        item={item}
+                        ctaLabel={t("viewProject")}
+                        featuredLabel={t("featuredLabel")}
+                      />
+                    </MotionReveal>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
-            <div className="rounded-[2rem] border border-border/60 bg-background p-10 text-center shadow-sm shadow-black/5">
-              <h2 className="text-2xl font-bold tracking-tight">{t("emptyTitle")}</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
+            <div className="rounded-[2rem] border border-white/70 bg-white/88 p-10 text-center shadow-[0_20px_55px_-38px_rgba(24,18,51,0.18)] backdrop-blur-md">
+              <h2 className="text-2xl font-semibold tracking-[-0.04em]">{t("emptyTitle")}</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
                 {t("emptyDescription")}
               </p>
             </div>
@@ -187,67 +169,19 @@ export default async function WorkPage({
         </Container>
       </Section>
 
-      <Section className="pt-16 md:pt-24">
-        <Container className="max-w-5xl">
-          <div className="relative overflow-hidden rounded-[2.25rem] bg-primary px-6 py-10 text-primary-foreground shadow-2xl shadow-primary/20 md:px-12 md:py-14">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/18 via-transparent to-transparent" />
-
-            <div className="relative z-10">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                  {t("ctaTitle")}
-                </h2>
-                <p className="mt-5 text-base leading-8 text-primary-foreground/90 md:text-lg">
-                  {t("ctaText")}
-                </p>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className={cn(
-                    buttonVariants({ variant: "secondary", size: "lg" }),
-                    "rounded-full px-7 text-base font-semibold",
-                  )}
-                >
-                  {t("ctaPrimary")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "rounded-full border-white/25 bg-white/10 px-7 text-base text-white hover:bg-white/15 hover:text-white",
-                  )}
-                >
-                  {t("ctaSecondary")}
-                </Link>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/services"
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "sm" }),
-                    "rounded-full text-white hover:bg-white/10 hover:text-white",
-                  )}
-                >
-                  {t("servicesLinkLabel")}
-                </Link>
-                <Link
-                  href="/contact"
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "sm" }),
-                    "rounded-full text-white hover:bg-white/10 hover:text-white",
-                  )}
-                >
-                  {t("contactLinkLabel")}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <PremiumCtaPanel
+        badge={t("heroPanelEyebrow")}
+        title={t("ctaTitle")}
+        description={t("ctaText")}
+        primaryAction={{ label: t("ctaPrimary"), href: "/contact" }}
+        secondaryAction={{ label: t("ctaSecondary"), href: "/pricing" }}
+        microPoints={heroPoints.map((point, index) => {
+          const Icon = heroIcons[index] || CheckCircle2;
+          return { label: point, icon: <Icon className="h-4 w-4" /> };
+        })}
+        panelTitle={t("heroPanelTitle")}
+        panelDescription={t("heroPanelDescription")}
+      />
     </div>
   );
 }

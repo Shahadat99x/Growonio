@@ -38,11 +38,12 @@ export function WorkCaseStudyCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-background shadow-sm shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:border-border hover:shadow-2xl hover:shadow-primary/5",
+        "group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-white/86 shadow-[0_22px_60px_-40px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_30px_72px_-38px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]",
         featured ? "md:col-span-2 xl:grid xl:grid-cols-[1.1fr_0.9fr]" : "",
         className,
       )}
     >
+      <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top_left,rgba(129,93,255,0.14),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
       <div
         className={cn(
           "relative overflow-hidden border-b border-border/50 bg-zinc-100 dark:bg-zinc-900/70",
@@ -58,11 +59,11 @@ export function WorkCaseStudyCard({
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-6 md:p-8">
+      <div className="relative flex flex-1 flex-col p-6 md:p-8">
         <div className="flex flex-wrap items-center gap-3">
           <Badge
             variant="outline"
-            className="rounded-full border-primary/15 bg-primary/5 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary"
+            className="rounded-full border-primary/15 bg-primary/6 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary"
           >
             {item.industry}
           </Badge>
@@ -76,8 +77,10 @@ export function WorkCaseStudyCard({
           )}
         </div>
 
-        <p className="mt-5 text-sm font-medium text-primary/80">{item.client_name}</p>
-        <h3 className="mt-3 text-2xl font-bold tracking-tight text-foreground">
+        <p className="mt-5 text-[0.76rem] font-semibold uppercase tracking-[0.2em] text-primary/72">
+          {item.client_name}
+        </p>
+        <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-foreground">
           <Link href={`/work/${item.slug}`} className="transition-colors group-hover:text-primary">
             {item.title}
           </Link>
@@ -99,7 +102,7 @@ export function WorkCaseStudyCard({
           />
         )}
 
-        <div className="mt-auto pt-7">
+        <div className="mt-auto border-t border-border/55 pt-6">
           <Link
             href={`/work/${item.slug}`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"

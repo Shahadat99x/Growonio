@@ -9,8 +9,8 @@ import {
 } from "@/app/[locale]/contact/actions";
 import { SubmitButton } from "@/components/admin/SubmitButton";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const t = useTranslations("Shared");
@@ -32,7 +32,7 @@ export function ContactForm() {
     <form
       ref={formRef}
       action={formAction}
-      className="space-y-6 w-full max-w-xl mx-auto p-6 md:p-8 rounded-2xl border border-border/40 bg-card shadow-sm"
+      className="w-full rounded-[2.1rem] border border-border/60 bg-white/86 p-6 shadow-[0_24px_65px_-42px_rgba(24,18,51,0.2)] backdrop-blur-md md:p-8"
     >
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="source_path" value="/contact" />
@@ -45,47 +45,73 @@ export function ContactForm() {
         aria-hidden="true"
       />
 
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/82">
+          {tContact("formEyebrow")}
+        </p>
+        <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-foreground">
+          {tContact("formTitle")}
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
+          {tContact("formDescription")}
+        </p>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        {(tContact.raw("formChips") as string[]).map((chip) => (
+          <div
+            key={chip}
+            className="inline-flex items-center rounded-full border border-border/65 bg-background/76 px-4 py-2 text-sm font-medium text-foreground shadow-[0_12px_24px_-22px_rgba(24,18,51,0.18)]"
+          >
+            <span className="mr-2 h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_-1px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]" />
+            {chip}
+          </div>
+        ))}
+      </div>
+
       {state.error && (
-        <div className="rounded-md border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+        <div className="mt-6 rounded-[1rem] border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
           {state.error}
         </div>
       )}
 
       {state.success && (
-        <div className="rounded-md border border-emerald-500/30 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300">
+        <div className="mt-6 rounded-[1rem] border border-emerald-500/30 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300">
           {state.success}
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="first_name">{t('firstName')}</Label>
-          <Input id="first_name" name="first_name" required placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })} />
+          <Input id="first_name" name="first_name" required placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })} className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="last_name">{t('lastName')}</Label>
-          <Input id="last_name" name="last_name" required placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })} />
+          <Input id="last_name" name="last_name" required placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })} className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
         </div>
       </div>
       
-      <div className="space-y-2">
+      <div className="mt-6 space-y-2">
         <Label htmlFor="email">{t('email')}</Label>
-        <Input id="email" name="email" type="email" required placeholder="john@example.com" />
+        <Input id="email" name="email" type="email" required placeholder="john@example.com" className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
       </div>
 
-      <div className="space-y-2">
+      <div className="mt-6 space-y-2">
         <Label htmlFor="message">{t('message')}</Label>
         <Textarea 
           id="message" 
           name="message"
           required
           placeholder={t('messagePlaceholder')}
-          className="min-h-[140px] resize-y"
+          className="min-h-[160px] resize-y rounded-[1.1rem] border-border/60 bg-background/84"
         />
       </div>
 
-      <SubmitButton className="w-full">{t('sendMessage')}</SubmitButton>
-      <p className="text-sm text-muted-foreground">
+      <div className="mt-8">
+        <SubmitButton className="w-full rounded-full">{t('sendMessage')}</SubmitButton>
+      </div>
+      <p className="mt-4 text-sm leading-7 text-muted-foreground">
         {tContact("contactFormNote")}
       </p>
     </form>
