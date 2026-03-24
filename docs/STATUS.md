@@ -49,11 +49,58 @@
   - direct email fallback visible on the page
 - Legal/supporting trust routes now contain actual bilingual baseline content instead of placeholders.
 
+## Redesign Initiative: Premium Growth-Tech
+- A frontend redesign initiative is now active to move the site from clean-but-generic to a more premium, memorable, growth-tech presentation layer.
+- Phase 0 audit findings:
+  - the homepage and core marketing surfaces rely too heavily on centered layouts and repeated section patterns
+  - the header is functional but lacks premium hierarchy, stronger active states, and brand presence
+  - the current hero is structurally safe and conversion-capable, but visually generic and not signature-worthy
+  - cards across the site are too flat, too similar, and not differentiated enough between light, tinted, and feature sections
+  - section rhythm is consistent but repetitive, which lowers energy and memorability for a business selling modern digital systems
+  - the current visual identity uses a clean indigo system, but it does not yet express the approved branching-growth motif or premium contrast range
+- What should stay:
+  - bilingual architecture
+  - SEO-friendly page structure and metadata system
+  - admin/content boundaries
+  - current route structure and semantic marketing-page foundations
+- What should change:
+  - visual tokens, depth system, card surfaces, CTA styling, header behavior, and the homepage hero composition
+  - reusable section modes should be reduced to a clearer system: light, soft growth-tint, and bold feature sections
+  - motion should become a reusable layer with restrained reveal, float, and hover patterns instead of ad hoc transitions
+- Completed in this run:
+  - **Phase 0:** redesign audit locked in docs
+  - **Phase 1:** visual system foundations updated
+    - color tokens shifted toward a stronger premium violet / electric-indigo feel
+    - body background identity now uses subtle growth-tint gradients
+    - buttons, section headers, and cards were upgraded for stronger depth and hierarchy
+    - section mode system introduced in code: `light`, `tint`, `feature`
+  - **Phase 1A:** motion foundation added
+    - introduced reusable `MotionReveal` and `MotionFloat` primitives
+    - reduced-motion handling added globally
+    - homepage now uses restrained reveal timing instead of flat static entrances
+  - **Phase 2:** header and homepage hero redesigned
+    - sticky header now gains stronger premium treatment on scroll
+    - navigation hierarchy, active states, language switcher, and contact CTA were upgraded
+    - hero rebuilt into a left-content / right-visual signature section
+    - right-side hero visual now expresses the approved growth/workflow idea through layered rings, branching lines, and floating workflow panels
+    - homepage hero copy was upgraded in both English and Romanian to better match Growonio’s positioning
+
 ## Remaining Gaps / Next Focus
-- **Launch Follow-Ups Before Public Promotion**
+- **Redesign Execution**
+  - Phase 3: homepage section redesign
+    - redesign services preview
+    - redesign solutions/industries preview
+    - redesign process and trust sections with stronger layout variation
+    - improve CTA rhythm across the rest of the homepage
+  - Phase 4: inner-page redesign
+    - Services
+    - Pricing
+    - Work / Portfolio
+    - Insights
+    - Contact
+- **Launch Follow-Ups After Redesign Review**
   - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
   - Configure Resend if email notifications should be sent automatically from contact submissions.
   - Add the real GA4 measurement ID and Google Search Console verification token in production.
   - Submit `sitemap.xml` in Search Console after deployment and verify index coverage.
   - Replace the placeholder app icon with final brand artwork if a polished brand-specific icon is available.
-- **Phase 10:** Launch, monitoring, and post-launch optimization.

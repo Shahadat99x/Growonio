@@ -257,3 +257,38 @@ Reason:
 - “website/app development” alone is too generic
 - AI lowers the value of raw page production
 - value is in execution, structure, integration, and accountability
+
+---
+
+## 13. Premium Growth-Tech Redesign Direction
+
+Decision:
+**Adopt “Premium Growth-Tech” as the next frontend design direction**
+
+Meaning:
+
+- light base as the default canvas
+- selective tinted and bold feature sections for rhythm
+- stronger depth, hierarchy, and contrast than the current minimal system
+- violet / electric-indigo accent energy
+- subtle organic growth motifs inspired by layered rings and branching systems
+- restrained glass and motion only in strategic areas like the header, hero, and premium CTA surfaces
+
+Implementation rules:
+
+- no mascot-led or childish visuals
+- no full-site dark mode presentation by default
+- no random animation without product meaning
+- no broad one-off styling hacks that weaken maintainability
+
+System-level constraint:
+The redesign should be built around reusable section modes, reusable motion patterns, and reusable surface styles rather than page-specific decoration.
+
+Technical implementation notes:
+
+- use `motion` / Motion for React as the primary animation layer
+- keep GSAP out unless a later scroll-storytelling phase creates a clear need
+- lock the section-mode system to three reusable states only:
+  - `light`
+  - `tint`
+  - `feature`
