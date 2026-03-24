@@ -11,20 +11,21 @@ export function FeatureCard({ icon, title, description, className, ...props }: F
   return (
     <div
       className={cn(
-        "group flex flex-col items-start p-8 rounded-2xl bg-card border border-border/40 hover:border-border/80 hover:shadow-sm transition-all duration-300",
+        "group relative flex flex-col items-start overflow-hidden rounded-[1.75rem] border border-border/55 bg-white/82 p-8 shadow-[0_18px_45px_-30px_rgba(24,18,51,0.25)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_24px_55px_-28px_color-mix(in_oklab,var(--color-primary)_30%,transparent)] dark:bg-card/85",
         className
       )}
       {...props}
     >
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/28 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       {icon && (
-        <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 ring-1 ring-primary/20 group-hover:scale-110 transition-transform duration-300">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-primary/12 bg-primary/9 text-primary ring-1 ring-white/45 transition-transform duration-300 group-hover:scale-[1.04]">
           {icon}
         </div>
       )}
-      <h3 className="text-xl font-bold tracking-tight mb-3 text-foreground">
+      <h3 className="mb-3 text-xl font-semibold tracking-[-0.03em] text-foreground">
         {title}
       </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">
+      <p className="text-sm leading-7 text-muted-foreground">
         {description}
       </p>
     </div>

@@ -1,10 +1,12 @@
 {
   "Index": {
-    "title": "Bine ați venit la Growonio",
-    "description": "Automatizarea afacerii construită pentru creștere. Ajutăm afacerile de servicii să prospere în era digitală.",
+    "title": "Sisteme digitale care ajută afacerile de servicii să crească",
+    "description": "Growonio proiectează website-uri moderne, fluxuri de programări mai inteligente și sisteme practice de automatizare care transformă mai mulți vizitatori în clienți și reduc munca manuală.",
+    "supportingLine": "Construite pentru afaceri de servicii din România și nu numai, cu livrare bilingvă, structură pregătită pentru SEO și sisteme ușor de administrat încă din prima zi.",
     "metaTitle": "Automatizare pentru afaceri de servicii din România",
     "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
-    "cta": "Începe acum",
+    "cta": "Cere ofertă",
+    "heroSecondaryCta": "Descoperă Serviciile",
     "servicesPreviewTitle": "Serviciile Noastre",
     "servicesPreviewDesc": "Soluții digitale complete, adaptate pentru creșterea ta.",
     "solutionsPreviewTitle": "Industrii Deservite",
@@ -24,7 +26,25 @@
     "ctaHeading": "Ești gata să-ți automatizezi creșterea?",
     "ctaDesc": "Hai să discutăm cum procesul nostru transparent și tehnologia modernă pot eleva afacerea ta.",
     "ctaButton": "Programează o Consultare Gratuită",
-    "heroBadge": "Platformă de Automatizare",
+    "heroBadge": "Studio Premium de Growth-Tech",
+    "heroTrustChips": [
+      "Livrare bilingvă",
+      "Structură pregătită pentru SEO",
+      "Sisteme ușor de administrat"
+    ],
+    "heroVisualEyebrow": "Flux de creștere",
+    "heroVisualTitle": "De la prima cerere la operațiuni mai clare",
+    "heroVisualDescription": "Un proiect Growonio este construit ca un sistem care se ramifică: captare mai bună a cererilor, programări mai clare, administrare mai bună a clienților și fundații pregătite pentru raportare.",
+    "heroWorkflowSteps": [
+      "Captare Lead-uri",
+      "Flux de Programări",
+      "Administrare Clienți",
+      "Pregătit pentru Raportare"
+    ],
+    "heroFloatingLeadEyebrow": "Pregătit pentru Lead-uri",
+    "heroFloatingLeadText": "Pagini construite pentru conversie",
+    "heroFloatingReportEyebrow": "Strat de Raportare",
+    "heroFloatingReportText": "Vizibilitate pentru programări, CRM și follow-up",
     "exploreWork": "Vezi portofoliul",
     "readInsights": "Citește articolele"
   },

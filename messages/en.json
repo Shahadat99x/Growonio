@@ -1,10 +1,12 @@
 {
   "Index": {
-    "title": "Welcome to Growonio",
-    "description": "Business automation built for growth. Helping service businesses thrive in the digital age with modern software solutions.",
+    "title": "Digital systems that help service businesses grow",
+    "description": "Growonio designs modern websites, smarter booking flows, and practical automation systems that turn more visitors into clients and reduce manual work.",
+    "supportingLine": "Built for service businesses in Romania and beyond, with bilingual delivery, SEO-ready structure, and admin-friendly systems from day one.",
     "metaTitle": "Business Automation for Service Businesses in Romania",
     "metaDescription": "Growonio builds conversion-focused websites, automations, booking systems, and digital workflows for service businesses growing in Romania.",
-    "cta": "Get Started",
+    "cta": "Request a Quote",
+    "heroSecondaryCta": "Explore Services",
     "servicesPreviewTitle": "Our Services",
     "servicesPreviewDesc": "End-to-end digital solutions tailored to your growth.",
     "solutionsPreviewTitle": "Industries We Serve",
@@ -24,7 +26,25 @@
     "ctaHeading": "Ready to automate your growth?",
     "ctaDesc": "Let's talk about how our transparent process and modern tech stack can elevate your business.",
     "ctaButton": "Book a Free Consultation",
-    "heroBadge": "Business Automation Platform",
+    "heroBadge": "Premium Growth-Tech Studio",
+    "heroTrustChips": [
+      "Bilingual delivery",
+      "SEO-ready structure",
+      "Admin-ready systems"
+    ],
+    "heroVisualEyebrow": "Growth workflow",
+    "heroVisualTitle": "From first inquiry to cleaner operations",
+    "heroVisualDescription": "A Growonio project is built like a branching system: better lead capture, clearer booking flow, stronger client handling, and reporting-ready foundations.",
+    "heroWorkflowSteps": [
+      "Lead Capture",
+      "Booking Flow",
+      "Client Admin",
+      "Reporting Ready"
+    ],
+    "heroFloatingLeadEyebrow": "Lead Ready",
+    "heroFloatingLeadText": "Pages built to convert",
+    "heroFloatingReportEyebrow": "Reporting Layer",
+    "heroFloatingReportText": "Booking + CRM + follow-up visibility",
     "exploreWork": "Explore our work",
     "readInsights": "Read our insights"
   },

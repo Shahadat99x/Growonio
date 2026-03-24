@@ -1,25 +1,28 @@
-# Next Phase Plan: Phase 10
-**Focus:** Launch Execution, Monitoring, and Post-Launch Optimization
+# Next Phase Plan: Redesign Phases 3 to 4
+**Focus:** Homepage section redesign and consistent inner-page rollout
 
 ## Objective
-Take the now launch-hardened Growonio site through actual production rollout and the first post-launch feedback loop: deploy, monitor, validate indexing and measurement, and tighten the first wave of real-world issues without reopening large product scope.
+Extend the now-established Premium Growth-Tech system beyond the header and hero so the rest of the homepage and inner pages feel intentionally designed, higher contrast, and more conversion-oriented without losing semantic clarity or maintainability.
 
 ## Key Tasks
-- Deploy the current production build and confirm the final domain environment variables.
-- Apply the `contact_leads` migration in the live Supabase project if form submissions should persist there.
-- Verify GA4 event intake and Google Search Console ownership on the live domain.
-- Submit and monitor `sitemap.xml`, canonical coverage, and hreflang interpretation in Search Console.
-- Run a short post-launch QA pass on the live site:
-  - public route rendering
-  - admin authentication
-  - article publishing
-  - media uploads
-  - contact lead handling
-- Monitor logs and analytics for broken routes, missing assets, failed form submissions, or crawl anomalies.
-- Prioritize the first round of low-risk conversion/content improvements based on live data.
+- Redesign the rest of the homepage using the new section modes and motion system:
+  - services preview
+  - industries / solutions preview
+  - process section
+  - trust/proof layer
+  - homepage CTA block
+- Introduce healthier layout variation so the homepage no longer relies on repeated centered sections.
+- Roll the system into the main inner pages:
+  - Services
+  - Pricing
+  - Work / Portfolio
+  - Insights
+  - Contact
+- Keep section rhythm, card depth, and CTA treatments consistent across pages.
+- Re-run responsive QA and production build checks after each major page batch.
 
 ## Constraints
-- No large redesigns.
-- No admin rebuild.
-- Preserve the hybrid CMS boundary, current SEO layer, and proxy-based route protection.
-- Focus on real launch execution and measured follow-up rather than speculative feature work.
+- Do not break SEO structure, localized metadata, or the bilingual architecture.
+- Keep the site light-based overall; use tinted/dark feature sections selectively.
+- Avoid cartoon branding, mascot-led visuals, noisy motion, or blanket glassmorphism.
+- Preserve the hybrid CMS boundary and route structure.
