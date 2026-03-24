@@ -27,7 +27,7 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <Card className={cn(
-      "flex flex-col relative w-full border-border/40 shadow-sm transition-all hover:shadow-md",
+      "flex flex-col h-full relative w-full border-border/40 shadow-sm transition-all hover:shadow-md",
       isPopular && "border-primary shadow-primary/10 scale-105 z-10"
     )}>
       {isPopular && (
@@ -38,9 +38,8 @@ export function PricingCard({
       <CardHeader>
         <CardTitle className="text-xl font-bold tracking-tight">{title}</CardTitle>
         <CardDescription className="text-sm">{description}</CardDescription>
-        <div className="mt-4 flex items-baseline text-4xl font-extrabold tracking-tight">
+        <div className="mt-4 text-4xl font-extrabold tracking-tight">
           {price}
-          {price !== "Custom" && <span className="ml-1 text-xl font-medium text-muted-foreground tracking-normal">/mo</span>}
         </div>
       </CardHeader>
       <CardContent className="flex-1">
