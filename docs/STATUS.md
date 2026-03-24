@@ -92,15 +92,27 @@
     - the old generic trust row was replaced with a richer proof/value section that emphasizes bilingual delivery, SEO structure, admin usability, and automation readiness
     - the homepage CTA was redesigned into a more signature closing section with stronger layering, trust notes, and better button hierarchy
     - homepage translation content in both English and Romanian was expanded so the redesigned sections have more specific, business-focused copy and not generic brochure text
+  - **Phase 4:** inner pages redesigned to align with the Premium Growth-Tech homepage quality
+    - introduced reusable inner-page primitives:
+      - `InnerPageHero`
+      - `PremiumCtaPanel`
+    - Services page now uses a stronger hero, more productized service modules, richer included-capabilities treatment, upgraded industry cards, a better dark process section, and a stronger premium CTA close
+    - Pricing page was rebuilt with a premium hero, clearer package comparison framing, upgraded pricing/support cards, stronger custom-project positioning, improved FAQ treatment, and a more useful closing CTA
+    - Work / Portfolio page now uses the shared premium hero system, a stronger featured-case-study presentation, upgraded work card surfaces, and a more consistent premium proof/CTA rhythm
+    - Insights page gained a stronger editorial hero, better featured-article treatment, more premium article cards, and a stronger article-to-contact CTA path
+    - Contact page now feels more high-trust and conversion-ready through a stronger hero, richer contact-context panel, upgraded form presentation, and better project-fit framing
+    - bilingual translation content was extended again for inner-page hero copy, panel copy, support framing, editorial framing, and CTA support text
+    - shared inner-page surfaces were upgraded:
+      - pricing cards
+      - support plan cards
+      - custom projects banner
+      - infrastructure note
+      - FAQ accordion
+      - work case-study card
+      - contact form
 
 ## Remaining Gaps / Next Focus
 - **Redesign Execution**
-  - Phase 4: inner-page redesign
-    - Services
-    - Pricing
-    - Work / Portfolio
-    - Insights
-    - Contact
   - Phase 5: footer and global polish
     - redesign footer structure and premium brand block
     - tighten section-to-section cohesion across the full site

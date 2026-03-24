@@ -311,3 +311,22 @@ Reason:
 - the homepage needed a stronger sense of progression after the hero
 - keeping the redesign inside dedicated section components is cleaner than pushing complex one-off markup into `page.tsx`
 - asymmetric composition helps the premium growth-tech direction feel intentional without forcing the same art direction onto every other page
+
+---
+
+## 15. Inner Page Phase 4 System Decision
+
+Decision:
+**Use shared inner-page hero and premium CTA primitives across the main public inner pages**
+
+Implementation shape:
+
+- introduced reusable `InnerPageHero` and `PremiumCtaPanel` components
+- Services, Pricing, Work, Insights, and Contact now share a stronger structural shell while still allowing page-specific right-panel content and section composition
+- page-specific surfaces can remain specialized, but the hero/CTA rhythm should stay consistent enough that the site feels like one product/studio system
+
+Reason:
+
+- the homepage redesign established a much higher visual quality bar than the inner pages
+- using shared hero and CTA primitives is cleaner and more maintainable than rebuilding those patterns separately on every route
+- the inner pages needed to catch up in quality without collapsing into five nearly identical page templates
