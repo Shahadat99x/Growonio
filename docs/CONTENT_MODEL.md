@@ -33,6 +33,12 @@ Showcases previous client transformations.
 - `client_name`: string
 - `industry_en`, `industry_ro`: string
 - `description_en`, `description_ro`: text
+- `overview_en`, `overview_ro`: text (optional richer case-study intro)
+- `challenge_en`, `challenge_ro`: text (optional)
+- `solution_en`, `solution_ro`: text (optional)
+- `results_en`, `results_ro`: text (optional)
+- `features_en`, `features_ro`: jsonb array of strings
+- `live_url`: string (optional public project URL)
 - `image_url`: string (optional)
 - `image_public_id`: string (Cloudinary asset id for tracked cleanup)
 - `image_alt_en`, `image_alt_ro`: string (optional localized alt text)
@@ -41,6 +47,16 @@ Showcases previous client transformations.
 - `is_featured`: boolean
 - `order`: integer
 - `is_active`: boolean
+
+### Work Item Gallery
+Supports multiple case-study images per work item.
+- `id`: uuid (PK)
+- `work_item_id`: uuid (FK to `work_items`)
+- `image_url`: string
+- `image_public_id`: string (optional Cloudinary cleanup id)
+- `alt_en`, `alt_ro`: string (optional localized alt text)
+- `image_width`, `image_height`: integer (optional intrinsic dimensions)
+- `sort_order`: integer
 
 ## 4. FAQ Items
 Business-oriented questions.

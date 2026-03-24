@@ -15,6 +15,8 @@ export interface Service extends BaseEntity {
   title_ro: string;
   description_en: string;
   description_ro: string;
+  bullet_points_en: string[];
+  bullet_points_ro: string[];
   icon_name: string;
 }
 
@@ -41,6 +43,17 @@ export interface WorkItem extends BaseEntity {
   industry_ro: string;
   description_en: string;
   description_ro: string;
+  overview_en: string | null;
+  overview_ro: string | null;
+  challenge_en: string | null;
+  challenge_ro: string | null;
+  solution_en: string | null;
+  solution_ro: string | null;
+  results_en: string | null;
+  results_ro: string | null;
+  features_en: string[];
+  features_ro: string[];
+  live_url: string | null;
   image_url: string | null;
   image_public_id: string | null;
   image_alt_en: string | null;
@@ -49,6 +62,19 @@ export interface WorkItem extends BaseEntity {
   image_height: number | null;
   stats: { label: string; value: string }[];
   is_featured: boolean;
+  gallery_items?: WorkItemGalleryItem[];
+}
+
+export interface WorkItemGalleryItem {
+  id: string;
+  work_item_id: string;
+  image_url: string;
+  image_public_id: string | null;
+  alt_en: string | null;
+  alt_ro: string | null;
+  image_width: number | null;
+  image_height: number | null;
+  sort_order: number;
 }
 
 export interface FAQItem extends BaseEntity {
@@ -96,6 +122,7 @@ export interface LocalizedService {
   slug: string;
   title: string;
   description: string;
+  bullet_points: string[];
   icon_name: string;
 }
 
@@ -115,15 +142,33 @@ export interface LocalizedWorkItem {
   client_name: string;
   industry: string;
   description: string;
+  overview?: string | null;
+  challenge?: string | null;
+  solution?: string | null;
+  results?: string | null;
+  features?: string[];
+  live_url?: string | null;
   image_url: string | null;
   image_public_id: string | null;
   image_alt: string | null;
   image_width: number | null;
   image_height: number | null;
   stats: { label: string; value: string }[];
+  gallery_items?: LocalizedWorkItemGalleryItem[];
   is_featured: boolean;
   order: number;
   isActive: boolean;
+}
+
+export interface LocalizedWorkItemGalleryItem {
+  id: string;
+  work_item_id: string;
+  image_url: string;
+  image_public_id: string | null;
+  alt: string | null;
+  image_width: number | null;
+  image_height: number | null;
+  sort_order: number;
 }
 
 export interface LocalizedPricingPackage {

@@ -28,12 +28,19 @@ export default async function WorkItemEditor({ params }: { params: Promise<{ id:
 
   if (!isNew) {
     const supabase = await requireAdminClient();
-    const { data } = await supabase.from("work_items").select("*").eq("id", id).single();
+    const { data } = await supabase
+      .from("work_items")
+      .select("*, work_item_gallery(*)")
+      .eq("id", id)
+      .single();
     if (!data) {
       notFound();
     }
 
-    work = data as WorkItemEditorRecord;
+    work = {
+      ...data,
+      gallery_items: Array.isArray(data.work_item_gallery) ? data.work_item_gallery : [],
+    } as WorkItemEditorRecord;
   }
 
   return (

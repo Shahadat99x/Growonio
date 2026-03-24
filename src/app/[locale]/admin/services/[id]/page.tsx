@@ -33,13 +33,15 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
   }
   
   let service:
-    | {
+      | {
         slug: string;
         icon_name: string | null;
         title_en: string;
         title_ro: string;
         description_en: string;
         description_ro: string;
+        bullet_points_en: string[] | null;
+        bullet_points_ro: string[] | null;
         sort_order: number | null;
         is_active: boolean | null;
       }
@@ -99,6 +101,39 @@ export default async function ServiceEditor({ params }: { params: Promise<{ id: 
             <div className="space-y-2">
               <Label htmlFor="description_ro">Description (Romanian)</Label>
               <Textarea id="description_ro" name="description_ro" defaultValue={service?.description_ro} required rows={4} />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 border-t pt-6">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label>Bullet Points (English)</Label>
+                <p className="text-sm text-muted-foreground">Add exactly 3 short supporting bullets for the public service card.</p>
+              </div>
+              {[0, 1, 2].map((index) => (
+                <Input
+                  key={`en-${index}`}
+                  name={`bullet_points_en_${index}`}
+                  defaultValue={service?.bullet_points_en?.[index] ?? ""}
+                  required
+                  placeholder={`English bullet ${index + 1}`}
+                />
+              ))}
+            </div>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label>Puncte Cheie (Romana)</Label>
+                <p className="text-sm text-muted-foreground">Adauga exact 3 puncte scurte care apar pe cardul public al serviciului.</p>
+              </div>
+              {[0, 1, 2].map((index) => (
+                <Input
+                  key={`ro-${index}`}
+                  name={`bullet_points_ro_${index}`}
+                  defaultValue={service?.bullet_points_ro?.[index] ?? ""}
+                  required
+                  placeholder={`Punct ${index + 1} in romana`}
+                />
+              ))}
             </div>
           </div>
 

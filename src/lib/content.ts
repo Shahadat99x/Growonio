@@ -3,6 +3,7 @@ import {
   LocalizedService, 
   LocalizedPricingPackage, 
   LocalizedWorkItem, 
+  LocalizedWorkItemGalleryItem,
   LocalizedFAQItem,
   LocalizedArticle,
 } from "@/types/content";
@@ -39,6 +40,33 @@ function localizeEntity<T extends Record<string, unknown>>(
   }
   
   return result;
+}
+
+function localizeWorkItemGallery(
+  galleryItems: Record<string, unknown>[] | null | undefined,
+  locale: string,
+): LocalizedWorkItemGalleryItem[] {
+  if (!Array.isArray(galleryItems)) {
+    return [];
+  }
+
+  return galleryItems
+    .slice()
+    .sort(
+      (left, right) =>
+        Number((left.sort_order as number | null | undefined) ?? 0) -
+        Number((right.sort_order as number | null | undefined) ?? 0),
+    )
+    .map((item) => {
+      const localized = { ...item } as Record<string, unknown>;
+      const altKey = locale === "ro" ? "alt_ro" : "alt_en";
+
+      localized.alt = (item[altKey] as string | null | undefined) ?? null;
+      delete localized.alt_en;
+      delete localized.alt_ro;
+
+      return localized as unknown as LocalizedWorkItemGalleryItem;
+    });
 }
 
 export async function getServices(locale: string = "en"): Promise<LocalizedService[]> {
@@ -92,6 +120,36 @@ export async function getWorkItems(locale: string = "en"): Promise<LocalizedWork
   } catch (err) {
     console.error("Failed to fetch work_items:", err);
     return [];
+  }
+}
+
+export async function getWorkItemBySlug(
+  slug: string,
+  locale: string = "en",
+): Promise<LocalizedWorkItem | null> {
+  try {
+    const supabase = createPublicClient();
+    const { data, error } = await supabase
+      .from("work_items")
+      .select("*, work_item_gallery(*)")
+      .eq("slug", slug)
+      .eq("is_active", true)
+      .single();
+
+    if (error) throw error;
+    if (!data) return null;
+
+    const localized = localizeEntity(data, locale) as Record<string, unknown>;
+    localized.gallery_items = localizeWorkItemGallery(
+      data.work_item_gallery as Record<string, unknown>[] | undefined,
+      locale,
+    );
+    delete localized.work_item_gallery;
+
+    return localized as unknown as LocalizedWorkItem;
+  } catch (err) {
+    console.error("Failed to fetch work item by slug:", err);
+    return null;
   }
 }
 

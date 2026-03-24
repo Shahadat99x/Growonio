@@ -52,11 +52,40 @@ CREATE TABLE work_items (
     industry_ro VARCHAR(255),
     description_en TEXT NOT NULL,
     description_ro TEXT NOT NULL,
+    overview_en TEXT,
+    overview_ro TEXT,
+    challenge_en TEXT,
+    challenge_ro TEXT,
+    solution_en TEXT,
+    solution_ro TEXT,
+    results_en TEXT,
+    results_ro TEXT,
+    features_en JSONB DEFAULT '[]'::jsonb,
+    features_ro JSONB DEFAULT '[]'::jsonb,
+    live_url TEXT,
     image_url TEXT,
+    image_public_id TEXT,
+    image_alt_en TEXT,
+    image_alt_ro TEXT,
+    image_width INTEGER,
+    image_height INTEGER,
     stats JSONB DEFAULT '[]'::jsonb,
     is_featured BOOLEAN DEFAULT false,
     sort_order INTEGER DEFAULT 0,
     is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+CREATE TABLE work_item_gallery (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    work_item_id UUID NOT NULL REFERENCES work_items(id) ON DELETE CASCADE,
+    image_url TEXT NOT NULL,
+    image_public_id TEXT,
+    alt_en TEXT,
+    alt_ro TEXT,
+    image_width INTEGER,
+    image_height INTEGER,
+    sort_order INTEGER DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
