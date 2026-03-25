@@ -543,7 +543,23 @@
     "contactFormNote": "Dacă formularul nu funcționează, ne poți scrie direct pe email și îți răspundem."
   },
   "Footer": {
+    "eyebrow": "Studio Growonio",
+    "title": "Sisteme digitale gândite pentru creșterea afacerilor de servicii",
     "description": "Automatizare construită pentru creștere pentru afaceri de servicii care au nevoie de website-uri mai bune, operațiuni mai clare și sisteme digitale practice.",
+    "contactTitle": "Contact direct",
+    "contactDescription": "Începe cu un mesaj scurt despre afacere, blocajul actual și tipul de sistem pe care vrei să îl îmbunătățești.",
+    "availabilityLabel": "Disponibilitate",
+    "availabilityValue": "România + livrare internațională",
+    "responseLabel": "Timp de răspuns",
+    "responseValue": "De obicei în maximum o zi lucrătoare",
+    "ctaPrimary": "Cere ofertă",
+    "ctaSecondary": "Vezi prețurile",
+    "whatsapp": "WhatsApp",
+    "microPoints": [
+      "Livrare bilingvă",
+      "Structură pregătită pentru SEO",
+      "Gândire practică pentru automatizare"
+    ],
     "company": "Companie",
     "services": "Servicii",
     "resources": "Resurse",

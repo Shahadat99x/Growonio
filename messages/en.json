@@ -543,7 +543,23 @@
     "contactFormNote": "If the form ever fails, email us directly and we will still respond."
   },
   "Footer": {
+    "eyebrow": "Growonio Studio",
+    "title": "Digital systems shaped for service-business growth",
     "description": "Business automation built for growth for service businesses that need stronger websites, cleaner operations, and practical digital systems.",
+    "contactTitle": "Direct contact",
+    "contactDescription": "Start with a short message about the business, the current bottleneck, and the kind of system you want to improve.",
+    "availabilityLabel": "Availability",
+    "availabilityValue": "Romania + international delivery",
+    "responseLabel": "Typical response",
+    "responseValue": "Usually within one business day",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "View Pricing",
+    "whatsapp": "WhatsApp",
+    "microPoints": [
+      "Bilingual delivery",
+      "SEO-aware structure",
+      "Practical automation thinking"
+    ],
     "company": "Company",
     "services": "Services",
     "resources": "Resources",

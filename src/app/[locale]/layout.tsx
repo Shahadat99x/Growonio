@@ -55,7 +55,17 @@ export default async function LocaleLayout(props: {
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main className="flex-1 overflow-hidden">{props.children}</main>
+          <main className="relative isolate flex-1 overflow-hidden">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[26rem] bg-[radial-gradient(circle_at_top,rgba(129,93,255,0.08),transparent_64%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute right-[-8rem] top-[26rem] -z-10 h-72 w-72 rounded-full bg-primary/6 blur-3xl"
+            />
+            {props.children}
+          </main>
           <Footer />
           <GoogleAnalytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || null}
