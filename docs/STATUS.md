@@ -117,17 +117,21 @@
     - restrained motion was extended through additional footer reveals, stronger focus-within/hover behavior on work cards, and smoother FAQ interaction surfaces
     - public-form polish was tightened through more intentional field treatment, better feedback states, and accessibility improvements like `aria-live`, `role`, and useful autocomplete attributes
     - responsive and polish cleanup focused on keeping the public site cohesive from hero to footer instead of introducing another round of page-specific redesign churn
+  - **Phase 6:** final launch polish, SEO/content review, and QA
+    - fixed the metadata title strategy so page-level titles now resolve as absolute values, preventing duplicate brand suffixes when combined with the localized layout title template
+    - added final accessibility polish in the nav and language switcher through stronger focus states, `aria-current`, `aria-expanded`, and localized language-toggle labels
+    - brought the lighter public routes up to the premium system quality bar:
+      - About now uses the shared inner-page hero and premium CTA rhythm with stronger brand/process positioning
+      - Solutions now presents industry-fit positioning with richer business-type cards and a stronger supporting panel
+      - FAQ now feels like part of the same public system, with a premium hero, clearer answer framing, and a stronger closing CTA
+    - expanded bilingual content for About, Solutions, and FAQ so those pages are no longer visually improved but textually thin
+    - performed a final launch-quality verification pass with both `npm run lint` and `npm run build`
 
 ## Remaining Gaps / Next Focus
-- **Redesign Execution**
-  - Phase 6: final launch polish + SEO/content/QA review
-    - run a final consistency pass across copy density, CTA hierarchy, and small UI mismatches that remain after the redesign rollout
-    - re-check SEO and content surfaces for any thin sections, metadata gaps, or weak internal-link opportunities
-    - do a launch-oriented QA pass for responsive behavior, accessibility, and performance on the fully redesigned public site
-    - keep the case-study detail pages on watch, but they are no longer the primary design gap after the shared shell/footer pass
-- **Launch Follow-Ups After Redesign Review**
+- **Launch / Deployment Follow-Ups**
   - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
   - Configure Resend if email notifications should be sent automatically from contact submissions.
   - Add the real GA4 measurement ID and Google Search Console verification token in production.
   - Submit `sitemap.xml` in Search Console after deployment and verify index coverage.
   - Replace the placeholder app icon with final brand artwork if a polished brand-specific icon is available.
+  - The public legal pages are structurally ready and production-safe, but they still use a simpler presentation layer than the main marketing routes; treat that as a non-blocking follow-up rather than a launch blocker.

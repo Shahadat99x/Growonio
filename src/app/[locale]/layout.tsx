@@ -7,6 +7,7 @@ import "@/app/globals.css";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/lib/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export async function generateMetadata(props: {
   const t = await getTranslations({ locale, namespace: "Index" });
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title: {
       default: t("metaTitle"),
       template: `%s | Growonio`,

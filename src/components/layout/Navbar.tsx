@@ -59,8 +59,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={pathname === link.href ? 'page' : undefined}
                 className={cn(
-                  "rounded-full px-3.5 py-2 text-sm font-medium transition-all duration-200",
+                  "rounded-full px-3.5 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                   pathname === link.href
                     ? "bg-foreground text-background shadow-[0_12px_25px_-18px_rgba(24,18,51,0.45)]"
                     : "text-muted-foreground hover:bg-primary/8 hover:text-foreground",
@@ -88,8 +89,10 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border/55 bg-white/78 text-muted-foreground shadow-[0_14px_28px_-24px_rgba(24,18,51,0.25)] transition-colors hover:text-foreground md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border/55 bg-white/78 text-muted-foreground shadow-[0_14px_28px_-24px_rgba(24,18,51,0.25)] transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 md:hidden"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -97,15 +100,19 @@ export default function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="mx-4 mt-3 overflow-hidden rounded-[1.6rem] border border-white/55 bg-white/88 shadow-[0_24px_60px_-34px_rgba(24,18,51,0.28)] backdrop-blur-2xl animate-in slide-in-from-top-2 duration-200 md:hidden sm:mx-6">
+        <div
+          id="mobile-navigation"
+          className="mx-4 mt-3 overflow-hidden rounded-[1.6rem] border border-white/55 bg-white/88 shadow-[0_24px_60px_-34px_rgba(24,18,51,0.28)] backdrop-blur-2xl animate-in slide-in-from-top-2 duration-200 md:hidden sm:mx-6"
+        >
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
+                aria-current={pathname === link.href ? 'page' : undefined}
                 className={cn(
-                  "flex items-center rounded-[1rem] px-4 py-3 text-sm font-medium transition-colors",
+                  "flex items-center rounded-[1rem] px-4 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                   pathname === link.href
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:bg-primary/8 hover:text-foreground",

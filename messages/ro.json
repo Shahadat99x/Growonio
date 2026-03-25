@@ -3,7 +3,7 @@
     "title": "Sisteme digitale care ajută afacerile de servicii să crească",
     "description": "Growonio proiectează website-uri moderne, fluxuri de programări mai inteligente și sisteme practice de automatizare care transformă mai mulți vizitatori în clienți și reduc munca manuală.",
     "supportingLine": "Construite pentru afaceri de servicii din România și nu numai, cu livrare bilingvă, structură pregătită pentru SEO și sisteme ușor de administrat încă din prima zi.",
-    "metaTitle": "Automatizare pentru afaceri de servicii din România",
+    "metaTitle": "Growonio | Automatizare pentru afaceri de servicii din România",
     "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
     "cta": "Cere ofertă",
     "heroSecondaryCta": "Descoperă Serviciile",
@@ -411,15 +411,79 @@
   },
   "SolutionsPage": {
     "title": "Soluții pe Industrii",
-    "description": "Strategii digitale adaptate pentru afacerile orientate pe servicii.",
+    "description": "Sisteme digitale adaptate afacerilor de servicii care depind de încredere, cereri, programări și operațiuni mai clare.",
     "metaTitle": "Soluții digitale pentru saloane, clinici și consultanți",
     "metaDescription": "Vezi cum adaptează Growonio automatizările, website-urile și fluxurile cu clienții pentru saloane, clinici, consultanți și alte afaceri de servicii.",
-    "salons": "Saloane & Frumusețe",
-    "salonsDesc": "Sisteme integrate de programări și loialitate.",
-    "clinics": "Clinici & Sănătate",
-    "clinicsDesc": "Management securizat al pacienților.",
-    "consultants": "Consultanți & Agenții",
-    "consultantsDesc": "Portaluri profesionale pentru clienți și captare lead-uri.",
+    "heroBadge": "Soluții Growonio",
+    "heroSupportingLine": "Adaptăm website-uri, logică de programări, captare de cereri și claritate operațională în jurul modului real în care funcționează fiecare tip de afacere.",
+    "heroPanelEyebrow": "Poziționare potrivită",
+    "heroPanelTitle": "Gândite pentru afaceri de servicii cu presiune operațională reală",
+    "heroPanelDescription": "Growonio este cel mai potrivit acolo unde încrederea online, răspunsul mai rapid și fluxurile mai simple influențează direct programările, cererile și coordonarea zilnică.",
+    "heroPoints": [
+      "Structură potrivită industriei",
+      "Claritate pentru lead-uri și programări",
+      "Livrare bilingvă pregătită pentru SEO"
+    ],
+    "industriesBadge": "Tipuri de Afaceri",
+    "industriesTitle": "Unde se potrivește cel mai bine Growonio",
+    "industriesDescription": "Fiecare direcție de soluție combină poziționare, gestionarea cererilor, structură de conținut și claritate administrativă în jurul nevoilor unui model real de afacere de servicii.",
+    "industryItems": [
+      {
+        "title": "Saloane și Afaceri din Beauty",
+        "description": "Pentru afaceri care au nevoie de prezentare locală puternică, trasee de programare orientate spre conversie și o structură mai clară a serviciilor pentru vizite recurente.",
+        "tags": [
+          "Meniuri de servicii",
+          "Fluxuri de programări",
+          "Suport pentru retenție"
+        ]
+      },
+      {
+        "title": "Clinici și Servicii Bazate pe Programări",
+        "description": "Pentru echipe care au nevoie de prezentare bazată pe încredere, programări mai fluide și mai puțină fricțiune în activitatea de recepție.",
+        "tags": [
+          "Ierarhie clară a serviciilor",
+          "Programare structurată",
+          "Claritate operațională"
+        ]
+      },
+      {
+        "title": "Consultanți și Firme de Servicii",
+        "description": "Pentru firme care au nevoie de o prezență mai credibilă, calificare mai bună a cererilor și follow-up mai puternic în jurul vânzării serviciilor.",
+        "tags": [
+          "Calificare lead-uri",
+          "Poziționare profesională",
+          "Follow-up mai rapid"
+        ]
+      },
+      {
+        "title": "Afaceri Locale de Servicii",
+        "description": "Pentru afaceri care depind de încredere locală, cereri rapide și sisteme simple pe care echipa le poate administra după lansare.",
+        "tags": [
+          "Vizibilitate locală",
+          "Cereri rapide",
+          "Control ușor de administrat"
+        ]
+      }
+    ],
+    "supportPoints": [
+      "Setup bilingv",
+      "Structură de pagină pregătită pentru SEO",
+      "Control administrativ ușor",
+      "Fluxuri de programări și cereri"
+    ],
+    "supportPanelEyebrow": "În fiecare build",
+    "supportPanelTitle": "Fundații comune care rămân totuși flexibile",
+    "supportPanelDescription": "Fiecare soluție poate include structură bilingvă, planificare SEO, utilizare administrativă clară, logică de programări și loc pentru automatizare ulterioară fără a forța același șablon pentru orice business.",
+    "ctaBadge": "Planifică potrivirea corectă",
+    "ctaTitle": "Ai nevoie de o soluție adaptată tipului tău de afacere?",
+    "ctaDescription": "Growonio poate recomanda structura de pornire potrivită în funcție de servicii, fluxul cu clienții și blocajele operaționale.",
+    "ctaPanelTitle": "Scop practic înaintea build-urilor prea mari",
+    "ctaPanelDescription": "Cea mai bună soluție este cea care se potrivește etapei actuale a afacerii, traseului clientului și capacității echipei, păstrând totodată loc pentru creștere ulterioară.",
+    "ctaPoints": [
+      "Claritate înainte de dezvoltare",
+      "Context real de business",
+      "Construit să poată scala mai târziu"
+    ],
     "servicesLinkLabel": "Descoperă serviciile",
     "contactLinkLabel": "Discută despre afacerea ta"
   },
@@ -485,20 +549,84 @@
     "description": "Credem în software care lucrează pentru tine, nu invers.",
     "metaTitle": "Despre Growonio",
     "metaDescription": "Află cum abordează Growonio automatizarea afacerii, execuția premium și creșterea digitală practică pentru afaceri de servicii.",
+    "heroBadge": "Despre Growonio",
+    "heroSupportingLine": "Lucrăm ca un partener digital concentrat pentru afaceri de servicii care au nevoie de claritate, sisteme utile și execuție responsabilă.",
+    "heroPanelEyebrow": "Studio mic, livrare practică",
+    "heroPanelTitle": "Construit să rămână focusat, nu umflat artificial",
+    "heroPanelDescription": "Growonio rămâne intenționat concentrat: website-uri, fluxuri de programări, captare de lead-uri, utilizare administrativă clară și automatizare practică pentru afaceri de servicii.",
+    "heroPoints": [
+      "Strategie orientată spre rezultat",
+      "Livrare în română și engleză",
+      "Scop clar și suport la lansare"
+    ],
     "mission": "Misiunea Noastră",
     "missionDesc": "Să facem automatizarea accesibilă afacerilor de servicii de pretutindeni.",
-    "value1Title": "Proces Transparent",
-    "value1Desc": "Evităm munca de agenție opacă. Știi ce se construiește, când se livrează și cum susține creșterea.",
-    "value2Title": "Construit pentru Creștere",
-    "value2Desc": "Creăm sisteme care captează lead-uri, gestionează programări și elimină munca administrativă repetitivă."
+    "missionLead": "Scopul nu este să vindem inovație vagă. Construim sisteme digitale care ajută afacerile să pară mai credibile, să gestioneze cererea mai bine și să reducă fricțiunea manuală.",
+    "principlesBadge": "Principii de Lucru",
+    "principlesTitle": "Cum abordează Growonio fiecare proiect",
+    "principlesDescription": "Fiecare livrare este construită în jurul clarității de business, calității tehnice și utilității pe termen lung după lansare.",
+    "values": [
+      {
+        "title": "Proces Transparent",
+        "description": "Evităm munca de agenție opacă. Știi ce se construiește, când se livrează și cum susține creșterea."
+      },
+      {
+        "title": "Construit pentru Creștere",
+        "description": "Creăm sisteme care captează lead-uri, gestionează programări și elimină munca administrativă repetitivă."
+      },
+      {
+        "title": "Colaborare Practică",
+        "description": "Comunicarea rămâne concisă, etapizată și legată de decizii reale de business, nu de teatru de agenție."
+      }
+    ],
+    "ctaBadge": "Discuția Următoare",
+    "ctaTitle": "Ai nevoie de un partener digital care păstrează lucrurile practice?",
+    "ctaDescription": "Growonio ajută afacerile de servicii să lanseze sisteme credibile, ușor de gestionat și construite în jurul fluxurilor reale.",
+    "ctaPrimary": "Cere ofertă",
+    "ctaSecondary": "Descoperă Serviciile",
+    "ctaPanelTitle": "Scop focusat. Livrare clară. Sisteme utile.",
+    "ctaPanelDescription": "Obiectivul este să recomandăm build-ul potrivit pentru etapa actuală a afacerii, lăsând loc pentru conținut mai bun, operațiuni mai fluide și automatizare ulterioară.",
+    "ctaPoints": [
+      "Planificare orientată spre business",
+      "Livrare bilingvă",
+      "Suport inclus la lansare"
+    ]
   },
   "FAQPage": {
     "title": "Întrebări Frecvente",
     "description": "Tot ce trebuie să știi despre colaborarea cu noi.",
     "metaTitle": "Întrebări frecvente despre colaborarea cu Growonio",
     "metaDescription": "Primește răspunsuri despre prețuri, livrare, colaborare și ce poți aștepta când construiești sisteme de creștere cu Growonio.",
+    "heroBadge": "FAQ Growonio",
+    "heroSupportingLine": "Aceste răspunsuri sunt scrise pentru a elimina incertitudinea legată de prețuri, livrare, colaborare și ce se întâmplă după lansare.",
+    "heroPanelEyebrow": "Claritate rapidă",
+    "heroPanelTitle": "Răspunsuri directe înainte de primul apel",
+    "heroPanelDescription": "FAQ-ul ajută afacerile să înțeleagă ce include Growonio, cum sunt dimensionate proiectele și la ce tip de suport se pot aștepta după lansare.",
+    "heroPoints": [
+      "Așteptări clare",
+      "Răspunsuri practice despre livrare",
+      "Construite pentru decizii reale de cumpărare"
+    ],
+    "faqCountLabel": "răspunsuri publicate",
+    "faqSupportLabel": "Ai nevoie de un răspuns direct?",
+    "faqSupportValue": "Folosește pagina de contact și descrie afacerea și blocajul actual.",
+    "emptyTitle": "Răspunsurile FAQ sunt în pregătire",
+    "emptyDescription": "Noi răspunsuri bilingve vor apărea aici pe măsură ce biblioteca publică de întrebări se extinde.",
+    "servicesLinkLabel": "Descoperă serviciile",
     "pricingLinkLabel": "Vezi prețurile",
-    "contactLinkLabel": "Pune o întrebare specifică"
+    "contactLinkLabel": "Pune o întrebare specifică",
+    "ctaBadge": "Ai nevoie de mai multă claritate?",
+    "ctaTitle": "Întreabă despre afacerea ta, nu despre un scenariu generic",
+    "ctaDescription": "Dacă situația ta este specifică, Growonio poate analiza contextul businessului și recomanda un pas următor practic.",
+    "ctaPrimary": "Pune o întrebare specifică",
+    "ctaSecondary": "Vezi prețurile",
+    "ctaPanelTitle": "Întrebările bune duc de obicei la un scop mai bun",
+    "ctaPanelDescription": "Un mesaj scurt despre afacere, fricțiunea actuală și rezultatul dorit este suficient pentru a începe o conversație utilă.",
+    "ctaPoints": [
+      "Fără răspunsuri vagi de agenție",
+      "Recomandări orientate spre business",
+      "Disponibil în română și engleză"
+    ]
   },
   "ContactPage": {
     "title": "Contact",
