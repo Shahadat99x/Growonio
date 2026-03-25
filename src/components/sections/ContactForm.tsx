@@ -28,6 +28,11 @@ export function ContactForm() {
     }
   }, [state.success]);
 
+  const fieldClassName =
+    "h-12 rounded-[1rem] border-border/60 bg-background/84 shadow-[0_14px_28px_-24px_rgba(24,18,51,0.16)] transition-[border-color,background-color,box-shadow] duration-200 hover:border-primary/20 focus-visible:bg-white/94";
+  const textareaClassName =
+    "min-h-[160px] resize-y rounded-[1.1rem] border-border/60 bg-background/84 shadow-[0_14px_28px_-24px_rgba(24,18,51,0.16)] transition-[border-color,background-color,box-shadow] duration-200 hover:border-primary/20 focus-visible:bg-white/94";
+
   return (
     <form
       ref={formRef}
@@ -70,13 +75,21 @@ export function ContactForm() {
       </div>
 
       {state.error && (
-        <div className="mt-6 rounded-[1rem] border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+        <div
+          role="alert"
+          aria-live="polite"
+          className="mt-6 rounded-[1rem] border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive"
+        >
           {state.error}
         </div>
       )}
 
       {state.success && (
-        <div className="mt-6 rounded-[1rem] border border-emerald-500/30 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300">
+        <div
+          role="status"
+          aria-live="polite"
+          className="mt-6 rounded-[1rem] border border-emerald-500/30 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300"
+        >
           {state.success}
         </div>
       )}
@@ -84,17 +97,39 @@ export function ContactForm() {
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="first_name">{t('firstName')}</Label>
-          <Input id="first_name" name="first_name" required placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })} className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
+          <Input
+            id="first_name"
+            name="first_name"
+            autoComplete="given-name"
+            required
+            placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })}
+            className={fieldClassName}
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="last_name">{t('lastName')}</Label>
-          <Input id="last_name" name="last_name" required placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })} className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
+          <Input
+            id="last_name"
+            name="last_name"
+            autoComplete="family-name"
+            required
+            placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })}
+            className={fieldClassName}
+          />
         </div>
       </div>
       
       <div className="mt-6 space-y-2">
         <Label htmlFor="email">{t('email')}</Label>
-        <Input id="email" name="email" type="email" required placeholder="john@example.com" className="h-12 rounded-[1rem] border-border/60 bg-background/84" />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          placeholder="john@example.com"
+          className={fieldClassName}
+        />
       </div>
 
       <div className="mt-6 space-y-2">
@@ -104,12 +139,14 @@ export function ContactForm() {
           name="message"
           required
           placeholder={t('messagePlaceholder')}
-          className="min-h-[160px] resize-y rounded-[1.1rem] border-border/60 bg-background/84"
+          className={textareaClassName}
         />
       </div>
 
       <div className="mt-8">
-        <SubmitButton className="w-full rounded-full">{t('sendMessage')}</SubmitButton>
+        <SubmitButton className="w-full rounded-full shadow-[0_20px_45px_-28px_color-mix(in_oklab,var(--color-primary)_45%,transparent)]">
+          {t('sendMessage')}
+        </SubmitButton>
       </div>
       <p className="mt-4 text-sm leading-7 text-muted-foreground">
         {tContact("contactFormNote")}

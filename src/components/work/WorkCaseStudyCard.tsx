@@ -38,7 +38,7 @@ export function WorkCaseStudyCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-white/86 shadow-[0_22px_60px_-40px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_30px_72px_-38px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]",
+        "group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-white/86 shadow-[0_22px_60px_-40px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_30px_72px_-38px_color-mix(in_oklab,var(--color-primary)_24%,transparent)] focus-within:-translate-y-1 focus-within:border-primary/22 focus-within:shadow-[0_30px_72px_-38px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]",
         featured ? "md:col-span-2 xl:grid xl:grid-cols-[1.1fr_0.9fr]" : "",
         className,
       )}
@@ -81,14 +81,17 @@ export function WorkCaseStudyCard({
           {item.client_name}
         </p>
         <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-foreground">
-          <Link href={`/work/${item.slug}`} className="transition-colors group-hover:text-primary">
+          <Link
+            href={`/work/${item.slug}`}
+            className="rounded-sm transition-colors group-hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
             {item.title}
           </Link>
         </h3>
         <p
           className={cn(
             "mt-4 leading-7 text-muted-foreground",
-            featured ? "text-base" : "text-sm",
+            featured ? "line-clamp-5 text-base" : "line-clamp-4 text-sm",
           )}
         >
           {getWorkCardSummary(item)}
