@@ -330,3 +330,23 @@ Reason:
 - the homepage redesign established a much higher visual quality bar than the inner pages
 - using shared hero and CTA primitives is cleaner and more maintainable than rebuilding those patterns separately on every route
 - the inner pages needed to catch up in quality without collapsing into five nearly identical page templates
+
+---
+
+## 16. Phase 5 Shell and Footer Cohesion Decision
+
+Decision:
+**Use a dark premium footer and shared shell-level polish to finish the redesign through common surfaces instead of reopening every page**
+
+Implementation shape:
+
+- the footer now acts as a distinct closing layer with an inverse brand treatment, grouped navigation, direct-contact framing, and small conversion paths
+- `BrandMark` supports both default and inverse tones so the same brand system can be reused across light and dark premium surfaces
+- the global shell uses subtle background texture/glow treatment in `globals.css` and the localized layout wrapper to improve continuity between page heroes, section bodies, CTA panels, and the footer
+- motion rollout stays inside the existing reveal/hover/focus language rather than introducing heavier choreography or another animation dependency
+
+Reason:
+
+- after the homepage and inner pages were redesigned, the remaining mismatch was mostly in shared shell surfaces rather than core page composition
+- finishing the footer and shared public interaction layer gives better site-wide cohesion than another broad page-by-page pass
+- keeping Phase 5 centered on shared surfaces protects maintainability and avoids decorative drift near launch

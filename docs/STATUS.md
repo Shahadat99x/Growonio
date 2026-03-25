@@ -110,17 +110,21 @@
       - FAQ accordion
       - work case-study card
       - contact form
+  - **Phase 5:** footer, shell cohesion, interaction polish, and responsive tightening
+    - footer was rebuilt as a premium dark closing layer with a stronger brand block, clearer navigation groups, direct contact framing, and integrated micro-conversion links
+    - `BrandMark` now supports an inverse tone so the brand system can render cleanly on darker premium surfaces without forking a second logo component
+    - the global shell now has stronger site-wide background identity through a subtler grid/tint treatment in `globals.css` and shared top-of-page glow treatment in the localized layout shell
+    - restrained motion was extended through additional footer reveals, stronger focus-within/hover behavior on work cards, and smoother FAQ interaction surfaces
+    - public-form polish was tightened through more intentional field treatment, better feedback states, and accessibility improvements like `aria-live`, `role`, and useful autocomplete attributes
+    - responsive and polish cleanup focused on keeping the public site cohesive from hero to footer instead of introducing another round of page-specific redesign churn
 
 ## Remaining Gaps / Next Focus
 - **Redesign Execution**
-  - Phase 5: footer and global polish
-    - redesign footer structure and premium brand block
-    - tighten section-to-section cohesion across the full site
-    - carry the motion system into more interior interaction points where useful
-  - Phase 6 to 8: production finishing pass
-    - broader motion rollout
-    - responsive, accessibility, and performance tightening
-    - final documentation and consistency cleanup
+  - Phase 6: final launch polish + SEO/content/QA review
+    - run a final consistency pass across copy density, CTA hierarchy, and small UI mismatches that remain after the redesign rollout
+    - re-check SEO and content surfaces for any thin sections, metadata gaps, or weak internal-link opportunities
+    - do a launch-oriented QA pass for responsive behavior, accessibility, and performance on the fully redesigned public site
+    - keep the case-study detail pages on watch, but they are no longer the primary design gap after the shared shell/footer pass
 - **Launch Follow-Ups After Redesign Review**
   - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
   - Configure Resend if email notifications should be sent automatically from contact submissions.
