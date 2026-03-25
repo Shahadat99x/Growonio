@@ -1,23 +1,31 @@
-# Next Phase Plan: Redesign Phase 4
-**Focus:** Roll the Premium Growth-Tech system consistently across the inner pages
+# Next Phase Plan: Redesign Phase 6
+**Focus:** Final launch polish, SEO/content review, and site-wide QA
 
 ## Objective
-Apply the now-established Premium Growth-Tech system from the homepage into the main public inner pages so the site feels cohesive from navigation to footer without losing semantic clarity, localization, maintainability, or SEO quality.
+Bring the redesigned public site from premium-looking to launch-ready by checking the final content layer, tightening remaining UI inconsistencies, and validating the production-facing SEO, responsive, accessibility, and performance surface.
 
 ## Key Tasks
-- Redesign the public page heroes for:
-  - Services
-  - Pricing
-  - Work / Portfolio
-  - Insights
-  - Contact
-- Upgrade inner-page section rhythm, card depth, CTA treatment, and information hierarchy to match the new homepage quality.
-- Keep the Work / case-study frontend aligned with the richer case-study data model already implemented.
-- Improve editorial presentation for Insights and trust quality for Contact.
-- Re-run responsive QA and production build checks after each page batch rather than waiting for one final large pass.
+- Audit the redesigned public pages one more time for:
+  - thin or awkward copy areas
+  - CTA hierarchy mismatches
+  - remaining card/surface inconsistencies
+  - small alignment or spacing issues that still weaken the premium system
+- Re-check the SEO layer:
+  - metadata coverage
+  - internal linking opportunities
+  - semantic heading structure
+  - discoverability of work/insights/contact/service flows
+- Run a launch-focused QA pass:
+  - desktop, tablet, and mobile responsive checks
+  - keyboard and focus-state review
+  - contrast/readability review
+  - reduced-motion and animation sanity check
+  - final `npm run lint` and `npm run build`
+- Keep case-study detail pages under review, but do not reopen them unless a clear launch-quality gap appears.
 
 ## Constraints
 - Do not break SEO structure, localized metadata, or the bilingual architecture.
 - Keep the site light-based overall; use tinted/dark feature sections selectively.
 - Avoid cartoon branding, mascot-led visuals, noisy motion, or blanket glassmorphism.
 - Preserve the hybrid CMS boundary and route structure.
+- Prefer polish, QA, and consistency improvements over another major structural redesign.

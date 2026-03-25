@@ -125,9 +125,14 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at top right, color-mix(in oklab, var(--color-primary) 10%, transparent), transparent 32%),
-      radial-gradient(circle at 12% 18%, color-mix(in oklab, var(--color-primary) 5%, transparent), transparent 22%),
-      linear-gradient(180deg, color-mix(in oklab, white 92%, var(--color-primary) 8%) 0%, var(--color-background) 18%);
+      radial-gradient(circle at 88% 2%, color-mix(in oklab, var(--color-primary) 11%, transparent), transparent 28%),
+      radial-gradient(circle at 12% 16%, color-mix(in oklab, var(--color-primary) 6%, transparent), transparent 24%),
+      radial-gradient(circle at 78% 74%, color-mix(in oklab, var(--color-primary) 5%, transparent), transparent 26%),
+      linear-gradient(180deg, color-mix(in oklab, white 92%, var(--color-primary) 8%) 0%, var(--color-background) 18%),
+      linear-gradient(color-mix(in oklab, var(--color-primary) 3%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--color-primary) 3%, transparent) 1px, transparent 1px);
+    background-size: auto, auto, auto, auto, 72px 72px, 72px 72px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
     background-attachment: fixed;
   }
   html {
