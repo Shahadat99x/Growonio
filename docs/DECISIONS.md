@@ -350,3 +350,21 @@ Reason:
 - after the homepage and inner pages were redesigned, the remaining mismatch was mostly in shared shell surfaces rather than core page composition
 - finishing the footer and shared public interaction layer gives better site-wide cohesion than another broad page-by-page pass
 - keeping Phase 5 centered on shared surfaces protects maintainability and avoids decorative drift near launch
+
+---
+
+## 17. Final Metadata Title Strategy
+
+Decision:
+**Page-level metadata titles should resolve as absolute titles**
+
+Implementation shape:
+
+- `buildPageMetadata` now returns `title.absolute`
+- the localized layout still provides the default title and title template for segments that do not override metadata
+- page metadata strings can safely include or omit the brand name without accidentally producing duplicated `| Growonio` suffixes
+
+Reason:
+
+- the redesign/content pass left a mix of title styles across routes: some included the brand directly, while others relied on the layout template
+- resolving page titles as absolute values is the safest production-ready approach because it prevents duplicate branding in browser titles and search snippets while preserving the current localized metadata content

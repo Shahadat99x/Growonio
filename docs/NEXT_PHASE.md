@@ -1,31 +1,24 @@
-# Next Phase Plan: Redesign Phase 6
-**Focus:** Final launch polish, SEO/content review, and site-wide QA
+# Next Phase Plan: Launch Checklist / Deployment
+**Focus:** Production configuration, deployment follow-through, and post-redesign launch checks
 
 ## Objective
-Bring the redesigned public site from premium-looking to launch-ready by checking the final content layer, tightening remaining UI inconsistencies, and validating the production-facing SEO, responsive, accessibility, and performance surface.
+Move the now launch-ready codebase through final production configuration, deployment, and post-launch validation so the public site is not only polished in code, but correctly wired in the live environment.
 
 ## Key Tasks
-- Audit the redesigned public pages one more time for:
-  - thin or awkward copy areas
-  - CTA hierarchy mismatches
-  - remaining card/surface inconsistencies
-  - small alignment or spacing issues that still weaken the premium system
-- Re-check the SEO layer:
-  - metadata coverage
-  - internal linking opportunities
-  - semantic heading structure
-  - discoverability of work/insights/contact/service flows
-- Run a launch-focused QA pass:
-  - desktop, tablet, and mobile responsive checks
-  - keyboard and focus-state review
-  - contrast/readability review
-  - reduced-motion and animation sanity check
-  - final `npm run lint` and `npm run build`
-- Keep case-study detail pages under review, but do not reopen them unless a clear launch-quality gap appears.
+- Apply remaining live-environment requirements:
+  - run `supabase/migrations/00004_contact_leads.sql` on the connected production project if contact leads should persist
+  - configure Resend if email notifications should be sent from contact submissions
+  - add the real GA4 measurement ID and Search Console verification token
+- Run deployment-oriented checks:
+  - verify public links, contact path, and legal pages in production
+  - submit and validate `sitemap.xml`
+  - confirm canonical/hreflang output in the live build
+  - confirm analytics and contact flows work outside local development
+- Finish remaining non-blocking brand/deployment polish:
+  - replace the placeholder app icon if final brand artwork is available
+  - optionally give legal pages the same premium shell treatment as the main public routes later
 
 ## Constraints
-- Do not break SEO structure, localized metadata, or the bilingual architecture.
-- Keep the site light-based overall; use tinted/dark feature sections selectively.
-- Avoid cartoon branding, mascot-led visuals, noisy motion, or blanket glassmorphism.
-- Preserve the hybrid CMS boundary and route structure.
-- Prefer polish, QA, and consistency improvements over another major structural redesign.
+- Do not reopen broad redesign work unless a real production issue appears.
+- Keep the bilingual architecture, SEO structure, and CMS boundaries intact.
+- Prefer deployment correctness and live validation over more visual experimentation.
