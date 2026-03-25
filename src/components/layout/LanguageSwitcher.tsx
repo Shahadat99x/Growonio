@@ -11,6 +11,10 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
+  const switchToRomanianLabel =
+    locale === 'ro' ? 'Schimbă limba în română' : 'Switch language to Romanian';
+  const switchToEnglishLabel =
+    locale === 'ro' ? 'Schimbă limba în engleză' : 'Switch language to English';
 
   function onSelectChange(nextLocale: string) {
     startTransition(() => {
@@ -24,10 +28,13 @@ export default function LanguageSwitcher() {
         <Languages className="h-4 w-4" />
       </div>
       <button
+        type="button"
         onClick={() => onSelectChange('ro')}
         disabled={isPending || locale === 'ro'}
+        aria-label={switchToRomanianLabel}
+        aria-pressed={locale === 'ro'}
         className={cn(
-          "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-200",
+          "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
           locale === 'ro' 
             ? "bg-foreground text-background shadow-[0_10px_22px_-16px_rgba(24,18,51,0.45)]" 
             : "text-muted-foreground hover:bg-background/80 hover:text-foreground",
@@ -37,10 +44,13 @@ export default function LanguageSwitcher() {
         RO
       </button>
       <button
+        type="button"
         onClick={() => onSelectChange('en')}
         disabled={isPending || locale === 'en'}
+        aria-label={switchToEnglishLabel}
+        aria-pressed={locale === 'en'}
         className={cn(
-          "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-200",
+          "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
           locale === 'en' 
             ? "bg-foreground text-background shadow-[0_10px_22px_-16px_rgba(24,18,51,0.45)]" 
             : "text-muted-foreground hover:bg-background/80 hover:text-foreground",

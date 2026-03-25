@@ -140,7 +140,9 @@ export function buildPageMetadata({
   const images = image ? [image] : undefined;
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     alternates: {
       canonical: canonicalUrl,
