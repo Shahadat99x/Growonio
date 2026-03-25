@@ -3,7 +3,7 @@
     "title": "Digital systems that help service businesses grow",
     "description": "Growonio designs modern websites, smarter booking flows, and practical automation systems that turn more visitors into clients and reduce manual work.",
     "supportingLine": "Built for service businesses in Romania and beyond, with bilingual delivery, SEO-ready structure, and admin-friendly systems from day one.",
-    "metaTitle": "Business Automation for Service Businesses in Romania",
+    "metaTitle": "Growonio | Business Automation for Service Businesses in Romania",
     "metaDescription": "Growonio builds conversion-focused websites, automations, booking systems, and digital workflows for service businesses growing in Romania.",
     "cta": "Request a Quote",
     "heroSecondaryCta": "Explore Services",
@@ -411,15 +411,79 @@
   },
   "SolutionsPage": {
     "title": "Industry Solutions",
-    "description": "Tailored digital strategies for service-oriented businesses.",
+    "description": "Digital systems tailored to service businesses that depend on credibility, inquiries, bookings, and smoother day-to-day operations.",
     "metaTitle": "Digital Solutions for Salons, Clinics, and Consultants",
     "metaDescription": "See how Growonio adapts automation, websites, and client workflows for salons, clinics, consultants, and other service businesses.",
-    "salons": "Salons & Beauty",
-    "salonsDesc": "Integrated booking and loyalty systems.",
-    "clinics": "Clinics & Health",
-    "clinicsDesc": "Secure patient management and scheduling.",
-    "consultants": "Consultants & Firms",
-    "consultantsDesc": "Professional lead capture and client portals.",
+    "heroBadge": "Growonio Solutions",
+    "heroSupportingLine": "We adapt websites, booking logic, lead capture, and operational clarity around the way each business category actually works.",
+    "heroPanelEyebrow": "Best-fit positioning",
+    "heroPanelTitle": "Designed for service businesses with real operational pressure",
+    "heroPanelDescription": "Growonio is strongest where online trust, faster response, and simpler workflows directly affect bookings, inquiries, and day-to-day coordination.",
+    "heroPoints": [
+      "Industry-fit structure",
+      "Lead and booking clarity",
+      "SEO-aware bilingual delivery"
+    ],
+    "industriesBadge": "Business Types",
+    "industriesTitle": "Where Growonio fits best",
+    "industriesDescription": "Each solution direction combines positioning, lead handling, content structure, and admin clarity around the needs of a specific service-business model.",
+    "industryItems": [
+      {
+        "title": "Salons & Beauty Businesses",
+        "description": "For businesses that need strong local presentation, booking-first journeys, and clearer service structure around recurring appointments.",
+        "tags": [
+          "Service menus",
+          "Booking flows",
+          "Retention support"
+        ]
+      },
+      {
+        "title": "Clinics & Appointment-Based Services",
+        "description": "For teams that need trust-first service presentation, smoother scheduling, and less manual reception-side friction.",
+        "tags": [
+          "Clear service hierarchy",
+          "Structured scheduling",
+          "Operational clarity"
+        ]
+      },
+      {
+        "title": "Consultants & Service Firms",
+        "description": "For firms that need a more credible expert presence, better inquiry qualification, and stronger follow-up around service sales.",
+        "tags": [
+          "Lead qualification",
+          "Professional positioning",
+          "Faster follow-up"
+        ]
+      },
+      {
+        "title": "Local Service Businesses",
+        "description": "For businesses that rely on local trust, quick inquiries, and simple systems the team can manage after launch.",
+        "tags": [
+          "Local visibility",
+          "Quick inquiries",
+          "Admin-friendly control"
+        ]
+      }
+    ],
+    "supportPoints": [
+      "Bilingual setup",
+      "SEO-ready page structure",
+      "Admin-friendly control",
+      "Booking and inquiry flows"
+    ],
+    "supportPanelEyebrow": "Across every build",
+    "supportPanelTitle": "Shared foundations that still stay flexible",
+    "supportPanelDescription": "Every solution can include bilingual structure, search-ready page planning, admin usability, booking logic, and room for future automation without forcing the same template on every business.",
+    "ctaBadge": "Plan the right fit",
+    "ctaTitle": "Need a solution shaped around your business type?",
+    "ctaDescription": "Growonio can recommend the right starting structure based on your services, client flow, and operational bottlenecks.",
+    "ctaPanelTitle": "Practical scope before oversized builds",
+    "ctaPanelDescription": "The best solution is the one that matches the business stage, customer journey, and team capacity now, while staying easy to grow later.",
+    "ctaPoints": [
+      "Clarity before development",
+      "Service-business context",
+      "Built to scale later"
+    ],
     "servicesLinkLabel": "Explore core services",
     "contactLinkLabel": "Talk about your business"
   },
@@ -485,20 +549,84 @@
     "description": "We believe in software that works for you, not the other way around.",
     "metaTitle": "About Growonio",
     "metaDescription": "Learn how Growonio approaches business automation, premium execution, and practical digital growth for service businesses.",
+    "heroBadge": "About Growonio",
+    "heroSupportingLine": "We work like a focused digital partner for service businesses that need clarity, useful systems, and accountable execution.",
+    "heroPanelEyebrow": "Small studio, practical delivery",
+    "heroPanelTitle": "Built to stay focused, not bloated",
+    "heroPanelDescription": "Growonio stays intentionally narrow: websites, booking flows, lead capture, admin usability, and practical automation for service businesses.",
+    "heroPoints": [
+      "Outcome-first strategy",
+      "Romanian + English delivery",
+      "Clear scope and launch support"
+    ],
     "mission": "Our Mission",
     "missionDesc": "To make powerful business automation accessible to service businesses everywhere.",
-    "value1Title": "Transparent Process",
-    "value1Desc": "We avoid black-box agency work. You know what is being built, when it ships, and how it supports growth.",
-    "value2Title": "Built for Growth",
-    "value2Desc": "We build systems that capture leads, manage bookings, and remove repetitive admin work."
+    "missionLead": "The goal is not to sell vague innovation. It is to build digital systems that help businesses look credible, handle demand better, and reduce manual friction.",
+    "principlesBadge": "Working Principles",
+    "principlesTitle": "How Growonio approaches every project",
+    "principlesDescription": "Each delivery is shaped around business clarity, technical quality, and long-term usefulness after launch.",
+    "values": [
+      {
+        "title": "Transparent Process",
+        "description": "We avoid black-box agency work. You know what is being built, when it ships, and how it supports growth."
+      },
+      {
+        "title": "Built for Growth",
+        "description": "We build systems that capture leads, manage bookings, and remove repetitive admin work."
+      },
+      {
+        "title": "Practical Collaboration",
+        "description": "Communication stays concise, milestone-based, and tied to real business decisions instead of agency theatre."
+      }
+    ],
+    "ctaBadge": "Next Conversation",
+    "ctaTitle": "Need a digital partner who keeps things practical?",
+    "ctaDescription": "Growonio helps service businesses launch systems that are credible, manageable, and built around real workflows.",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "Explore Services",
+    "ctaPanelTitle": "Focused scope. Clear delivery. Useful systems.",
+    "ctaPanelDescription": "The objective is to recommend the right build for the business stage now while leaving room for stronger content, smoother operations, and future automation.",
+    "ctaPoints": [
+      "Business-first planning",
+      "Bilingual delivery",
+      "Launch support included"
+    ]
   },
   "FAQPage": {
     "title": "Frequently Asked Questions",
     "description": "Everything you need to know about working with us.",
     "metaTitle": "Frequently Asked Questions About Working with Growonio",
     "metaDescription": "Get answers about pricing, delivery, collaboration, and what to expect when building growth systems with Growonio.",
+    "heroBadge": "Growonio FAQ",
+    "heroSupportingLine": "These answers are written to remove uncertainty around pricing, delivery, collaboration, and what happens after launch.",
+    "heroPanelEyebrow": "Quick clarity",
+    "heroPanelTitle": "Direct answers before the first call",
+    "heroPanelDescription": "The FAQ helps businesses understand what Growonio includes, how projects are scoped, and what kind of support to expect after launch.",
+    "heroPoints": [
+      "Clear expectations",
+      "Practical delivery answers",
+      "Built for real buying decisions"
+    ],
+    "faqCountLabel": "published answers",
+    "faqSupportLabel": "Still need a direct answer?",
+    "faqSupportValue": "Use the contact page and describe your business and current bottleneck.",
+    "emptyTitle": "FAQ answers are being prepared",
+    "emptyDescription": "New bilingual answers will appear here as the public FAQ library expands.",
+    "servicesLinkLabel": "Explore services",
     "pricingLinkLabel": "Review pricing",
-    "contactLinkLabel": "Ask a specific question"
+    "contactLinkLabel": "Ask a specific question",
+    "ctaBadge": "Need more clarity?",
+    "ctaTitle": "Ask about your business, not a generic scenario",
+    "ctaDescription": "If your situation is specific, Growonio can review the business context and recommend a practical next step.",
+    "ctaPrimary": "Ask a specific question",
+    "ctaSecondary": "Review pricing",
+    "ctaPanelTitle": "Good questions usually lead to better scope",
+    "ctaPanelDescription": "A short message about the business, the current friction, and the desired outcome is enough to start a useful conversation.",
+    "ctaPoints": [
+      "No vague agency replies",
+      "Business-focused recommendations",
+      "Available in Romanian and English"
+    ]
   },
   "ContactPage": {
     "title": "Contact Us",
