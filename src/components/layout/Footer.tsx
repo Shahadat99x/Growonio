@@ -18,6 +18,7 @@ export default function Footer() {
 
   const companyLinks = [
     { href: "/about", label: t("about") },
+    { href: "/careers", label: t("careers") },
     { href: "/work", label: t("work") },
     { href: "/contact", label: t("contact") },
   ];

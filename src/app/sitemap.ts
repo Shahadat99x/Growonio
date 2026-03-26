@@ -14,6 +14,7 @@ const staticRoutes: Array<{
   { pathname: "/solutions", changeFrequency: "monthly", priority: 0.85 },
   { pathname: "/work", changeFrequency: "weekly", priority: 0.8 },
   { pathname: "/about", changeFrequency: "monthly", priority: 0.6 },
+  { pathname: "/careers", changeFrequency: "monthly", priority: 0.55 },
   { pathname: "/faq", changeFrequency: "weekly", priority: 0.7 },
   { pathname: "/contact", changeFrequency: "monthly", priority: 0.8 },
   { pathname: "/insights", changeFrequency: "weekly", priority: 0.75 },
