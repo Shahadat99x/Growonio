@@ -228,6 +228,7 @@
     "work": "Portofoliu",
     "insights": "Articole",
     "about": "Despre",
+    "careers": "Cariere",
     "contact": "Contact",
     "faq": "Întrebări Frecvente"
   },
@@ -669,6 +670,141 @@
     "servicesLinkLabel": "Descoperă serviciile",
     "insightsLinkLabel": "Citește articolele",
     "contactFormNote": "Dacă formularul nu funcționează, ne poți scrie direct pe email și îți răspundem."
+  },
+  "CareersPage": {
+    "title": "Cariere",
+    "metaTitle": "Cariere | Alătură-te Growonio",
+    "metaDescription": "Alătură-te Growonio într-o etapă timpurie. Căutăm un colaborator vorbitor de română interesat de outreach, business development, vânzări sau marketing.",
+    "heroBadge": "Oportunitate Early-Stage",
+    "heroTitle": "Alătură-te Growonio într-o Etapă Timpurie",
+    "heroDescription": "Construim Growonio, un startup concentrat pe website-uri, sisteme de programări și automatizare pentru afaceri locale din România.",
+    "heroSupportingLine": "În acest moment căutăm un colaborator vorbitor de română interesat de creștere, outreach, business development sau marketing.",
+    "heroPrimaryCta": "Aplică Acum",
+    "heroSecondaryCta": "Trimite un Email",
+    "heroPoints": [
+      "Oportunitate pentru vorbitori de română",
+      "Colaborare de startup",
+      "Implicare flexibilă într-o etapă timpurie"
+    ],
+    "heroPanelEyebrow": "Realitatea etapei actuale",
+    "heroPanelTitle": "Nu este un rol salarial standard din prima zi",
+    "heroPanelDescription": "Growonio este încă într-o etapă timpurie. Vrem să lucrăm cu cineva care înțelege că prima fază înseamnă colaborare practică, validarea cererii și ajutor real pentru creșterea businessului.",
+    "heroPanelPoints": [
+      "Etapă de startup prezentată onest, fără teatru corporatist",
+      "Structura de recompensă trebuie să crească odată cu contribuția și rezultatele reale",
+      "Potrivire bună pentru cineva care vrea expunere la construirea reală a unui business"
+    ],
+    "aboutBadge": "Despre Growonio",
+    "aboutTitle": "Un studio mic de growth-tech concentrat pe sisteme practice",
+    "aboutDescription": "Growonio ajută afacerile locale să aibă o prezență online mai puternică și să își îmbunătățească gestionarea cererilor, programărilor și fluxurilor simple de business.",
+    "aboutCardTitle": "Ce construiește Growonio",
+    "aboutCardDescription": "Munca este orientată spre sisteme digitale utile pentru afaceri de servicii din România, nu spre experimente vagi de startup.",
+    "aboutItems": [
+      "Website-uri moderne pentru afaceri locale",
+      "Fluxuri de programări și cereri",
+      "Automatizare practică și utilizare administrativă clară"
+    ],
+    "whoTitle": "Pe Cine Căutăm",
+    "whoDescription": "Această oportunitate este potrivită mai ales pentru un student sau un colaborator aflat la început de carieră, vorbitor de română, care vrea expunere practică la startup-uri și este interesat de creștere comercială, comunicare și înțelegerea pieței.",
+    "whoItems": [
+      "Se exprimă confortabil în română, verbal și în scris",
+      "Este interesat de vânzări, business development, outreach sau marketing",
+      "Este curios despre startup-uri, oferte și modul în care afacerile mici cumpără servicii",
+      "Este serios, practic și comunică clar"
+    ],
+    "helpBadge": "Cu Ce Ai Ajuta",
+    "helpTitle": "Rolul este despre suport real pentru creștere, nu despre busywork",
+    "helpDescription": "Munca poate evolua odată cu etapa businessului, dar focusul este pe a ajuta Growonio să înțeleagă piața, să îmbunătățească outreach-ul și să susțină business development-ul timpuriu.",
+    "helpItems": [
+      {
+        "title": "Research de piață locală",
+        "description": "Identifici tipuri de afaceri, nevoi și tipare din piața locală de servicii din România."
+      },
+      {
+        "title": "Outreach și comunicare",
+        "description": "Ajuti la outreach practic, mesaje de prim contact și înțelegerea a ceea ce generează răspunsuri reale."
+      },
+      {
+        "title": "Follow-up pentru lead-uri",
+        "description": "Susții un follow-up mai clar pentru conversații, răspunsuri și lead-uri calde care nu ar trebui pierdute."
+      },
+      {
+        "title": "Îmbunătățirea ofertei și a mesajelor",
+        "description": "Observi obiecții, puncte slabe și formulări utile care pot face Growonio mai ușor de înțeles și de considerat credibil."
+      },
+      {
+        "title": "Suport general pentru creștere",
+        "description": "Contribui acolo unde creșterea timpurie are nevoie de ajutor practic, structură sau execuție mai bună."
+      }
+    ],
+    "stageBadge": "Etapa Actuală",
+    "stageTitle": "Aceasta este o oportunitate de colaborare într-un startup aflat la început",
+    "stageDescription": "Growonio este în prezent într-o etapă timpurie. Acesta nu este un rol salarial standard la început și nu vrem să îl prezentăm ca atare.",
+    "stageSupportingLine": "Căutăm pe cineva care vrea să colaboreze practic, să ajute la validarea businessului și să crească împreună cu noi încă dintr-o etapă timpurie. Pe măsură ce pornește munca cu clienți, obiectivul este să construim o structură corectă de recompensă bazată pe contribuție și rezultate reale.",
+    "whyJoinBadge": "De Ce Acum",
+    "whyJoinTitle": "De ce poate fi totuși valoros",
+    "whyJoinItems": [
+      "Expunere reală la startup, nu sarcini simulate de internship",
+      "Vizibilitate directă în outreach, modelarea ofertei și construirea businessului",
+      "Colaborare flexibilă în jurul programului de studii sau al începutului de carieră",
+      "Șansa de a influența cum crește Growonio de la început"
+    ],
+    "fitBadge": "Potrivire Sau Nu",
+    "fitTitle": "Vrem o potrivire prezentată onest din ambele părți",
+    "fitDescription": "Cea mai bună colaborare pornește de la așteptări clare. Pagina aceasta este făcută ca să te ajute să decizi realist înainte să aplici.",
+    "goodFitTitle": "Potrivire Bună",
+    "goodFitDescription": "Este probabil o potrivire bună dacă te motivează să înveți și să ajuți la construirea a ceva real încă dintr-o etapă timpurie.",
+    "goodFitItems": [
+      "Vrei experiență practică de startup, nu doar teorie",
+      "Te simți confortabil cu outreach, comunicare și follow-up",
+      "Te interesează creșterea, oferta și modul în care afacerile câștigă clienți",
+      "Poți lucra cu ambiguitate, dar rămâi responsabil"
+    ],
+    "notGoodFitTitle": "Nu Este o Potrivire Bună",
+    "notGoodFitDescription": "Probabil nu este oportunitatea potrivită dacă ai nevoie de un rol corporatist complet structurat din prima zi.",
+    "notGoodFitItems": [
+      "Vrei imediat un job salarial standard",
+      "Nu îți place outreach-ul, gândirea comercială sau comunicarea directă",
+      "Ai nevoie de supraveghere permanentă pas cu pas pentru sarcini simple",
+      "Cauți doar o linie decorativă în CV fără contribuție reală"
+    ],
+    "applyBadge": "Aplicare",
+    "applyTitle": "Te interesează să colaborezi cu Growonio?",
+    "applyDescription": "Folosește formularul de mai jos și păstrează lucrurile simple. O aplicare clară și onestă este mai utilă decât un răspuns corporatist lustruit.",
+    "applyPanelTitle": "Cum aplici",
+    "applyPanelDescription": "Trimite suficient context cât să înțelegem backgroundul tău, de ce te interesează această etapă și dacă o colaborare ar putea avea sens.",
+    "applyPanelPoints": [
+      "Spune-ne ce studiezi sau care este backgroundul tău acum",
+      "Explică de ce Growonio ți se pare interesant",
+      "Menționează orice experiență de vânzări, outreach sau marketing, chiar dacă este mică"
+    ],
+    "aboutLinkLabel": "Despre Growonio",
+    "contactLinkLabel": "Pagina de Contact",
+    "formEyebrow": "Formular de Aplicare",
+    "formTitle": "Trimite o aplicare simplă",
+    "formDescription": "Nu căutăm răspunsuri de tip HR. Context clar, motivație onestă și exemple practice sunt suficiente.",
+    "formChips": [
+      "Oportunitate pentru vorbitori de română",
+      "Colaborare early-stage",
+      "Expunere practică la business"
+    ],
+    "fullNameLabel": "Nume Complet",
+    "fullNamePlaceholder": "Andrei Popescu",
+    "emailLabel": "Adresă de Email",
+    "emailPlaceholder": "andrei@example.com",
+    "phoneLabel": "Telefon / WhatsApp",
+    "phonePlaceholder": "+40 7xx xxx xxx",
+    "backgroundLabel": "Universitate / Background",
+    "backgroundPlaceholder": "Student la marketing, economie, comunicare sau domeniu apropiat",
+    "profileLinkLabel": "Link LinkedIn / CV / Portofoliu",
+    "profileLinkPlaceholder": "https://linkedin.com/in/numele-tau",
+    "interestLabel": "De ce te interesează Growonio?",
+    "interestPlaceholder": "Spune-ne de ce această oportunitate ți se pare relevantă și ce fel de expunere la startup vrei.",
+    "experienceLabel": "Ai experiență în vânzări, outreach sau marketing?",
+    "experiencePlaceholder": "Oferă exemple practice, chiar dacă vin din proiecte universitare, voluntariat, proiecte personale sau joburi mici.",
+    "directEmailLabel": "Email direct",
+    "submitLabel": "Trimite Aplicarea",
+    "formNote": "Dacă formularul nu funcționează, scrie-ne direct pe email și include aceleași detalii."
   },
   "Footer": {
     "eyebrow": "Studio Growonio",

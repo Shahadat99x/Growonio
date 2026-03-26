@@ -1,7 +1,12 @@
 "use server";
 
-import { createAdminClient, hasSupabaseAdminEnv } from "@/lib/supabase/server";
 import { siteConfig } from "@/lib/config";
+import {
+  isValidEmail,
+  normalizeRequiredText,
+  sendLeadNotification,
+  storeLead,
+} from "@/lib/forms/lead-submission";
 
 export type ContactFormState = {
   error: string | null;
@@ -21,14 +26,6 @@ type ContactPayload = {
   locale: string;
   sourcePath: string;
 };
-
-function normalizeRequiredText(value: FormDataEntryValue | null) {
-  if (typeof value !== "string") {
-    return "";
-  }
-
-  return value.trim();
-}
 
 function getLocalizedMessages(locale: string) {
   if (locale === "ro") {
@@ -51,91 +48,24 @@ function getLocalizedMessages(locale: string) {
     fallback: `We could not process the form right now. Please email us directly at ${siteConfig.companyEmail}.`,
   };
 }
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function getResendConfig() {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
-  const from = process.env.RESEND_FROM_EMAIL?.trim();
-  const to = process.env.CONTACT_NOTIFICATION_EMAIL?.trim();
-
-  if (!apiKey || !from || !to) {
-    return null;
-  }
-
-  return { apiKey, from, to };
-}
-
-async function storeLead(payload: ContactPayload) {
-  if (!hasSupabaseAdminEnv()) {
-    return false;
-  }
-
-  const supabase = createAdminClient();
-  const { error } = await supabase.from("contact_leads").insert({
-    first_name: payload.firstName,
-    last_name: payload.lastName,
-    email: payload.email,
-    message: payload.message,
-    locale: payload.locale,
-    source_path: payload.sourcePath,
-  });
-
-  if (error) {
-    if (
-      error.code === "42P01" ||
-      error.message.includes("contact_leads") ||
-      error.message.includes("schema cache")
-    ) {
-      return false;
-    }
-
-    throw error;
-  }
-
-  return true;
-}
-
-async function sendLeadNotification(payload: ContactPayload) {
-  const config = getResendConfig();
-  if (!config) {
-    return false;
-  }
-
+async function sendContactNotification(payload: ContactPayload) {
   const subject =
     payload.locale === "ro"
       ? `Lead nou Growonio de la ${payload.firstName} ${payload.lastName}`
       : `New Growonio lead from ${payload.firstName} ${payload.lastName}`;
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${config.apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: config.from,
-      to: [config.to],
-      reply_to: payload.email,
-      subject,
-      text: [
-        `Name: ${payload.firstName} ${payload.lastName}`,
-        `Email: ${payload.email}`,
-        `Locale: ${payload.locale}`,
-        `Source: ${payload.sourcePath}`,
-        "",
-        payload.message,
-      ].join("\n"),
-    }),
+  return sendLeadNotification({
+    replyTo: payload.email,
+    subject,
+    text: [
+      `Name: ${payload.firstName} ${payload.lastName}`,
+      `Email: ${payload.email}`,
+      `Locale: ${payload.locale}`,
+      `Source: ${payload.sourcePath}`,
+      "",
+      payload.message,
+    ].join("\n"),
   });
-
-  if (!response.ok) {
-    throw new Error("Resend delivery failed.");
-  }
-
-  return true;
 }
 
 export async function submitContactAction(
@@ -184,7 +114,7 @@ export async function submitContactAction(
   }
 
   try {
-    emailed = await sendLeadNotification(payload);
+    emailed = await sendContactNotification(payload);
   } catch (error) {
     console.error("Failed to send contact notification:", error);
   }

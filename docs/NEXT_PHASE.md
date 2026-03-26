@@ -6,14 +6,14 @@ Move the now launch-ready codebase through final production configuration, deplo
 
 ## Key Tasks
 - Apply remaining live-environment requirements:
-  - run `supabase/migrations/00004_contact_leads.sql` on the connected production project if contact leads should persist
-  - configure Resend if email notifications should be sent from contact submissions
+  - run `supabase/migrations/00004_contact_leads.sql` on the connected production project if contact and careers leads should persist
+  - configure Resend if email notifications should be sent from contact and careers submissions
   - add the real GA4 measurement ID and Search Console verification token
 - Run deployment-oriented checks:
-  - verify public links, contact path, and legal pages in production
+  - verify public links, contact path, careers path, and legal pages in production
   - submit and validate `sitemap.xml`
   - confirm canonical/hreflang output in the live build
-  - confirm analytics and contact flows work outside local development
+  - confirm analytics, contact flow, and careers application flow work outside local development
 - Finish remaining non-blocking brand/deployment polish:
   - replace the placeholder app icon if final brand artwork is available
   - optionally give legal pages the same premium shell treatment as the main public routes later

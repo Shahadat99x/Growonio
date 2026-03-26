@@ -368,3 +368,23 @@ Reason:
 
 - the redesign/content pass left a mix of title styles across routes: some included the brand directly, while others relied on the layout template
 - resolving page titles as absolute values is the safest production-ready approach because it prevents duplicate branding in browser titles and search snippets while preserving the current localized metadata content
+
+---
+
+## 18. Careers Page Delivery Strategy
+
+Decision:
+**Keep the Careers opportunity code-managed and reuse the public lead pipeline instead of building a separate recruiting backend**
+
+Implementation shape:
+
+- `/careers` is a bilingual public marketing page, not a CMS-managed hiring system
+- the page is written in code so the early-stage opportunity can stay tightly controlled, honest, and visually aligned with the premium public site
+- the application form reuses the existing public lead submission path and stores submissions under the `/careers` source path rather than introducing a separate hiring table/admin flow
+- we do not use `JobPosting` schema or corporate-style hiring framing because the opportunity is an early-stage collaboration, not a standard salaried vacancy
+
+Reason:
+
+- the business needs a practical launch-ready collaborator page quickly, not a large hiring subsystem
+- the opportunity needs careful wording and should not drift into fake-corporate recruiting language
+- reusing the existing validated submission path keeps implementation leaner and easier to maintain while still giving enough structure for early-stage applications

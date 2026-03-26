@@ -184,6 +184,7 @@ Core public pages:
 - Work / Portfolio
 - Solutions
 - About
+- Careers
 - FAQ
 - Contact
 
@@ -236,6 +237,10 @@ Industry-focused positioning for relevant niches.
 ### About
 
 Explains the company approach, values, and working style.
+
+### Careers
+
+Explains early-stage collaboration opportunities clearly and honestly without sounding like a corporate hiring page.
 
 ### FAQ
 

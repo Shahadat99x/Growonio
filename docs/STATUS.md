@@ -47,6 +47,11 @@
   - validated server action
   - optional email notification path
   - direct email fallback visible on the page
+- Careers now has a public bilingual route with:
+  - localized metadata and sitemap inclusion
+  - footer navigation exposure
+  - an early-stage collaboration page framed honestly for a Romanian-speaking growth/outreach/business-development collaborator
+  - a lightweight application form that reuses the public lead-submission pipeline and records `/careers` as the source path
 - Legal/supporting trust routes now contain actual bilingual baseline content instead of placeholders.
 
 ## Redesign Initiative: Premium Growth-Tech
@@ -130,8 +135,9 @@
 ## Remaining Gaps / Next Focus
 - **Launch / Deployment Follow-Ups**
   - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
-  - Configure Resend if email notifications should be sent automatically from contact submissions.
+  - Configure Resend if email notifications should be sent automatically from contact and careers submissions.
   - Add the real GA4 measurement ID and Google Search Console verification token in production.
   - Submit `sitemap.xml` in Search Console after deployment and verify index coverage.
+  - Verify the live `/careers` form path stores or emails submissions correctly after production environment setup.
   - Replace the placeholder app icon with final brand artwork if a polished brand-specific icon is available.
   - The public legal pages are structurally ready and production-safe, but they still use a simpler presentation layer than the main marketing routes; treat that as a non-blocking follow-up rather than a launch blocker.

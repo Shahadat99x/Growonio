@@ -228,6 +228,7 @@
     "work": "Portfolio",
     "insights": "Insights",
     "about": "About",
+    "careers": "Careers",
     "contact": "Contact",
     "faq": "FAQ"
   },
@@ -669,6 +670,141 @@
     "servicesLinkLabel": "Explore services",
     "insightsLinkLabel": "Read insights",
     "contactFormNote": "If the form ever fails, email us directly and we will still respond."
+  },
+  "CareersPage": {
+    "title": "Careers",
+    "metaTitle": "Careers | Join Growonio",
+    "metaDescription": "Join Growonio at an early stage. We are looking for a Romanian-speaking collaborator interested in outreach, business development, sales, or marketing.",
+    "heroBadge": "Early-Stage Opportunity",
+    "heroTitle": "Join Growonio at an Early Stage",
+    "heroDescription": "We are building Growonio, a startup focused on websites, booking systems, and business automation for local businesses in Romania.",
+    "heroSupportingLine": "Right now, we are looking for a Romanian-speaking collaborator interested in growth, outreach, business development, or marketing.",
+    "heroPrimaryCta": "Apply Now",
+    "heroSecondaryCta": "Email Growonio",
+    "heroPoints": [
+      "Romanian-speaking opportunity",
+      "Startup collaboration",
+      "Flexible early-stage involvement"
+    ],
+    "heroPanelEyebrow": "Early-stage reality",
+    "heroPanelTitle": "Not a standard salaried role on day one",
+    "heroPanelDescription": "Growonio is still at an early stage. We want to work with someone who understands that the first phase is about practical collaboration, validating demand, and helping the business grow in a real way.",
+    "heroPanelPoints": [
+      "Honest startup stage, not corporate hiring theatre",
+      "Fair reward structure should grow with real contribution and results",
+      "Best fit for someone who wants exposure to real business building"
+    ],
+    "aboutBadge": "About Growonio",
+    "aboutTitle": "A small growth-tech studio focused on practical systems",
+    "aboutDescription": "Growonio helps local businesses build a stronger online presence and improve how they manage inquiries, bookings, and simple business workflows.",
+    "aboutCardTitle": "What Growonio builds",
+    "aboutCardDescription": "The work is centered on useful digital systems for service businesses in Romania, not vague startup experimentation.",
+    "aboutItems": [
+      "Modern websites for local businesses",
+      "Booking and inquiry flows",
+      "Practical automation and admin usability"
+    ],
+    "whoTitle": "Who We’re Looking For",
+    "whoDescription": "This opportunity is best for a Romanian-speaking student or early-career collaborator who wants practical startup exposure and is interested in commercial growth, communication, and market learning.",
+    "whoItems": [
+      "Comfortable speaking and writing in Romanian",
+      "Interested in sales, business development, outreach, or marketing",
+      "Curious about startups, offers, and how small businesses buy services",
+      "Reliable, practical, and able to communicate clearly"
+    ],
+    "helpBadge": "What You Would Help With",
+    "helpTitle": "The role is about practical growth support, not busywork",
+    "helpDescription": "The work can evolve with the stage of the business, but the focus is on helping Growonio learn the market, improve outreach, and support early business development.",
+    "helpItems": [
+      {
+        "title": "Local market research",
+        "description": "Identify business types, needs, and patterns in the Romanian local-services market."
+      },
+      {
+        "title": "Outreach and communication",
+        "description": "Help with practical outreach, first-contact messaging, and learning what gets real responses."
+      },
+      {
+        "title": "Lead follow-up",
+        "description": "Support structured follow-up for conversations, replies, and warm leads that should not get lost."
+      },
+      {
+        "title": "Offer and messaging improvement",
+        "description": "Notice objections, weak points, and useful language that can make Growonio easier to understand and trust."
+      },
+      {
+        "title": "General growth support",
+        "description": "Contribute wherever early growth needs practical help, structure, or better execution."
+      }
+    ],
+    "stageBadge": "Current Stage",
+    "stageTitle": "This is a collaboration opportunity inside an early startup",
+    "stageDescription": "Growonio is currently at an early stage. This is not a standard salaried role at the beginning, and we do not want to present it as one.",
+    "stageSupportingLine": "We are looking for someone who wants to collaborate in a practical way, help validate the business, and grow with us from an early stage. As client work starts, the goal is to build a fair reward structure around real contribution and results.",
+    "whyJoinBadge": "Why Join Now",
+    "whyJoinTitle": "Why this can still be valuable",
+    "whyJoinItems": [
+      "Real startup exposure instead of simulated internship tasks",
+      "Direct visibility into outreach, offer shaping, and business building",
+      "Flexible collaboration around studies or early-career schedules",
+      "A chance to influence how Growonio grows from the beginning"
+    ],
+    "fitBadge": "Good Fit or Not",
+    "fitTitle": "We want a fit that is honest on both sides",
+    "fitDescription": "The best collaboration here comes from clear expectations. This page is meant to help you self-select before applying.",
+    "goodFitTitle": "Good Fit",
+    "goodFitDescription": "This is likely a good match if you are energized by learning and helping build something real from an early stage.",
+    "goodFitItems": [
+      "You want practical startup experience, not only theory",
+      "You are comfortable with outreach, communication, and follow-up",
+      "You care about growth, offers, and how businesses win clients",
+      "You can work with ambiguity while still staying responsible"
+    ],
+    "notGoodFitTitle": "Not a Good Fit",
+    "notGoodFitDescription": "This is probably not the right opportunity if you need a fully structured corporate role from day one.",
+    "notGoodFitItems": [
+      "You want a standard salaried job immediately",
+      "You dislike outreach, commercial thinking, or direct communication",
+      "You need constant step-by-step supervision for simple tasks",
+      "You are looking only for a decorative CV line without real contribution"
+    ],
+    "applyBadge": "Apply",
+    "applyTitle": "Interested in collaborating with Growonio?",
+    "applyDescription": "Use the form below and keep it simple. A clear, honest application is more useful than a polished corporate answer.",
+    "applyPanelTitle": "How to apply",
+    "applyPanelDescription": "Share enough context for us to understand your background, why this stage interests you, and whether the collaboration could make sense.",
+    "applyPanelPoints": [
+      "Tell us what you are studying or what your background looks like now",
+      "Explain why Growonio feels interesting to you",
+      "Mention any sales, outreach, or marketing experience, even if small"
+    ],
+    "aboutLinkLabel": "About Growonio",
+    "contactLinkLabel": "Contact Page",
+    "formEyebrow": "Application Form",
+    "formTitle": "Send a simple application",
+    "formDescription": "We are not looking for HR-style answers. Clear context, honest motivation, and practical examples are enough.",
+    "formChips": [
+      "Romanian-speaking opportunity",
+      "Early-stage collaboration",
+      "Practical business exposure"
+    ],
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "Andrei Popescu",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "andrei@example.com",
+    "phoneLabel": "Phone / WhatsApp",
+    "phonePlaceholder": "+40 7xx xxx xxx",
+    "backgroundLabel": "University / Background",
+    "backgroundPlaceholder": "Student in marketing, economics, communication, or similar",
+    "profileLinkLabel": "LinkedIn / CV / Portfolio Link",
+    "profileLinkPlaceholder": "https://linkedin.com/in/your-name",
+    "interestLabel": "Why are you interested in Growonio?",
+    "interestPlaceholder": "Tell us why this opportunity feels relevant to you and what kind of startup exposure you want.",
+    "experienceLabel": "Do you have any sales, outreach, or marketing experience?",
+    "experiencePlaceholder": "Share practical examples, even if they come from university projects, volunteering, side projects, or small jobs.",
+    "directEmailLabel": "Direct email",
+    "submitLabel": "Send Application",
+    "formNote": "If the form does not work, email us directly and include the same details."
   },
   "Footer": {
     "eyebrow": "Growonio Studio",
