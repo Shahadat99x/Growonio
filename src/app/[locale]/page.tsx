@@ -59,23 +59,23 @@ export default function HomePage() {
       <JsonLd data={[buildOrganizationSchema(locale), buildWebsiteSchema(locale)]} />
 
       <Hero
-        badge={t('heroBadge')}
-        title={t('title')}
-        description={t('description')}
-        supportingLine={t('supportingLine')}
-        primaryCtaText={t('cta')}
+        badge={t("heroBadge")}
+        title={t("title")}
+        description={t("description")}
+        supportingLine={t("supportingLine")}
+        primaryCtaText={t("cta")}
         primaryCtaHref="/contact"
-        secondaryCtaText={t('heroSecondaryCta')}
+        secondaryCtaText={t("heroSecondaryCta")}
         secondaryCtaHref="/services"
-        trustChips={t.raw('heroTrustChips') as string[]}
-        visualEyebrow={t('heroVisualEyebrow')}
-        visualTitle={t('heroVisualTitle')}
-        visualDescription={t('heroVisualDescription')}
-        workflowSteps={t.raw('heroWorkflowSteps') as string[]}
-        floatingLeadEyebrow={t('heroFloatingLeadEyebrow')}
-        floatingLeadText={t('heroFloatingLeadText')}
-        floatingReportEyebrow={t('heroFloatingReportEyebrow')}
-        floatingReportText={t('heroFloatingReportText')}
+        trustChips={t.raw("heroTrustChips") as string[]}
+        automationBadge={t("heroAutomationBadge")}
+        automationTitle={t("heroAutomationTitle")}
+        automationTriggerLabel={t("heroAutomationTriggerLabel")}
+        automationTriggerValue={t("heroAutomationTriggerValue")}
+        automationSteps={t.raw("heroAutomationSteps") as string[]}
+        automationFooter={t("heroAutomationFooter")}
+        desktopImageAlt={t("heroDesktopAlt")}
+        mobileImageAlt={t("heroMobileAlt")}
       />
 
       <HomeServicesPreview

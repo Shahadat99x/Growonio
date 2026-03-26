@@ -1,8 +1,8 @@
 {
   "Index": {
-    "title": "Digital systems that help service businesses grow",
-    "description": "Growonio designs modern websites, smarter booking flows, and practical automation systems that turn more visitors into clients and reduce manual work.",
-    "supportingLine": "Built for service businesses in Romania and beyond, with bilingual delivery, SEO-ready structure, and admin-friendly systems from day one.",
+    "title": "Websites, booking systems, and automation for service businesses ready to grow",
+    "description": "Growonio builds modern digital systems that help service businesses win more inquiries, manage bookings cleanly, and reduce manual operational work.",
+    "supportingLine": "Built for Romania first, with bilingual delivery, SEO-ready structure, and admin-friendly handover from day one.",
     "metaTitle": "Growonio | Business Automation for Service Businesses in Romania",
     "metaDescription": "Growonio builds conversion-focused websites, automations, booking systems, and digital workflows for service businesses growing in Romania.",
     "cta": "Request a Quote",
@@ -198,25 +198,24 @@
       "Launch support included"
     ],
     "ctaPanelTitle": "Strategy, build, and launch support in one delivery flow",
-    "heroBadge": "Premium Growth-Tech Studio",
+    "heroBadge": "Growth systems for service businesses",
     "heroTrustChips": [
-      "Bilingual delivery",
-      "SEO-ready structure",
-      "Admin-ready systems"
+      "Romanian + English delivery",
+      "SEO-ready foundations",
+      "Admin-friendly systems"
     ],
-    "heroVisualEyebrow": "Growth workflow",
-    "heroVisualTitle": "From first inquiry to cleaner operations",
-    "heroVisualDescription": "A Growonio project is built like a branching system: better lead capture, clearer booking flow, stronger client handling, and reporting-ready foundations.",
-    "heroWorkflowSteps": [
-      "Lead Capture",
-      "Booking Flow",
-      "Client Admin",
-      "Reporting Ready"
+    "heroAutomationBadge": "Automation layer",
+    "heroAutomationTitle": "New inquiry to booked consultation",
+    "heroAutomationTriggerLabel": "Trigger",
+    "heroAutomationTriggerValue": "Lead form submitted",
+    "heroAutomationSteps": [
+      "Create client record",
+      "Send confirmation",
+      "Move deal to follow-up"
     ],
-    "heroFloatingLeadEyebrow": "Lead Ready",
-    "heroFloatingLeadText": "Pages built to convert",
-    "heroFloatingReportEyebrow": "Reporting Layer",
-    "heroFloatingReportText": "Booking + CRM + follow-up visibility",
+    "heroAutomationFooter": "Connected to admin, booking, and follow-up visibility.",
+    "heroDesktopAlt": "Growonio desktop dashboard showing bookings, client pipeline, and operational workflow management",
+    "heroMobileAlt": "Growonio mobile booking flow for service consultation scheduling",
     "exploreWork": "Explore our work",
     "readInsights": "Read our insights"
   },

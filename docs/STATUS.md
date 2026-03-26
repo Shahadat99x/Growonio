@@ -1,5 +1,5 @@
 # Project Status
-**Current Phase:** H0 Complete
+**Current Phase:** H1 Complete
 **Date:** 2026-03-27
 
 ## Current Product State
@@ -29,7 +29,17 @@
 - Hero will use one fixed desktop dashboard image, one mobile image, and one coded automation card.
 - Motion will stay subtle and limited.
 
+## Phase H1 Complete
+- Homepage hero rebuilt in production code.
+- Current abstract hero visual replaced with a real product-style composition.
+- Hero now uses the two local assets from `public/images`:
+  - desktop dashboard image
+  - mobile booking image
+- Automation card is now coded in HTML/CSS and its text is editable through localization files.
+- Hero copy was tightened in both Romanian and English.
+- The rest of the homepage was intentionally left unchanged.
+
 ## Next
-- Phase H1 is ready.
-- Phase H1 implements the redesigned homepage hero only.
-- No full homepage rebuild happens in H1.
+- Phase H1A is ready.
+- Phase H1A should focus only on subtle hero motion polish.
+- No broader homepage redesign should happen in H1A.
