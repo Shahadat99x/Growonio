@@ -1,143 +1,35 @@
 # Project Status
-**Phase:** 9 Complete
-**Date:** March 2026
+**Current Phase:** H0 Complete
+**Date:** 2026-03-27
 
-## Complete
-- **Phase 0:** Master context, architecture scaffolding.
-- **Phase 1:** Next.js + Tailwind v4 + Next-Intl + Shadcn core initialization.
-- **Phase 2:** Design system, base layouts, Navbar/Footer.
-- **Phase 3:** Core bilingual marketing pages.
-- **Phase 4:** CMS data modeling and migration groundwork.
-- **Phase 5:** Live Supabase-backed content hydration.
-- **Phase 6:** Authentication and admin back-office MVP.
-- **Phase 7:** Media & Storage Integration + Insights/Blog system.
-- **Phase 7A:** Frontend premium polish + responsive refinement.
-- **Phase 8:** SEO & Discoverability Hardening.
-  - Added localized page metadata across the core public marketing routes.
-  - Added canonical and hreflang generation tied to the actual `next-intl` routing config.
-  - Added structured data for `Organization`, `WebSite`, `Service`, `FAQPage`, `Blog`, `BlogPosting`, and article breadcrumbs where relevant.
-  - Added `robots.txt` and `sitemap.xml` generation with published-article inclusion only.
-  - Added noindex handling for admin and login surfaces.
-  - Tightened article discoverability so only published, already-live posts resolve publicly.
-  - Moved public content reads to a cookie-free server client to keep the public SEO surface cleaner.
-- **Phase 9:** Launch Readiness, Final QA, and Production Hardening.
-  - Replaced deprecated `middleware` routing with the Next.js 16 `proxy` convention.
-  - Added a real contact form action with validation, bot-field protection, optional Resend notifications, and graceful fallback behavior.
-  - Added launch assets and setup hooks:
-    - Google Analytics component
-    - Google Search Console verification metadata
-    - `manifest.webmanifest`
-    - `icon.svg`
-    - localized `not-found` page
-  - Replaced legal placeholder copy with bilingual production-ready baseline text.
-  - Fixed admin/media upload signing so article uploads use the correct Cloudinary entity folder.
-  - Cleaned remaining admin/login lint debt and verified the app now passes both `npm run lint` and `npm run build`.
-  - Ran a live Supabase smoke test:
-    - draft article stays hidden publicly
-    - published article becomes publicly queryable
-    - active work item becomes publicly queryable
-    - `contact_leads` table is still missing from the currently connected Supabase schema and is tracked below as a deployment follow-up
+## Current Product State
+- The codebase already has a bilingual marketing site, admin area, and Supabase-backed content layer.
+- The current homepage implementation contains six main parts:
+  - hero
+  - services preview
+  - industries preview
+  - process section
+  - proof section
+  - final CTA
+- The homepage currently leans too long and too descriptive for the new direction.
+- Homepage content is still mostly code/translation-driven, and the homepage-specific data-source rules were not clearly locked before this phase.
 
-## Current State
-- The public site, blog, and admin are bilingual, Supabase-backed, and pass both lint and production build checks.
-- Proxy-based route protection is in place for localized admin/login flows on Next.js 16 without the old deprecation warning.
-- Work items and articles render Cloudinary-backed media cleanly, and article uploads now sign against the correct folder.
-- Core public routes have localized metadata, canonical URLs, hreflang alternates, OG/Twitter metadata, sitemap coverage, and structured data.
-- Contact now has a production-safe baseline:
-  - validated server action
-  - optional email notification path
-  - direct email fallback visible on the page
-- Careers now has a public bilingual route with:
-  - localized metadata and sitemap inclusion
-  - footer navigation exposure
-  - an early-stage collaboration page framed honestly for a Romanian-speaking growth/outreach/business-development collaborator
-  - a lightweight application form that reuses the public lead-submission pipeline and records `/careers` as the source path
-- Legal/supporting trust routes now contain actual bilingual baseline content instead of placeholders.
+## Phase H0 Complete
+- Homepage direction audited against the real current homepage structure.
+- Final homepage section order locked.
+- Homepage simplification direction locked.
+- Hero strategy locked.
+- Visual system direction locked.
+- Homepage data-source strategy locked.
 
-## Redesign Initiative: Premium Growth-Tech
-- A frontend redesign initiative is now active to move the site from clean-but-generic to a more premium, memorable, growth-tech presentation layer.
-- Phase 0 audit findings:
-  - the homepage and core marketing surfaces rely too heavily on centered layouts and repeated section patterns
-  - the header is functional but lacks premium hierarchy, stronger active states, and brand presence
-  - the current hero is structurally safe and conversion-capable, but visually generic and not signature-worthy
-  - cards across the site are too flat, too similar, and not differentiated enough between light, tinted, and feature sections
-  - section rhythm is consistent but repetitive, which lowers energy and memorability for a business selling modern digital systems
-  - the current visual identity uses a clean indigo system, but it does not yet express the approved branching-growth motif or premium contrast range
-- What should stay:
-  - bilingual architecture
-  - SEO-friendly page structure and metadata system
-  - admin/content boundaries
-  - current route structure and semantic marketing-page foundations
-- What should change:
-  - visual tokens, depth system, card surfaces, CTA styling, header behavior, and the homepage hero composition
-  - reusable section modes should be reduced to a clearer system: light, soft growth-tint, and bold feature sections
-  - motion should become a reusable layer with restrained reveal, float, and hover patterns instead of ad hoc transitions
-- Completed in this run:
-  - **Phase 0:** redesign audit locked in docs
-  - **Phase 1:** visual system foundations updated
-    - color tokens shifted toward a stronger premium violet / electric-indigo feel
-    - body background identity now uses subtle growth-tint gradients
-    - buttons, section headers, and cards were upgraded for stronger depth and hierarchy
-    - section mode system introduced in code: `light`, `tint`, `feature`
-  - **Phase 1A:** motion foundation added
-    - introduced reusable `MotionReveal` and `MotionFloat` primitives
-    - reduced-motion handling added globally
-    - homepage now uses restrained reveal timing instead of flat static entrances
-  - **Phase 2:** header and homepage hero redesigned
-    - sticky header now gains stronger premium treatment on scroll
-    - navigation hierarchy, active states, language switcher, and contact CTA were upgraded
-    - hero rebuilt into a left-content / right-visual signature section
-    - right-side hero visual now expresses the approved growth/workflow idea through layered rings, branching lines, and floating workflow panels
-    - homepage hero copy was upgraded in both English and Romanian to better match Growonio’s positioning
-  - **Phase 3:** homepage sections redesigned to match the new hero/header quality
-    - homepage content below the hero was refactored into dedicated `src/components/home/*` section components instead of staying as one large inline page file
-    - services preview was rebuilt as productized module cards with stronger hierarchy, bullets, asymmetric rhythm, and clearer internal navigation
-    - industries preview was upgraded into a better business-fit section with stronger tags, clearer “best for” framing, and a more useful support panel
-    - process was rebuilt into a four-step premium delivery path with stronger progression, milestone emphasis, and more distinct dark feature styling
-    - the old generic trust row was replaced with a richer proof/value section that emphasizes bilingual delivery, SEO structure, admin usability, and automation readiness
-    - the homepage CTA was redesigned into a more signature closing section with stronger layering, trust notes, and better button hierarchy
-    - homepage translation content in both English and Romanian was expanded so the redesigned sections have more specific, business-focused copy and not generic brochure text
-  - **Phase 4:** inner pages redesigned to align with the Premium Growth-Tech homepage quality
-    - introduced reusable inner-page primitives:
-      - `InnerPageHero`
-      - `PremiumCtaPanel`
-    - Services page now uses a stronger hero, more productized service modules, richer included-capabilities treatment, upgraded industry cards, a better dark process section, and a stronger premium CTA close
-    - Pricing page was rebuilt with a premium hero, clearer package comparison framing, upgraded pricing/support cards, stronger custom-project positioning, improved FAQ treatment, and a more useful closing CTA
-    - Work / Portfolio page now uses the shared premium hero system, a stronger featured-case-study presentation, upgraded work card surfaces, and a more consistent premium proof/CTA rhythm
-    - Insights page gained a stronger editorial hero, better featured-article treatment, more premium article cards, and a stronger article-to-contact CTA path
-    - Contact page now feels more high-trust and conversion-ready through a stronger hero, richer contact-context panel, upgraded form presentation, and better project-fit framing
-    - bilingual translation content was extended again for inner-page hero copy, panel copy, support framing, editorial framing, and CTA support text
-    - shared inner-page surfaces were upgraded:
-      - pricing cards
-      - support plan cards
-      - custom projects banner
-      - infrastructure note
-      - FAQ accordion
-      - work case-study card
-      - contact form
-  - **Phase 5:** footer, shell cohesion, interaction polish, and responsive tightening
-    - footer was rebuilt as a premium dark closing layer with a stronger brand block, clearer navigation groups, direct contact framing, and integrated micro-conversion links
-    - `BrandMark` now supports an inverse tone so the brand system can render cleanly on darker premium surfaces without forking a second logo component
-    - the global shell now has stronger site-wide background identity through a subtler grid/tint treatment in `globals.css` and shared top-of-page glow treatment in the localized layout shell
-    - restrained motion was extended through additional footer reveals, stronger focus-within/hover behavior on work cards, and smoother FAQ interaction surfaces
-    - public-form polish was tightened through more intentional field treatment, better feedback states, and accessibility improvements like `aria-live`, `role`, and useful autocomplete attributes
-    - responsive and polish cleanup focused on keeping the public site cohesive from hero to footer instead of introducing another round of page-specific redesign churn
-  - **Phase 6:** final launch polish, SEO/content review, and QA
-    - fixed the metadata title strategy so page-level titles now resolve as absolute values, preventing duplicate brand suffixes when combined with the localized layout title template
-    - added final accessibility polish in the nav and language switcher through stronger focus states, `aria-current`, `aria-expanded`, and localized language-toggle labels
-    - brought the lighter public routes up to the premium system quality bar:
-      - About now uses the shared inner-page hero and premium CTA rhythm with stronger brand/process positioning
-      - Solutions now presents industry-fit positioning with richer business-type cards and a stronger supporting panel
-      - FAQ now feels like part of the same public system, with a premium hero, clearer answer framing, and a stronger closing CTA
-    - expanded bilingual content for About, Solutions, and FAQ so those pages are no longer visually improved but textually thin
-    - performed a final launch-quality verification pass with both `npm run lint` and `npm run build`
+## Result of Phase H0
+- Homepage will move to a shorter summary-first structure.
+- Services preview on the homepage will use database content.
+- Featured work preview on the homepage will use database content.
+- Hero will use one fixed desktop dashboard image, one mobile image, and one coded automation card.
+- Motion will stay subtle and limited.
 
-## Remaining Gaps / Next Focus
-- **Launch / Deployment Follow-Ups**
-  - Apply `supabase/migrations/00004_contact_leads.sql` to the live Supabase project if contact submissions should persist in the database.
-  - Configure Resend if email notifications should be sent automatically from contact and careers submissions.
-  - Add the real GA4 measurement ID and Google Search Console verification token in production.
-  - Submit `sitemap.xml` in Search Console after deployment and verify index coverage.
-  - Verify the live `/careers` form path stores or emails submissions correctly after production environment setup.
-  - Replace the placeholder app icon with final brand artwork if a polished brand-specific icon is available.
-  - The public legal pages are structurally ready and production-safe, but they still use a simpler presentation layer than the main marketing routes; treat that as a non-blocking follow-up rather than a launch blocker.
+## Next
+- Phase H1 is ready.
+- Phase H1 implements the redesigned homepage hero only.
+- No full homepage rebuild happens in H1.
