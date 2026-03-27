@@ -1,5 +1,5 @@
 # Project Status
-**Current Phase:** Homepage Preview Refinement Complete
+**Current Phase:** Homepage Process + CTA Refinement Complete
 **Date:** 2026-03-27
 
 ## Current Product State
@@ -62,7 +62,12 @@
 - Reduced homepage featured work visual heaviness by tightening the lead card and shrinking the two supporting cards.
 - Improved scan speed and reduced vertical sprawl while keeping both sections database-driven and homepage-specific.
 
+## Homepage Process + CTA Refinement Pass Complete
+- Removed the heavier support-side treatment from the homepage process section and kept the focus on the 4-step workflow cards.
+- Tightened the process copy and card density so the section feels clearer and easier to scan.
+- Cleaned up the final homepage CTA into a calmer premium block with a single supporting panel and less visual noise.
+
 ## Next
-- Phase H3A is ready.
-- Phase H3A should focus only on process section simplification and homepage final CTA cleanup.
-- Do not reopen the hero, services preview, or featured work preview during H3A.
+- Final homepage polish is ready.
+- The next pass should focus on responsive cleanup, consistency review, accessibility, performance, and homepage QA.
+- Do not reopen the hero, services preview, featured work preview, process structure, or final CTA concept during that pass.

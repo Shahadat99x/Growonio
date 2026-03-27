@@ -108,9 +108,6 @@ export default async function HomePage({
         badge={t("processBadge")}
         title={t("processTitle")}
         description={t("processDesc")}
-        noteTitle={t("processNoteTitle")}
-        noteDescription={t("processNoteDescription")}
-        supportPoints={t.raw("processSupportPoints") as string[]}
         steps={processSteps}
       />
 
