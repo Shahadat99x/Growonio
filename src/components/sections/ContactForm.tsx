@@ -3,21 +3,23 @@
 import { useActionState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
-import {
-  initialContactFormState,
-  submitContactAction,
-} from "@/app/[locale]/contact/actions";
+import { submitContactAction } from "@/app/[locale]/contact/actions";
 import { SubmitButton } from "@/components/admin/SubmitButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+
+const initialContactFormState = {
+  error: null,
+  success: null,
+};
 
 export function ContactForm() {
   const t = useTranslations("Shared");
   const tContact = useTranslations("ContactPage");
   const locale = useLocale();
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useActionState(
+  const [state, formAction, isPending] = useActionState(
     submitContactAction,
     initialContactFormState,
   );
@@ -37,6 +39,7 @@ export function ContactForm() {
     <form
       ref={formRef}
       action={formAction}
+      aria-busy={isPending}
       className="w-full rounded-[2.1rem] border border-border/60 bg-white/86 p-6 shadow-[0_24px_65px_-42px_rgba(24,18,51,0.2)] backdrop-blur-md md:p-8"
     >
       <input type="hidden" name="locale" value={locale} />
@@ -102,6 +105,8 @@ export function ContactForm() {
             name="first_name"
             autoComplete="given-name"
             required
+            minLength={2}
+            maxLength={80}
             placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })}
             className={fieldClassName}
           />
@@ -113,6 +118,8 @@ export function ContactForm() {
             name="last_name"
             autoComplete="family-name"
             required
+            minLength={2}
+            maxLength={80}
             placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })}
             className={fieldClassName}
           />
@@ -127,6 +134,7 @@ export function ContactForm() {
           type="email"
           autoComplete="email"
           required
+          maxLength={160}
           placeholder="john@example.com"
           className={fieldClassName}
         />
@@ -138,6 +146,8 @@ export function ContactForm() {
           id="message" 
           name="message"
           required
+          minLength={20}
+          maxLength={5000}
           placeholder={t('messagePlaceholder')}
           className={textareaClassName}
         />

@@ -232,7 +232,7 @@ export const mockFAQs: FAQItem[] = [
 
 export const mockCompanySettings: CompanySettings = {
   id: "global",
-  email: "hello@growonio.com",
+  email: "hello@growonio.ro",
   phone: "+40 123 456 789",
   address_en: "123 Innovation Blvd, Tech District",
   address_ro: "Bvd Inovației 123, Districtul Tehnologic",

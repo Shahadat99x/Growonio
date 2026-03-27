@@ -1,4 +1,11 @@
-import { ArrowRight, CalendarCheck, CheckCircle2, MonitorSmartphone, Smartphone, Workflow } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarCheck,
+  MonitorSmartphone,
+  Smartphone,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -7,13 +14,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-
-type ServiceModule = {
-  eyebrow: string;
-  title: string;
-  description: string;
-  bullets: string[];
-};
+import type { LocalizedService } from "@/types/content";
 
 interface HomeServicesPreviewProps {
   badge: string;
@@ -22,26 +23,19 @@ interface HomeServicesPreviewProps {
   panelTitle: string;
   panelDescription: string;
   highlights: string[];
-  cards: ServiceModule[];
+  services: LocalizedService[];
+  shortLabels: Record<string, string>;
   primaryLabel: string;
-  secondaryLabel: string;
-  tertiaryLabel: string;
-  learnMoreLabel: string;
+  emptyTitle: string;
+  emptyDescription: string;
 }
 
-const serviceIcons = [MonitorSmartphone, CalendarCheck, Workflow, Smartphone];
-const layoutClasses = [
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-5",
-  "lg:col-span-7",
-];
-const accentClasses = [
-  "from-primary/18 via-primary/6 to-transparent",
-  "from-sky-500/15 via-primary/5 to-transparent",
-  "from-fuchsia-500/16 via-primary/5 to-transparent",
-  "from-violet-500/16 via-primary/5 to-transparent",
-];
+const iconMap: Record<string, LucideIcon> = {
+  MonitorSmartphone,
+  CalendarCheck,
+  Workflow,
+  Smartphone,
+};
 
 export function HomeServicesPreview({
   badge,
@@ -50,115 +44,31 @@ export function HomeServicesPreview({
   panelTitle,
   panelDescription,
   highlights,
-  cards,
+  services,
+  shortLabels,
   primaryLabel,
-  secondaryLabel,
-  tertiaryLabel,
-  learnMoreLabel,
+  emptyTitle,
+  emptyDescription,
 }: HomeServicesPreviewProps) {
+  const previewServices = services.slice(0, 3);
+
   return (
-    <Section variant="tint" className="relative">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(129,93,255,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(129,93,255,0.08),transparent_30%)]" />
+    <Section className="relative overflow-hidden border-y border-slate-200/70 bg-[linear-gradient(180deg,rgba(253,252,255,0.98)_0%,rgba(248,248,251,0.98)_100%)]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.08),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(63,103,220,0.05),transparent_26%)]" />
 
       <Container className="relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-end">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <MotionReveal>
             <SectionHeader
               align="left"
               badge={badge}
               title={title}
               description={description}
-              className="mb-0 max-w-none"
+              className="mb-0 max-w-3xl [&_div]:border-slate-200/80 [&_div]:bg-white/92 [&_div]:text-slate-700 [&_h2]:text-slate-950 [&_h2]:md:text-[3rem] [&_p]:max-w-xl [&_p]:text-slate-600"
             />
           </MotionReveal>
 
           <MotionReveal delay={0.08}>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/65 bg-white/84 p-7 shadow-[0_22px_60px_-36px_rgba(24,18,51,0.25)] backdrop-blur-md">
-              <div className="absolute inset-y-0 right-0 w-2/5 bg-[radial-gradient(circle_at_center,rgba(129,93,255,0.12),transparent_68%)]" />
-              <p className="relative text-sm font-semibold uppercase tracking-[0.22em] text-primary/85">
-                {panelTitle}
-              </p>
-              <p className="relative mt-4 max-w-2xl text-base leading-8 text-muted-foreground md:text-[1.02rem]">
-                {panelDescription}
-              </p>
-              <div className="relative mt-6 flex flex-wrap gap-3">
-                {highlights.map((highlight) => (
-                  <span
-                    key={highlight}
-                    className="inline-flex items-center rounded-full border border-primary/14 bg-primary/8 px-4 py-2 text-sm font-medium text-foreground shadow-[0_12px_25px_-22px_color-mix(in_oklab,var(--color-primary)_35%,transparent)]"
-                  >
-                    <span className="mr-2 h-2 w-2 rounded-full bg-primary shadow-[0_0_14px_-2px_color-mix(in_oklab,var(--color-primary)_90%,transparent)]" />
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </MotionReveal>
-        </div>
-
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-12 xl:gap-6">
-          {cards.map((card, index) => {
-            const Icon = serviceIcons[index] ?? MonitorSmartphone;
-
-            return (
-              <MotionReveal
-                key={card.title}
-                delay={0.06 + index * 0.06}
-                className={layoutClasses[index]}
-              >
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/72 bg-white/88 p-7 shadow-[0_22px_60px_-34px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-[0_28px_70px_-34px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]">
-                  <div
-                    className={cn(
-                      "absolute inset-x-0 top-0 h-28 bg-linear-to-br opacity-90 transition-opacity duration-300 group-hover:opacity-100",
-                      accentClasses[index],
-                    )}
-                  />
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                  <div className="relative flex items-start justify-between gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] border border-primary/14 bg-primary/9 text-primary shadow-[0_16px_34px_-28px_color-mix(in_oklab,var(--color-primary)_60%,transparent)] ring-1 ring-white/45 transition-transform duration-300 group-hover:scale-[1.04]">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <span className="rounded-full border border-border/60 bg-white/72 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      {card.eyebrow}
-                    </span>
-                  </div>
-
-                  <div className="relative mt-7 flex flex-1 flex-col">
-                    <h3 className="max-w-xl text-2xl font-semibold tracking-[-0.04em] text-foreground">
-                      {card.title}
-                    </h3>
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground md:text-[0.98rem]">
-                      {card.description}
-                    </p>
-
-                    <ul className="mt-6 grid gap-3">
-                      {card.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3 text-sm leading-6 text-foreground/88">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-7 flex items-center justify-end border-t border-border/55 pt-5">
-                      <Link
-                        href="/services"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
-                      >
-                        {learnMoreLabel}
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              </MotionReveal>
-            );
-          })}
-        </div>
-
-        <MotionReveal delay={0.18}>
-          <div className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/services"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}
@@ -166,17 +76,107 @@ export function HomeServicesPreview({
               {primaryLabel}
               <ArrowRight className="h-4 w-4" />
             </Link>
+          </MotionReveal>
+        </div>
+
+        <MotionReveal delay={0.1}>
+          <div className="mt-8 rounded-[1.7rem] border border-slate-200/80 bg-white/94 px-5 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)]">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-slate-700">
+                  {panelTitle}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-600 md:text-[0.98rem]">
+                  {panelDescription}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {highlights.map((highlight) => (
+                  <span
+                    key={highlight}
+                    className="inline-flex items-center rounded-full border border-slate-200/85 bg-slate-50 px-3 py-1.5 text-[0.76rem] font-medium leading-5 text-slate-700"
+                  >
+                    <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </MotionReveal>
+
+        {previewServices.length > 0 ? (
+          <div className="mt-8 grid gap-4 lg:grid-cols-3 xl:gap-5">
+            {previewServices.map((service, index) => {
+              const Icon = iconMap[service.icon_name] ?? MonitorSmartphone;
+              const quickPoints = Array.isArray(service.bullet_points)
+                ? service.bullet_points.slice(0, 2)
+                : [];
+              const compactTitle = shortLabels[service.slug] ?? service.title;
+
+              return (
+                <MotionReveal key={service.id} delay={0.06 + index * 0.05}>
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/85 bg-white/96 p-5 shadow-[0_18px_48px_-38px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_24px_60px_-38px_rgba(55,42,123,0.18)]">
+                    <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.1),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+
+                    <div className="relative flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(245,244,251,1)_0%,rgba(255,255,255,1)_100%)] text-primary shadow-[0_16px_30px_-26px_rgba(55,42,123,0.22)]">
+                        <Icon className="h-4.5 w-4.5" />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">
+                          {compactTitle}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {quickPoints.length > 0 && (
+                      <div className="relative mt-5 flex flex-wrap gap-2">
+                        {quickPoints.map((point) => (
+                          <span
+                            key={point}
+                            className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1.5 text-[0.74rem] font-medium leading-5 text-slate-700"
+                          >
+                            {point}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="relative mt-auto pt-5">
+                      <p className="text-[0.74rem] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                        {String(service.order).padStart(2, "0")}
+                      </p>
+                    </div>
+                  </article>
+                </MotionReveal>
+              );
+            })}
+          </div>
+        ) : (
+          <MotionReveal delay={0.08}>
+            <div className="mt-14 rounded-[2rem] border border-slate-200/80 bg-white/96 px-7 py-10 shadow-[0_22px_56px_-42px_rgba(19,16,38,0.16)]">
+              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                {emptyTitle}
+              </h3>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
+                {emptyDescription}
+              </p>
+            </div>
+          </MotionReveal>
+        )}
+
+        <MotionReveal delay={0.16}>
+          <div className="mt-6 flex flex-wrap gap-3 lg:hidden">
             <Link
-              href="/work"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-7")}
+              href="/services"
+              className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}
             >
-              {secondaryLabel}
-            </Link>
-            <Link
-              href="/insights"
-              className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "rounded-full px-6")}
-            >
-              {tertiaryLabel}
+              {primaryLabel}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </MotionReveal>

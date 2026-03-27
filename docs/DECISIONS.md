@@ -1,390 +1,173 @@
 # Growonio — Key Decisions Log
 
-## 1. Brand Name
+## 1. Core Business Direction
 
-Chosen brand:
-**Growonio**
+- Brand: **Growonio**
+- Tagline: **Business automation built for growth**
+- Primary market: **Romania**
+- Language strategy: Romanian default, English secondary
+- Positioning: modern tech solutions studio for service businesses
 
-Reason:
+## 2. Offer Focus
 
-- sounds modern and brandable
-- feels more ownable than generic service names
-- can support future growth beyond just websites
-- domain direction chosen around growonio.com
-
-Tagline:
-**Business automation built for growth**
-
----
-
-## 2. Market Direction
-
-Primary market:
-**Romania**
-
-Reason:
-
-- local opportunity exists
-- Romanian language gives trust advantage
-- local SEO can support early organic visibility
-- easier to position against generic English-only small agencies
-
-Secondary positioning:
-
-- English also supported for broader credibility and future expansion
-
----
-
-## 3. Language Decision
-
-Decision:
-**Bilingual site (Romanian + English)**
-
-Reason:
-
-- Romanian is important for local sales and local SEO
-- English is important for premium feel and broader business credibility
-- Romania-first strategy should not block future growth
-
-Current preference:
-
-- Romanian as default
-- English as secondary
-
----
-
-## 4. Positioning Decision
-
-Growonio will not be positioned as a generic “we build anything” company.
-
-Instead, it will focus on:
+Growonio stays focused on:
 
 - websites
-- booking flows
-- lead capture
+- booking systems
 - client management
-- simple automation
+- lead capture
+- workflow automation
+
+Mobile apps remain secondary, not the main homepage sales hook.
+
+## 3. CMS Boundary
+
+Use a hybrid CMS approach.
+
+Database-driven content:
+
+- services
+- pricing
+- work / portfolio
+- articles
+- FAQs
+- company settings
+
+Code-managed structure:
+
+- layout system
+- section order
+- navigation
+- SEO logic
+- motion rules
+- reusable card variants
+
+## 4. Homepage Simplification
+
+Decision:
+**The homepage will be simplified into a shorter summary-first page.**
 
 Reason:
 
-- easier to sell outcomes than generic coding services
-- stronger differentiation
-- better fit for local service businesses
-- more resilient than just “AI makes websites too”
+- current homepage is too broad
+- future detail should live on internal pages
+- the homepage must explain Growonio quickly
 
----
+## 5. Final Homepage Section Order
 
-## 5. Core Service Direction
+Locked order:
 
-Main service areas chosen:
+1. Hero
+2. Services Preview
+3. Featured Work Preview
+4. Process Snapshot
+5. Final CTA
 
-- Website Design & Development
-- Booking & Client Management
-- Lead Capture & Workflow Automation
-- Mobile App Development
+## 6. Homepage Sections to Remove or Merge
 
-Reason:
+- remove the standalone industries / solutions preview from the homepage
+- remove the standalone proof / trust section from the homepage
+- keep trust signals, but fold them into the hero, work preview, and CTA
+- keep process, but in a compressed summary form
 
-- strong business relevance
-- easy to package
-- suitable for service-business clients
-- allows future upsell without overcomplicating the offer
+## 7. Homepage Data Source Strategy
 
-Mobile apps should remain secondary, not the main sales entry point.
+Homepage sections that should use database content:
 
----
+- services preview
+- featured portfolio / work preview
 
-## 6. Website Structure Decision
+Homepage decisions that remain hardcoded:
 
-Core public pages chosen:
+- homepage layout
+- section structure
+- card variants
+- CTA placement
+- motion behavior
 
-- Home
-- Services
-- Pricing
-- Work / Portfolio
-- Solutions
-- About
-- FAQ
-- Contact
+## 8. Homepage Hero Strategy
 
-Reason:
+Decision:
+**The homepage hero uses fixed product-style visuals, not an abstract generated scene.**
 
-- enough pages for trust, sales, and SEO
-- avoids bloated agency-site structure
-- supports both conversion and discoverability
+Locked composition:
 
-Legal pages also required.
+- left text block with headline, short support copy, CTAs, and trust chips
+- one desktop dashboard image
+- one mobile image
+- one HTML/CSS automation card
 
----
+Motion rule:
 
-## 7. UI Direction Decision
+- desktop image stays fixed
+- subtle motion only on the mobile image and automation card
 
-Visual direction chosen:
+## 9. Homepage Visual Direction
 
-- modern
-- premium
-- minimal
-- clear
-- business-focused
-- trustworthy
+Decision:
+**Shift the homepage palette away from soft pink/lavender toward deep violet and indigo.**
+
+Locked direction:
+
+- deep violet
+- indigo
+- graphite
+- off-white
+- more neutral whitespace
+- more serious modern-tech feel
 
 Avoid:
 
-- overanimated UI
-- generic corporate jargon
-- fake giant-agency feeling
-- cluttered layouts
+- pink-heavy feel
+- playful visuals
+- fake enterprise styling
+- clutter
 
-Reason:
-
-- target buyers need trust and clarity
-- small studio should look focused, not inflated
-
----
-
-## 8. SEO Direction Decision
-
-SEO must be built in from the beginning.
-
-Priority:
-
-- Romanian local organic SEO
-- bilingual structure
-- service + niche relevance
-- technical SEO basics from launch
-
-Reason:
-
-- organic traffic can compound over time
-- Romanian pages help local search trust
-- better to design page structure early around SEO than patch later
-
----
-
-## 9. Admin Scope Decision
+## 10. Homepage Content Rule
 
 Decision:
-**Hybrid CMS approach**
+**The homepage is a curated summary, not a detail-heavy brochure.**
 
-Editable in admin:
+Practical rule:
 
-- service content
-- pricing
-- work / portfolio
-- blog / insights
-- testimonials
-- FAQs
-- company settings
-- selected homepage text
+- explain what Growonio does fast
+- show focused proof
+- keep hierarchy strong
+- push deeper service, niche, and explanation content into internal pages
 
-Hardcoded in code:
-
-- page templates
-- design system
-- route structure
-- SEO logic
-- navigation structure
-
-Reason:
-
-- best balance of flexibility and consistency
-- avoids messy page-builder problems
-- preserves design quality and SEO structure
-
----
-
-## 10. Tech Stack Decision
-
-Preferred core stack:
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Supabase
-- Cloudinary
-- Vercel
-
-Likely additions:
-
-- i18n library
-- validation/forms library
-- domain email
-- analytics/search console setup
-
-Reason:
-
-- strong modern stack
-- good fit for content + admin + deployment
-- scalable enough without being too heavy
-
----
-
-## 11. Build Workflow Decision
-
-Project should use a lean documentation system for AI continuity.
-
-Core docs:
-
-- MASTER_CONTEXT.md
-- STATUS.md
-- NEXT_PHASE.md
-- DECISIONS.md
-
-Reason:
-
-- fewer files
-- easier context transfer across AI chats
-- lower token waste
-- easy to update phase by phase
-
----
-
-## 12. Business Strategy Direction
-
-Growonio should sell business outcomes, not just code.
-
-Main sales framing:
-
-- more bookings
-- better lead capture
-- reduced manual work
-- better online trust
-- clearer client communication
-- practical digital systems
-
-Reason:
-
-- “website/app development” alone is too generic
-- AI lowers the value of raw page production
-- value is in execution, structure, integration, and accountability
-
----
-
-## 13. Premium Growth-Tech Redesign Direction
+## 11. Public Form Success Criteria
 
 Decision:
-**Adopt “Premium Growth-Tech” as the next frontend design direction**
-
-Meaning:
-
-- light base as the default canvas
-- selective tinted and bold feature sections for rhythm
-- stronger depth, hierarchy, and contrast than the current minimal system
-- violet / electric-indigo accent energy
-- subtle organic growth motifs inspired by layered rings and branching systems
-- restrained glass and motion only in strategic areas like the header, hero, and premium CTA surfaces
-
-Implementation rules:
-
-- no mascot-led or childish visuals
-- no full-site dark mode presentation by default
-- no random animation without product meaning
-- no broad one-off styling hacks that weaken maintainability
-
-System-level constraint:
-The redesign should be built around reusable section modes, reusable motion patterns, and reusable surface styles rather than page-specific decoration.
-
-Technical implementation notes:
-
-- use `motion` / Motion for React as the primary animation layer
-- keep GSAP out unless a later scroll-storytelling phase creates a clear need
-- lock the section-mode system to three reusable states only:
-  - `light`
-  - `tint`
-  - `feature`
-
----
-
-## 14. Homepage Phase 3 Composition Decision
-
-Decision:
-**Refactor homepage sections into dedicated section components with asymmetric layouts**
-
-Implementation shape:
-
-- homepage sections below the hero now live in `src/components/home/*`
-- services, industries, process, proof, and CTA each use different layout rhythms instead of repeating the same centered heading + uniform card row
-- homepage-specific cards can be richer than the generic card primitive, but they must still reuse the main visual tokens, button system, and section modes
+**A public form submission counts as successful only when the Resend notification email is accepted for delivery.**
 
 Reason:
 
-- the homepage needed a stronger sense of progression after the hero
-- keeping the redesign inside dedicated section components is cleaner than pushing complex one-off markup into `page.tsx`
-- asymmetric composition helps the premium growth-tech direction feel intentional without forcing the same art direction onto every other page
+- the business goal for this phase is inbox delivery, not only database persistence
+- a Supabase-only write is not enough if Growonio never sees the inquiry
+- users must not see a false-positive success state
 
----
-
-## 15. Inner Page Phase 4 System Decision
+## 12. Public Form Delivery Defaults
 
 Decision:
-**Use shared inner-page hero and premium CTA primitives across the main public inner pages**
+**The shared public-form delivery path defaults to the current live mailbox setup unless env values intentionally override it.**
 
-Implementation shape:
+Current defaults:
 
-- introduced reusable `InnerPageHero` and `PremiumCtaPanel` components
-- Services, Pricing, Work, Insights, and Contact now share a stronger structural shell while still allowing page-specific right-panel content and section composition
-- page-specific surfaces can remain specialized, but the hero/CTA rhythm should stay consistent enough that the site feels like one product/studio system
+- sender: `Growonio <hello@growonio.ro>`
+- notification inbox: `growoniohq@gmail.com`
+- public contact email: `hello@growonio.ro`
 
 Reason:
 
-- the homepage redesign established a much higher visual quality bar than the inner pages
-- using shared hero and CTA primitives is cleaner and more maintainable than rebuilding those patterns separately on every route
-- the inner pages needed to catch up in quality without collapsing into five nearly identical page templates
+- the active business setup is already known for this phase
+- missing optional env values should not silently disable email delivery again
 
----
-
-## 16. Phase 5 Shell and Footer Cohesion Decision
+## 13. Public Form Storage Priority
 
 Decision:
-**Use a dark premium footer and shared shell-level polish to finish the redesign through common surfaces instead of reopening every page**
-
-Implementation shape:
-
-- the footer now acts as a distinct closing layer with an inverse brand treatment, grouped navigation, direct-contact framing, and small conversion paths
-- `BrandMark` supports both default and inverse tones so the same brand system can be reused across light and dark premium surfaces
-- the global shell uses subtle background texture/glow treatment in `globals.css` and the localized layout wrapper to improve continuity between page heroes, section bodies, CTA panels, and the footer
-- motion rollout stays inside the existing reveal/hover/focus language rather than introducing heavier choreography or another animation dependency
+**Supabase storage remains best-effort secondary behavior for public forms in this phase.**
 
 Reason:
 
-- after the homepage and inner pages were redesigned, the remaining mismatch was mostly in shared shell surfaces rather than core page composition
-- finishing the footer and shared public interaction layer gives better site-wide cohesion than another broad page-by-page pass
-- keeping Phase 5 centered on shared surfaces protects maintainability and avoids decorative drift near launch
-
----
-
-## 17. Final Metadata Title Strategy
-
-Decision:
-**Page-level metadata titles should resolve as absolute titles**
-
-Implementation shape:
-
-- `buildPageMetadata` now returns `title.absolute`
-- the localized layout still provides the default title and title template for segments that do not override metadata
-- page metadata strings can safely include or omit the brand name without accidentally producing duplicated `| Growonio` suffixes
-
-Reason:
-
-- the redesign/content pass left a mix of title styles across routes: some included the brand directly, while others relied on the layout template
-- resolving page titles as absolute values is the safest production-ready approach because it prevents duplicate branding in browser titles and search snippets while preserving the current localized metadata content
-
----
-
-## 18. Careers Page Delivery Strategy
-
-Decision:
-**Keep the Careers opportunity code-managed and reuse the public lead pipeline instead of building a separate recruiting backend**
-
-Implementation shape:
-
-- `/careers` is a bilingual public marketing page, not a CMS-managed hiring system
-- the page is written in code so the early-stage opportunity can stay tightly controlled, honest, and visually aligned with the premium public site
-- the application form reuses the existing public lead submission path and stores submissions under the `/careers` source path rather than introducing a separate hiring table/admin flow
-- we do not use `JobPosting` schema or corporate-style hiring framing because the opportunity is an early-stage collaboration, not a standard salaried vacancy
-
-Reason:
-
-- the business needs a practical launch-ready collaborator page quickly, not a large hiring subsystem
-- the opportunity needs careful wording and should not drift into fake-corporate recruiting language
-- reusing the existing validated submission path keeps implementation leaner and easier to maintain while still giving enough structure for early-stage applications
+- reliable email notification is the operational requirement right now
+- storage/admin review can be expanded in the next phase without blocking form delivery

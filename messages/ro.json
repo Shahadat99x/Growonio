@@ -1,65 +1,31 @@
 {
   "Index": {
-    "title": "Sisteme digitale care ajută afacerile de servicii să crească",
-    "description": "Growonio proiectează website-uri moderne, fluxuri de programări mai inteligente și sisteme practice de automatizare care transformă mai mulți vizitatori în clienți și reduc munca manuală.",
-    "supportingLine": "Construite pentru afaceri de servicii din România și nu numai, cu livrare bilingvă, structură pregătită pentru SEO și sisteme ușor de administrat încă din prima zi.",
+    "title": "Website-uri, sisteme de programări și automatizări pentru afaceri de servicii care vor să crească",
+    "description": "Growonio construiește sisteme digitale moderne care ajută afacerile de servicii să câștige mai multe cereri, să gestioneze mai clar programările și să reducă munca operațională manuală.",
+    "supportingLine": "Construite pentru România mai întâi, cu livrare bilingvă, structură pregătită pentru SEO și predare ușor de administrat încă din prima zi.",
     "metaTitle": "Growonio | Automatizare pentru afaceri de servicii din România",
     "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
     "cta": "Cere ofertă",
     "heroSecondaryCta": "Descoperă Serviciile",
-    "servicesPreviewBadge": "Module Principale de Livrare",
-    "servicesPreviewTitle": "Patru direcții clare de servicii construite ca un singur sistem de creștere",
-    "servicesPreviewDesc": "Growonio combină website-uri, logică de programări, control administrativ și pregătire pentru automatizare în module conectate care susțin modul real în care funcționează afacerile de servicii.",
-    "servicesPreviewPanelTitle": "Gândite să funcționeze împreună",
-    "servicesPreviewPanelDescription": "Fiecare soluție este planificată ca parte din același stack digital, astfel încât website-ul să atragă cereri, să organizeze interacțiunile și să rămână ușor de administrat după lansare.",
+    "servicesPreviewBadge": "Servicii Principale",
+    "servicesPreviewTitle": "Trei straturi principale de servicii prezentate ca un preview rapid de homepage",
+    "servicesPreviewDesc": "O vedere compactă asupra sistemelor principale pe care Growonio le construiește pentru afaceri de servicii care au nevoie de poziționare mai bună, gestionare mai clară a cererii și mai puțină muncă manuală.",
+    "servicesPreviewPanelTitle": "Un singur sistem de livrare conectat",
+    "servicesPreviewPanelDescription": "Homepage-ul rămâne scurt, dar fiecare serviciu este definit ca parte dintr-un sistem conectat pentru creștere și operațiuni zilnice.",
     "servicesPreviewHighlights": [
-      "Arhitectură de conținut bilingvă",
-      "Predare pregătită pentru admin",
-      "Fundații de pagină pregătite pentru SEO"
+      "Setup pregătit pentru două limbi",
+      "Predare ușor de administrat",
+      "Structură pregătită pentru SEO"
     ],
-    "serviceModules": [
-      {
-        "eyebrow": "Poziționare + conversie",
-        "title": "Creare Website-uri pentru Afaceri",
-        "description": "Website-uri moderne pentru afaceri, construite pentru a prezenta clar compania, a susține SEO și a ghida vizitatorii către următorul pas potrivit.",
-        "bullets": [
-          "Design responsive personalizat",
-          "Ierarhie clară a paginilor de servicii",
-          "Editare ușoară a conținutului după lansare"
-        ]
-      },
-      {
-        "eyebrow": "Programări + flux client",
-        "title": "Sisteme de Programări și Management Clienți",
-        "description": "Sisteme structurate de programări și gestionare a cererilor care reduc coordonarea manuală, organizează cererea și îmbunătățesc experiența clientului.",
-        "bullets": [
-          "Fluxuri de programări sau cereri",
-          "Vizibilitate administrativă pentru cererile primite",
-          "Organizare servicii și clienți"
-        ]
-      },
-      {
-        "eyebrow": "Captare lead-uri + follow-up",
-        "title": "Captare Cereri și Automatizare Fluxuri",
-        "description": "Captare mai inteligentă a cererilor și fundații pentru automatizare care ajută afacerile să răspundă mai rapid, să reducă munca repetitivă și să piardă mai puține oportunități.",
-        "bullets": [
-          "Formulare și trasee de calificare",
-          "Logică de automatizare pentru follow-up",
-          "Structură pregătită pentru raportare"
-        ]
-      },
-      {
-        "eyebrow": "Puncte avansate de contact",
-        "title": "Dezvoltare Aplicații Mobile",
-        "description": "Produse mobile personalizate pentru experiențe orientate spre client sau pentru fluxuri interne de operațiuni atunci când un website nu este suficient.",
-        "bullets": [
-          "Livrare Android sau cross-platform",
-          "Planificare orientată spre business",
-          "Fundație tehnică scalabilă"
-        ]
-      }
-    ],
+    "servicesPreviewShortTitles": {
+      "web-design": "Website-uri de Business",
+      "booking-systems": "Sisteme de Programări",
+      "automations": "Automatizare Fluxuri",
+      "mobile-apps": "Aplicații Mobile"
+    },
     "servicesPrimaryLinkLabel": "Descoperă toate serviciile",
+    "servicesPreviewEmptyTitle": "Preview-ul serviciilor este în pregătire",
+    "servicesPreviewEmptyDescription": "Pagina completă de servicii rămâne disponibilă în timp ce homepage-ul preia biblioteca curentă de servicii.",
     "solutionsPreviewBadge": "Afaceri Potrivite",
     "solutionsPreviewTitle": "Construit pentru afaceri de servicii unde operațiunile și fluxul de cereri contează",
     "solutionsPreviewDesc": "Growonio este potrivit pentru afaceri care depind de credibilitate, claritate în programări și follow-up mai rapid pentru a transforma cererea în venit real.",
@@ -110,11 +76,18 @@
     ],
     "solutionsPrimaryLinkLabel": "Vezi soluțiile pe industrii",
     "solutionsSecondaryLinkLabel": "Discută despre afacerea ta",
-    "workPreviewTitle": "Proiecte Recente",
-    "workPreviewDesc": "O privire asupra transformărilor noastre digitale.",
+    "workPreviewBadge": "Portofoliu Selectat",
+    "workPreviewTitle": "Proiecte selectate care arată cum Growonio transformă operațiunile de servicii în sisteme digitale mai clare",
+    "workPreviewDesc": "Un strat scurt de proof pentru homepage: un proiect principal mai puternic și două exemple de suport din biblioteca activă de proiecte.",
+    "workPreviewPanelTitle": "Proof selectiv, nu o listă mare de proiecte",
+    "workPreviewPanelDescription": "Homepage-ul afișează doar o selecție foarte editată, astfel încât vizitatorii să poată evalua rapid calitatea înainte de a deschide portofoliul complet.",
+    "workPreviewPrimaryLabel": "Explorează tot portofoliul",
+    "workPreviewCardCtaLabel": "Vezi studiul de caz",
+    "workPreviewEmptyTitle": "Portofoliul selectat este în pregătire",
+    "workPreviewEmptyDescription": "Pagina de portofoliu rămâne disponibilă în timp ce noile studii de caz sunt pregătite pentru preview-ul homepage-ului.",
     "processBadge": "Proces de Livrare",
     "processTitle": "Un flux structurat care păstrează strategia și execuția aliniate",
-    "processDesc": "Procesul este construit să rămână transparent, etapizat și util pentru afacerile care vor claritate de la descoperire până la lansare.",
+    "processDesc": "Un flux clar în patru pași, construit pentru a păstra scopul, execuția și așteptările de lansare aliniate încă de la început.",
     "processNoteTitle": "Transparență în fiecare etapă",
     "processNoteDescription": "Știi permanent ce se construiește, de ce contează și ce deblochează fiecare etapă pentru următoarea.",
     "processSupportPoints": [
@@ -188,35 +161,34 @@
     "processStep3Desc": "Implementare, instruire și suport continuu pentru accelerarea creșterii.",
     "ctaBadge": "Pornește următorul sistem",
     "ctaHeading": "Ești gata să construiești un sistem digital mai puternic?",
-    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programări mai curate și sisteme practice de creștere construite în jurul operațiunilor reale.",
+    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programări mai curate și sisteme practice construite în jurul operațiunilor reale.",
     "ctaButton": "Cere ofertă",
     "ctaSecondaryButton": "Vezi Prețurile",
-    "ctaSupportNote": "Cele mai multe proiecte încep cu o conversație scurtă de descoperire și o recomandare practică de scop, nu cu un proces de agenție umflat inutil.",
+    "ctaSupportNote": "Cele mai multe proiecte încep cu o conversație scurtă de descoperire și o recomandare practică de scop.",
     "ctaMicroPoints": [
       "Livrare bilingvă",
       "Scop clar și etape definite",
       "Suport inclus la lansare"
     ],
-    "ctaPanelTitle": "Strategie, build și suport la lansare într-un singur flux de livrare",
-    "heroBadge": "Studio Premium de Growth-Tech",
+    "ctaPanelTitle": "Scop clar, build și suport la lansare într-un singur flux",
+    "heroBadge": "Sisteme de creștere pentru afaceri de servicii",
     "heroTrustChips": [
-      "Livrare bilingvă",
-      "Structură pregătită pentru SEO",
+      "Livrare în română și engleză",
+      "Fundații pregătite pentru SEO",
       "Sisteme ușor de administrat"
     ],
-    "heroVisualEyebrow": "Flux de creștere",
-    "heroVisualTitle": "De la prima cerere la operațiuni mai clare",
-    "heroVisualDescription": "Un proiect Growonio este construit ca un sistem care se ramifică: captare mai bună a cererilor, programări mai clare, administrare mai bună a clienților și fundații pregătite pentru raportare.",
-    "heroWorkflowSteps": [
-      "Captare Lead-uri",
-      "Flux de Programări",
-      "Administrare Clienți",
-      "Pregătit pentru Raportare"
+    "heroAutomationBadge": "Strat de automatizare",
+    "heroAutomationTitle": "De la cerere nouă la consultație programată",
+    "heroAutomationTriggerLabel": "Trigger",
+    "heroAutomationTriggerValue": "Formular de lead trimis",
+    "heroAutomationSteps": [
+      "Creare fișă client",
+      "Trimitere confirmare",
+      "Mutare în follow-up"
     ],
-    "heroFloatingLeadEyebrow": "Pregătit pentru Lead-uri",
-    "heroFloatingLeadText": "Pagini construite pentru conversie",
-    "heroFloatingReportEyebrow": "Strat de Raportare",
-    "heroFloatingReportText": "Vizibilitate pentru programări, CRM și follow-up",
+    "heroAutomationFooter": "Conectat cu adminul, programările și vizibilitatea pentru follow-up.",
+    "heroDesktopAlt": "Dashboard Growonio pe desktop pentru programări, pipeline de clienți și administrarea fluxurilor operaționale",
+    "heroMobileAlt": "Flux mobil Growonio pentru programarea unei consultații",
     "exploreWork": "Vezi portofoliul",
     "readInsights": "Citește articolele"
   },

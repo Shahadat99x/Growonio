@@ -2,20 +2,19 @@
 
 import { siteConfig } from "@/lib/config";
 import {
+  buildNotificationEmail,
+  hasMeaningfulText,
   isValidEmail,
+  isValidPhone,
+  isValidUrl,
   normalizeRequiredText,
   sendLeadNotification,
   storeLead,
 } from "@/lib/forms/lead-submission";
 
-export type CareersFormState = {
+type CareersFormState = {
   error: string | null;
   success: string | null;
-};
-
-const initialState: CareersFormState = {
-  error: null,
-  success: null,
 };
 
 type CareersPayload = {
@@ -36,6 +35,11 @@ function getLocalizedMessages(locale: string) {
       required:
         "Completează toate câmpurile obligatorii înainte de trimitere.",
       invalidEmail: "Introdu o adresă de email validă.",
+      invalidPhone: "Introdu un număr de telefon sau WhatsApp valid.",
+      invalidLink:
+        "Linkul de LinkedIn, CV sau portofoliu trebuie să fie un URL complet valid.",
+      tooShort:
+        "Răspunsurile sunt prea scurte. Adaugă puțin context util ca să putem evalua aplicarea.",
       tooLong:
         "Răspunsul este prea lung. Scurtează-l puțin și încearcă din nou.",
       success:
@@ -48,6 +52,11 @@ function getLocalizedMessages(locale: string) {
   return {
     required: "Complete the required fields before submitting.",
     invalidEmail: "Enter a valid email address.",
+    invalidPhone: "Enter a valid phone or WhatsApp number.",
+    invalidLink:
+      "The LinkedIn, CV, or portfolio link must be a complete valid URL.",
+    tooShort:
+      "Your answers are too short. Add a bit more useful context so we can review the application.",
     tooLong: "One of your answers is too long. Shorten it and try again.",
     success:
       "Your application has been sent. We will get back to you if there is a good fit.",
@@ -94,15 +103,43 @@ function buildApplicationMessage(payload: CareersPayload) {
 }
 
 async function sendCareersNotification(payload: CareersPayload) {
-  const subject =
-    payload.locale === "ro"
-      ? `Aplicare Growonio de la ${payload.fullName}`
-      : `Growonio application from ${payload.fullName}`;
+  const submittedAt = new Date().toISOString();
+  const emailContent = buildNotificationEmail({
+    title: "New Growonio careers application",
+    fields: [
+      { label: "Full name", value: payload.fullName },
+      { label: "Email", value: payload.email },
+      { label: "Phone / WhatsApp", value: payload.phone },
+      { label: "University / Background", value: payload.background },
+      {
+        label: "LinkedIn / CV / Portfolio",
+        value: payload.profileLink || "Not provided",
+      },
+      { label: "Source page", value: payload.sourcePath },
+      { label: "Locale", value: payload.locale },
+      { label: "Submitted at (UTC)", value: submittedAt },
+    ],
+    sections: [
+      {
+        heading: "Why they are interested",
+        value: payload.interest,
+      },
+      {
+        heading: "Sales / outreach / marketing experience",
+        value: payload.experience,
+      },
+    ],
+  });
 
   return sendLeadNotification({
     replyTo: payload.email,
-    subject,
-    text: buildApplicationMessage(payload),
+    subject: "New Growonio careers application",
+    html: emailContent.html,
+    text: emailContent.text,
+    tags: [
+      { name: "form_type", value: "careers" },
+      { name: "locale", value: payload.locale },
+    ],
   });
 }
 
@@ -148,8 +185,27 @@ export async function submitCareersAction(
     return { error: messages.invalidEmail, success: null };
   }
 
+  if (!isValidPhone(payload.phone)) {
+    return { error: messages.invalidPhone, success: null };
+  }
+
+  if (payload.profileLink && !isValidUrl(payload.profileLink)) {
+    return { error: messages.invalidLink, success: null };
+  }
+
   if (
-    payload.background.length > 600 ||
+    !hasMeaningfulText(payload.fullName, 3, 3) ||
+    !hasMeaningfulText(payload.background, 3, 3) ||
+    !hasMeaningfulText(payload.interest, 30, 18) ||
+    !hasMeaningfulText(payload.experience, 15, 8)
+  ) {
+    return { error: messages.tooShort, success: null };
+  }
+
+  if (
+    payload.fullName.length > 120 ||
+    payload.phone.length > 30 ||
+    payload.background.length > 160 ||
     payload.profileLink.length > 300 ||
     payload.interest.length > 2000 ||
     payload.experience.length > 2000
@@ -176,13 +232,19 @@ export async function submitCareersAction(
     console.error("Failed to store careers application:", error);
   }
 
+  if (!stored) {
+    console.warn("Careers application email will proceed without Supabase lead storage.");
+  }
+
   try {
     emailed = await sendCareersNotification(payload);
   } catch (error) {
     console.error("Failed to send careers notification:", error);
   }
 
-  if (!stored && !emailed) {
+  // Public-form success means Growonio received the email notification,
+  // not only that we managed to persist a lead row.
+  if (!emailed) {
     return { error: messages.fallback, success: null };
   }
 
@@ -191,5 +253,3 @@ export async function submitCareersAction(
     success: messages.success,
   };
 }
-
-export { initialState as initialCareersFormState };

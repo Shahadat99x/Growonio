@@ -2,20 +2,17 @@
 
 import { siteConfig } from "@/lib/config";
 import {
+  buildNotificationEmail,
+  hasMeaningfulText,
   isValidEmail,
   normalizeRequiredText,
   sendLeadNotification,
   storeLead,
 } from "@/lib/forms/lead-submission";
 
-export type ContactFormState = {
+type ContactFormState = {
   error: string | null;
   success: string | null;
-};
-
-const initialState: ContactFormState = {
-  error: null,
-  success: null,
 };
 
 type ContactPayload = {
@@ -32,6 +29,8 @@ function getLocalizedMessages(locale: string) {
     return {
       required: "Completează toate câmpurile înainte de trimitere.",
       invalidEmail: "Introdu o adresă de email validă.",
+      tooShort:
+        "Adaugă câteva detalii utile despre proiect ca să putem înțelege solicitarea.",
       tooLong: "Mesajul este prea lung. Te rog scurtează-l și încearcă din nou.",
       success:
         "Mesajul a fost trimis. Revenim către tine cât mai curând.",
@@ -43,28 +42,42 @@ function getLocalizedMessages(locale: string) {
   return {
     required: "Complete all fields before submitting.",
     invalidEmail: "Enter a valid email address.",
+    tooShort:
+      "Add a bit more useful detail about the project so we can understand the request.",
     tooLong: "Your message is too long. Shorten it and try again.",
     success: "Your message has been sent. We will get back to you shortly.",
     fallback: `We could not process the form right now. Please email us directly at ${siteConfig.companyEmail}.`,
   };
 }
 async function sendContactNotification(payload: ContactPayload) {
-  const subject =
-    payload.locale === "ro"
-      ? `Lead nou Growonio de la ${payload.firstName} ${payload.lastName}`
-      : `New Growonio lead from ${payload.firstName} ${payload.lastName}`;
+  const submittedAt = new Date().toISOString();
+  const emailContent = buildNotificationEmail({
+    title: "New Growonio contact inquiry",
+    fields: [
+      { label: "First name", value: payload.firstName },
+      { label: "Last name", value: payload.lastName },
+      { label: "Email address", value: payload.email },
+      { label: "Source page", value: payload.sourcePath },
+      { label: "Locale", value: payload.locale },
+      { label: "Submitted at (UTC)", value: submittedAt },
+    ],
+    sections: [
+      {
+        heading: "Project details / Message",
+        value: payload.message,
+      },
+    ],
+  });
 
   return sendLeadNotification({
     replyTo: payload.email,
-    subject,
-    text: [
-      `Name: ${payload.firstName} ${payload.lastName}`,
-      `Email: ${payload.email}`,
-      `Locale: ${payload.locale}`,
-      `Source: ${payload.sourcePath}`,
-      "",
-      payload.message,
-    ].join("\n"),
+    subject: "New Growonio contact inquiry",
+    html: emailContent.html,
+    text: emailContent.text,
+    tags: [
+      { name: "form_type", value: "contact" },
+      { name: "locale", value: payload.locale },
+    ],
   });
 }
 
@@ -100,6 +113,14 @@ export async function submitContactAction(
     return { error: messages.invalidEmail, success: null };
   }
 
+  if (
+    !hasMeaningfulText(payload.firstName, 2, 2) ||
+    !hasMeaningfulText(payload.lastName, 2, 2) ||
+    !hasMeaningfulText(payload.message, 20, 10)
+  ) {
+    return { error: messages.tooShort, success: null };
+  }
+
   if (payload.message.length > 5000) {
     return { error: messages.tooLong, success: null };
   }
@@ -113,13 +134,19 @@ export async function submitContactAction(
     console.error("Failed to store contact lead:", error);
   }
 
+  if (!stored) {
+    console.warn("Contact submission email will proceed without Supabase lead storage.");
+  }
+
   try {
     emailed = await sendContactNotification(payload);
   } catch (error) {
     console.error("Failed to send contact notification:", error);
   }
 
-  if (!stored && !emailed) {
+  // Public-form success means Growonio received the email notification,
+  // not only that we managed to persist a lead row.
+  if (!emailed) {
     return { error: messages.fallback, success: null };
   }
 
@@ -128,5 +155,3 @@ export async function submitContactAction(
     success: messages.success,
   };
 }
-
-export { initialState as initialContactFormState };

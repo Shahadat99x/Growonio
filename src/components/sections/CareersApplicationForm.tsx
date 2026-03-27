@@ -4,21 +4,23 @@ import { useActionState, useEffect, useRef } from "react";
 import { Mail } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import {
-  initialCareersFormState,
-  submitCareersAction,
-} from "@/app/[locale]/careers/actions";
+import { submitCareersAction } from "@/app/[locale]/careers/actions";
 import { SubmitButton } from "@/components/admin/SubmitButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { siteConfig } from "@/lib/config";
 
+const initialCareersFormState = {
+  error: null,
+  success: null,
+};
+
 export function CareersApplicationForm() {
   const t = useTranslations("CareersPage");
   const locale = useLocale();
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useActionState(
+  const [state, formAction, isPending] = useActionState(
     submitCareersAction,
     initialCareersFormState,
   );
@@ -38,6 +40,7 @@ export function CareersApplicationForm() {
     <form
       ref={formRef}
       action={formAction}
+      aria-busy={isPending}
       className="w-full rounded-[2.1rem] border border-border/60 bg-white/88 p-6 shadow-[0_24px_65px_-42px_rgba(24,18,51,0.2)] backdrop-blur-md md:p-8"
     >
       <input type="hidden" name="locale" value={locale} />
@@ -103,6 +106,8 @@ export function CareersApplicationForm() {
             name="full_name"
             autoComplete="name"
             required
+            minLength={3}
+            maxLength={120}
             placeholder={t("fullNamePlaceholder")}
             className={fieldClassName}
           />
@@ -116,6 +121,7 @@ export function CareersApplicationForm() {
             type="email"
             autoComplete="email"
             required
+            maxLength={160}
             placeholder={t("emailPlaceholder")}
             className={fieldClassName}
           />
@@ -129,6 +135,8 @@ export function CareersApplicationForm() {
             type="tel"
             autoComplete="tel"
             required
+            minLength={7}
+            maxLength={30}
             placeholder={t("phonePlaceholder")}
             className={fieldClassName}
           />
@@ -141,6 +149,8 @@ export function CareersApplicationForm() {
             name="background"
             autoComplete="organization-title"
             required
+            minLength={3}
+            maxLength={160}
             placeholder={t("backgroundPlaceholder")}
             className={fieldClassName}
           />
@@ -153,6 +163,7 @@ export function CareersApplicationForm() {
             name="profile_link"
             type="url"
             autoComplete="url"
+            maxLength={300}
             placeholder={t("profileLinkPlaceholder")}
             className={fieldClassName}
           />
@@ -164,6 +175,8 @@ export function CareersApplicationForm() {
             id="interest"
             name="interest"
             required
+            minLength={30}
+            maxLength={2000}
             placeholder={t("interestPlaceholder")}
             className={textareaClassName}
           />
@@ -175,6 +188,8 @@ export function CareersApplicationForm() {
             id="experience"
             name="experience"
             required
+            minLength={15}
+            maxLength={2000}
             placeholder={t("experiencePlaceholder")}
             className={textareaClassName}
           />

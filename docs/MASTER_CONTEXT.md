@@ -212,10 +212,8 @@ A strong sales-oriented homepage with:
 
 - clear hero
 - services preview
-- solutions by business type
-- selected work / demos
-- process
-- trust section
+- featured work preview
+- compact process snapshot
 - CTA
 
 ### Services
@@ -262,9 +260,9 @@ Visual direction:
 - clean
 - lots of spacing
 - strong typography
-- soft premium styling
-- subtle motion
-- polished mockups/screenshots
+- premium contrast
+- restrained motion
+- polished product-style mockups/screenshots
 - clear calls to action
 
 Avoid:
@@ -278,6 +276,7 @@ Avoid:
 Tone of design:
 
 - sharp
+- serious
 - minimal
 - trustworthy
 - business-ready
@@ -348,7 +347,8 @@ Editable from admin:
 - testimonials
 - FAQs
 - company info
-- selected homepage content
+- homepage services preview data
+- homepage featured work preview data
 
 Hardcoded / controlled in code:
 
@@ -430,3 +430,113 @@ A successful Growonio website should:
 - allow easy content management for key areas
 - help close real business leads
 - be easy to maintain and extend
+
+---
+
+## 16. Homepage Redesign Direction
+
+### Final Homepage Goal
+
+The homepage should be a curated summary page that explains Growonio fast, establishes trust early, and pushes detailed reading into internal pages.
+
+It should not behave like a long brochure. It should help a visitor quickly understand:
+
+- what Growonio does
+- who it is for
+- what kind of work it delivers
+- what next step to take
+
+### Final Homepage Section Order
+
+1. Hero
+2. Services Preview
+3. Featured Work Preview
+4. Process Snapshot
+5. Final CTA
+
+### Keep / Compress / Remove
+
+Keep:
+
+- hero
+- services preview
+- process section in a shorter summary form
+- final CTA
+
+Add:
+
+- featured work / portfolio preview sourced from database
+
+Remove as standalone homepage sections:
+
+- industries / solutions preview
+- standalone proof / trust section
+
+Those ideas should be pushed into:
+
+- internal pages like Services, Solutions, Work, and About
+- smaller trust signals inside the hero, work preview, and CTA
+
+### Hero Strategy
+
+Hero layout is locked as:
+
+- left side: brand badge or label, clear H1, short supporting copy, primary CTA, secondary CTA, compact trust chips
+- right side: one main desktop dashboard image, one smaller mobile image, one HTML/CSS automation card
+
+Important behavior:
+
+- desktop dashboard image stays visually fixed and stable
+- only the mobile image and automation card may use subtle motion
+- the hero should feel premium, sharp, and product-like, not abstract or playful
+
+### Color / Visual Direction
+
+Homepage direction is:
+
+- deep violet
+- indigo
+- graphite
+- off-white
+
+Rules:
+
+- move away from soft pink / lavender bias
+- keep more neutral whitespace
+- use stronger contrast and cleaner surfaces
+- keep the feeling modern, serious, and tech-forward
+
+### Homepage Content Hierarchy Rules
+
+- homepage is summary-first, not detail-heavy
+- fewer sections are preferred over more sections
+- each section should do one job clearly
+- the first screen and first two sections must explain Growonio quickly
+- deeper service detail, niche detail, and long-form explanation belong on internal pages
+
+### Database-Driven vs Hardcoded
+
+Database-driven homepage content:
+
+- services preview
+- featured work / portfolio preview
+
+Hardcoded / code-managed homepage decisions:
+
+- homepage layout
+- section order
+- hero composition
+- hero assets
+- process summary structure
+- card variants
+- CTA placement
+- motion behavior
+
+### Animation Direction Summary
+
+- use restrained reveal animation only where it improves hierarchy
+- no heavy looping motion across the whole homepage
+- no fake product-demo choreography
+- desktop hero image stays static
+- subtle motion is limited to the mobile image and automation card
+- reduced-motion support must be respected

@@ -1,65 +1,31 @@
 {
   "Index": {
-    "title": "Digital systems that help service businesses grow",
-    "description": "Growonio designs modern websites, smarter booking flows, and practical automation systems that turn more visitors into clients and reduce manual work.",
-    "supportingLine": "Built for service businesses in Romania and beyond, with bilingual delivery, SEO-ready structure, and admin-friendly systems from day one.",
+    "title": "Websites, booking systems, and automation for service businesses ready to grow",
+    "description": "Growonio builds modern digital systems that help service businesses win more inquiries, manage bookings cleanly, and reduce manual operational work.",
+    "supportingLine": "Built for Romania first, with bilingual delivery, SEO-ready structure, and admin-friendly handover from day one.",
     "metaTitle": "Growonio | Business Automation for Service Businesses in Romania",
     "metaDescription": "Growonio builds conversion-focused websites, automations, booking systems, and digital workflows for service businesses growing in Romania.",
     "cta": "Request a Quote",
     "heroSecondaryCta": "Explore Services",
-    "servicesPreviewBadge": "Core Delivery Modules",
-    "servicesPreviewTitle": "Four focused service lines built as one growth system",
-    "servicesPreviewDesc": "Growonio packages websites, booking logic, admin usability, and automation readiness into connected delivery modules that support how service businesses actually operate.",
-    "servicesPreviewPanelTitle": "Designed to work together",
-    "servicesPreviewPanelDescription": "Each solution is planned as part of one coherent digital stack, so the site can attract demand, route inquiries cleanly, support the team internally, and stay easy to manage after launch.",
+    "servicesPreviewBadge": "Core Services",
+    "servicesPreviewTitle": "Three core service layers presented as a fast homepage preview",
+    "servicesPreviewDesc": "A compact view of the main systems Growonio builds for service businesses that need stronger positioning, cleaner demand handling, and less manual work.",
+    "servicesPreviewPanelTitle": "One connected delivery system",
+    "servicesPreviewPanelDescription": "The homepage stays brief, but each service is still scoped as part of one connected system built for growth and daily operations.",
     "servicesPreviewHighlights": [
-      "Bilingual content architecture",
-      "Admin-ready handover",
-      "Search-ready page foundations"
+      "Bilingual-ready setup",
+      "Admin-friendly handover",
+      "Search-ready structure"
     ],
-    "serviceModules": [
-      {
-        "eyebrow": "Positioning + conversion",
-        "title": "Business Website Design & Development",
-        "description": "Modern business websites built to position the company clearly, support SEO growth, and guide visitors toward the right next step.",
-        "bullets": [
-          "Custom responsive design",
-          "Clear service-page hierarchy",
-          "Easy content editing after launch"
-        ]
-      },
-      {
-        "eyebrow": "Booking + client flow",
-        "title": "Booking & Client Management Systems",
-        "description": "Structured scheduling and request-handling systems that reduce manual coordination, organize demand, and improve the client journey.",
-        "bullets": [
-          "Booking or request workflows",
-          "Admin visibility for incoming demand",
-          "Service and client organization"
-        ]
-      },
-      {
-        "eyebrow": "Lead handling + follow-up",
-        "title": "Lead Capture & Workflow Automation",
-        "description": "Smarter inquiry capture and automation foundations that help businesses respond faster, reduce repetitive work, and miss fewer opportunities.",
-        "bullets": [
-          "Lead forms and qualification paths",
-          "Follow-up automation logic",
-          "Reporting-ready workflow structure"
-        ]
-      },
-      {
-        "eyebrow": "Advanced customer touchpoints",
-        "title": "Mobile App Development",
-        "description": "Custom mobile products for customer-facing journeys or internal operational workflows when a website alone is not enough.",
-        "bullets": [
-          "Android or cross-platform delivery",
-          "Business-focused feature planning",
-          "Scalable technical foundation"
-        ]
-      }
-    ],
+    "servicesPreviewShortTitles": {
+      "web-design": "Business Websites",
+      "booking-systems": "Booking Systems",
+      "automations": "Workflow Automation",
+      "mobile-apps": "Mobile Apps"
+    },
     "servicesPrimaryLinkLabel": "Explore all services",
+    "servicesPreviewEmptyTitle": "Service previews are being prepared",
+    "servicesPreviewEmptyDescription": "The full services page remains available while the homepage preview pulls in the current service library.",
     "solutionsPreviewBadge": "Best-Fit Businesses",
     "solutionsPreviewTitle": "Built for service businesses where operations and lead flow matter",
     "solutionsPreviewDesc": "Growonio fits businesses that depend on credibility, booking clarity, and faster follow-up to convert demand into real revenue.",
@@ -110,11 +76,18 @@
     ],
     "solutionsPrimaryLinkLabel": "See solutions by industry",
     "solutionsSecondaryLinkLabel": "Talk about your business",
-    "workPreviewTitle": "Featured Work",
-    "workPreviewDesc": "A glimpse into our recent digital transformations.",
+    "workPreviewBadge": "Featured Work",
+    "workPreviewTitle": "Selected work that shows how Growonio turns service operations into cleaner digital systems",
+    "workPreviewDesc": "A concise proof layer for the homepage: one stronger featured project and two supporting examples from the live work library.",
+    "workPreviewPanelTitle": "Curated proof, not a project dump",
+    "workPreviewPanelDescription": "The homepage only shows a tightly edited selection so visitors can assess quality quickly before opening the full portfolio.",
+    "workPreviewPrimaryLabel": "Explore all work",
+    "workPreviewCardCtaLabel": "View case study",
+    "workPreviewEmptyTitle": "Featured work is being prepared",
+    "workPreviewEmptyDescription": "The portfolio page remains available while new case studies are finalized for the homepage preview.",
     "processBadge": "Delivery Process",
     "processTitle": "A structured workflow that keeps strategy and execution aligned",
-    "processDesc": "The process is designed to stay transparent, milestone-based, and useful for businesses that want clarity from discovery to launch.",
+    "processDesc": "A clear four-step delivery flow designed to keep scope, execution, and launch expectations aligned from the start.",
     "processNoteTitle": "Transparent by design",
     "processNoteDescription": "You always know what is being built, why it matters, and what each stage unlocks for the next one.",
     "processSupportPoints": [
@@ -188,35 +161,34 @@
     "processStep3Desc": "Deployment, training, and ongoing support to accelerate growth.",
     "ctaBadge": "Start the next system",
     "ctaHeading": "Ready to build a stronger digital system?",
-    "ctaDesc": "We help service businesses launch credible websites, cleaner booking flows, and practical growth systems shaped around real operations.",
+    "ctaDesc": "We help service businesses launch credible websites, cleaner booking flows, and practical systems built around real operations.",
     "ctaButton": "Request a Quote",
     "ctaSecondaryButton": "View Pricing",
-    "ctaSupportNote": "Most projects start with a short discovery conversation and a practical scope recommendation, not a bloated agency process.",
+    "ctaSupportNote": "Most projects start with a short discovery conversation and a practical scope recommendation.",
     "ctaMicroPoints": [
       "Bilingual delivery",
       "Clear scope and milestones",
       "Launch support included"
     ],
-    "ctaPanelTitle": "Strategy, build, and launch support in one delivery flow",
-    "heroBadge": "Premium Growth-Tech Studio",
+    "ctaPanelTitle": "Clear scope, build, and launch support in one flow",
+    "heroBadge": "Growth systems for service businesses",
     "heroTrustChips": [
-      "Bilingual delivery",
-      "SEO-ready structure",
-      "Admin-ready systems"
+      "Romanian + English delivery",
+      "SEO-ready foundations",
+      "Admin-friendly systems"
     ],
-    "heroVisualEyebrow": "Growth workflow",
-    "heroVisualTitle": "From first inquiry to cleaner operations",
-    "heroVisualDescription": "A Growonio project is built like a branching system: better lead capture, clearer booking flow, stronger client handling, and reporting-ready foundations.",
-    "heroWorkflowSteps": [
-      "Lead Capture",
-      "Booking Flow",
-      "Client Admin",
-      "Reporting Ready"
+    "heroAutomationBadge": "Automation layer",
+    "heroAutomationTitle": "New inquiry to booked consultation",
+    "heroAutomationTriggerLabel": "Trigger",
+    "heroAutomationTriggerValue": "Lead form submitted",
+    "heroAutomationSteps": [
+      "Create client record",
+      "Send confirmation",
+      "Move deal to follow-up"
     ],
-    "heroFloatingLeadEyebrow": "Lead Ready",
-    "heroFloatingLeadText": "Pages built to convert",
-    "heroFloatingReportEyebrow": "Reporting Layer",
-    "heroFloatingReportText": "Booking + CRM + follow-up visibility",
+    "heroAutomationFooter": "Connected to admin, booking, and follow-up visibility.",
+    "heroDesktopAlt": "Growonio desktop dashboard showing bookings, client pipeline, and operational workflow management",
+    "heroMobileAlt": "Growonio mobile booking flow for service consultation scheduling",
     "exploreWork": "Explore our work",
     "readInsights": "Read our insights"
   },
