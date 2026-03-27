@@ -7,59 +7,19 @@
     "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
     "cta": "Cere ofertă",
     "heroSecondaryCta": "Descoperă Serviciile",
-    "servicesPreviewBadge": "Module Principale de Livrare",
-    "servicesPreviewTitle": "Patru direcții clare de servicii construite ca un singur sistem de creștere",
-    "servicesPreviewDesc": "Growonio combină website-uri, logică de programări, control administrativ și pregătire pentru automatizare în module conectate care susțin modul real în care funcționează afacerile de servicii.",
-    "servicesPreviewPanelTitle": "Gândite să funcționeze împreună",
-    "servicesPreviewPanelDescription": "Fiecare soluție este planificată ca parte din același stack digital, astfel încât website-ul să atragă cereri, să organizeze interacțiunile și să rămână ușor de administrat după lansare.",
+    "servicesPreviewBadge": "Servicii Principale",
+    "servicesPreviewTitle": "Trei direcții principale prezentate rapid, nu întreaga broșură de servicii",
+    "servicesPreviewDesc": "Homepage-ul evidențiază straturile principale prin care Growonio ajută afacerile de servicii să inspire încredere, să gestioneze cererea mai bine și să reducă munca manuală.",
+    "servicesPreviewPanelTitle": "Un singur sistem de livrare conectat",
+    "servicesPreviewPanelDescription": "Claritatea website-ului, logica de programări și pregătirea pentru automatizare sunt planificate împreună, astfel încât sistemul final să susțină creșterea și operațiunile zilnice.",
     "servicesPreviewHighlights": [
-      "Arhitectură de conținut bilingvă",
-      "Predare pregătită pentru admin",
-      "Fundații de pagină pregătite pentru SEO"
-    ],
-    "serviceModules": [
-      {
-        "eyebrow": "Poziționare + conversie",
-        "title": "Creare Website-uri pentru Afaceri",
-        "description": "Website-uri moderne pentru afaceri, construite pentru a prezenta clar compania, a susține SEO și a ghida vizitatorii către următorul pas potrivit.",
-        "bullets": [
-          "Design responsive personalizat",
-          "Ierarhie clară a paginilor de servicii",
-          "Editare ușoară a conținutului după lansare"
-        ]
-      },
-      {
-        "eyebrow": "Programări + flux client",
-        "title": "Sisteme de Programări și Management Clienți",
-        "description": "Sisteme structurate de programări și gestionare a cererilor care reduc coordonarea manuală, organizează cererea și îmbunătățesc experiența clientului.",
-        "bullets": [
-          "Fluxuri de programări sau cereri",
-          "Vizibilitate administrativă pentru cererile primite",
-          "Organizare servicii și clienți"
-        ]
-      },
-      {
-        "eyebrow": "Captare lead-uri + follow-up",
-        "title": "Captare Cereri și Automatizare Fluxuri",
-        "description": "Captare mai inteligentă a cererilor și fundații pentru automatizare care ajută afacerile să răspundă mai rapid, să reducă munca repetitivă și să piardă mai puține oportunități.",
-        "bullets": [
-          "Formulare și trasee de calificare",
-          "Logică de automatizare pentru follow-up",
-          "Structură pregătită pentru raportare"
-        ]
-      },
-      {
-        "eyebrow": "Puncte avansate de contact",
-        "title": "Dezvoltare Aplicații Mobile",
-        "description": "Produse mobile personalizate pentru experiențe orientate spre client sau pentru fluxuri interne de operațiuni atunci când un website nu este suficient.",
-        "bullets": [
-          "Livrare Android sau cross-platform",
-          "Planificare orientată spre business",
-          "Fundație tehnică scalabilă"
-        ]
-      }
+      "Setup pregătit pentru două limbi",
+      "Predare ușor de administrat",
+      "Structură pregătită pentru SEO"
     ],
     "servicesPrimaryLinkLabel": "Descoperă toate serviciile",
+    "servicesPreviewEmptyTitle": "Preview-ul serviciilor este în pregătire",
+    "servicesPreviewEmptyDescription": "Pagina completă de servicii rămâne disponibilă în timp ce homepage-ul preia biblioteca curentă de servicii.",
     "solutionsPreviewBadge": "Afaceri Potrivite",
     "solutionsPreviewTitle": "Construit pentru afaceri de servicii unde operațiunile și fluxul de cereri contează",
     "solutionsPreviewDesc": "Growonio este potrivit pentru afaceri care depind de credibilitate, claritate în programări și follow-up mai rapid pentru a transforma cererea în venit real.",
@@ -110,8 +70,15 @@
     ],
     "solutionsPrimaryLinkLabel": "Vezi soluțiile pe industrii",
     "solutionsSecondaryLinkLabel": "Discută despre afacerea ta",
-    "workPreviewTitle": "Proiecte Recente",
-    "workPreviewDesc": "O privire asupra transformărilor noastre digitale.",
+    "workPreviewBadge": "Portofoliu Selectat",
+    "workPreviewTitle": "Proiecte selectate care arată cum Growonio transformă operațiunile de servicii în sisteme digitale mai clare",
+    "workPreviewDesc": "Acesta este un strat scurt de proof pentru homepage: câteva proiecte actuale care arată în practică poziționarea, fluxurile de programări și claritatea operațională.",
+    "workPreviewPanelTitle": "Proof selectiv, nu o listă mare de proiecte",
+    "workPreviewPanelDescription": "Homepage-ul afișează doar o selecție mică din biblioteca de proiecte, astfel încât vizitatorii să poată evalua rapid calitatea înainte de a deschide portofoliul complet.",
+    "workPreviewPrimaryLabel": "Explorează tot portofoliul",
+    "workPreviewCardCtaLabel": "Vezi studiul de caz",
+    "workPreviewEmptyTitle": "Portofoliul selectat este în pregătire",
+    "workPreviewEmptyDescription": "Pagina de portofoliu rămâne disponibilă în timp ce noile studii de caz sunt pregătite pentru preview-ul homepage-ului.",
     "processBadge": "Proces de Livrare",
     "processTitle": "Un flux structurat care păstrează strategia și execuția aliniate",
     "processDesc": "Procesul este construit să rămână transparent, etapizat și util pentru afacerile care vor claritate de la descoperire până la lansare.",

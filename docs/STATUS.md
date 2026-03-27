@@ -1,18 +1,17 @@
 # Project Status
-**Current Phase:** H2 Complete
+**Current Phase:** H3 Complete
 **Date:** 2026-03-27
 
 ## Current Product State
 - The codebase already has a bilingual marketing site, admin area, and Supabase-backed content layer.
-- The current homepage implementation contains six main parts:
+- The current homepage implementation now follows the locked simplified direction:
   - hero
   - services preview
-  - industries preview
+  - featured work preview
   - process section
-  - proof section
   - final CTA
-- The homepage currently leans too long and too descriptive for the new direction.
-- Homepage content is still mostly code/translation-driven, and the homepage-specific data-source rules were not clearly locked before this phase.
+- Homepage still needs cleanup work in the process section and final CTA, but the heavier industries/proof homepage sections have been removed.
+- Homepage preview content now uses structured content sources for services and work instead of relying only on translation-defined cards.
 
 ## Phase H0 Complete
 - Homepage direction audited against the real current homepage structure.
@@ -52,7 +51,13 @@
 - Improved lower-section typography contrast, card treatment, borders, shadows, and CTA consistency.
 - Kept the hero structure intact and avoided broader homepage content redesign during H2.
 
+## Phase H3 Complete
+- Redesigned the homepage services preview as a lighter homepage-specific preview using database-driven services content.
+- Added a homepage featured work preview using database-driven work items with featured-first ordering and fallback logic.
+- Removed the older homepage industries and proof sections so the homepage now follows the locked simplified section order.
+- Kept the process section and final CTA intact for the next cleanup phase.
+
 ## Next
-- Phase H3 is ready.
-- Phase H3 should focus on homepage services preview and featured work preview redesign.
-- Do not reopen the hero or perform unrelated inner-page redesign during H3.
+- Phase H3A is ready.
+- Phase H3A should focus only on process section cleanup and homepage final CTA polish.
+- Do not reopen the hero, services preview, or featured work preview during H3A.

@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
 import { HomeFinalCta } from "@/components/home/HomeFinalCta";
-import { HomeIndustriesPreview } from "@/components/home/HomeIndustriesPreview";
 import { HomeProcessSection } from "@/components/home/HomeProcessSection";
-import { HomeProofSection } from "@/components/home/HomeProofSection";
 import { HomeServicesPreview } from "@/components/home/HomeServicesPreview";
+import { HomeWorkPreview } from "@/components/home/HomeWorkPreview";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildOrganizationSchema, buildPageMetadata, buildWebsiteSchema, type AppLocale } from "@/lib/seo";
-import { useLocale } from "next-intl";
+import { getServices, getWorkItems } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -27,36 +25,38 @@ export async function generateMetadata({
   });
 }
 
-export default function HomePage() {
-  const locale = useLocale() as AppLocale;
-  const t = useTranslations("Index");
-  const tShared = useTranslations("Shared");
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const appLocale = locale as AppLocale;
 
-  const serviceModules = t.raw("serviceModules") as Array<{
-    eyebrow: string;
-    title: string;
-    description: string;
-    bullets: string[];
-  }>;
-  const industryCards = t.raw("industryCards") as Array<{
-    title: string;
-    description: string;
-    tags: string[];
-  }>;
+  const [t, tShared, services, allWorkItems] = await Promise.all([
+    getTranslations({ locale, namespace: "Index" }),
+    getTranslations({ locale, namespace: "Shared" }),
+    getServices(locale),
+    getWorkItems(locale),
+  ]);
+
+  const workItems = [...allWorkItems].sort((left, right) => {
+    if (left.is_featured === right.is_featured) {
+      return left.order - right.order;
+    }
+
+    return left.is_featured ? -1 : 1;
+  });
   const processSteps = t.raw("processSteps") as Array<{
     eyebrow: string;
     title: string;
     description: string;
     outcome: string;
   }>;
-  const proofPillars = t.raw("proofPillars") as Array<{
-    title: string;
-    description: string;
-  }>;
 
   return (
     <>
-      <JsonLd data={[buildOrganizationSchema(locale), buildWebsiteSchema(locale)]} />
+      <JsonLd data={[buildOrganizationSchema(appLocale), buildWebsiteSchema(appLocale)]} />
 
       <Hero
         badge={t("heroBadge")}
@@ -85,22 +85,24 @@ export default function HomePage() {
         panelTitle={t("servicesPreviewPanelTitle")}
         panelDescription={t("servicesPreviewPanelDescription")}
         highlights={t.raw("servicesPreviewHighlights") as string[]}
-        cards={serviceModules}
+        services={services}
         primaryLabel={t("servicesPrimaryLinkLabel")}
-        secondaryLabel={t("exploreWork")}
-        tertiaryLabel={t("readInsights")}
         learnMoreLabel={tShared("learnMore")}
+        emptyTitle={t("servicesPreviewEmptyTitle")}
+        emptyDescription={t("servicesPreviewEmptyDescription")}
       />
 
-      <HomeIndustriesPreview
-        badge={t("solutionsPreviewBadge")}
-        title={t("solutionsPreviewTitle")}
-        description={t("solutionsPreviewDesc")}
-        panelTitle={t("solutionsPreviewPanelTitle")}
-        panelPoints={t.raw("solutionsPreviewPanelPoints") as string[]}
-        cards={industryCards}
-        primaryLabel={t("solutionsPrimaryLinkLabel")}
-        secondaryLabel={t("solutionsSecondaryLinkLabel")}
+      <HomeWorkPreview
+        badge={t("workPreviewBadge")}
+        title={t("workPreviewTitle")}
+        description={t("workPreviewDesc")}
+        panelTitle={t("workPreviewPanelTitle")}
+        panelDescription={t("workPreviewPanelDescription")}
+        items={workItems}
+        primaryLabel={t("workPreviewPrimaryLabel")}
+        cardCtaLabel={t("workPreviewCardCtaLabel")}
+        emptyTitle={t("workPreviewEmptyTitle")}
+        emptyDescription={t("workPreviewEmptyDescription")}
       />
 
       <HomeProcessSection
@@ -111,21 +113,6 @@ export default function HomePage() {
         noteDescription={t("processNoteDescription")}
         supportPoints={t.raw("processSupportPoints") as string[]}
         steps={processSteps}
-      />
-
-      <HomeProofSection
-        badge={t("trustBadge")}
-        title={t("trustTitle")}
-        description={t("trustDesc")}
-        panelEyebrow={t("trustPanelEyebrow")}
-        panelTitle={t("trustPanelTitle")}
-        panelDescription={t("trustPanelDescription")}
-        pillars={proofPillars}
-        chips={t.raw("proofChips") as string[]}
-        primaryLabel={t("proofPrimaryLinkLabel")}
-        secondaryLabel={t("proofSecondaryLinkLabel")}
-        contactLabel={t("proofContactLinkLabel")}
-        brandDescription={t("proofBrandDescription")}
       />
 
       <HomeFinalCta

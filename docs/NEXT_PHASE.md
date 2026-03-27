@@ -1,30 +1,28 @@
-# Next Phase Plan: H3 Homepage Services + Featured Work Preview Redesign
-**Focus:** Redesign the homepage services preview and homepage featured work preview
+# Next Phase Plan: H3A Process Section Cleanup + Homepage Final CTA Polish
+**Focus:** Clean up the homepage process section and polish the homepage final CTA
 
 ## Goal
-Move the homepage closer to the locked summary-first structure by upgrading the services preview and replacing older lower-page homepage content with a sharper featured work preview.
+Bring the last two lower-homepage sections up to the new quality bar so the full homepage feels consistently premium, concise, and aligned with the locked summary-first direction.
 
 ## Exact Scope
-- Redesign the homepage services preview so it feels more curated, clearer, and more product-grade.
-- Implement the homepage featured work preview using database-driven content.
-- Use the homepage as a summary surface, not a full brochure.
-- Push deeper detail into internal services and work pages.
-- Keep the hero and H2 visual system direction intact.
+- Refine the homepage process section so it feels more concise and less heavy.
+- Keep the process section as a short summary snapshot, not a long explainer.
+- Polish the homepage final CTA so it feels cleaner, sharper, and more integrated with the newer hero/services/work direction.
+- Improve spacing, hierarchy, and surface treatment where needed in those two sections only.
 
 ## Direction
-- Services preview should communicate Growonio's core offers quickly.
-- Featured work preview should show selective proof, not a large portfolio dump.
-- Maintain the deep violet, indigo, graphite, and off-white visual system from H2.
-- Keep stronger hierarchy, tighter copy, and cleaner CTA placement.
+- Keep the deep violet, indigo, graphite, and off-white visual system established in H2 and H3.
+- Preserve the simplified homepage structure now in place.
+- Use stronger hierarchy and cleaner CTA treatment without adding more homepage content.
 
 ## Constraints
-- Do not redesign unrelated internal pages during H3.
-- Do not turn the homepage into a long descriptive page again.
-- Do not reopen hero structure or hero asset decisions.
-- Keep homepage layout decisions aligned with the locked homepage direction.
+- Do not redesign the hero again.
+- Do not reopen the homepage services preview or featured work preview during H3A.
+- Do not reintroduce industries/proof as standalone homepage sections.
+- Do not change unrelated inner pages during H3A.
 
 ## Definition of Done
-- Homepage services preview feels sharper and more intentional.
-- Homepage featured work preview is present and uses database content.
-- Older homepage content blocks that no longer fit the locked direction are reduced, merged, or removed as needed.
-- The homepage feels more aligned with the final locked structure without regressing responsiveness or localization.
+- Process section feels tighter, cleaner, and more summary-first.
+- Final CTA feels more premium and better integrated with the homepage flow.
+- The homepage reads as one coherent system from hero through final CTA.
+- No regression in responsiveness, localization, or maintainability.
