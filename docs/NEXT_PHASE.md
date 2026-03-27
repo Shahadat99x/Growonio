@@ -1,31 +1,33 @@
-# Next Phase Plan: H1A Hero Motion Polish
-**Focus:** Add restrained motion polish to the homepage hero only
+# Next Phase Plan: H2 Homepage Visual System Refresh
+**Focus:** Refresh the homepage visual system below the hero
 
 ## Goal
-Polish the new homepage hero with subtle motion that improves realism and hierarchy without changing the locked layout or reopening the broader homepage redesign.
+Improve the visual quality and hierarchy of the homepage sections after the hero so the page feels more cohesive, premium, and summary-first without turning into a long brochure again.
 
 ## Exact Scope
-- Keep the current H1 hero structure and visual composition.
-- Add only light motion where it helps:
-  - mobile image
-  - automation card
-  - possibly very restrained reveal timing for the right-side visual stack
-- Keep the desktop dashboard image visually stable as the anchor.
+- Review the homepage sections below the hero:
+  - services preview
+  - featured work preview when added
+  - process snapshot
+  - final CTA
+- Tighten spacing, section rhythm, card treatment, borders, and surface contrast.
+- Reduce any remaining generic or repetitive section feeling.
+- Keep the homepage section order locked.
 
-## Motion Rules
-- Motion must stay subtle and premium.
-- No floating chaos, no looping gimmicks, no slider behavior.
-- No motion that makes the hero feel playful or noisy.
-- Respect reduced-motion behavior.
+## Direction
+- Stronger deep violet, indigo, graphite, and off-white system usage.
+- Cleaner whitespace and better section hierarchy.
+- More premium surfaces and clearer contrast.
+- Keep the homepage concise and curated.
 
 ## Constraints
-- Do not redesign hero copy again unless motion needs very small spacing adjustments.
-- Do not replace the two existing hero images.
-- Do not redesign the rest of the homepage.
-- Do not introduce a broad animation system in this phase.
+- Do not redesign the hero structure again.
+- Do not add extra homepage sections.
+- Do not make the homepage detail-heavy.
+- Do not change unrelated inner pages in H2.
 
 ## Definition of Done
-- Hero motion feels cleaner and more polished than H1.
-- Mobile image and automation card gain subtle life without competing with the desktop image.
-- Reduced-motion mode remains safe.
-- Hero layout, hierarchy, and visual direction remain unchanged.
+- Homepage sections below the hero feel more aligned with the new hero quality bar.
+- Visual rhythm is cleaner and more intentional.
+- The homepage remains summary-first and easier to scan.
+- No regression in responsiveness, clarity, or localization structure.

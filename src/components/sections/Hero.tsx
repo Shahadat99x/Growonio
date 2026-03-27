@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { MotionReveal } from "@/components/motion/Reveal";
+import { MotionFloat, MotionReveal } from "@/components/motion/Reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -156,7 +156,12 @@ function HeroVisual({
           />
         </div>
 
-        <div className="absolute -bottom-10 right-3 z-20 w-[36%] min-w-[8.5rem] max-w-[14rem] rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(242,242,248,0.96)_100%)] p-2 shadow-[0_38px_90px_-50px_rgba(20,15,49,0.5)] sm:-bottom-14 sm:right-5 sm:w-[31%] sm:p-3">
+        <MotionFloat
+          className="absolute -bottom-10 right-3 z-20 w-[36%] min-w-[8.5rem] max-w-[14rem] rounded-[2rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(242,242,248,0.96)_100%)] p-2 shadow-[0_38px_90px_-50px_rgba(20,15,49,0.5)] sm:-bottom-14 sm:right-5 sm:w-[31%] sm:p-3"
+          delay={0.45}
+          duration={7.4}
+          y={8}
+        >
           <Image
             src="/images/hero-booking-mobile.png"
             alt={mobileImageAlt}
@@ -165,9 +170,14 @@ function HeroVisual({
             sizes="(max-width: 768px) 34vw, (max-width: 1280px) 22vw, 15vw"
             className="h-auto w-full"
           />
-        </div>
+        </MotionFloat>
 
-        <div className="absolute -left-1 bottom-6 z-30 w-[16rem] max-w-[80%] sm:-left-6 sm:bottom-12 sm:w-[19rem]">
+        <MotionFloat
+          className="absolute -left-1 bottom-6 z-30 w-[16rem] max-w-[80%] sm:-left-6 sm:bottom-12 sm:w-[19rem]"
+          delay={1}
+          duration={8.8}
+          y={10}
+        >
           <HeroAutomationCard
             badge={automationBadge}
             title={automationTitle}
@@ -176,7 +186,7 @@ function HeroVisual({
             steps={automationSteps}
             footer={automationFooter}
           />
-        </div>
+        </MotionFloat>
       </div>
     </div>
   );

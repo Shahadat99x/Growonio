@@ -1,5 +1,5 @@
 # Project Status
-**Current Phase:** H1 Complete
+**Current Phase:** H1A Complete
 **Date:** 2026-03-27
 
 ## Current Product State
@@ -39,7 +39,14 @@
 - Hero copy was tightened in both Romanian and English.
 - The rest of the homepage was intentionally left unchanged.
 
+## Phase H1A Complete
+- Added subtle idle motion to the overlapping mobile image.
+- Added subtle idle motion polish to the automation card.
+- Kept the desktop dashboard visually stable as the hero anchor.
+- Reused the existing motion primitives and preserved reduced-motion handling.
+- Hero structure, copy, and assets were left unchanged.
+
 ## Next
-- Phase H1A is ready.
-- Phase H1A should focus only on subtle hero motion polish.
-- No broader homepage redesign should happen in H1A.
+- Phase H2 is ready.
+- Phase H2 should focus on homepage visual system refresh below the hero.
+- Do not reopen hero structure or broader site-wide redesign during H2.
