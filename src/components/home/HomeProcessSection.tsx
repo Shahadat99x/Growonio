@@ -40,8 +40,11 @@ export function HomeProcessSection({
   steps,
 }: HomeProcessSectionProps) {
   return (
-    <Section variant="feature" className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(158,114,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(101,76,191,0.22),transparent_30%)]" />
+    <Section
+      variant="feature"
+      className="relative overflow-hidden border-y border-slate-900/80 bg-[linear-gradient(135deg,rgba(17,20,31,1)_0%,rgba(25,29,46,1)_52%,rgba(46,36,96,1)_100%)]"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(93,69,209,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(63,103,220,0.12),transparent_30%)]" />
 
       <Container className="relative z-10">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-end">
@@ -51,14 +54,14 @@ export function HomeProcessSection({
               badge={badge}
               title={title}
               description={description}
-              className="mb-0 max-w-none [&_div]:border-white/16 [&_div]:bg-white/8 [&_div]:text-white/80 [&_h2]:text-white [&_p]:text-white/72"
+              className="mb-0 max-w-none [&_div]:border-white/12 [&_div]:bg-white/7 [&_div]:text-white/76 [&_h2]:text-white [&_p]:text-white/68"
             />
           </MotionReveal>
 
           <MotionReveal delay={0.08}>
-            <aside className="rounded-[2rem] border border-white/12 bg-white/7 p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.45)] backdrop-blur-md">
+            <aside className="rounded-[2rem] border border-white/10 bg-white/7 p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.45)] backdrop-blur-md">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] border border-white/12 bg-white/10 text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] border border-white/10 bg-white/10 text-white">
                   <Sparkles className="h-5 w-5" />
                 </div>
                 <div>
@@ -76,7 +79,7 @@ export function HomeProcessSection({
                 {supportPoints.map((point) => (
                   <div
                     key={point}
-                    className="rounded-[1.2rem] border border-white/10 bg-black/10 px-4 py-3 text-sm font-medium text-white/80"
+                    className="rounded-[1.2rem] border border-white/8 bg-white/6 px-4 py-3 text-sm font-medium text-white/78"
                   >
                     {point}
                   </div>
@@ -96,25 +99,25 @@ export function HomeProcessSection({
                 delay={0.08 + index * 0.06}
                 className={cn(offsets[index])}
               >
-                <article className="relative h-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/8 p-7 shadow-[0_22px_60px_-42px_rgba(0,0,0,0.6)] backdrop-blur-md">
-                  <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top_left,rgba(158,114,255,0.18),transparent_72%)]" />
+                <article className="relative h-full overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] p-7 shadow-[0_24px_62px_-42px_rgba(0,0,0,0.58)] backdrop-blur-md">
+                  <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.2),transparent_72%)]" />
                   <div className="absolute left-8 top-10 hidden xl:block h-3 w-3 rounded-full bg-primary shadow-[0_0_20px_-2px_color-mix(in_oklab,var(--color-primary)_88%,transparent)]" />
 
                   <div className="relative">
-                    <div className="inline-flex rounded-full border border-white/12 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white">
+                    <div className="inline-flex rounded-full border border-white/10 bg-white/9 px-4 py-1.5 text-sm font-semibold text-white">
                       0{index + 1}
                     </div>
-                    <p className="mt-5 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/58">
+                    <p className="mt-5 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/56">
                       {step.eyebrow}
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
                       {step.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-7 text-white/72">
+                    <p className="mt-4 text-sm leading-7 text-white/74">
                       {step.description}
                     </p>
 
-                    <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-black/10 px-4 py-2 text-sm font-medium text-white/80">
+                    <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-4 py-2 text-sm font-medium text-white/80">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                       {step.outcome}
                     </div>

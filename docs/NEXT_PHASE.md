@@ -1,33 +1,30 @@
-# Next Phase Plan: H2 Homepage Visual System Refresh
-**Focus:** Refresh the homepage visual system below the hero
+# Next Phase Plan: H3 Homepage Services + Featured Work Preview Redesign
+**Focus:** Redesign the homepage services preview and homepage featured work preview
 
 ## Goal
-Improve the visual quality and hierarchy of the homepage sections after the hero so the page feels more cohesive, premium, and summary-first without turning into a long brochure again.
+Move the homepage closer to the locked summary-first structure by upgrading the services preview and replacing older lower-page homepage content with a sharper featured work preview.
 
 ## Exact Scope
-- Review the homepage sections below the hero:
-  - services preview
-  - featured work preview when added
-  - process snapshot
-  - final CTA
-- Tighten spacing, section rhythm, card treatment, borders, and surface contrast.
-- Reduce any remaining generic or repetitive section feeling.
-- Keep the homepage section order locked.
+- Redesign the homepage services preview so it feels more curated, clearer, and more product-grade.
+- Implement the homepage featured work preview using database-driven content.
+- Use the homepage as a summary surface, not a full brochure.
+- Push deeper detail into internal services and work pages.
+- Keep the hero and H2 visual system direction intact.
 
 ## Direction
-- Stronger deep violet, indigo, graphite, and off-white system usage.
-- Cleaner whitespace and better section hierarchy.
-- More premium surfaces and clearer contrast.
-- Keep the homepage concise and curated.
+- Services preview should communicate Growonio's core offers quickly.
+- Featured work preview should show selective proof, not a large portfolio dump.
+- Maintain the deep violet, indigo, graphite, and off-white visual system from H2.
+- Keep stronger hierarchy, tighter copy, and cleaner CTA placement.
 
 ## Constraints
-- Do not redesign the hero structure again.
-- Do not add extra homepage sections.
-- Do not make the homepage detail-heavy.
-- Do not change unrelated inner pages in H2.
+- Do not redesign unrelated internal pages during H3.
+- Do not turn the homepage into a long descriptive page again.
+- Do not reopen hero structure or hero asset decisions.
+- Keep homepage layout decisions aligned with the locked homepage direction.
 
 ## Definition of Done
-- Homepage sections below the hero feel more aligned with the new hero quality bar.
-- Visual rhythm is cleaner and more intentional.
-- The homepage remains summary-first and easier to scan.
-- No regression in responsiveness, clarity, or localization structure.
+- Homepage services preview feels sharper and more intentional.
+- Homepage featured work preview is present and uses database content.
+- Older homepage content blocks that no longer fit the locked direction are reduced, merged, or removed as needed.
+- The homepage feels more aligned with the final locked structure without regressing responsiveness or localization.
