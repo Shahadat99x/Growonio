@@ -5,10 +5,10 @@ function normalizeUrl(url: string) {
 export const siteConfig = {
   name: "Growonio",
   tagline: "Business automation built for growth",
-  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL || "https://growonio.com"),
+  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL || "https://growonio.ro"),
   ogImage: null,
   description: "Modern digital solutions for service businesses.",
-  companyEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "hello@growonio.com",
+  companyEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "hello@growonio.ro",
   location: {
     city: "Bucharest",
     country: "Romania",

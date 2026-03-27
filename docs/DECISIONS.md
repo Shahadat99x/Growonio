@@ -134,3 +134,40 @@ Practical rule:
 - show focused proof
 - keep hierarchy strong
 - push deeper service, niche, and explanation content into internal pages
+
+## 11. Public Form Success Criteria
+
+Decision:
+**A public form submission counts as successful only when the Resend notification email is accepted for delivery.**
+
+Reason:
+
+- the business goal for this phase is inbox delivery, not only database persistence
+- a Supabase-only write is not enough if Growonio never sees the inquiry
+- users must not see a false-positive success state
+
+## 12. Public Form Delivery Defaults
+
+Decision:
+**The shared public-form delivery path defaults to the current live mailbox setup unless env values intentionally override it.**
+
+Current defaults:
+
+- sender: `Growonio <hello@growonio.ro>`
+- notification inbox: `growoniohq@gmail.com`
+- public contact email: `hello@growonio.ro`
+
+Reason:
+
+- the active business setup is already known for this phase
+- missing optional env values should not silently disable email delivery again
+
+## 13. Public Form Storage Priority
+
+Decision:
+**Supabase storage remains best-effort secondary behavior for public forms in this phase.**
+
+Reason:
+
+- reliable email notification is the operational requirement right now
+- storage/admin review can be expanded in the next phase without blocking form delivery

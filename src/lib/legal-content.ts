@@ -49,7 +49,7 @@ const legalContent: Record<AppLocale, Record<LegalPageKey, LegalPageContent>> = 
           heading: "Your rights",
           paragraphs: [
             "You may request access, correction, or deletion of your inquiry data by contacting Growonio directly.",
-            "For privacy-related requests, email us at hello@growonio.com.",
+            "For privacy-related requests, email us at hello@growonio.ro.",
           ],
         },
       ],
@@ -151,7 +151,7 @@ const legalContent: Record<AppLocale, Record<LegalPageKey, LegalPageContent>> = 
           heading: "Drepturile tale",
           paragraphs: [
             "Poți solicita accesul, corectarea sau ștergerea datelor transmise prin formular contactând direct Growonio.",
-            "Pentru solicitări legate de confidențialitate, scrie-ne la hello@growonio.com.",
+            "Pentru solicitări legate de confidențialitate, scrie-ne la hello@growonio.ro.",
           ],
         },
       ],

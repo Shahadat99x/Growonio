@@ -1,29 +1,37 @@
-# Next Phase Plan: Final Homepage Polish Pass
-**Focus:** Responsive cleanup, consistency review, accessibility, performance, and QA
+# Next Phase Plan: Submission Inbox + Delivery Hardening
+**Focus:** optional admin storage, optional mailbox architecture, and pragmatic spam protection improvements
 
 ## Goal
-Finalize the homepage after the major redesign work so the full page feels cohesive, responsive, performant, and production-ready across breakpoints.
+Build the next operational layer on top of the restored public forms so Growonio can review submissions more comfortably, keep a better record of leads/applications, and harden abuse handling without replacing the simple Resend-first flow.
 
 ## Exact Scope
-- Review the homepage across desktop, tablet, and mobile breakpoints.
-- Tighten spacing inconsistencies and cross-section rhythm where needed.
-- Check accessibility details such as contrast, focus states, semantic structure, and reduced-motion behavior.
-- Review homepage image behavior, surface rendering, and any unnecessary visual weight that affects perceived performance.
-- Run a final homepage QA pass for consistency, polish, and maintainability.
+- Add structured persistence for public submissions:
+  - either a unified `public_submissions` table or dedicated contact/careers tables
+  - preserve key fields separately instead of storing only a large combined message body
+- Add an admin/dashboard view for submissions:
+  - list recent contact inquiries
+  - list recent careers applications
+  - basic status markers such as `new`, `reviewed`, `archived`
+- Decide the later mailbox architecture explicitly:
+  - keep Resend notifications as the delivery mechanism
+  - document whether Growonio will later use Google Workspace, forwarding, or another mailbox host for `hello@growonio.ro`
+- Improve lightweight anti-abuse protections only where justified by traffic:
+  - request-rate throttling for public form endpoints/server actions
+  - stronger honeypot or timing heuristics if spam appears
+  - optional CAPTCHA only if lighter measures are insufficient
 
 ## Direction
-- Keep the locked homepage structure and the deep violet, indigo, graphite, and off-white system.
-- Preserve the simplified summary-first hierarchy already established.
-- Focus on polish, not new homepage content or new homepage sections.
+- Keep the current public form design and user flow intact.
+- Preserve Resend email delivery as the primary operational path.
+- Prefer simple internal tools over building a heavy CRM.
 
 ## Constraints
-- Do not redesign hero, services preview, featured work preview, process structure, or final CTA concept again.
-- Do not add new homepage sections.
-- Do not reintroduce removed homepage sections.
-- Do not change unrelated inner pages during this polish pass.
+- Do not turn this into a full sales pipeline system.
+- Do not block legitimate inquiries with heavy anti-spam friction unless abuse volume justifies it.
+- Do not replace the working Resend notification flow while adding storage/admin layers.
 
 ## Definition of Done
-- Homepage feels visually and behaviorally consistent across breakpoints.
-- Accessibility and interaction details are in a good production-ready state.
-- Performance and perceived responsiveness remain strong.
-- The homepage is ready for final review without regressing localization or maintainability.
+- Public submissions are stored in a structured, reviewable way.
+- Admin users can review recent contact and careers submissions from the dashboard.
+- The future mailbox hosting/forwarding path is documented clearly.
+- Spam protection is improved only to the level justified by real usage.
