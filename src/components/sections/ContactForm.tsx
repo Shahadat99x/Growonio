@@ -3,14 +3,16 @@
 import { useActionState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
-import {
-  initialContactFormState,
-  submitContactAction,
-} from "@/app/[locale]/contact/actions";
+import { submitContactAction } from "@/app/[locale]/contact/actions";
 import { SubmitButton } from "@/components/admin/SubmitButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+
+const initialContactFormState = {
+  error: null,
+  success: null,
+};
 
 export function ContactForm() {
   const t = useTranslations("Shared");

@@ -12,14 +12,9 @@ import {
   storeLead,
 } from "@/lib/forms/lead-submission";
 
-export type CareersFormState = {
+type CareersFormState = {
   error: string | null;
   success: string | null;
-};
-
-const initialState: CareersFormState = {
-  error: null,
-  success: null,
 };
 
 type CareersPayload = {
@@ -258,5 +253,3 @@ export async function submitCareersAction(
     success: messages.success,
   };
 }
-
-export { initialState as initialCareersFormState };

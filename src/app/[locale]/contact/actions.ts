@@ -10,14 +10,9 @@ import {
   storeLead,
 } from "@/lib/forms/lead-submission";
 
-export type ContactFormState = {
+type ContactFormState = {
   error: string | null;
   success: string | null;
-};
-
-const initialState: ContactFormState = {
-  error: null,
-  success: null,
 };
 
 type ContactPayload = {
@@ -160,5 +155,3 @@ export async function submitContactAction(
     success: messages.success,
   };
 }
-
-export { initialState as initialContactFormState };
