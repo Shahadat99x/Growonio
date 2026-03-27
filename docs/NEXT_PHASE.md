@@ -1,13 +1,13 @@
-# Next Phase Plan: H3A Process Section Cleanup + Homepage Final CTA Polish
-**Focus:** Clean up the homepage process section and polish the homepage final CTA
+# Next Phase Plan: H3A Homepage Process Simplification + Final CTA Cleanup
+**Focus:** Simplify the homepage process section and clean up the homepage final CTA
 
 ## Goal
-Bring the last two lower-homepage sections up to the new quality bar so the full homepage feels consistently premium, concise, and aligned with the locked summary-first direction.
+Bring the last two homepage sections up to the same compressed, premium quality bar so the full homepage feels summary-first from hero to final CTA.
 
 ## Exact Scope
-- Refine the homepage process section so it feels more concise and less heavy.
+- Simplify the homepage process section so it feels more concise and less heavy.
 - Keep the process section as a short summary snapshot, not a long explainer.
-- Polish the homepage final CTA so it feels cleaner, sharper, and more integrated with the newer hero/services/work direction.
+- Clean up the homepage final CTA so it feels sharper, less heavy, and more integrated with the newer hero/services/work direction.
 - Improve spacing, hierarchy, and surface treatment where needed in those two sections only.
 
 ## Direction
@@ -23,6 +23,6 @@ Bring the last two lower-homepage sections up to the new quality bar so the full
 
 ## Definition of Done
 - Process section feels tighter, cleaner, and more summary-first.
-- Final CTA feels more premium and better integrated with the homepage flow.
+- Final CTA feels cleaner, more premium, and better integrated with the homepage flow.
 - The homepage reads as one coherent system from hero through final CTA.
 - No regression in responsiveness, localization, or maintainability.

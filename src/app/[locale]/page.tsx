@@ -33,9 +33,8 @@ export default async function HomePage({
   const { locale } = await params;
   const appLocale = locale as AppLocale;
 
-  const [t, tShared, services, allWorkItems] = await Promise.all([
+  const [t, services, allWorkItems] = await Promise.all([
     getTranslations({ locale, namespace: "Index" }),
-    getTranslations({ locale, namespace: "Shared" }),
     getServices(locale),
     getWorkItems(locale),
   ]);
@@ -86,8 +85,8 @@ export default async function HomePage({
         panelDescription={t("servicesPreviewPanelDescription")}
         highlights={t.raw("servicesPreviewHighlights") as string[]}
         services={services}
+        shortLabels={t.raw("servicesPreviewShortTitles") as Record<string, string>}
         primaryLabel={t("servicesPrimaryLinkLabel")}
-        learnMoreLabel={tShared("learnMore")}
         emptyTitle={t("servicesPreviewEmptyTitle")}
         emptyDescription={t("servicesPreviewEmptyDescription")}
       />

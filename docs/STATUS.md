@@ -1,5 +1,5 @@
 # Project Status
-**Current Phase:** H3 Complete
+**Current Phase:** Homepage Preview Refinement Complete
 **Date:** 2026-03-27
 
 ## Current Product State
@@ -57,7 +57,12 @@
 - Removed the older homepage industries and proof sections so the homepage now follows the locked simplified section order.
 - Kept the process section and final CTA intact for the next cleanup phase.
 
+## Homepage Preview Refinement Pass Complete
+- Compressed the homepage services preview into a shorter 3-card summary format with homepage-safe short labels.
+- Reduced homepage featured work visual heaviness by tightening the lead card and shrinking the two supporting cards.
+- Improved scan speed and reduced vertical sprawl while keeping both sections database-driven and homepage-specific.
+
 ## Next
 - Phase H3A is ready.
-- Phase H3A should focus only on process section cleanup and homepage final CTA polish.
+- Phase H3A should focus only on process section simplification and homepage final CTA cleanup.
 - Do not reopen the hero, services preview, or featured work preview during H3A.
