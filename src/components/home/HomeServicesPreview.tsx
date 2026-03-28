@@ -57,7 +57,7 @@ export function HomeServicesPreview({
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.08),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(63,103,220,0.05),transparent_26%)]" />
 
       <Container className="relative z-10">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <MotionReveal>
             <SectionHeader
               align="left"
@@ -71,7 +71,10 @@ export function HomeServicesPreview({
           <MotionReveal delay={0.08}>
             <Link
               href="/services"
-              className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "hidden rounded-full px-7 lg:inline-flex",
+              )}
             >
               {primaryLabel}
               <ArrowRight className="h-4 w-4" />
@@ -80,13 +83,13 @@ export function HomeServicesPreview({
         </div>
 
         <MotionReveal delay={0.1}>
-          <div className="mt-8 rounded-[1.7rem] border border-slate-200/80 bg-white/94 px-5 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)]">
+          <div className="mt-6 rounded-[1.45rem] border border-slate-200/80 bg-white/94 px-4 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)] sm:mt-8 sm:rounded-[1.7rem] sm:px-5">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-slate-700">
                   {panelTitle}
                 </p>
-                <p className="mt-2 text-sm leading-7 text-slate-600 md:text-[0.98rem]">
+                <p className="mt-2 text-sm leading-6 text-slate-600 md:text-[0.98rem] md:leading-7">
                   {panelDescription}
                 </p>
               </div>
@@ -106,7 +109,7 @@ export function HomeServicesPreview({
         </MotionReveal>
 
         {previewServices.length > 0 ? (
-          <div className="mt-8 grid gap-4 lg:grid-cols-3 xl:gap-5">
+          <div className="mt-6 grid gap-4 lg:grid-cols-3 xl:mt-8 xl:gap-5">
             {previewServices.map((service, index) => {
               const Icon = iconMap[service.icon_name] ?? MonitorSmartphone;
               const quickPoints = Array.isArray(service.bullet_points)
@@ -116,7 +119,7 @@ export function HomeServicesPreview({
 
               return (
                 <MotionReveal key={service.id} delay={0.06 + index * 0.05}>
-                  <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/85 bg-white/96 p-5 shadow-[0_18px_48px_-38px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_24px_60px_-38px_rgba(55,42,123,0.18)]">
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] border border-slate-200/85 bg-white/96 p-4 shadow-[0_18px_48px_-38px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_24px_60px_-38px_rgba(55,42,123,0.18)] sm:rounded-[1.7rem] sm:p-5">
                     <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.1),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
                     <div className="relative flex items-start gap-4">
@@ -127,14 +130,14 @@ export function HomeServicesPreview({
                         <h3 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">
                           {compactTitle}
                         </h3>
-                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                        <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
                           {service.description}
                         </p>
                       </div>
                     </div>
 
                     {quickPoints.length > 0 && (
-                      <div className="relative mt-5 flex flex-wrap gap-2">
+                      <div className="relative mt-4 flex flex-wrap gap-2 sm:mt-5">
                         {quickPoints.map((point) => (
                           <span
                             key={point}
@@ -146,7 +149,7 @@ export function HomeServicesPreview({
                       </div>
                     )}
 
-                    <div className="relative mt-auto pt-5">
+                    <div className="relative mt-auto pt-4 sm:pt-5">
                       <p className="text-[0.74rem] font-semibold uppercase tracking-[0.18em] text-slate-500">
                         {String(service.order).padStart(2, "0")}
                       </p>
@@ -170,7 +173,7 @@ export function HomeServicesPreview({
         )}
 
         <MotionReveal delay={0.16}>
-          <div className="mt-6 flex flex-wrap gap-3 lg:hidden">
+          <div className="mt-5 flex flex-wrap gap-3 lg:hidden sm:mt-6">
             <Link
               href="/services"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}

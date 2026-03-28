@@ -43,33 +43,33 @@ export function HomeProcessSection({
           />
         </MotionReveal>
 
-        <div className="relative mt-10">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+        <div className="relative mt-8 sm:mt-10">
+          <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
             {steps.map((step, index) => (
               <MotionReveal
                 key={step.title}
                 delay={0.08 + index * 0.06}
               >
-                <article className="relative h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] p-6 shadow-[0_20px_54px_-40px_rgba(0,0,0,0.52)] backdrop-blur-md">
+                <article className="relative h-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] p-4 shadow-[0_20px_54px_-40px_rgba(0,0,0,0.52)] backdrop-blur-md sm:rounded-[1.8rem] sm:p-6">
                   <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.16),transparent_72%)]" />
 
                   <div className="relative">
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex rounded-full border border-white/10 bg-white/9 px-3.5 py-1.5 text-[0.78rem] font-semibold text-white">
-                        0{index + 1}
-                      </div>
-                      <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/56">
-                        {step.eyebrow}
-                      </p>
+                        <div className="inline-flex rounded-full border border-white/10 bg-white/9 px-3.5 py-1.5 text-[0.78rem] font-semibold text-white">
+                          0{index + 1}
+                        </div>
+                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/56">
+                          {step.eyebrow}
+                        </p>
                     </div>
-                    <h3 className="mt-5 text-[1.35rem] font-semibold tracking-[-0.035em] text-white">
+                    <h3 className="mt-4 text-[1.18rem] font-semibold tracking-[-0.035em] text-white sm:mt-5 sm:text-[1.35rem]">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-white/72">
+                    <p className="mt-2.5 text-sm leading-6 text-white/72 sm:mt-3">
                       {step.description}
                     </p>
 
-                    <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-3.5 py-1.5 text-[0.78rem] font-medium text-white/80">
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-3 py-1.5 text-[0.76rem] font-medium text-white/80 sm:mt-5 sm:px-3.5 sm:text-[0.78rem]">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                       {step.outcome}
                     </div>
