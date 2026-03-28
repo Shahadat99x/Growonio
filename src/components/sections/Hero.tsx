@@ -60,7 +60,7 @@ function HeroAutomationCard({
   footer: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-[1.45rem] border border-slate-200/72 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(244,242,250,0.96)_100%)] p-3 shadow-[0_26px_64px_-42px_rgba(29,20,64,0.34)] backdrop-blur-lg sm:rounded-[1.7rem] sm:border-slate-200/80 sm:p-5 sm:shadow-[0_35px_85px_-42px_rgba(29,20,64,0.42)] sm:backdrop-blur-xl">
+    <div className="relative overflow-hidden rounded-[1.35rem] border border-slate-200/68 bg-[linear-gradient(180deg,rgba(255,255,255,0.93)_0%,rgba(244,242,250,0.95)_100%)] p-2.5 shadow-[0_22px_54px_-40px_rgba(29,20,64,0.28)] backdrop-blur-md sm:rounded-[1.7rem] sm:border-slate-200/80 sm:p-5 sm:shadow-[0_35px_85px_-42px_rgba(29,20,64,0.42)] sm:backdrop-blur-xl">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(86,59,183,0.14),transparent_72%)] sm:h-24 sm:bg-[radial-gradient(circle_at_top_left,rgba(86,59,183,0.18),transparent_72%)]" />
 
       <div className="relative flex items-start justify-between gap-3">
@@ -68,7 +68,7 @@ function HeroAutomationCard({
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/82">
             {badge}
           </p>
-          <h3 className="mt-2.5 text-[0.96rem] font-semibold tracking-[-0.035em] text-slate-950 sm:mt-3 sm:text-lg">
+          <h3 className="mt-2 text-[0.93rem] font-semibold tracking-[-0.035em] text-slate-950 sm:mt-3 sm:text-lg">
             {title}
           </h3>
         </div>
@@ -77,11 +77,11 @@ function HeroAutomationCard({
         </span>
       </div>
 
-      <div className="relative mt-4 rounded-[1.05rem] border border-slate-200/78 bg-white/90 p-2.5 shadow-[0_14px_32px_-30px_rgba(29,20,64,0.22)] sm:mt-5 sm:rounded-[1.25rem] sm:p-3 sm:shadow-[0_18px_40px_-34px_rgba(29,20,64,0.28)]">
+      <div className="relative mt-3.5 rounded-[0.98rem] border border-slate-200/74 bg-white/88 p-2 shadow-[0_12px_28px_-28px_rgba(29,20,64,0.18)] sm:mt-5 sm:rounded-[1.25rem] sm:p-3 sm:shadow-[0_18px_40px_-34px_rgba(29,20,64,0.28)]">
         <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
           {triggerLabel}
         </p>
-        <p className="mt-1.5 text-[0.82rem] font-semibold text-slate-900 sm:mt-2 sm:text-sm">
+        <p className="mt-1 text-[0.78rem] font-semibold leading-5 text-slate-900 sm:mt-2 sm:text-sm sm:leading-normal">
           {triggerValue}
         </p>
       </div>
@@ -90,21 +90,21 @@ function HeroAutomationCard({
         {steps.map((step, index) => (
           <div
             key={step}
-            className="flex items-center gap-2.5 rounded-[1rem] border border-slate-200/78 bg-white/80 px-2.5 py-2 sm:gap-3 sm:rounded-[1.15rem] sm:px-3 sm:py-2.5"
+            className="flex items-center gap-2 rounded-[0.95rem] border border-slate-200/76 bg-white/78 px-2 py-1.5 sm:gap-3 sm:rounded-[1.15rem] sm:px-3 sm:py-2.5"
           >
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/14 bg-primary/10 text-[0.66rem] font-semibold text-primary sm:h-8 sm:w-8 sm:text-[0.72rem]">
+            <div className="flex h-[1.625rem] w-[1.625rem] shrink-0 items-center justify-center rounded-full border border-primary/14 bg-primary/10 text-[0.62rem] font-semibold text-primary sm:h-8 sm:w-8 sm:text-[0.72rem]">
               0{index + 1}
             </div>
-            <p className="text-[0.82rem] font-medium leading-5 text-slate-800 sm:text-sm">
+            <p className="text-[0.78rem] font-medium leading-[1.2rem] text-slate-800 sm:text-sm sm:leading-5">
               {step}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="relative mt-3.5 flex items-start gap-2.5 rounded-[1rem] border border-slate-200/72 bg-slate-950 px-3 py-2.5 text-white shadow-[0_18px_38px_-30px_rgba(8,7,16,0.45)] sm:mt-4 sm:rounded-[1.15rem] sm:px-3.5 sm:py-3 sm:shadow-[0_22px_45px_-34px_rgba(8,7,16,0.55)]">
+      <div className="relative mt-3 flex items-start gap-2 rounded-[0.95rem] border border-slate-200/70 bg-slate-950 px-2.5 py-2 text-white shadow-[0_16px_34px_-28px_rgba(8,7,16,0.4)] sm:mt-4 sm:rounded-[1.15rem] sm:px-3.5 sm:py-3 sm:shadow-[0_22px_45px_-34px_rgba(8,7,16,0.55)]">
         <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-400 sm:h-4 sm:w-4" />
-        <p className="text-[0.76rem] leading-5 text-white/82 sm:text-[0.82rem] sm:leading-6">
+        <p className="text-[0.72rem] leading-[1.15rem] text-white/82 sm:text-[0.82rem] sm:leading-6">
           {footer}
         </p>
       </div>
@@ -163,7 +163,7 @@ function HeroVisual({
         </div>
 
         <MotionFloat
-          className="absolute -bottom-4 right-2 z-20 w-[26%] min-w-[6.1rem] max-w-[8.4rem] rounded-[1.2rem] border border-transparent bg-white/68 p-1.5 shadow-[0_16px_36px_-26px_rgba(20,15,49,0.2)] backdrop-blur-sm sm:-bottom-14 sm:right-5 sm:w-[31%] sm:min-w-[8.5rem] sm:max-w-[14rem] sm:rounded-[2rem] sm:border-white/80 sm:bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(242,242,248,0.96)_100%)] sm:p-3 sm:shadow-[0_38px_90px_-50px_rgba(20,15,49,0.5)]"
+          className="absolute bottom-1 right-1 z-20 w-[22%] min-w-[4.9rem] max-w-[6.9rem] sm:-bottom-14 sm:right-5 sm:w-[31%] sm:min-w-[8.5rem] sm:max-w-[14rem] sm:rounded-[2rem] sm:border sm:border-white/80 sm:bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(242,242,248,0.96)_100%)] sm:p-3 sm:shadow-[0_38px_90px_-50px_rgba(20,15,49,0.5)]"
           delay={0.45}
           duration={7.4}
           y={6}
@@ -174,12 +174,12 @@ function HeroVisual({
             width={1536}
             height={2752}
             sizes="(max-width: 768px) 34vw, (max-width: 1280px) 22vw, 15vw"
-            className="h-auto w-full rounded-[1rem] sm:rounded-[1.45rem]"
+            className="h-auto w-full sm:rounded-[1.45rem]"
           />
         </MotionFloat>
 
         <MotionFloat
-          className="absolute left-1 bottom-1 z-30 w-[11.5rem] max-w-[70%] sm:-left-6 sm:bottom-12 sm:w-[19rem] sm:max-w-[80%]"
+          className="absolute left-2 top-3 z-30 w-[10.4rem] max-w-[61%] sm:-left-6 sm:top-auto sm:bottom-12 sm:w-[19rem] sm:max-w-[80%]"
           delay={1}
           duration={8.8}
           y={8}
@@ -289,7 +289,7 @@ export function Hero({
             )}
           </div>
 
-          <MotionReveal delay={0.18} distance={36} className="mt-3 sm:mt-0">
+          <MotionReveal delay={0.18} distance={36} className="mt-5 sm:mt-0">
             <HeroVisual
               desktopImageAlt={desktopImageAlt}
               mobileImageAlt={mobileImageAlt}
