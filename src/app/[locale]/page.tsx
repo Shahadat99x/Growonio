@@ -50,7 +50,6 @@ export default async function HomePage({
     eyebrow: string;
     title: string;
     description: string;
-    outcome: string;
   }>;
 
   return (
@@ -61,12 +60,10 @@ export default async function HomePage({
         badge={t("heroBadge")}
         title={t("title")}
         description={t("description")}
-        supportingLine={t("supportingLine")}
         primaryCtaText={t("cta")}
         primaryCtaHref="/contact"
         secondaryCtaText={t("heroSecondaryCta")}
         secondaryCtaHref="/services"
-        trustChips={t.raw("heroTrustChips") as string[]}
         automationBadge={t("heroAutomationBadge")}
         automationTitle={t("heroAutomationTitle")}
         automationTriggerLabel={t("heroAutomationTriggerLabel")}
@@ -81,11 +78,12 @@ export default async function HomePage({
         badge={t("servicesPreviewBadge")}
         title={t("servicesPreviewTitle")}
         description={t("servicesPreviewDesc")}
-        panelTitle={t("servicesPreviewPanelTitle")}
-        panelDescription={t("servicesPreviewPanelDescription")}
-        highlights={t.raw("servicesPreviewHighlights") as string[]}
+        previewCards={t.raw("servicesPreviewCards") as Array<{
+          title: string;
+          description: string;
+          pills: string[];
+        }>}
         services={services}
-        shortLabels={t.raw("servicesPreviewShortTitles") as Record<string, string>}
         primaryLabel={t("servicesPrimaryLinkLabel")}
         emptyTitle={t("servicesPreviewEmptyTitle")}
         emptyDescription={t("servicesPreviewEmptyDescription")}
@@ -95,8 +93,6 @@ export default async function HomePage({
         badge={t("workPreviewBadge")}
         title={t("workPreviewTitle")}
         description={t("workPreviewDesc")}
-        panelTitle={t("workPreviewPanelTitle")}
-        panelDescription={t("workPreviewPanelDescription")}
         items={workItems}
         primaryLabel={t("workPreviewPrimaryLabel")}
         cardCtaLabel={t("workPreviewCardCtaLabel")}
@@ -117,7 +113,6 @@ export default async function HomePage({
         description={t("ctaDesc")}
         primaryLabel={t("ctaButton")}
         secondaryLabel={t("ctaSecondaryButton")}
-        supportNote={t("ctaSupportNote")}
         microPoints={t.raw("ctaMicroPoints") as string[]}
         panelTitle={t("ctaPanelTitle")}
       />

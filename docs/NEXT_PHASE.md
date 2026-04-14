@@ -1,37 +1,55 @@
-# Next Phase Plan: Submission Inbox + Delivery Hardening
-**Focus:** optional admin storage, optional mailbox architecture, and pragmatic spam protection improvements
+# Next Phase Plan: Final Public Launch Polish + Responsive QA
+**Focus:** finish launch-facing refinement, not new redesign work
 
 ## Goal
-Build the next operational layer on top of the restored public forms so Growonio can review submissions more comfortably, keep a better record of leads/applications, and harden abuse handling without replacing the simple Resend-first flow.
+Take the current Premium Growth-Tech public site from polished prototype quality to final launch confidence through systematic responsive QA, copy tightening where needed, and small high-value corrections.
 
 ## Exact Scope
-- Add structured persistence for public submissions:
-  - either a unified `public_submissions` table or dedicated contact/careers tables
-  - preserve key fields separately instead of storing only a large combined message body
-- Add an admin/dashboard view for submissions:
-  - list recent contact inquiries
-  - list recent careers applications
-  - basic status markers such as `new`, `reviewed`, `archived`
-- Decide the later mailbox architecture explicitly:
-  - keep Resend notifications as the delivery mechanism
-  - document whether Growonio will later use Google Workspace, forwarding, or another mailbox host for `hello@growonio.ro`
-- Improve lightweight anti-abuse protections only where justified by traffic:
-  - request-rate throttling for public form endpoints/server actions
-  - stronger honeypot or timing heuristics if spam appears
-  - optional CAPTCHA only if lighter measures are insufficient
+- Run a final responsive QA pass across the public marketing pages:
+  - home
+  - services
+  - pricing
+  - work
+  - about
+  - FAQ
+  - contact
+  - careers
+- Check key viewport bands carefully:
+  - narrow mobile
+  - standard mobile
+  - tablet
+  - small laptop
+  - large desktop
+- Fix remaining small launch-facing issues only:
+  - spacing inconsistencies
+  - card-density problems
+  - weak CTA rhythm
+  - image cropping or mockup balance issues
+  - typography breaks or awkward line wraps
+- Validate the public funnel behavior:
+  - nav clarity
+  - homepage-to-service/work/pricing paths
+  - contact/pricing CTA consistency
+  - bilingual route coverage and polish
+- Recheck SEO-facing public structure after visual polish:
+  - metadata coverage
+  - heading hierarchy
+  - internal linking sanity
+  - localized page quality
 
 ## Direction
-- Keep the current public form design and user flow intact.
-- Preserve Resend email delivery as the primary operational path.
-- Prefer simple internal tools over building a heavy CRM.
+- Preserve the current homepage architecture and Premium Growth-Tech direction.
+- Prefer small, defensible improvements over new concepts.
+- Treat this as launch QA and refinement, not another redesign phase.
 
 ## Constraints
-- Do not turn this into a full sales pipeline system.
-- Do not block legitimate inquiries with heavy anti-spam friction unless abuse volume justifies it.
-- Do not replace the working Resend notification flow while adding storage/admin layers.
+- Do not reopen the homepage concept or section order.
+- Do not introduce heavy new UI patterns, dependencies, or animation.
+- Do not create churn in working systems unless a real issue is found.
+- Do not turn final QA into a broad product-scope expansion.
 
 ## Definition of Done
-- Public submissions are stored in a structured, reviewable way.
-- Admin users can review recent contact and careers submissions from the dashboard.
-- The future mailbox hosting/forwarding path is documented clearly.
-- Spam protection is improved only to the level justified by real usage.
+- Public marketing pages feel consistent and intentional across major breakpoints.
+- Remaining responsive defects are resolved or explicitly documented.
+- CTA behavior and navigation paths are clean across the public funnel.
+- The site is ready for final pre-launch review instead of another design pass.

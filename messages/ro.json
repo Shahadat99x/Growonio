@@ -1,29 +1,42 @@
 {
   "Index": {
-    "title": "Website-uri, sisteme de programări și automatizări pentru afaceri de servicii care vor să crească",
-    "description": "Growonio construiește sisteme digitale moderne care ajută afacerile de servicii să câștige mai multe cereri, să gestioneze mai clar programările și să reducă munca operațională manuală.",
+    "title": "Sisteme de creștere pentru firme de servicii",
+    "description": "Website, programări, administrare și automatizare, gândite ca un singur sistem conectat.",
     "supportingLine": "Construite pentru România mai întâi, cu livrare bilingvă, structură pregătită pentru SEO și predare ușor de administrat încă din prima zi.",
     "metaTitle": "Growonio | Automatizare pentru afaceri de servicii din România",
     "metaDescription": "Growonio construiește website-uri orientate spre conversie, automatizări, sisteme de programări și fluxuri digitale pentru afaceri de servicii din România.",
-    "cta": "Cere ofertă",
-    "heroSecondaryCta": "Descoperă Serviciile",
+    "cta": "Solicită o ofertă",
+    "heroSecondaryCta": "Vezi serviciile",
     "servicesPreviewBadge": "Servicii Principale",
-    "servicesPreviewTitle": "Trei straturi principale de servicii prezentate ca un preview rapid de homepage",
-    "servicesPreviewDesc": "O vedere compactă asupra sistemelor principale pe care Growonio le construiește pentru afaceri de servicii care au nevoie de poziționare mai bună, gestionare mai clară a cererii și mai puțină muncă manuală.",
-    "servicesPreviewPanelTitle": "Un singur sistem de livrare conectat",
-    "servicesPreviewPanelDescription": "Homepage-ul rămâne scurt, dar fiecare serviciu este definit ca parte dintr-un sistem conectat pentru creștere și operațiuni zilnice.",
-    "servicesPreviewHighlights": [
-      "Setup pregătit pentru două limbi",
-      "Predare ușor de administrat",
-      "Structură pregătită pentru SEO"
+    "servicesPreviewTitle": "Trei sisteme esențiale pentru afaceri de servicii",
+    "servicesPreviewDesc": "De la website-uri și aplicații mobile la programări și automatizare, acestea sunt sistemele esențiale pe care le construim pentru afaceri de servicii în creștere.",
+    "servicesPrimaryLinkLabel": "Vezi toate serviciile",
+    "servicesPreviewCards": [
+      {
+        "title": "Website-uri și aplicații mobile",
+        "description": "Website-uri și aplicații mobile orientate către client, gândite să inspire încredere, să susțină programările și să facă serviciile mai ușor de accesat.",
+        "pills": [
+          "Design website",
+          "Aplicații mobile"
+        ]
+      },
+      {
+        "title": "Programări și administrarea clienților",
+        "description": "Fluxuri de programare și vizibilitate administrativă pentru afaceri care gestionează programări, solicitări sau clienți recurenți.",
+        "pills": [
+          "Fluxuri de programare",
+          "Vizibilitate administrativă"
+        ]
+      },
+      {
+        "title": "Automatizare workflow",
+        "description": "Automatizări pentru captarea lead-urilor, follow-up și procese interne, care ajută echipele să răspundă mai rapid — inclusiv fluxuri cu chatbot și AI acolo unde chiar aduc valoare.",
+        "pills": [
+          "Captare lead-uri",
+          "Automatizare follow-up"
+        ]
+      }
     ],
-    "servicesPreviewShortTitles": {
-      "web-design": "Website-uri de Business",
-      "booking-systems": "Sisteme de Programări",
-      "automations": "Automatizare Fluxuri",
-      "mobile-apps": "Aplicații Mobile"
-    },
-    "servicesPrimaryLinkLabel": "Descoperă toate serviciile",
     "servicesPreviewEmptyTitle": "Preview-ul serviciilor este în pregătire",
     "servicesPreviewEmptyDescription": "Pagina completă de servicii rămâne disponibilă în timp ce homepage-ul preia biblioteca curentă de servicii.",
     "solutionsPreviewBadge": "Afaceri Potrivite",
@@ -76,18 +89,16 @@
     ],
     "solutionsPrimaryLinkLabel": "Vezi soluțiile pe industrii",
     "solutionsSecondaryLinkLabel": "Discută despre afacerea ta",
-    "workPreviewBadge": "Portofoliu Selectat",
-    "workPreviewTitle": "Proiecte selectate care arată cum Growonio transformă operațiunile de servicii în sisteme digitale mai clare",
-    "workPreviewDesc": "Un strat scurt de proof pentru homepage: un proiect principal mai puternic și două exemple de suport din biblioteca activă de proiecte.",
-    "workPreviewPanelTitle": "Proof selectiv, nu o listă mare de proiecte",
-    "workPreviewPanelDescription": "Homepage-ul afișează doar o selecție foarte editată, astfel încât vizitatorii să poată evalua rapid calitatea înainte de a deschide portofoliul complet.",
-    "workPreviewPrimaryLabel": "Explorează tot portofoliul",
+    "workPreviewBadge": "Proiecte selectate",
+    "workPreviewTitle": "Proiecte selectate pentru afaceri de servicii",
+    "workPreviewDesc": "O selecție scurtă de proiecte din zona de website-uri, fluxuri de programare și sisteme operaționale.",
+    "workPreviewPrimaryLabel": "Vezi toate proiectele",
     "workPreviewCardCtaLabel": "Vezi studiul de caz",
     "workPreviewEmptyTitle": "Portofoliul selectat este în pregătire",
     "workPreviewEmptyDescription": "Pagina de portofoliu rămâne disponibilă în timp ce noile studii de caz sunt pregătite pentru preview-ul homepage-ului.",
-    "processBadge": "Proces de Livrare",
-    "processTitle": "Un flux structurat care păstrează strategia și execuția aliniate",
-    "processDesc": "Un flux clar în patru pași, construit pentru a păstra scopul, execuția și așteptările de lansare aliniate încă de la început.",
+    "processBadge": "Proces",
+    "processTitle": "Un proces clar, de la planificare la lansare",
+    "processDesc": "Patru pași practici care mențin direcția, livrarea și lansarea pe drumul corect.",
     "processNoteTitle": "Transparență în fiecare etapă",
     "processNoteDescription": "Știi permanent ce se construiește, de ce contează și ce deblochează fiecare etapă pentru următoarea.",
     "processSupportPoints": [
@@ -98,27 +109,23 @@
     "processSteps": [
       {
         "eyebrow": "Context de business",
-        "title": "Descoperim",
-        "description": "Analizăm modelul de business, fluxul de servicii, blocajele și ce trebuie să îmbunătățească mai întâi sistemul digital.",
-        "outcome": "Obiective și blocaje clarificate"
+        "title": "Descoperire",
+        "description": "Analizăm businessul, fluxul serviciilor și problemele pe care sistemul trebuie să le rezolve mai întâi."
       },
       {
         "eyebrow": "Structură + scop",
-        "title": "Planificăm",
-        "description": "Definim ierarhia paginilor, traseele utilizatorilor, logica de programări, direcția de conținut și scopul practic al livrării înainte de build.",
-        "outcome": "Roadmap clar înainte de dezvoltare"
+        "title": "Planificare",
+        "description": "Stabilim structura, prioritățile și aria de livrare înainte să înceapă designul și dezvoltarea."
       },
       {
         "eyebrow": "Execuție",
-        "title": "Construim",
-        "description": "Proiectăm și implementăm sistemul cu interfață responsive, utilizare administrativă clară, calitate tehnică și fundații pregătite pentru creștere.",
-        "outcome": "Sistem premium construit pentru uz real"
+        "title": "Implementare",
+        "description": "Proiectăm și construim sistemul cu UX clar, administrare practică și o bază tehnică solidă."
       },
       {
-        "eyebrow": "Go-live + predare",
-        "title": "Lansăm și Oferim Suport",
-        "description": "Testăm, lansăm și sprijinim implementarea astfel încât echipa ta să poată folosi sistemul cu încredere și să îl îmbunătățească în timp.",
-        "outcome": "Lansare sigură, cu suport"
+        "eyebrow": "Lansare + suport",
+        "title": "Lansare și suport",
+        "description": "Testăm, lansăm și susținem implementarea astfel încât sistemul să poată fi folosit din prima zi."
       }
     ],
     "trustBadge": "De ce Growonio",
@@ -160,18 +167,18 @@
     "processStep3Title": "Lansare și Scalare",
     "processStep3Desc": "Implementare, instruire și suport continuu pentru accelerarea creșterii.",
     "ctaBadge": "Pornește următorul sistem",
-    "ctaHeading": "Ești gata să construiești un sistem digital mai puternic?",
-    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programări mai curate și sisteme practice construite în jurul operațiunilor reale.",
-    "ctaButton": "Cere ofertă",
-    "ctaSecondaryButton": "Vezi Prețurile",
+    "ctaHeading": "Pregătit să construiești un sistem mai puternic?",
+    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programare mai clare și sisteme practice, construite pentru operațiuni reale.",
+    "ctaButton": "Solicită o ofertă",
+    "ctaSecondaryButton": "Vezi prețurile",
     "ctaSupportNote": "Cele mai multe proiecte încep cu o conversație scurtă de descoperire și o recomandare practică de scop.",
     "ctaMicroPoints": [
-      "Livrare bilingvă",
-      "Scop clar și etape definite",
-      "Suport inclus la lansare"
+      "O scurtă discuție de descoperire",
+      "O recomandare clară",
+      "Pași practici de urmat"
     ],
-    "ctaPanelTitle": "Scop clar, build și suport la lansare într-un singur flux",
-    "heroBadge": "Sisteme de creștere pentru afaceri de servicii",
+    "ctaPanelTitle": "Ce urmează după ce ne contactezi",
+    "heroBadge": "Gândit pentru operațiuni reale",
     "heroTrustChips": [
       "Livrare în română și engleză",
       "Fundații pregătite pentru SEO",
@@ -779,16 +786,16 @@
     "formNote": "Dacă formularul nu funcționează, scrie-ne direct pe email și include aceleași detalii."
   },
   "Footer": {
-    "eyebrow": "Studio Growonio",
-    "title": "Sisteme digitale gândite pentru creșterea afacerilor de servicii",
-    "description": "Automatizare construită pentru creștere pentru afaceri de servicii care au nevoie de website-uri mai bune, operațiuni mai clare și sisteme digitale practice.",
+    "eyebrow": "Growonio Studio",
+    "title": "Sisteme digitale pentru afaceri de servicii",
+    "description": "Website-uri, fluxuri de programare și sisteme practice, construite pentru operațiuni reale.",
     "contactTitle": "Contact direct",
-    "contactDescription": "Începe cu un mesaj scurt despre afacere, blocajul actual și tipul de sistem pe care vrei să îl îmbunătățești.",
+    "contactDescription": "Poți începe cu un scurt mesaj despre afacerea ta, blocajul principal și ce vrei să îmbunătățești.",
     "availabilityLabel": "Disponibilitate",
-    "availabilityValue": "România + livrare internațională",
+    "availabilityValue": "Disponibili în România și internațional",
     "responseLabel": "Timp de răspuns",
-    "responseValue": "De obicei în maximum o zi lucrătoare",
-    "ctaPrimary": "Cere ofertă",
+    "responseValue": "De obicei, în maximum o zi lucrătoare",
+    "ctaPrimary": "Solicită o ofertă",
     "ctaSecondary": "Vezi prețurile",
     "whatsapp": "WhatsApp",
     "microPoints": [

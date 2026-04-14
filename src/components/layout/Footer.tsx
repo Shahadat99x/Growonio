@@ -14,7 +14,7 @@ export default function Footer() {
   const tFooter = useTranslations("Footer");
   const tLegal = useTranslations("Legal");
   const currentYear = new Date().getFullYear();
-  const microPoints = tFooter.raw("microPoints") as string[];
+  const visibleEmail = "hello@growonio.ro";
 
   const companyLinks = [
     { href: "/about", label: t("about") },
@@ -59,18 +59,6 @@ export default function Footer() {
                 {tFooter("description")}
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
-                {microPoints.map((point) => (
-                  <div
-                    key={point}
-                    className="inline-flex items-center rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm font-medium text-white/82 backdrop-blur-sm"
-                  >
-                    <span className="mr-2 h-2 w-2 rounded-full bg-primary shadow-[0_0_14px_-1px_color-mix(in_oklab,var(--color-primary)_90%,transparent)]" />
-                    {point}
-                  </div>
-                ))}
-              </div>
-
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
@@ -81,15 +69,6 @@ export default function Footer() {
                 >
                   {tFooter("ctaPrimary")}
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "rounded-full border-white/14 bg-white/10 px-7 text-base text-white hover:border-white/24 hover:bg-white/14",
-                  )}
-                >
-                  {tFooter("ctaSecondary")}
                 </Link>
               </div>
             </div>
@@ -110,10 +89,10 @@ export default function Footer() {
                       {tFooter("contactDescription")}
                     </p>
                     <a
-                      href={`mailto:${siteConfig.companyEmail}`}
+                      href={`mailto:${visibleEmail}`}
                       className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-primary"
                     >
-                      {siteConfig.companyEmail}
+                      {visibleEmail}
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>

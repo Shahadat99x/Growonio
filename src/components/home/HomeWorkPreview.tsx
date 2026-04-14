@@ -15,8 +15,6 @@ interface HomeWorkPreviewProps {
   badge: string;
   title: string;
   description: string;
-  panelTitle: string;
-  panelDescription: string;
   items: LocalizedWorkItem[];
   primaryLabel: string;
   cardCtaLabel: string;
@@ -24,32 +22,29 @@ interface HomeWorkPreviewProps {
   emptyDescription: string;
 }
 
-function getWorkSummary(item: LocalizedWorkItem) {
+function getWorkSupportingLine(item: LocalizedWorkItem) {
+  const description = item.description?.trim();
+  if (description) {
+    return description;
+  }
+
   const overview = item.overview?.trim();
   if (overview) {
     return overview;
   }
 
-  return item.description;
-}
+  const results = item.results?.trim();
+  if (results) {
+    return results;
+  }
 
-function getWorkHighlightChips(item: LocalizedWorkItem) {
-  const statChip = item.stats[0]
-    ? `${item.stats[0].label}: ${item.stats[0].value}`
-    : null;
-  const featureChip = Array.isArray(item.features) && item.features.length > 0
-    ? item.features[0]
-    : null;
-
-  return [statChip, featureChip].filter(Boolean) as string[];
+  return "";
 }
 
 export function HomeWorkPreview({
   badge,
   title,
   description,
-  panelTitle,
-  panelDescription,
   items,
   primaryLabel,
   cardCtaLabel,
@@ -57,16 +52,13 @@ export function HomeWorkPreview({
   emptyDescription,
 }: HomeWorkPreviewProps) {
   const previewItems = items.slice(0, 3);
-  const leadItem = previewItems[0] ?? null;
-  const secondaryItems = leadItem ? previewItems.slice(1, 3) : [];
-  const industryChips = [...new Set(previewItems.map((item) => item.industry).filter(Boolean))].slice(0, 3);
 
   return (
     <Section className="relative overflow-hidden border-b border-slate-200/70 bg-[linear-gradient(180deg,rgba(251,251,253,0.98)_0%,rgba(246,247,250,0.98)_100%)]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_left_top,rgba(93,69,209,0.06),transparent_24%),radial-gradient(circle_at_right_bottom,rgba(63,103,220,0.05),transparent_26%)]" />
 
       <Container className="relative z-10">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <MotionReveal>
             <SectionHeader
               align="left"
@@ -80,7 +72,10 @@ export function HomeWorkPreview({
           <MotionReveal delay={0.08}>
             <Link
               href="/work"
-              className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "hidden rounded-full px-7 lg:inline-flex",
+              )}
             >
               {primaryLabel}
               <ArrowRight className="h-4 w-4" />
@@ -88,162 +83,56 @@ export function HomeWorkPreview({
           </MotionReveal>
         </div>
 
-        <MotionReveal delay={0.1}>
-          <div className="mt-8 rounded-[1.7rem] border border-slate-200/80 bg-white/94 px-5 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)]">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-slate-700">
-                  {panelTitle}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-slate-600 md:text-[0.98rem]">
-                  {panelDescription}
-                </p>
-              </div>
+        {previewItems.length > 0 ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:mt-8 xl:grid-cols-3 xl:gap-5">
+            {previewItems.map((item, index) => (
+              <MotionReveal key={item.id} delay={0.06 + index * 0.05} className="h-full">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] border border-slate-200/85 bg-white/96 shadow-[0_18px_46px_-36px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_24px_58px_-38px_rgba(55,42,123,0.16)] sm:rounded-[1.7rem]">
+                  <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.1),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
-              {industryChips.length > 0 && (
-                <div className="flex flex-wrap gap-2.5">
-                  {industryChips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center rounded-full border border-slate-200/85 bg-slate-50 px-3 py-1.5 text-[0.76rem] font-medium leading-5 text-slate-700"
-                    >
-                      <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </MotionReveal>
-
-        {leadItem ? (
-          <div className="mt-8 grid gap-4 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] xl:items-stretch">
-            <MotionReveal>
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.85rem] border border-slate-200/85 bg-white/96 shadow-[0_20px_54px_-38px_rgba(19,16,38,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_26px_66px_-40px_rgba(55,42,123,0.18)] md:grid md:grid-cols-[220px_1fr] md:items-stretch">
-                <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.1),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200/75 bg-slate-100 md:min-h-full md:border-r md:border-b-0">
-                  <WorkItemCardImage
-                    src={leadItem.image_url}
-                    alt={getWorkItemImageAlt(leadItem)}
-                    title={leadItem.title}
-                  />
-                </div>
-
-                <div className="relative flex flex-1 flex-col p-5 md:p-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-600">
-                      {leadItem.industry}
-                    </span>
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary/78">
-                      {leadItem.client_name}
-                    </span>
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200/75 bg-slate-100">
+                    <WorkItemCardImage
+                      src={item.image_url}
+                      alt={getWorkItemImageAlt(item)}
+                      title={item.title}
+                    />
                   </div>
 
-                  <h3 className="mt-3 text-[1.45rem] font-semibold tracking-[-0.04em] text-slate-950 md:text-[1.6rem]">
-                    <Link
-                      href={`/work/${leadItem.slug}`}
-                      className="rounded-sm transition-colors group-hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-                    >
-                      {leadItem.title}
-                    </Link>
-                  </h3>
+                  <div className="relative flex flex-1 flex-col p-4 sm:p-5">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary/76">
+                      {item.client_name}
+                    </p>
 
-                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
-                    {getWorkSummary(leadItem)}
-                  </p>
+                    <h3 className="mt-3 text-[1.08rem] font-semibold tracking-[-0.03em] text-slate-950 sm:text-[1.15rem]">
+                      <Link
+                        href={`/work/${item.slug}`}
+                        className="rounded-sm transition-colors group-hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+                      >
+                        {item.title}
+                      </Link>
+                    </h3>
 
-                  {getWorkHighlightChips(leadItem).length > 0 && (
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {getWorkHighlightChips(leadItem).map((chip) => (
-                        <span
-                          key={chip}
-                          className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1.5 text-[0.74rem] font-medium leading-5 text-slate-700"
-                        >
-                          {chip}
-                        </span>
-                      ))}
+                    <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.16em] text-slate-500">
+                      {item.industry}
+                    </p>
+
+                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
+                      {getWorkSupportingLine(item)}
+                    </p>
+
+                    <div className="mt-auto pt-4">
+                      <Link
+                        href={`/work/${item.slug}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-primary"
+                      >
+                        {cardCtaLabel}
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </Link>
                     </div>
-                  )}
-
-                  <div className="mt-auto pt-5">
-                    <Link
-                      href={`/work/${leadItem.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-primary"
-                    >
-                      {cardCtaLabel}
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                    </Link>
                   </div>
-                </div>
-              </article>
-            </MotionReveal>
-
-            {secondaryItems.length > 0 && (
-              <div className="grid gap-4">
-                {secondaryItems.map((item, index) => (
-                  <MotionReveal key={item.id} delay={0.08 + index * 0.05}>
-                    <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-slate-200/85 bg-white/96 shadow-[0_18px_46px_-36px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_24px_58px_-38px_rgba(55,42,123,0.16)] sm:grid sm:grid-cols-[112px_1fr] sm:items-stretch">
-                      <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200/75 bg-slate-100 sm:min-h-full sm:border-r sm:border-b-0">
-                        <WorkItemCardImage
-                          src={item.image_url}
-                          alt={getWorkItemImageAlt(item)}
-                          title={item.title}
-                        />
-                      </div>
-
-                      <div className="flex flex-1 flex-col p-4">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-600">
-                            {item.industry}
-                          </span>
-                          <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary/76">
-                            {item.client_name}
-                          </span>
-                        </div>
-
-                        <h3 className="mt-3 text-[1.05rem] font-semibold tracking-[-0.03em] text-slate-950">
-                          <Link
-                            href={`/work/${item.slug}`}
-                            className="rounded-sm transition-colors group-hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-                          >
-                            {item.title}
-                          </Link>
-                        </h3>
-
-                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
-                          {getWorkSummary(item)}
-                        </p>
-
-                        {getWorkHighlightChips(item).length > 0 && (
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            {getWorkHighlightChips(item).slice(0, 1).map((chip) => (
-                              <span
-                                key={chip}
-                                className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[0.72rem] font-medium leading-5 text-slate-700"
-                              >
-                                {chip}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        <div className="mt-auto pt-4">
-                          <Link
-                            href={`/work/${item.slug}`}
-                            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-primary"
-                          >
-                            {cardCtaLabel}
-                            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                          </Link>
-                        </div>
-                      </div>
-                    </article>
-                  </MotionReveal>
-                ))}
-              </div>
-            )}
+                </article>
+              </MotionReveal>
+            ))}
           </div>
         ) : (
           <MotionReveal delay={0.08}>
@@ -259,7 +148,7 @@ export function HomeWorkPreview({
         )}
 
         <MotionReveal delay={0.16}>
-          <div className="mt-6 flex flex-wrap gap-3 lg:hidden">
+          <div className="mt-5 flex flex-wrap gap-3 lg:hidden sm:mt-6">
             <Link
               href="/work"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full px-7")}
