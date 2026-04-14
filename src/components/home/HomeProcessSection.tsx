@@ -1,5 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { MotionReveal } from "@/components/motion/Reveal";
@@ -9,7 +7,6 @@ type ProcessStep = {
   eyebrow: string;
   title: string;
   description: string;
-  outcome: string;
 };
 
 interface HomeProcessSectionProps {
@@ -68,11 +65,6 @@ export function HomeProcessSection({
                     <p className="mt-2.5 text-sm leading-6 text-white/72 sm:mt-3">
                       {step.description}
                     </p>
-
-                    <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-3 py-1.5 text-[0.76rem] font-medium text-white/80 sm:mt-5 sm:px-3.5 sm:text-[0.78rem]">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      {step.outcome}
-                    </div>
                   </div>
                 </article>
               </MotionReveal>

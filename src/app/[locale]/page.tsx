@@ -50,7 +50,6 @@ export default async function HomePage({
     eyebrow: string;
     title: string;
     description: string;
-    outcome: string;
   }>;
 
   return (
@@ -114,7 +113,6 @@ export default async function HomePage({
         description={t("ctaDesc")}
         primaryLabel={t("ctaButton")}
         secondaryLabel={t("ctaSecondaryButton")}
-        supportNote={t("ctaSupportNote")}
         microPoints={t.raw("ctaMicroPoints") as string[]}
         panelTitle={t("ctaPanelTitle")}
       />

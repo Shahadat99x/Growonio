@@ -96,9 +96,9 @@
     "workPreviewCardCtaLabel": "Vezi studiul de caz",
     "workPreviewEmptyTitle": "Portofoliul selectat este în pregătire",
     "workPreviewEmptyDescription": "Pagina de portofoliu rămâne disponibilă în timp ce noile studii de caz sunt pregătite pentru preview-ul homepage-ului.",
-    "processBadge": "Proces de Livrare",
-    "processTitle": "Un flux structurat care păstrează strategia și execuția aliniate",
-    "processDesc": "Un flux clar în patru pași, construit pentru a păstra scopul, execuția și așteptările de lansare aliniate încă de la început.",
+    "processBadge": "Proces",
+    "processTitle": "Un proces clar, de la planificare la lansare",
+    "processDesc": "Patru pași practici care mențin direcția, livrarea și lansarea pe drumul corect.",
     "processNoteTitle": "Transparență în fiecare etapă",
     "processNoteDescription": "Știi permanent ce se construiește, de ce contează și ce deblochează fiecare etapă pentru următoarea.",
     "processSupportPoints": [
@@ -109,27 +109,23 @@
     "processSteps": [
       {
         "eyebrow": "Context de business",
-        "title": "Descoperim",
-        "description": "Analizăm modelul de business, fluxul de servicii, blocajele și ce trebuie să îmbunătățească mai întâi sistemul digital.",
-        "outcome": "Obiective și blocaje clarificate"
+        "title": "Descoperire",
+        "description": "Analizăm businessul, fluxul serviciilor și problemele pe care sistemul trebuie să le rezolve mai întâi."
       },
       {
         "eyebrow": "Structură + scop",
-        "title": "Planificăm",
-        "description": "Definim ierarhia paginilor, traseele utilizatorilor, logica de programări, direcția de conținut și scopul practic al livrării înainte de build.",
-        "outcome": "Roadmap clar înainte de dezvoltare"
+        "title": "Planificare",
+        "description": "Stabilim structura, prioritățile și aria de livrare înainte să înceapă designul și dezvoltarea."
       },
       {
         "eyebrow": "Execuție",
-        "title": "Construim",
-        "description": "Proiectăm și implementăm sistemul cu interfață responsive, utilizare administrativă clară, calitate tehnică și fundații pregătite pentru creștere.",
-        "outcome": "Sistem premium construit pentru uz real"
+        "title": "Implementare",
+        "description": "Proiectăm și construim sistemul cu UX clar, administrare practică și o bază tehnică solidă."
       },
       {
-        "eyebrow": "Go-live + predare",
-        "title": "Lansăm și Oferim Suport",
-        "description": "Testăm, lansăm și sprijinim implementarea astfel încât echipa ta să poată folosi sistemul cu încredere și să îl îmbunătățească în timp.",
-        "outcome": "Lansare sigură, cu suport"
+        "eyebrow": "Lansare + suport",
+        "title": "Lansare și suport",
+        "description": "Testăm, lansăm și susținem implementarea astfel încât sistemul să poată fi folosit din prima zi."
       }
     ],
     "trustBadge": "De ce Growonio",
@@ -171,17 +167,17 @@
     "processStep3Title": "Lansare și Scalare",
     "processStep3Desc": "Implementare, instruire și suport continuu pentru accelerarea creșterii.",
     "ctaBadge": "Pornește următorul sistem",
-    "ctaHeading": "Ești gata să construiești un sistem digital mai puternic?",
-    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programări mai curate și sisteme practice construite în jurul operațiunilor reale.",
-    "ctaButton": "Cere ofertă",
-    "ctaSecondaryButton": "Vezi Prețurile",
+    "ctaHeading": "Pregătit să construiești un sistem mai puternic?",
+    "ctaDesc": "Ajutăm afacerile de servicii să lanseze website-uri credibile, fluxuri de programare mai clare și sisteme practice, construite pentru operațiuni reale.",
+    "ctaButton": "Solicită o ofertă",
+    "ctaSecondaryButton": "Vezi prețurile",
     "ctaSupportNote": "Cele mai multe proiecte încep cu o conversație scurtă de descoperire și o recomandare practică de scop.",
     "ctaMicroPoints": [
-      "Livrare bilingvă",
-      "Scop clar și etape definite",
-      "Suport inclus la lansare"
+      "O scurtă discuție de descoperire",
+      "O recomandare clară",
+      "Pași practici de urmat"
     ],
-    "ctaPanelTitle": "Scop clar, build și suport la lansare într-un singur flux",
+    "ctaPanelTitle": "Ce urmează după ce ne contactezi",
     "heroBadge": "Gândit pentru operațiuni reale",
     "heroTrustChips": [
       "Livrare în română și engleză",

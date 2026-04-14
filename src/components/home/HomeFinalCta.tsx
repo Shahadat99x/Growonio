@@ -13,7 +13,6 @@ interface HomeFinalCtaProps {
   description: string;
   primaryLabel: string;
   secondaryLabel: string;
-  supportNote: string;
   microPoints: string[];
   panelTitle: string;
 }
@@ -24,7 +23,6 @@ export function HomeFinalCta({
   description,
   primaryLabel,
   secondaryLabel,
-  supportNote,
   microPoints,
   panelTitle,
 }: HomeFinalCtaProps) {
@@ -69,13 +67,9 @@ export function HomeFinalCta({
                     {secondaryLabel}
                   </Link>
                 </div>
-
-                <p className="mt-4 max-w-xl text-sm leading-7 text-white/62 sm:mt-5">
-                  {supportNote}
-                </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-white/10 bg-white/7 p-5 backdrop-blur-md sm:rounded-[1.8rem] sm:p-6 lg:p-7">
+              <div className="rounded-[1.45rem] border border-white/10 bg-white/6 p-4 backdrop-blur-md sm:rounded-[1.7rem] sm:p-5 lg:p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-[0.95rem] border border-white/10 bg-white/10 text-white">
                     <Sparkles className="h-5 w-5" />
@@ -90,11 +84,11 @@ export function HomeFinalCta({
                   </div>
                 </div>
 
-                <div className="mt-4 grid gap-2.5 sm:mt-5 sm:gap-3">
+                <div className="mt-4 grid gap-2.5 sm:mt-5">
                   {microPoints.map((point) => (
                     <div
                       key={point}
-                      className="rounded-[1.05rem] border border-white/8 bg-white/6 px-3.5 py-3 text-sm font-medium text-white/78 sm:rounded-[1.2rem] sm:px-4"
+                      className="rounded-[1rem] border border-white/8 bg-white/5 px-3.5 py-2.5 text-sm font-medium text-white/78 sm:px-4"
                     >
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

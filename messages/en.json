@@ -96,9 +96,9 @@
     "workPreviewCardCtaLabel": "View case study",
     "workPreviewEmptyTitle": "Featured work is being prepared",
     "workPreviewEmptyDescription": "The portfolio page remains available while new case studies are finalized for the homepage preview.",
-    "processBadge": "Delivery Process",
-    "processTitle": "A structured workflow that keeps strategy and execution aligned",
-    "processDesc": "A clear four-step delivery flow designed to keep scope, execution, and launch expectations aligned from the start.",
+    "processBadge": "Process",
+    "processTitle": "A clear process from planning to launch",
+    "processDesc": "Four practical steps that keep scope, delivery, and launch on track.",
     "processNoteTitle": "Transparent by design",
     "processNoteDescription": "You always know what is being built, why it matters, and what each stage unlocks for the next one.",
     "processSupportPoints": [
@@ -110,26 +110,22 @@
       {
         "eyebrow": "Business context",
         "title": "Discover",
-        "description": "We review the business model, service flow, bottlenecks, and what the digital system needs to improve first.",
-        "outcome": "Goals and blockers mapped"
+        "description": "We review the business, service flow, and the key problems the system needs to solve first."
       },
       {
         "eyebrow": "Structure + scope",
         "title": "Plan",
-        "description": "We define page hierarchy, user journeys, booking logic, content direction, and the practical delivery scope before the build starts.",
-        "outcome": "Clear roadmap before development"
+        "description": "We define structure, priorities, and delivery scope before design and development start."
       },
       {
         "eyebrow": "Execution",
         "title": "Build",
-        "description": "We design and implement the system with responsive UI, admin usability, technical quality, and growth-ready foundations.",
-        "outcome": "Premium system built for real use"
+        "description": "We design and build the system with clean UX, practical admin use, and strong technical quality."
       },
       {
-        "eyebrow": "Go-live + handover",
+        "eyebrow": "Launch + support",
         "title": "Launch & Support",
-        "description": "We test, launch, and support the rollout so your team can use the system confidently and continue improving it after handover.",
-        "outcome": "Confident launch with support"
+        "description": "We test, launch, and support the rollout so the system is usable from day one."
       }
     ],
     "trustBadge": "Why Growonio",
@@ -171,17 +167,17 @@
     "processStep3Title": "Launch & Scale",
     "processStep3Desc": "Deployment, training, and ongoing support to accelerate growth.",
     "ctaBadge": "Start the next system",
-    "ctaHeading": "Ready to build a stronger digital system?",
+    "ctaHeading": "Ready to build a stronger system?",
     "ctaDesc": "We help service businesses launch credible websites, cleaner booking flows, and practical systems built around real operations.",
     "ctaButton": "Request a Quote",
     "ctaSecondaryButton": "View Pricing",
     "ctaSupportNote": "Most projects start with a short discovery conversation and a practical scope recommendation.",
     "ctaMicroPoints": [
-      "Bilingual delivery",
-      "Clear scope and milestones",
-      "Launch support included"
+      "Short discovery call",
+      "Clear recommendation",
+      "Practical next steps"
     ],
-    "ctaPanelTitle": "Clear scope, build, and launch support in one flow",
+    "ctaPanelTitle": "What happens after you reach out",
     "heroBadge": "Designed for real operations",
     "heroTrustChips": [
       "Romanian + English delivery",
