@@ -15,8 +15,6 @@ interface HomeWorkPreviewProps {
   badge: string;
   title: string;
   description: string;
-  panelTitle: string;
-  panelDescription: string;
   items: LocalizedWorkItem[];
   primaryLabel: string;
   cardCtaLabel: string;
@@ -24,36 +22,29 @@ interface HomeWorkPreviewProps {
   emptyDescription: string;
 }
 
-function getWorkSummary(item: LocalizedWorkItem) {
+function getWorkSupportingLine(item: LocalizedWorkItem) {
+  const description = item.description?.trim();
+  if (description) {
+    return description;
+  }
+
   const overview = item.overview?.trim();
   if (overview) {
     return overview;
   }
 
-  return item.description;
-}
+  const results = item.results?.trim();
+  if (results) {
+    return results;
+  }
 
-function getWorkHighlightChips(item: LocalizedWorkItem) {
-  const statChip = item.stats[0]
-    ? `${item.stats[0].label}: ${item.stats[0].value}`
-    : null;
-  const featureChip = Array.isArray(item.features) && item.features.length > 0
-    ? item.features[0]
-    : null;
-
-  return [statChip, featureChip].filter(Boolean) as string[];
-}
-
-function getWorkFeaturePreview(item: LocalizedWorkItem, limit: number) {
-  return Array.isArray(item.features) ? item.features.slice(0, limit) : [];
+  return "";
 }
 
 export function HomeWorkPreview({
   badge,
   title,
   description,
-  panelTitle,
-  panelDescription,
   items,
   primaryLabel,
   cardCtaLabel,
@@ -63,9 +54,7 @@ export function HomeWorkPreview({
   const previewItems = items.slice(0, 3);
   const leadItem = previewItems[0] ?? null;
   const secondaryItems = leadItem ? previewItems.slice(1, 3) : [];
-  const industryChips = [...new Set(previewItems.map((item) => item.industry).filter(Boolean))].slice(0, 3);
-  const leadHighlights = leadItem ? getWorkHighlightChips(leadItem) : [];
-  const leadFeatures = leadItem ? getWorkFeaturePreview(leadItem, 2) : [];
+  const leadStat = leadItem?.stats[0] ?? null;
 
   return (
     <Section className="relative overflow-hidden border-b border-slate-200/70 bg-[linear-gradient(180deg,rgba(251,251,253,0.98)_0%,rgba(246,247,250,0.98)_100%)]">
@@ -97,35 +86,6 @@ export function HomeWorkPreview({
           </MotionReveal>
         </div>
 
-        <MotionReveal delay={0.1}>
-          <div className="mt-6 rounded-[1.45rem] border border-slate-200/80 bg-white/94 px-4 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)] sm:mt-8 sm:rounded-[1.7rem] sm:px-5">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-slate-700">
-                  {panelTitle}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-slate-600 md:text-[0.98rem] md:leading-7">
-                  {panelDescription}
-                </p>
-              </div>
-
-              {industryChips.length > 0 && (
-                <div className="flex flex-wrap gap-2.5">
-                  {industryChips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center rounded-full border border-slate-200/85 bg-slate-50 px-3 py-1.5 text-[0.76rem] font-medium leading-5 text-slate-700"
-                    >
-                      <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </MotionReveal>
-
         {leadItem ? (
           <div className="mt-6 grid gap-4 xl:mt-8 xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] xl:items-stretch xl:gap-5">
             <MotionReveal>
@@ -142,9 +102,6 @@ export function HomeWorkPreview({
 
                 <div className="relative flex flex-1 flex-col p-4 sm:p-5 md:p-6">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-full border border-primary/12 bg-primary/8 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-primary/82">
-                      {String(leadItem.order).padStart(2, "0")}
-                    </span>
                     <span className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-600">
                       {leadItem.industry}
                     </span>
@@ -162,35 +119,20 @@ export function HomeWorkPreview({
                     </Link>
                   </h3>
 
-                  <p className="mt-3 line-clamp-4 text-sm leading-6 text-slate-600">
-                    {getWorkSummary(leadItem)}
+                  <p className="mt-3 line-clamp-3 max-w-xl text-sm leading-6 text-slate-600">
+                    {getWorkSupportingLine(leadItem)}
                   </p>
 
-                  {(leadHighlights.length > 0 || leadFeatures.length > 0) && (
-                    <div className="mt-5 space-y-4">
-                      {leadHighlights.length > 0 && (
-                        <div className="grid gap-2 sm:grid-cols-2">
-                          {leadHighlights.map((chip) => (
-                            <div
-                              key={chip}
-                              className="rounded-[1.1rem] border border-slate-200/80 bg-slate-50/92 px-3.5 py-3"
-                            >
-                              <p className="text-sm font-semibold leading-6 text-slate-900">{chip}</p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {leadFeatures.length > 0 && (
-                        <div className="grid gap-2">
-                          {leadFeatures.map((feature) => (
-                            <div key={feature} className="flex items-start gap-3 text-sm text-slate-700">
-                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                              <span className="leading-6">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                  {leadStat && (
+                    <div className="mt-5">
+                      <div className="inline-flex min-w-[10rem] flex-col rounded-[1.1rem] border border-slate-200/80 bg-slate-50/92 px-4 py-3">
+                        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                          {leadStat.label}
+                        </p>
+                        <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-slate-950">
+                          {leadStat.value}
+                        </p>
+                      </div>
                     </div>
                   )}
 
@@ -211,8 +153,8 @@ export function HomeWorkPreview({
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-1">
                 {secondaryItems.map((item, index) => (
                   <MotionReveal key={item.id} delay={0.08 + index * 0.05} className="h-full">
-                    <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-slate-200/85 bg-white/96 shadow-[0_18px_46px_-36px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_24px_58px_-38px_rgba(55,42,123,0.16)] sm:grid sm:grid-cols-[128px_1fr] sm:items-stretch xl:grid-cols-[148px_1fr]">
-                      <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200/75 bg-slate-100 sm:min-h-full sm:border-r sm:border-b-0">
+                    <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-slate-200/85 bg-white/96 shadow-[0_18px_46px_-36px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_24px_58px_-38px_rgba(55,42,123,0.16)]">
+                      <div className="relative aspect-[16/9] overflow-hidden border-b border-slate-200/75 bg-slate-100">
                         <WorkItemCardImage
                           src={item.image_url}
                           alt={getWorkItemImageAlt(item)}
@@ -222,9 +164,6 @@ export function HomeWorkPreview({
 
                       <div className="flex flex-1 flex-col p-4 sm:p-5">
                         <div className="flex flex-wrap items-center gap-3">
-                          <span className="rounded-full border border-primary/12 bg-primary/8 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-primary/82">
-                            {String(item.order).padStart(2, "0")}
-                          </span>
                           <span className="rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-600">
                             {item.industry}
                           </span>
@@ -242,36 +181,9 @@ export function HomeWorkPreview({
                           </Link>
                         </h3>
 
-                        <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
-                          {getWorkSummary(item)}
+                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                          {getWorkSupportingLine(item)}
                         </p>
-
-                        {(getWorkHighlightChips(item).length > 0 ||
-                          getWorkFeaturePreview(item, 2).length > 0) && (
-                          <div className="mt-4 space-y-3">
-                            {getWorkHighlightChips(item)
-                              .slice(0, 1)
-                              .map((chip) => (
-                                <div
-                                  key={chip}
-                                  className="rounded-[1rem] border border-slate-200/80 bg-slate-50/92 px-3 py-2.5"
-                                >
-                                  <p className="text-sm font-semibold leading-6 text-slate-900">{chip}</p>
-                                </div>
-                              ))}
-
-                            {getWorkFeaturePreview(item, 2).length > 0 && (
-                              <div className="grid gap-2">
-                                {getWorkFeaturePreview(item, 2).map((feature) => (
-                                  <div key={feature} className="flex items-start gap-3 text-sm text-slate-700">
-                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                                    <span className="leading-6">{feature}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        )}
 
                         <div className="mt-auto pt-4">
                           <Link

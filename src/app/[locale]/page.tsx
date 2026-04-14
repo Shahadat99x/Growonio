@@ -94,8 +94,6 @@ export default async function HomePage({
         badge={t("workPreviewBadge")}
         title={t("workPreviewTitle")}
         description={t("workPreviewDesc")}
-        panelTitle={t("workPreviewPanelTitle")}
-        panelDescription={t("workPreviewPanelDescription")}
         items={workItems}
         primaryLabel={t("workPreviewPrimaryLabel")}
         cardCtaLabel={t("workPreviewCardCtaLabel")}
