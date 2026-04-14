@@ -20,7 +20,6 @@ interface HeroProps {
   primaryCtaHref: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  trustChips?: string[];
   automationBadge: string;
   automationTitle: string;
   automationTriggerLabel: string;
@@ -29,19 +28,6 @@ interface HeroProps {
   automationFooter: string;
   desktopImageAlt: string;
   mobileImageAlt: string;
-}
-
-function HeroTrustLine({ chips }: { chips: string[] }) {
-  return (
-    <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.92rem] text-muted-foreground/92 sm:mt-5 sm:text-sm">
-      {chips.map((chip, index) => (
-        <div key={chip} className="inline-flex items-center gap-3">
-          {index > 0 && <span className="h-1 w-1 rounded-full bg-primary/70" />}
-          <span>{chip}</span>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function HeroAutomationCard({
@@ -207,7 +193,6 @@ export function Hero({
   primaryCtaHref,
   secondaryCtaText,
   secondaryCtaHref,
-  trustChips = [],
   automationBadge,
   automationTitle,
   automationTriggerLabel,
@@ -281,12 +266,6 @@ export function Hero({
                 )}
               </div>
             </MotionReveal>
-
-            {trustChips.length > 0 && (
-              <MotionReveal delay={0.34}>
-                <HeroTrustLine chips={trustChips} />
-              </MotionReveal>
-            )}
           </div>
 
           <MotionReveal delay={0.18} distance={36} className="mt-5 sm:mt-0">

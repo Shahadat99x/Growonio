@@ -61,12 +61,10 @@ export default async function HomePage({
         badge={t("heroBadge")}
         title={t("title")}
         description={t("description")}
-        supportingLine={t("supportingLine")}
         primaryCtaText={t("cta")}
         primaryCtaHref="/contact"
         secondaryCtaText={t("heroSecondaryCta")}
         secondaryCtaHref="/services"
-        trustChips={t.raw("heroTrustChips") as string[]}
         automationBadge={t("heroAutomationBadge")}
         automationTitle={t("heroAutomationTitle")}
         automationTriggerLabel={t("heroAutomationTriggerLabel")}
