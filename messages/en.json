@@ -8,22 +8,35 @@
     "cta": "Request a Quote",
     "heroSecondaryCta": "See Services",
     "servicesPreviewBadge": "Core Services",
-    "servicesPreviewTitle": "Three core service layers presented as a fast homepage preview",
-    "servicesPreviewDesc": "A compact view of the main systems Growonio builds for service businesses that need stronger positioning, cleaner demand handling, and less manual work.",
-    "servicesPreviewPanelTitle": "One connected delivery system",
-    "servicesPreviewPanelDescription": "The homepage stays brief, but each service is still scoped as part of one connected system built for growth and daily operations.",
-    "servicesPreviewHighlights": [
-      "Bilingual-ready setup",
-      "Admin-friendly handover",
-      "Search-ready structure"
+    "servicesPreviewTitle": "Three core systems for service businesses",
+    "servicesPreviewDesc": "From websites and apps to booking and automation, these are the core systems we build for growing service businesses.",
+    "servicesPrimaryLinkLabel": "See all services",
+    "servicesPreviewCards": [
+      {
+        "title": "Websites & Mobile Apps",
+        "description": "Customer-facing websites and mobile apps designed to build trust, support bookings, and make services easier to access.",
+        "pills": [
+          "Website design",
+          "Mobile apps"
+        ]
+      },
+      {
+        "title": "Booking & Client Management",
+        "description": "Booking flows and admin visibility for businesses that manage appointments, requests, or repeat clients.",
+        "pills": [
+          "Booking flows",
+          "Admin visibility"
+        ]
+      },
+      {
+        "title": "Workflow Automation",
+        "description": "Lead capture, follow-up, and workflow automations that help teams respond faster — including chatbot and AI-assisted flows where useful.",
+        "pills": [
+          "Lead capture",
+          "Follow-up automation"
+        ]
+      }
     ],
-    "servicesPreviewShortTitles": {
-      "web-design": "Business Websites",
-      "booking-systems": "Booking Systems",
-      "automations": "Workflow Automation",
-      "mobile-apps": "Mobile Apps"
-    },
-    "servicesPrimaryLinkLabel": "Explore all services",
     "servicesPreviewEmptyTitle": "Service previews are being prepared",
     "servicesPreviewEmptyDescription": "The full services page remains available while the homepage preview pulls in the current service library.",
     "solutionsPreviewBadge": "Best-Fit Businesses",

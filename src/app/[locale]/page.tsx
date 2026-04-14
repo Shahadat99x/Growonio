@@ -79,11 +79,12 @@ export default async function HomePage({
         badge={t("servicesPreviewBadge")}
         title={t("servicesPreviewTitle")}
         description={t("servicesPreviewDesc")}
-        panelTitle={t("servicesPreviewPanelTitle")}
-        panelDescription={t("servicesPreviewPanelDescription")}
-        highlights={t.raw("servicesPreviewHighlights") as string[]}
+        previewCards={t.raw("servicesPreviewCards") as Array<{
+          title: string;
+          description: string;
+          pills: string[];
+        }>}
         services={services}
-        shortLabels={t.raw("servicesPreviewShortTitles") as Record<string, string>}
         primaryLabel={t("servicesPrimaryLinkLabel")}
         emptyTitle={t("servicesPreviewEmptyTitle")}
         emptyDescription={t("servicesPreviewEmptyDescription")}

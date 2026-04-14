@@ -20,11 +20,12 @@ interface HomeServicesPreviewProps {
   badge: string;
   title: string;
   description: string;
-  panelTitle: string;
-  panelDescription: string;
-  highlights: string[];
+  previewCards: Array<{
+    title: string;
+    description: string;
+    pills: string[];
+  }>;
   services: LocalizedService[];
-  shortLabels: Record<string, string>;
   primaryLabel: string;
   emptyTitle: string;
   emptyDescription: string;
@@ -41,16 +42,39 @@ export function HomeServicesPreview({
   badge,
   title,
   description,
-  panelTitle,
-  panelDescription,
-  highlights,
+  previewCards,
   services,
-  shortLabels,
   primaryLabel,
   emptyTitle,
   emptyDescription,
 }: HomeServicesPreviewProps) {
-  const previewServices = services.slice(0, 3);
+  const availableServices = new Map(services.map((service) => [service.slug, service]));
+  const previewConfigs = [
+    { slugs: ["web-design", "mobile-apps"], fallbackIcon: MonitorSmartphone },
+    { slugs: ["booking-systems"], fallbackIcon: CalendarCheck },
+    { slugs: ["automations"], fallbackIcon: Workflow },
+  ] as const;
+  const curatedCards = previewCards
+    .map((card, index) => {
+      const config = previewConfigs[index];
+      if (!config) {
+        return null;
+      }
+
+      const service = config.slugs
+        .map((slug) => availableServices.get(slug))
+        .find((item): item is LocalizedService => Boolean(item));
+
+      if (!service) {
+        return null;
+      }
+
+      return {
+        ...card,
+        Icon: iconMap[service.icon_name] ?? config.fallbackIcon,
+      };
+    })
+    .filter((card): card is NonNullable<typeof card> => Boolean(card));
 
   return (
     <Section className="relative overflow-hidden border-y border-slate-200/70 bg-[linear-gradient(180deg,rgba(253,252,255,0.98)_0%,rgba(248,248,251,0.98)_100%)]">
@@ -82,43 +106,14 @@ export function HomeServicesPreview({
           </MotionReveal>
         </div>
 
-        <MotionReveal delay={0.1}>
-          <div className="mt-6 rounded-[1.45rem] border border-slate-200/80 bg-white/94 px-4 py-4 shadow-[0_20px_50px_-42px_rgba(19,16,38,0.14)] sm:mt-8 sm:rounded-[1.7rem] sm:px-5">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-slate-700">
-                  {panelTitle}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-slate-600 md:text-[0.98rem] md:leading-7">
-                  {panelDescription}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2.5">
-                {highlights.map((highlight) => (
-                  <span
-                    key={highlight}
-                    className="inline-flex items-center rounded-full border border-slate-200/85 bg-slate-50 px-3 py-1.5 text-[0.76rem] font-medium leading-5 text-slate-700"
-                  >
-                    <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </MotionReveal>
-
-        {previewServices.length > 0 ? (
+        {curatedCards.length > 0 ? (
           <div className="mt-6 grid gap-4 lg:grid-cols-3 xl:mt-8 xl:gap-5">
-            {previewServices.map((service, index) => {
-              const Icon = iconMap[service.icon_name] ?? MonitorSmartphone;
-              const quickPoints = Array.isArray(service.bullet_points)
-                ? service.bullet_points.slice(0, 2)
-                : [];
-              const compactTitle = shortLabels[service.slug] ?? service.title;
+            {curatedCards.map((card, index) => {
+              const quickPoints = Array.isArray(card.pills) ? card.pills.slice(0, 2) : [];
+              const Icon = card.Icon;
 
               return (
-                <MotionReveal key={service.id} delay={0.06 + index * 0.05}>
+                <MotionReveal key={card.title} delay={0.06 + index * 0.05}>
                   <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] border border-slate-200/85 bg-white/96 p-4 shadow-[0_18px_48px_-38px_rgba(19,16,38,0.14)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_24px_60px_-38px_rgba(55,42,123,0.18)] sm:rounded-[1.7rem] sm:p-5">
                     <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_top_left,rgba(93,69,209,0.1),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -128,10 +123,10 @@ export function HomeServicesPreview({
                       </div>
                       <div className="min-w-0">
                         <h3 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">
-                          {compactTitle}
+                          {card.title}
                         </h3>
                         <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
-                          {service.description}
+                          {card.description}
                         </p>
                       </div>
                     </div>
@@ -148,12 +143,6 @@ export function HomeServicesPreview({
                         ))}
                       </div>
                     )}
-
-                    <div className="relative mt-auto pt-4 sm:pt-5">
-                      <p className="text-[0.74rem] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        {String(service.order).padStart(2, "0")}
-                      </p>
-                    </div>
                   </article>
                 </MotionReveal>
               );
