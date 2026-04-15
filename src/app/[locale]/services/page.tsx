@@ -92,7 +92,7 @@ export default async function ServicesPage({
 
   const structuredData = [
     buildBreadcrumbSchema(appLocale, [
-      { name: locale === "ro" ? "Acasa" : "Home", pathname: "/" },
+      { name: locale === "ro" ? "Acasă" : "Home", pathname: "/" },
       { name: t("heroBadge"), pathname: "/services" },
     ]),
     buildServiceListSchema(appLocale, services),
@@ -121,7 +121,7 @@ export default async function ServicesPage({
             </MotionReveal>
 
             <MotionReveal delay={0.16}>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
+              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 md:text-xl">
                 {t("description")}
               </p>
             </MotionReveal>
@@ -132,7 +132,7 @@ export default async function ServicesPage({
                   href="/contact"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "rounded-full px-7 text-base font-semibold",
+                    "rounded-full px-7 text-base font-semibold max-sm:w-full max-sm:justify-center",
                   )}
                 >
                   {t("heroPrimaryCta")}
@@ -142,7 +142,7 @@ export default async function ServicesPage({
                   href="/pricing"
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
-                    "rounded-full px-7 text-base font-semibold",
+                    "rounded-full px-7 text-base font-semibold max-sm:w-full max-sm:justify-center",
                   )}
                 >
                   {t("heroSecondaryCta")}
@@ -159,11 +159,11 @@ export default async function ServicesPage({
             <SectionHeader
               title={t("servicesSectionTitle")}
               description={t("servicesSectionDescription")}
-              className="mb-10 md:mb-12"
+              className="mb-10 md:mb-12 [&_h2]:max-w-4xl [&_p]:max-w-3xl"
             />
           </MotionReveal>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:gap-6">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-2 xl:gap-6">
             {services.map((service, index) => {
               const Icon = iconMap[service.icon_name] || MonitorSmartphone;
               const bulletPoints = Array.isArray(service.bullet_points)
@@ -173,7 +173,7 @@ export default async function ServicesPage({
               return (
                 <MotionReveal key={service.id} delay={0.06 + index * 0.05}>
                   <article
-                    className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/70 bg-white/88 p-7 shadow-[0_22px_60px_-36px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-[0_28px_70px_-36px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/70 bg-white/88 p-6 shadow-[0_22px_60px_-36px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-[0_28px_70px_-36px_color-mix(in_oklab,var(--color-primary)_24%,transparent)] sm:p-7"
                   >
                     <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top_left,rgba(129,93,255,0.14),transparent_72%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
                     <div className="relative flex items-start justify-between gap-4">
@@ -186,14 +186,14 @@ export default async function ServicesPage({
                     </div>
 
                     <div className="relative flex flex-1 flex-col">
-                      <h3 className="mt-7 text-2xl font-semibold tracking-[-0.04em] text-foreground">
+                      <h3 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-[-0.04em] text-foreground sm:mt-7 sm:text-2xl">
                         {service.title}
                       </h3>
-                      <p className="mt-4 text-base leading-8 text-muted-foreground">
+                      <p className="mt-3 text-base leading-7 text-muted-foreground sm:mt-4 sm:leading-8">
                         {service.description}
                       </p>
 
-                      <ul className="mt-6 space-y-3">
+                      <ul className="mt-5 space-y-2.5 sm:mt-6 sm:space-y-3">
                         {bulletPoints.map((bullet) => (
                           <li key={bullet} className="flex items-start gap-3">
                             <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -204,10 +204,10 @@ export default async function ServicesPage({
                         ))}
                       </ul>
 
-                      <div className="mt-auto border-t border-border/55 pt-6">
+                      <div className="mt-auto border-t border-border/55 pt-5 sm:pt-6">
                         <Link
                           href="/contact"
-                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                          className="inline-flex w-full items-center justify-between gap-3 text-sm font-semibold text-primary transition-colors hover:text-primary/80 sm:w-auto sm:justify-start"
                         >
                           {t("serviceCardCta")}
                           <ArrowRight className="h-4 w-4" />
@@ -228,18 +228,18 @@ export default async function ServicesPage({
             <SectionHeader
               title={t("industriesTitle")}
               description={t("industriesIntro")}
-              className="mb-12 md:mb-16"
+              className="mb-10 md:mb-14 [&_h2]:max-w-4xl [&_p]:max-w-3xl"
             />
           </MotionReveal>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
             {industryItems.map((industry, index) => {
               const Icon = industryIcons[index] || Building2;
 
               return (
                 <MotionReveal key={industry.title} delay={0.05 + index * 0.05}>
                   <article
-                    className="group rounded-[2rem] border border-white/70 bg-white/86 p-6 shadow-[0_20px_55px_-38px_rgba(24,18,51,0.18)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_26px_60px_-36px_color-mix(in_oklab,var(--color-primary)_22%,transparent)]"
+                    className="group rounded-[2rem] border border-white/70 bg-white/86 p-5 shadow-[0_20px_55px_-38px_rgba(24,18,51,0.18)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_26px_60px_-36px_color-mix(in_oklab,var(--color-primary)_22%,transparent)] sm:p-6"
                   >
                     <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/14 bg-primary/9 text-primary">
                       <Icon className="h-6 w-6" />
@@ -265,18 +265,18 @@ export default async function ServicesPage({
               badge={t("processBadge")}
               title={t("processTitle")}
               description={t("processIntro")}
-              className="mb-12 md:mb-16 [&_div]:border-white/16 [&_div]:bg-white/8 [&_div]:text-white/82 [&_h2]:text-white [&_p]:text-white/72"
+              className="mb-10 md:mb-14 [&_div]:border-white/16 [&_div]:bg-white/8 [&_div]:text-white/82 [&_h2]:max-w-4xl [&_h2]:text-white [&_p]:max-w-3xl [&_p]:text-white/72"
             />
           </MotionReveal>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
             {processSteps.map((step, index) => {
               const Icon = processIcons[index] || Rocket;
 
               return (
                 <MotionReveal key={step.title} delay={0.06 + index * 0.05}>
                   <article
-                    className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/8 p-6 shadow-[0_22px_60px_-42px_rgba(0,0,0,0.6)] backdrop-blur-md"
+                    className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/8 p-5 shadow-[0_22px_60px_-42px_rgba(0,0,0,0.6)] backdrop-blur-md sm:p-6"
                   >
                     <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top_left,rgba(158,114,255,0.18),transparent_72%)]" />
                     <div className="flex items-center justify-between gap-4">
