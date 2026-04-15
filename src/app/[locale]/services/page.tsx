@@ -302,15 +302,17 @@ export default async function ServicesPage({
         </Container>
       </Section>
 
-      <HomeFinalCta
-        badge={t("ctaBadge")}
-        title={t("ctaTitle")}
-        description={t("ctaText")}
-        primaryLabel={t("ctaPrimary")}
-        secondaryLabel={t("ctaSecondary")}
-        microPoints={ctaPanelPoints}
-        panelTitle={t("ctaPanelTitle")}
-      />
+      <div className="[&_section]:pt-8 md:[&_section]:pt-10 lg:[&_section]:pt-12">
+        <HomeFinalCta
+          badge={t("ctaBadge")}
+          title={t("ctaTitle")}
+          description={t("ctaText")}
+          primaryLabel={t("ctaPrimary")}
+          secondaryLabel={t("ctaSecondary")}
+          microPoints={ctaPanelPoints}
+          panelTitle={t("ctaPanelTitle")}
+        />
+      </div>
     </div>
   );
 }
