@@ -212,12 +212,12 @@
     "faq": "Întrebări Frecvente"
   },
   "ServicesPage": {
-    "title": "Serviciile Noastre",
-    "description": "Soluții digitale create pentru a ajuta afacerile să crească, să își optimizeze operațiunile și să transforme mai mulți vizitatori în clienți.",
+    "title": "Sisteme construite pentru afaceri de servicii",
+    "description": "Website-uri, aplicații, fluxuri de programare și automatizare, gândite pentru operațiuni reale.",
     "supportingLine": "De la website-uri moderne la sisteme de programări și automatizare de fluxuri, construim sisteme digitale practice pentru afaceri de servicii din România și nu numai.",
     "metaTitle": "Creare Website-uri, Sisteme de Programări și Automatizare | Growonio",
     "metaDescription": "Growonio construiește website-uri pentru afaceri, sisteme de programări, captare cereri și soluții de automatizare pentru afaceri de servicii din România.",
-    "heroBadge": "Servicii Growonio",
+    "heroBadge": "Servicii",
     "heroPanelEyebrow": "Livrare orientată spre business",
     "heroPanelTitle": "Construite în jurul nevoilor operaționale reale",
     "heroPanelDescription": "Combinăm mesaje clare, structură pregătită pentru SEO, control administrativ și fluxuri practice astfel încât sistemul final să funcționeze și după lansare, nu doar în ziua predării.",
@@ -226,10 +226,10 @@
       "Structură pregătită pentru SEO",
       "Dashboard administrativ inclus"
     ],
-    "heroPrimaryCta": "Cere ofertă",
+    "heroPrimaryCta": "Solicită o ofertă",
     "heroSecondaryCta": "Vezi prețurile",
-    "servicesSectionTitle": "Servicii de bază pentru afaceri moderne de servicii",
-    "servicesSectionDescription": "Growonio păstrează oferta clară: patru direcții principale care ajută afacerile să se prezinte mai bine online, să gestioneze cererile mai eficient și să reducă munca operațională manuală.",
+    "servicesSectionTitle": "Servicii esențiale pentru afaceri de servicii",
+    "servicesSectionDescription": "Patru direcții clare de servicii, construite pentru o prezentare mai bună, programări mai clare și operațiuni mai eficiente.",
     "webDesign": "Creare Website-uri pentru Afaceri",
     "webDesignDesc": "Website-uri moderne și performante, create pentru a inspira încredere, a susține SEO și a transforma vizitatorii în cereri reale.",
     "booking": "Sisteme de Programări și Management Clienți",
@@ -257,28 +257,29 @@
       "Implementare mobile-first",
       "Suport la lansare"
     ],
-    "industriesTitle": "Creat pentru Afaceri de Servicii",
-    "industriesIntro": "Growonio este potrivit în special pentru afaceri care au nevoie de o prezență online mai puternică, gestionare mai bună a cererilor, fluxuri de programări mai clare sau mai puțină muncă manuală în operațiuni.",
+    "industriesTitle": "Unde se potrivesc cel mai bine aceste sisteme",
+    "industriesIntro": "Potrivite în special pentru afaceri de servicii care au nevoie de o prezentare mai bună, fluxuri de programare mai clare și mai puțin lucru manual.",
     "industryItems": [
       {
-        "title": "Saloane și Afaceri din Beauty",
-        "description": "Website-uri, meniuri de servicii și fluxuri de programări gândite pentru a ajuta clienții să rezerve mai repede și să revină mai des."
+        "title": "Afaceri conduse de programări",
+        "description": "Pentru afaceri în care claritatea programărilor, disponibilitatea și follow-up-ul influențează direct conversia și experiența clientului."
       },
       {
-        "title": "Clinici și Servicii Bazate pe Programări",
-        "description": "Prezentare clară a serviciilor și sisteme de programări care reduc fricțiunea din recepție și organizarea manuală."
+        "title": "Branduri de servicii care au nevoie de mai multă încredere",
+        "description": "Pentru echipe care au nevoie de o prezență online mai clară, o prezentare mai bună a serviciilor și o primă impresie mai credibilă."
       },
       {
-        "title": "Consultanți și Firme de Servicii",
-        "description": "Prezență digitală credibilă și fluxuri de lead-uri care susțin calificarea, follow-up-ul și încrederea clienților."
+        "title": "Afaceri cu cereri recurente",
+        "description": "Pentru operațiuni care au nevoie de captare, calificare și preluare mai clară a cererilor, fără follow-up manual împrăștiat."
       },
       {
-        "title": "Afaceri Locale de Servicii",
-        "description": "Setări digitale practice pentru afaceri care depind de vizibilitate locală, încredere și preluare rapidă a cererilor."
+        "title": "Echipe în creștere cu administrare manuală",
+        "description": "Pentru afaceri gata să reducă coordonarea repetitivă și să susțină munca de zi cu zi prin sisteme mai practice."
       }
     ],
-    "processTitle": "Cum Lucrăm",
-    "processIntro": "Fiecare proiect urmează o secvență practică astfel încât strategia, designul și implementarea să rămână aliniate cu obiectivele reale de business.",
+    "processBadge": "Proces",
+    "processTitle": "Un proces clar, de la planificare la lansare",
+    "processIntro": "Patru pași practici care mențin direcția, livrarea și lansarea pe drumul corect.",
     "processSteps": [
       {
         "title": "Descoperim",
@@ -297,10 +298,17 @@
         "description": "Testăm, lansăm și sprijinim predarea astfel încât echipa ta să poată folosi sistemul cu încredere încă din prima zi."
       }
     ],
+    "ctaBadge": "Pornește următorul sistem",
     "ctaTitle": "Ai nevoie de o soluție adaptată afacerii tale?",
-    "ctaText": "Ajutăm afacerile să lanseze website-uri moderne, fluxuri de programări mai inteligente și sisteme practice de automatizare construite în jurul nevoilor operaționale reale.",
-    "ctaPrimary": "Cere ofertă",
+    "ctaText": "Ajutăm afacerile de servicii să construiască website-uri, fluxuri de programare și sisteme practice, gândite pentru operațiuni reale.",
+    "ctaPrimary": "Solicită o ofertă",
     "ctaSecondary": "Vezi prețurile",
+    "ctaPanelTitle": "Ce urmează după ce ne contactezi",
+    "ctaPanelPoints": [
+      "O scurtă discuție de descoperire",
+      "O recomandare clară",
+      "Pași practici de urmat"
+    ],
     "seeSolutions": "Vezi soluțiile pe industrii",
     "seeWork": "Vezi proiectele recente"
   },

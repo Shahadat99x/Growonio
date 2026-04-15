@@ -212,12 +212,12 @@
     "faq": "FAQ"
   },
   "ServicesPage": {
-    "title": "Our Services",
-    "description": "Digital solutions built to help businesses grow, streamline operations, and convert more visitors into clients.",
+    "title": "Systems built for service businesses",
+    "description": "Websites, apps, booking flows, and automation designed around real operations.",
     "supportingLine": "From modern websites to booking systems and workflow automation, we build practical digital systems for service businesses in Romania and beyond.",
     "metaTitle": "Business Website Design, Booking Systems & Automation | Growonio",
     "metaDescription": "Growonio builds business websites, booking systems, lead capture flows, and automation solutions for service businesses in Romania.",
-    "heroBadge": "Growonio Services",
+    "heroBadge": "Services",
     "heroPanelEyebrow": "Business-focused delivery",
     "heroPanelTitle": "Built around real operational needs",
     "heroPanelDescription": "We combine clear messaging, search-ready structure, admin control, and practical workflows so the final system keeps working after launch, not just on day one.",
@@ -228,8 +228,8 @@
     ],
     "heroPrimaryCta": "Request a Quote",
     "heroSecondaryCta": "View Pricing",
-    "servicesSectionTitle": "Core services for modern service businesses",
-    "servicesSectionDescription": "Growonio keeps the offer focused: four core service areas that help businesses present themselves better online, manage demand more efficiently, and reduce manual operational work.",
+    "servicesSectionTitle": "Core services for service businesses",
+    "servicesSectionDescription": "Four focused service areas built to improve presentation, booking flow, and day-to-day operations.",
     "webDesign": "Business Website Design & Development",
     "webDesignDesc": "Modern, high-performing websites built to help businesses look credible, rank better, and turn visitors into inquiries.",
     "booking": "Booking & Client Management Systems",
@@ -257,28 +257,29 @@
       "Mobile-first implementation",
       "Launch support"
     ],
-    "industriesTitle": "Built for Service Businesses",
-    "industriesIntro": "Growonio is best suited for businesses that need a stronger online presence, better lead handling, smoother booking flows, or less manual operational work.",
+    "industriesTitle": "Where these systems fit best",
+    "industriesIntro": "Best suited for service-led businesses that need stronger presentation, cleaner booking flow, and less manual work.",
     "industryItems": [
       {
-        "title": "Salons & Beauty Businesses",
-        "description": "Websites, service menus, and booking flows designed to help clients book faster and return more often."
+        "title": "Appointment-led businesses",
+        "description": "For businesses where scheduling clarity, availability, and follow-up directly affect conversion and client experience."
       },
       {
-        "title": "Clinics & Appointment-Based Services",
-        "description": "Clear service presentation and structured scheduling systems that reduce front-desk friction."
+        "title": "Service brands that need stronger trust",
+        "description": "For teams that need a clearer online presence, better service presentation, and a more credible first impression."
       },
       {
-        "title": "Consultants & Service Firms",
-        "description": "Credible digital presence and lead flows that support qualification, follow-up, and client trust."
+        "title": "Businesses with repeat inquiries",
+        "description": "For operations that need cleaner lead capture, qualification, and handoff instead of scattered manual follow-up."
       },
       {
-        "title": "Local Service Businesses",
-        "description": "Practical digital setups for businesses that rely on local visibility, trust, and fast inquiry handling."
+        "title": "Growing teams with manual admin",
+        "description": "For businesses ready to reduce repetitive coordination and support day-to-day work with more practical systems."
       }
     ],
-    "processTitle": "How We Work",
-    "processIntro": "Every project follows a practical sequence so strategy, design, and implementation stay aligned with real business goals.",
+    "processBadge": "Process",
+    "processTitle": "A clear process from planning to launch",
+    "processIntro": "Four practical steps that keep scope, delivery, and launch on track.",
     "processSteps": [
       {
         "title": "Discover",
@@ -297,10 +298,17 @@
         "description": "We test, launch, and support the handover so your team can use the system with confidence from day one."
       }
     ],
+    "ctaBadge": "Start the next system",
     "ctaTitle": "Need a solution tailored to your business?",
-    "ctaText": "We help businesses launch modern websites, smarter booking flows, and practical automation systems built around real operational needs.",
+    "ctaText": "We help service businesses build websites, booking flows, and practical systems designed around real operations.",
     "ctaPrimary": "Request a Quote",
     "ctaSecondary": "View Pricing",
+    "ctaPanelTitle": "What happens after you reach out",
+    "ctaPanelPoints": [
+      "Short discovery call",
+      "Clear recommendation",
+      "Practical next steps"
+    ],
     "seeSolutions": "See industry solutions",
     "seeWork": "See recent work"
   },
