@@ -50,6 +50,10 @@ export default async function PricingPage({
     }
   };
 
+  const getVisiblePackageFeatures = (features: string[]) => {
+    return features.filter((feature) => feature.trim().length > 0).slice(0, 5);
+  };
+
   const faqs = [
     { question: t("faq1Q"), answer: t("faq1A") },
     { question: t("faq2Q"), answer: t("faq2A") },
@@ -128,7 +132,7 @@ export default async function PricingPage({
                 title={pkg.title}
                 description={pkg.description}
                 price={pkg.price_monthly}
-                features={pkg.features}
+                features={getVisiblePackageFeatures(pkg.features)}
                 ctaText={pkg.cta_text}
                 ctaHref={pkg.cta_link}
                 startingLabel={t("startingPackageLabel")}
