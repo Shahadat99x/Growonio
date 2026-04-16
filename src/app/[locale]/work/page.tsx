@@ -68,16 +68,26 @@ export default async function WorkPage({
       return "";
     }
 
-    const cleaned =
+    const softened =
       locale === "ro"
         ? normalized
+            .replace(/^O transformare digitală completă incluzând\s+/i, "Un sistem digital mai clar, cu ")
+            .replace(
+              /^Sistem securizat de înregistrare pacienți și mementouri automate/i,
+              "Onboarding pentru pacienți și mementouri automate",
+            )
             .replace(/\s+care\s+(a|au)\s+(crescut|redus|îmbunătățit).*$/i, "")
             .replace(/\s+(reducând|eliminând)\s+.*$/i, "")
         : normalized
+            .replace(/^A complete digital transformation including\s+/i, "A clearer digital setup with ")
+            .replace(
+              /^Secure patient onboarding and automated reminder pipelines/i,
+              "Patient onboarding and automated reminder flows",
+            )
             .replace(/\s+that\s+(increased|reduced|improved|boosted).*$/i, "")
             .replace(/\s+(reducing|cutting|driving)\s+.*$/i, "");
 
-    const trimmed = cleaned.replace(/[.]+$/, "").trim();
+    const trimmed = softened.replace(/[.]+$/, "").trim();
 
     if (!trimmed) {
       return normalized;
@@ -122,14 +132,14 @@ export default async function WorkPage({
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-7 text-base font-semibold")}
+                  className={cn(buttonVariants({ variant: "default", size: "lg" }), "w-full rounded-full px-7 text-base font-semibold sm:w-auto")}
                 >
                   {t("heroPrimaryCta")}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/pricing"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-7 text-base font-semibold")}
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full rounded-full px-7 text-base font-semibold sm:w-auto")}
                 >
                   {t("heroSecondaryCta")}
                 </Link>
@@ -151,7 +161,7 @@ export default async function WorkPage({
           </MotionReveal>
 
           {prioritizedItems.length > 0 ? (
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3 xl:gap-8">
               {prioritizedItems.map((item, index) => (
                 <MotionReveal key={item.id} delay={0.06 + index * 0.04}>
                   <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-white/88 shadow-[0_22px_60px_-38px_rgba(24,18,51,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/22 hover:shadow-[0_28px_70px_-36px_color-mix(in_oklab,var(--color-primary)_24%,transparent)]">
@@ -163,14 +173,14 @@ export default async function WorkPage({
                       />
                     </div>
 
-                    <div className="flex flex-1 flex-col p-6">
+                    <div className="flex flex-1 flex-col p-5 sm:p-6">
                       <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary/78">
                         {item.industry}
                       </p>
-                      <h2 className="mt-3 text-xl font-semibold tracking-[-0.04em] text-foreground">
+                      <h2 className="mt-3 line-clamp-2 text-xl font-semibold tracking-[-0.04em] text-foreground">
                         {item.title}
                       </h2>
-                      <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted-foreground">
+                      <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground sm:mt-4">
                         {getWorkCardSupportingLine(item.description)}
                       </p>
 
@@ -202,7 +212,7 @@ export default async function WorkPage({
       <Section className="pt-16 md:pt-24">
         <Container className="max-w-6xl">
           <MotionReveal>
-            <div className="relative overflow-hidden rounded-[2.4rem] border border-primary/18 bg-[linear-gradient(135deg,rgba(247,243,255,0.96)_0%,rgba(255,255,255,0.98)_100%)] px-6 py-10 shadow-[0_30px_80px_-48px_rgba(54,29,105,0.26)] md:px-10 md:py-12 lg:px-12">
+            <div className="relative overflow-hidden rounded-[2.4rem] border border-primary/18 bg-[linear-gradient(135deg,rgba(247,243,255,0.96)_0%,rgba(255,255,255,0.98)_100%)] px-6 py-8 shadow-[0_30px_80px_-48px_rgba(54,29,105,0.26)] md:px-10 md:py-10 lg:px-12">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(182,155,255,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(129,93,255,0.12),transparent_24%)]" />
 
               <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:items-center">
@@ -221,21 +231,21 @@ export default async function WorkPage({
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/contact"
-                      className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-7 text-base font-semibold")}
+                      className={cn(buttonVariants({ variant: "default", size: "lg" }), "w-full rounded-full px-7 text-base font-semibold sm:w-auto")}
                     >
                       {t("ctaPrimary")}
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                     <Link
                       href="/contact"
-                      className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-7 text-base font-semibold")}
+                      className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full rounded-full px-7 text-base font-semibold sm:w-auto")}
                     >
                       {t("ctaSecondary")}
                     </Link>
                   </div>
                 </div>
 
-                <div className="rounded-[1.9rem] border border-border/60 bg-white/84 p-6 shadow-[0_22px_50px_-36px_rgba(24,18,51,0.18)] backdrop-blur-md md:p-7">
+                <div className="rounded-[1.9rem] border border-border/60 bg-white/84 p-5 shadow-[0_22px_50px_-36px_rgba(24,18,51,0.18)] backdrop-blur-md md:p-6">
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-primary/82">
                     {t("heroPanelEyebrow")}
                   </p>
