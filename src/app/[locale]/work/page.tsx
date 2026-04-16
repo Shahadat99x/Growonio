@@ -61,6 +61,35 @@ export default async function WorkPage({
     buildWorkItemListSchema(appLocale, prioritizedItems),
   ].filter(Boolean);
 
+  const getWorkCardSupportingLine = (text: string) => {
+    const normalized = text.trim().replace(/\s+/g, " ");
+
+    if (!normalized) {
+      return "";
+    }
+
+    const cleaned =
+      locale === "ro"
+        ? normalized
+            .replace(/\s+care\s+(a|au)\s+(crescut|redus|îmbunătățit).*$/i, "")
+            .replace(/\s+(reducând|eliminând)\s+.*$/i, "")
+        : normalized
+            .replace(/\s+that\s+(increased|reduced|improved|boosted).*$/i, "")
+            .replace(/\s+(reducing|cutting|driving)\s+.*$/i, "");
+
+    const trimmed = cleaned.replace(/[.]+$/, "").trim();
+
+    if (!trimmed) {
+      return normalized;
+    }
+
+    if (trimmed.length <= 110) {
+      return `${trimmed}.`;
+    }
+
+    return `${trimmed.slice(0, 107).trimEnd()}...`;
+  };
+
   return (
     <div className="overflow-hidden pb-24">
       <JsonLd data={structuredData} />
@@ -141,11 +170,8 @@ export default async function WorkPage({
                       <h2 className="mt-3 text-xl font-semibold tracking-[-0.04em] text-foreground">
                         {item.title}
                       </h2>
-                      <p className="mt-2 text-sm font-medium text-foreground/72">
-                        {item.client_name}
-                      </p>
                       <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted-foreground">
-                        {item.description}
+                        {getWorkCardSupportingLine(item.description)}
                       </p>
 
                       <div className="mt-auto border-t border-border/55 pt-6">
