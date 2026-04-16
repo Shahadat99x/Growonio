@@ -886,6 +886,18 @@
       "Useful for Romanian and English audiences",
       "Built around business realities"
     ],
+    "finalCtaBadge": "Need help applying this?",
+    "finalCtaTitle": "Need help applying these ideas to your business?",
+    "finalCtaDescription": "We can turn useful insights into practical systems for websites, booking flow, and day-to-day operations.",
+    "finalCtaPrimary": "Get in Touch",
+    "finalCtaSecondary": "Explore Services",
+    "finalCtaPanelLabel": "Growonio",
+    "finalCtaPanelTitle": "What happens after you reach out",
+    "finalCtaPoints": [
+      "Short discovery call",
+      "Clear recommendation",
+      "Practical next steps"
+    ],
     "empty": "No articles published yet. Check back soon."
   }
 }

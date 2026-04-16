@@ -886,6 +886,18 @@
       "Util pentru audiențe române și engleze",
       "Construit în jurul realităților de business"
     ],
+    "finalCtaBadge": "Ai nevoie de ajutor cu aplicarea acestor idei?",
+    "finalCtaTitle": "Vrei să aplici aceste idei în afacerea ta?",
+    "finalCtaDescription": "Putem transforma ideile utile în sisteme practice pentru website-uri, fluxuri de programare și operațiuni de zi cu zi.",
+    "finalCtaPrimary": "Ia legătura cu noi",
+    "finalCtaSecondary": "Vezi serviciile",
+    "finalCtaPanelLabel": "Growonio",
+    "finalCtaPanelTitle": "Ce urmează după ce ne contactezi",
+    "finalCtaPoints": [
+      "O scurtă discuție de descoperire",
+      "O recomandare clară",
+      "Pași practici de urmat"
+    ],
     "empty": "Niciun articol publicat încă. Revino curând."
   }
 }
