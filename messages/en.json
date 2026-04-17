@@ -847,11 +847,11 @@
     "learnMore": "Learn More"
   },
   "InsightsPage": {
-    "title": "Insights",
-    "description": "Ideas, guides, and practical thinking on business automation and digital growth.",
+    "title": "Ideas, guides, and practical notes for service businesses",
+    "description": "Short, useful articles on websites, booking flow, digital operations, and business systems.",
     "metaTitle": "Insights on Automation, Websites, and Digital Growth",
     "metaDescription": "Read practical Growonio articles on automation, digital operations, client acquisition, and sustainable growth for service businesses.",
-    "heroBadge": "Growonio Insights",
+    "heroBadge": "Insights",
     "heroSupportingLine": "The focus is practical thinking for service businesses: clearer websites, better client flow, operational improvements, and digital systems that remain useful after launch.",
     "heroPrimaryCta": "Get in Touch",
     "heroSecondaryCta": "Explore Services",
@@ -865,12 +865,12 @@
     ],
     "publishedLabel": "published articles",
     "editorialNote": "Designed to stay useful after the first read",
-    "featuredBadge": "Featured Insight",
-    "featuredTitle": "Highlighted article",
-    "featuredDescription": "A deeper look at one practical Growonio topic before exploring the rest of the article archive.",
-    "latestBadge": "Latest Articles",
-    "latestTitle": "More ideas, guides, and practical notes",
-    "latestDescription": "Shorter editorial pieces focused on websites, digital operations, automation, and service-business growth thinking.",
+    "featuredBadge": "Featured article",
+    "featuredTitle": "Featured article",
+    "featuredDescription": "Start with one practical article before exploring the rest of the archive.",
+    "latestBadge": "Latest articles",
+    "latestTitle": "Latest articles",
+    "latestDescription": "Practical notes on websites, digital operations, automation, and service-business growth.",
     "readMore": "Read Article",
     "readTime": "read",
     "backToInsights": "Back to Insights",
@@ -885,6 +885,18 @@
       "Strategy with execution in mind",
       "Useful for Romanian and English audiences",
       "Built around business realities"
+    ],
+    "finalCtaBadge": "Need help applying this?",
+    "finalCtaTitle": "Need help applying these ideas to your business?",
+    "finalCtaDescription": "We can turn useful insights into practical systems for websites, booking flow, and day-to-day operations.",
+    "finalCtaPrimary": "Get in Touch",
+    "finalCtaSecondary": "Explore Services",
+    "finalCtaPanelLabel": "Growonio",
+    "finalCtaPanelTitle": "What happens after you reach out",
+    "finalCtaPoints": [
+      "Short discovery call",
+      "Clear recommendation",
+      "Practical next steps"
     ],
     "empty": "No articles published yet. Check back soon."
   }
