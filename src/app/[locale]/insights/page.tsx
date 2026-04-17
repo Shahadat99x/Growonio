@@ -39,6 +39,25 @@ function formatDate(dateStr: string | null, locale: string) {
   });
 }
 
+function getEditorialExcerpt(excerpt: string | null | undefined, maxLength: number) {
+  const normalized = excerpt?.replace(/\s+/g, " ").trim() ?? "";
+  if (!normalized) return "";
+
+  const firstSentence = normalized.match(/.*?[.!?](?:\s|$)/)?.[0]?.trim() ?? "";
+  const preferredExcerpt =
+    firstSentence && firstSentence.length <= maxLength ? firstSentence : normalized;
+
+  if (preferredExcerpt.length <= maxLength) {
+    return preferredExcerpt;
+  }
+
+  const slice = preferredExcerpt.slice(0, maxLength + 1);
+  const lastSpace = slice.lastIndexOf(" ");
+  const cutoff = lastSpace > Math.floor(maxLength * 0.6) ? lastSpace : maxLength;
+
+  return `${slice.slice(0, cutoff).trimEnd()}...`;
+}
+
 export default async function InsightsPage({
   params,
 }: {
@@ -160,8 +179,8 @@ export default async function InsightsPage({
                     <h2 className="mt-6 text-3xl font-semibold tracking-[-0.045em] text-foreground transition-colors group-hover:text-primary">
                       {featuredArticle.title}
                     </h2>
-                    <p className="mt-5 text-base leading-8 text-muted-foreground">
-                      {featuredArticle.excerpt}
+                    <p className="mt-5 line-clamp-3 text-base leading-7 text-muted-foreground">
+                      {getEditorialExcerpt(featuredArticle.excerpt, 180)}
                     </p>
 
                     <div className="mt-8 inline-flex items-center text-sm font-semibold text-primary">
@@ -236,8 +255,8 @@ export default async function InsightsPage({
                         <h3 className="mt-5 text-xl font-semibold tracking-[-0.035em] text-foreground transition-colors group-hover:text-primary">
                           {article.title}
                         </h3>
-                        <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground line-clamp-4">
-                          {article.excerpt}
+                        <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground line-clamp-3">
+                          {getEditorialExcerpt(article.excerpt, 120)}
                         </p>
 
                         <div className="mt-6 inline-flex items-center text-sm font-semibold text-primary">
