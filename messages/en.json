@@ -621,12 +621,12 @@
     ]
   },
   "ContactPage": {
-    "title": "Contact Us",
-    "description": "Ready to scale? Let's discuss your project.",
+    "title": "Let’s talk about your project",
+    "description": "The fastest way to start is a short message about your business, the current bottleneck, and what you want to improve.",
     "metaTitle": "Contact Growonio",
     "metaDescription": "Talk to Growonio about websites, automation, and digital systems for service businesses in Bucharest, across Romania, and beyond.",
-    "heroBadge": "Talk to Growonio",
-    "heroSupportingLine": "The fastest way to start is a short message about the business, the current bottleneck, and what type of system or improvement you want to discuss.",
+    "heroBadge": "Contact",
+    "heroSupportingLine": "The fastest way to start is a short message about your business, the current bottleneck, and what you want to improve.",
     "heroPrimaryCta": "Email Growonio",
     "heroSecondaryCta": "Chat on WhatsApp",
     "heroPanelEyebrow": "High-trust contact",
@@ -638,21 +638,21 @@
       "Response-oriented communication"
     ],
     "contactCardTitle": "Get in touch",
-    "contactCardDescription": "Tell us what the business does, where the current friction is, and what outcome you want the system to improve first.",
+    "contactCardDescription": "You can contact us about the current friction, the system you want to improve, or the kind of project you want to scope first.",
     "projectFitItems": [
       "New website or website rebuild",
       "Booking flow or lead capture improvement",
       "Admin dashboard or workflow automation"
     ],
     "formEyebrow": "Project inquiry",
-    "formTitle": "Tell us about the business and the project",
+    "formTitle": "Tell us about the business and what you want to improve",
     "formDescription": "A concise message is enough. The goal is to understand the business, the current bottleneck, and the kind of system or improvement you are considering.",
     "formChips": [
       "Bilingual delivery",
       "Business-focused scope",
       "Practical recommendations"
     ],
-    "emailLabel": "Email",
+    "emailLabel": "Direct email",
     "locationLabel": "Location",
     "locationValue": "Bucharest, Romania",
     "locationAvailability": "Available across Romania and internationally",
