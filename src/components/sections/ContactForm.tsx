@@ -95,7 +95,7 @@ export function ContactForm() {
             required
             minLength={2}
             maxLength={80}
-            placeholder={t('firstNamePlaceholder', { defaultMessage: 'John' })}
+            placeholder={t('firstNamePlaceholder', { defaultMessage: 'First name' })}
             className={fieldClassName}
           />
         </div>
@@ -108,7 +108,7 @@ export function ContactForm() {
             required
             minLength={2}
             maxLength={80}
-            placeholder={t('lastNamePlaceholder', { defaultMessage: 'Doe' })}
+            placeholder={t('lastNamePlaceholder', { defaultMessage: 'Last name' })}
             className={fieldClassName}
           />
         </div>
@@ -123,7 +123,7 @@ export function ContactForm() {
           autoComplete="email"
           required
           maxLength={160}
-          placeholder="john@example.com"
+          placeholder={t('emailPlaceholder', { defaultMessage: 'you@example.com' })}
           className={fieldClassName}
         />
       </div>

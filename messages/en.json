@@ -836,14 +836,15 @@
     "contact": "Contact Us"
   },
   "Shared": {
-    "firstName": "First Name",
-    "firstNamePlaceholder": "John",
-    "lastName": "Last Name",
-    "lastNamePlaceholder": "Doe",
-    "email": "Email Address",
-    "message": "Project Details",
-    "messagePlaceholder": "Tell us about your business and goals...",
-    "sendMessage": "Send Message",
+    "firstName": "First name",
+    "firstNamePlaceholder": "First name",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "Last name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "message": "Project details",
+    "messagePlaceholder": "Tell us a little about the business, the current bottleneck, and what you want to improve.",
+    "sendMessage": "Send message",
     "learnMore": "Learn More"
   },
   "InsightsPage": {

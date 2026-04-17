@@ -660,7 +660,7 @@
     "whatsAppCta": "Scrie pe WhatsApp",
     "servicesLinkLabel": "Descoperă serviciile",
     "insightsLinkLabel": "Citește articolele",
-    "contactFormNote": "Dacă formularul nu funcționează, ne poți scrie direct pe email și îți răspundem."
+    "contactFormNote": "Dacă formularul nu funcționează, ne poți scrie direct pe email și îți vom răspunde."
   },
   "CareersPage": {
     "title": "Cariere",
@@ -837,13 +837,14 @@
   },
   "Shared": {
     "firstName": "Prenume",
-    "firstNamePlaceholder": "Ion",
+    "firstNamePlaceholder": "Prenume",
     "lastName": "Nume",
-    "lastNamePlaceholder": "Popescu",
-    "email": "Adresă de Email",
-    "message": "Detalii Proiect",
-    "messagePlaceholder": "Spune-ne despre afacerea și obiectivele tale...",
-    "sendMessage": "Trimite Mesajul",
+    "lastNamePlaceholder": "Nume",
+    "email": "Adresă de email",
+    "emailPlaceholder": "tu@exemplu.ro",
+    "message": "Detalii proiect",
+    "messagePlaceholder": "Spune-ne pe scurt despre afacere, blocajul actual și ce vrei să îmbunătățești.",
+    "sendMessage": "Trimite mesajul",
     "learnMore": "Află mai multe"
   },
   "InsightsPage": {
