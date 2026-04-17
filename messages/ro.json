@@ -621,13 +621,13 @@
     ]
   },
   "ContactPage": {
-    "title": "Contact",
-    "description": "Ești gata să scalezi? Hai să discutăm proiectul tău.",
+    "title": "Hai să vorbim despre proiectul tău",
+    "description": "Cel mai simplu mod de a începe este un mesaj scurt despre afacerea ta, blocajul actual și ce vrei să îmbunătățești.",
     "metaTitle": "Contact Growonio",
     "metaDescription": "Discută cu Growonio despre website-uri, automatizări și sisteme digitale pentru afaceri de servicii din București, din România și din alte piețe.",
-    "heroBadge": "Discută cu Growonio",
-    "heroSupportingLine": "Cea mai rapidă metodă de a începe este un mesaj scurt despre afacere, blocajul actual și tipul de sistem sau îmbunătățire pe care vrei să îl discuți.",
-    "heroPrimaryCta": "Trimite email",
+    "heroBadge": "Contact",
+    "heroSupportingLine": "Cel mai simplu mod de a începe este un mesaj scurt despre afacerea ta, blocajul actual și ce vrei să îmbunătățești.",
+    "heroPrimaryCta": "Trimite un email către Growonio",
     "heroSecondaryCta": "Scrie pe WhatsApp",
     "heroPanelEyebrow": "Contact cu încredere",
     "heroPanelTitle": "O conversație practică, nu un apel vag de vânzare",
@@ -637,22 +637,22 @@
       "Ghidare clară pentru următorii pași",
       "Comunicare orientată spre răspuns"
     ],
-    "contactCardTitle": "Hai să vorbim",
-    "contactCardDescription": "Spune-ne ce face afacerea, unde apare fricțiunea acum și ce rezultat vrei să îmbunătățească sistemul mai întâi.",
+    "contactCardTitle": "Ia legătura cu noi",
+    "contactCardDescription": "Ne poți contacta despre blocajul actual, sistemul pe care vrei să îl îmbunătățești sau tipul de proiect pe care vrei să îl clarifici mai întâi.",
     "projectFitItems": [
-      "Website nou sau refacere de website",
-      "Îmbunătățire pentru programări sau captare lead-uri",
-      "Dashboard administrativ sau automatizare de flux"
+      "Website nou sau refacerea unui website",
+      "Îmbunătățirea fluxului de programare sau de captare lead-uri",
+      "Dashboard administrativ sau automatizare workflow"
     ],
     "formEyebrow": "Cerere de proiect",
-    "formTitle": "Spune-ne despre afacere și despre proiect",
-    "formDescription": "Un mesaj concis este suficient. Scopul este să înțelegem afacerea, blocajul actual și sistemul sau îmbunătățirea pe care o ai în vedere.",
+    "formTitle": "Spune-ne despre afacere și ce vrei să îmbunătățești",
+    "formDescription": "Este suficient un mesaj concis. Scopul este să înțelegem afacerea, blocajul actual și ce tip de sistem sau îmbunătățire iei în calcul.",
     "formChips": [
       "Livrare bilingvă",
       "Scop orientat spre business",
       "Recomandări practice"
     ],
-    "emailLabel": "Email",
+    "emailLabel": "Email direct",
     "locationLabel": "Locație",
     "locationValue": "București, România",
     "locationAvailability": "Disponibili în toată România și internațional",

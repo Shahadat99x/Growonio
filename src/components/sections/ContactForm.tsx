@@ -65,18 +65,6 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-3">
-        {(tContact.raw("formChips") as string[]).map((chip) => (
-          <div
-            key={chip}
-            className="inline-flex items-center rounded-full border border-border/65 bg-background/76 px-4 py-2 text-sm font-medium text-foreground shadow-[0_12px_24px_-22px_rgba(24,18,51,0.18)]"
-          >
-            <span className="mr-2 h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_-1px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]" />
-            {chip}
-          </div>
-        ))}
-      </div>
-
       {state.error && (
         <div
           role="alert"
